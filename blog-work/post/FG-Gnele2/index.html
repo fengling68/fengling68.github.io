@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>Flex布局 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>Flex布局</h1>
+          <p class="article-meta">
+            2016-07-04
+            
+            <a href="https://h8396x.coding-pages.com/tag/fzHk7_HZr/index.html" class="tagitem">
+              html
+            </a>
+            
+          </p>
+          
+            <div class="post-article-img">
+              <img src="https://h8396x.coding-pages.com/post-images/FG-Gnele2.png" alt="Flex布局">
+            </div>
+          
+          <div class="post-content">
+            <h2 id="一-基本知识点">一、基本知识点</h2>
+<blockquote>
+<p>1、px : 像素, 逻辑像素 相对单位, 抽象的单位长度</p>
+<p>2、dp : 在参数中, 显示的是物理像素, 实际的单位长度, 设备无关像素</p>
+<p>3、dpr: 设备像素缩放比<br>
+1px = dpr^2*dp<br>
+4、屏幕像素密度ppi: 屏幕每英寸像素数量</p>
+<p>5、ppi = 屏幕对角线长度 / 屏幕英寸</p>
+<p>例 iPhone5：ppi = sqrt(1136<em>1136 + 640</em>640)/4</p>
+</blockquote>
+<h2 id="布局">布局</h2>
+<pre><code>//html
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;box&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;box&quot;&gt;4&lt;/div&gt;
+&lt;/div&gt;
+
+.container{
+    /* 将container变成弹性盒子 */
+    display: flex;
+}
+</code></pre>
+<h2 id="二-容器属性container">二、容器属性（.container）</h2>
+<h5 id="1-主轴方向-flex-direction">1、主轴方向 <code>flex-direction:</code></h5>
+<pre><code>row（默认）       按照主轴开始位置排列
+row-reverse      按照主轴结束位置排列 
+column           按照交叉轴开始位置排列
+column-reverse   按照交叉轴结束位置排列
+</code></pre>
+<h5 id="2-换行-flex-wrap">2、换行 <code>flex-wrap：</code></h5>
+<pre><code>wrap             超过contain盒子的宽度后强制换行
+nowrap           不换行
+wrap-reverse     换行后翻转，第一行在下面
+</code></pre>
+<h5 id="3-主轴方向换行值1方向-值2-换行">3、主轴方向+换行(值1:方向 值2: 换行)</h5>
+<pre><code>flex-flow: row wrap-reverse;
+</code></pre>
+<h5 id="4-主轴对齐方式-justify-content">4、主轴对齐方式 <code>justify-content</code></h5>
+<pre><code>flex-start       按照主轴开始的位置对齐
+flex-end         按照主轴结束的位置对齐
+center           按照主轴中心的位置对齐
+space-between    按照主轴, 两端对齐 , 间隔相同
+space-around     主轴方向, 每个项目的左右间隔相同
+</code></pre>
+<h5 id="5-交叉轴对齐方式-align-items">5、交叉轴对齐方式 <code>align-items</code>：</h5>
+<pre><code>flex-start       交叉轴开始位置对齐
+flex-end         交叉轴结束位置对齐
+center           交叉轴水平位置对齐
+baseline         交叉轴基线位置对齐
+stretch          如果没有高度或者高度自动，自动撑满整个容器
+</code></pre>
+<h5 id="6-主轴方向对齐方式">6、主轴方向+对齐方式</h5>
+<h5 id="7-多根轴线对齐强制换行">7、多根轴线对齐(强制换行)</h5>
+<blockquote>
+<p>盒子不换行默认一条轴线排列,不会产生第二根基线。设置多根轴线无作用</p>
+<p>盒子换行：出现多根轴线对齐（按每一根轴线的...对齐）</p>
+</blockquote>
+<h2 id="三-项目属性box">三、项目属性（.box）</h2>
+<h5 id="1-项目的顺序-order">1、项目的顺序 —— <code>order</code></h5>
+<pre><code>/*默认从左到右都是0  数越小, 越靠前*/
+.box:nth-child(3){
+    order: 1;
+}
+.box:nth-child(2){
+    order: 5;
+}
+</code></pre>
+<h5 id="2-项目的放大-flex-grow">2、项目的放大 —— <code>flex-grow</code></h5>
+<pre><code>/* 
+ * 项目的放大比例 ———— flew-grow
+ * 默认为0, 即使存在剩余空间也不会放大
+ * 不能设置负数
+ * 也不要设置小数
+ */
+.box:nth-child(3){
+    flex-grow: 3;
+}
+</code></pre>
+<h5 id="3-项目的缩小-flex-shrink">3、项目的缩小 —— <code>flex-shrink</code></h5>
+<pre><code>/*
+ * 项目的缩小比例
+ * 默认值为1, 如果剩余空间不足, 项目会缩小
+ * 设置为0 , 不会缩小
+ * 不能设置负数
+ * 也不要设置小数
+ */
+.box:nth-child(2){
+    order: 0.5;
+    flex-shrink: 0;
+}
+</code></pre>
+<h5 id="4-项目的主轴空间大小-flex-basis">4、项目的主轴空间大小 —— <code>flex-basis</code></h5>
+<pre><code>/* 
+ * 主轴空间大小
+ * 定义在分配主轴空间之前，项目占据主轴空间，
+ * 浏览器根据当前属性，计算主轴是否有多余空间
+ * 
+ * 宽度固定
+ */
+.box:nth-child(3){
+    flex-basis: 300px;
+    /*flex-shrink: 0;*/
+}
+</code></pre>
+<h2 id="附-一个盒子九宫格位置">附、一个盒子九宫格位置</h2>
+<pre><code>.container{
+    width: 400px;
+    height: 400px;
+    border: 3px solid black;
+    /* 将container变成弹性盒子 */
+    display: flex;
+
+    /* 位置1 */
+    justify-content: flex-start;
+
+    /* 位置2 主轴方向-居中对齐*/
+    justify-content: center;
+
+    /* 位置3 主轴方向-结束位置对齐*/
+    justify-content: flex-end;
+
+    /* 位置4 主轴方向-结束位置对齐*
+    justify-content: flex-start;
+    align-items: center;
+
+    /* 位置5 主轴方向-结束位置对齐*/
+    justify-content: center;
+    align-items: center;
+
+    /* 位置6 主轴方向-结束位置对齐*/
+    justify-content: flex-end;
+    align-items: center;
+
+    /* 位置7 主轴方向-结束位置对齐*/
+    /*flex-direction: column;
+    align-items: flex-start;*/
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    /* 位置8 主轴方向-结束位置对齐*/
+    /*flex-direction: column;
+    align-items: center;*/
+    justify-content: center;
+    align-items: flex-end;
+
+    /* 位置9 主轴方向-结束位置对齐*/
+    /*flex-direction: column;
+    align-items: flex-end;*/
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+</code></pre>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/H4FS428MO/index.html">
+              <h3 class="post-title">
+                three.js简单示例
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/TX7tVZfv7/index.html">
+              <h3 class="post-title">
+                rem、移动端事件、html加载
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：949</a></li>
+        <li><a href="javascript:;">阅读时间：4 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：949</a></li>
+        <li><a href="javascript:;">阅读时间：4 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%B8%80-%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9">一、基本知识点</a></li>
+<li><a href="#%E5%B8%83%E5%B1%80">布局</a></li>
+<li><a href="#%E4%BA%8C-%E5%AE%B9%E5%99%A8%E5%B1%9E%E6%80%A7container">二、容器属性（.container）</a><br>
+*<br>
+*<br>
+* <a href="#1-%E4%B8%BB%E8%BD%B4%E6%96%B9%E5%90%91-flex-direction">1、主轴方向 <code>flex-direction:</code></a><br>
+* <a href="#2-%E6%8D%A2%E8%A1%8C-flex-wrap">2、换行 <code>flex-wrap：</code></a><br>
+* <a href="#3-%E4%B8%BB%E8%BD%B4%E6%96%B9%E5%90%91%E6%8D%A2%E8%A1%8C%E5%80%BC1%E6%96%B9%E5%90%91-%E5%80%BC2-%E6%8D%A2%E8%A1%8C">3、主轴方向+换行(值1:方向 值2: 换行)</a><br>
+* <a href="#4-%E4%B8%BB%E8%BD%B4%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F-justify-content">4、主轴对齐方式 <code>justify-content</code></a><br>
+* <a href="#5-%E4%BA%A4%E5%8F%89%E8%BD%B4%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F-align-items">5、交叉轴对齐方式 <code>align-items</code>：</a><br>
+* <a href="#6-%E4%B8%BB%E8%BD%B4%E6%96%B9%E5%90%91%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F">6、主轴方向+对齐方式</a><br>
+* <a href="#7-%E5%A4%9A%E6%A0%B9%E8%BD%B4%E7%BA%BF%E5%AF%B9%E9%BD%90%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C">7、多根轴线对齐(强制换行)</a></li>
+<li><a href="#%E4%B8%89-%E9%A1%B9%E7%9B%AE%E5%B1%9E%E6%80%A7box">三、项目属性（.box）</a><br>
+*<br>
+*<br>
+* <a href="#1-%E9%A1%B9%E7%9B%AE%E7%9A%84%E9%A1%BA%E5%BA%8F-order">1、项目的顺序 —— <code>order</code></a><br>
+* <a href="#2-%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%94%BE%E5%A4%A7-flex-grow">2、项目的放大 —— <code>flex-grow</code></a><br>
+* <a href="#3-%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%BC%A9%E5%B0%8F-flex-shrink">3、项目的缩小 —— <code>flex-shrink</code></a><br>
+* <a href="#4-%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%B8%BB%E8%BD%B4%E7%A9%BA%E9%97%B4%E5%A4%A7%E5%B0%8F-flex-basis">4、项目的主轴空间大小 —— <code>flex-basis</code></a></li>
+<li><a href="#%E9%99%84-%E4%B8%80%E4%B8%AA%E7%9B%92%E5%AD%90%E4%B9%9D%E5%AE%AB%E6%A0%BC%E4%BD%8D%E7%BD%AE">附、一个盒子九宫格位置</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

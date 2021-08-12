@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>时间流和事件冒泡 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>时间流和事件冒泡</h1>
+          <p class="article-meta">
+            2016-03-18
+            
+            <a href="https://h8396x.coding-pages.com/tag/ihMjX_vyp/index.html" class="tagitem">
+              javascript
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <h2 id="事件流">事件流</h2>
+<ul>
+<li>
+<p>指网页中事件传播顺序，当我们对页面进行操作的时候，都会产生事件流。这个事件流在传播过程中，就会查找跟事件流事件类型相同的元素。</p>
+</li>
+<li>
+<p>点击时，会产生点击事件流。<br>
+在传播的过程中，只要发现有元素绑定了和事件流相同类型的事件，就触发此事件。</p>
+</li>
+</ul>
+<h2 id="两种事件流模型">两种事件流模型</h2>
+<ul>
+<li>
+<p>1、冒泡事件流模型：从里往外</p>
+</li>
+<li>
+<p>现代浏览器，默认都是冒泡</p>
+</li>
+<li>
+<p>认为事件流，从触发事件的元素开始传递，传播到根节点结束。</p>
+</li>
+<li>
+<p>2、捕获事件流模型：从外往里</p>
+</li>
+<li>
+<p>NetScape , 很少用</p>
+</li>
+<li>
+<p>认为事件流从根节点产生开始传播，传播到当前元素结束。</p>
+</li>
+</ul>
+<h2 id="阻止冒泡阻止事件的传播">阻止冒泡：阻止事件的传播</h2>
+<p>1、W3C方式</p>
+<pre><code>    事件对象.stopPropagation();   调用这个方法
+    event.stopPropagation();
+</code></pre>
+<p>2、IE方式(IE8以下)</p>
+<pre><code>    事件对象.cancelBubble = true;
+</code></pre>
+<p>3、兼容IE浏览器//阻止事件冒泡的函数</p>
+<pre><code>    function stopPro(event){
+        //var e = evt || window.event;
+        //window.event ? e.cancelBubble = true : e.stopPropagation();
+
+        if(event.stopPropagation){
+            event.stoppagation();         //非IE浏览器
+        }else{
+            event.cancelBubble = true;    //IE浏览器
+        }
+    }
+</code></pre>
+<h2 id="修改事件的默认行为">修改事件的默认行为</h2>
+<p>例：img   a   submit</p>
+<p>例：表单中type是submit，点击后在事件传播完成后会自动提交表单</p>
+<p>例：input的keydown事件发生并处理后，浏览器会将用户键入的字符自动追加到input元素的值中。</p>
+<pre><code>//(1)IE
+function someHandle(){
+    window.event.returnValue = false;
+}
+
+//(2)W3C
+function someHandle(event){
+    event.preventDefault();
+}
+
+//(3)兼容性处理
+function preventDefault(e){
+    if(e.preventDefault){
+        e.preventDefault();
+    }else{
+        e.returnValue = false;
+    }
+}
+</code></pre>
+<h2 id="dom2模型">DOM2模型</h2>
+<p><strong>1、绑定事件</strong></p>
+<pre><code>(1)W3C标准：
+    addEventListener(&quot;eventType&quot;,handler,true | false);
+    参数一：事件类型(不加 on)
+            事件属性 = on + 事件类型
+    参数二：处理函数
+    参数三：指定是否在捕获阶段进行处理，false&lt;=&gt;IE
+
+    function clickOne(){
+        alert(&quot;订单安全验证&quot;);
+    }
+    function clickTwo(){
+        alert(&quot;订单提交&quot;);
+    }
+    btn.addEventListener(&quot;click&quot;,clickOne,false);
+    btn.addEventListener(&quot;click&quot;,clickTwo,false);
+</code></pre>
+<p>(2)IE7 / IE8:(只能用冒泡)</p>
+<pre><code>    attachEvent(&quot;eventType&quot;,handler);
+    参数一：事件类型(加 on)
+    参数二：事件处理函数
+
+    attachEvent(&quot;onclick&quot;,clickOne);
+    attachEvent(&quot;onclick&quot;,clickTwo);
+</code></pre>
+<p>(3)DOM2绑定事件兼容性处理</p>
+<pre><code>    function addEvent(ele,eventType,handler,isCapture){   //isCapture 是否冒泡
+        if(ele.addEventListener){
+            ele.addEventListener(eventType,handler,isCapture);
+        }else{
+            ele.attachEvent(&quot;on&quot;+eventType,handler);
+        }
+    }
+</code></pre>
+<p><strong>2、移出事件</strong></p>
+<p>(1)W3C方式</p>
+<pre><code>    removeEventListener( &quot;eventType&quot;,handler,true||false );
+    参数一：不加on
+</code></pre>
+<p>(2)IE方式</p>
+<pre><code>    detachEvent(eventType,handler);
+    参数二：加on
+</code></pre>
+<p>(3)DOM2解除事件兼容性处理</p>
+<pre><code>    function removeEvent(ele,eventType,handler,isCapture){
+        if(ele.removeEventListener){     //isCapture未传参，则是undefined
+            ele.removeEventListener(eventType,handler,isCapture);
+        }else{
+            ele.detachEvent(&quot;on&quot;+eventType,handler);
+        }
+    }
+</code></pre>
+<h2 id="事件委托">事件委托</h2>
+<ul>
+<li>本该子元素做的事情，委托给父元素来做。实质：冒泡事件</li>
+<li>监听到的实际的事件源</li>
+<li>标准浏览器target : ul</li>
+<li>IE浏览器srcElement : ul</li>
+</ul>
+<p><strong>代码示例</strong></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;ul&gt;
+            &lt;li&gt;我是li标签1&lt;/li&gt;
+            &lt;li&gt;我是li标签2&lt;/li&gt;
+            &lt;li&gt;我是li标签3&lt;/li&gt;
+            &lt;li&gt;我是li标签4&lt;/li&gt;
+            &lt;p&gt;我是p标签&lt;/p&gt;
+        &lt;/ul&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var ul = document.getElementsByTagName(&quot;ul&quot;)[0];
+    ul.onclick = function(event){
+        var e = event || window.event;
+        console.log(e);
+        console.log(e.target || e.srcElement);
+
+        var tar = e.target || e.srcElement;
+        //节点名称nodeName都是大写的
+        if(tar.nodeName.toLowerCase() == &quot;li&quot;){
+            alert(123);
+        }
+    }
+&lt;/script&gt;
+</code></pre>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/Ctho-9te1/index.html">
+              <h3 class="post-title">
+                懒加载和滚动加载
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/lMrpM2Tr7/index.html">
+              <h3 class="post-title">
+                JS事件对象
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：859</a></li>
+        <li><a href="javascript:;">阅读时间：4 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：859</a></li>
+        <li><a href="javascript:;">阅读时间：4 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E6%B5%81">事件流</a></li>
+<li><a href="#%E4%B8%A4%E7%A7%8D%E4%BA%8B%E4%BB%B6%E6%B5%81%E6%A8%A1%E5%9E%8B">两种事件流模型</a></li>
+<li><a href="#%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%BC%A0%E6%92%AD">阻止冒泡：阻止事件的传播</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E4%BA%8B%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA">修改事件的默认行为</a></li>
+<li><a href="#dom2%E6%A8%A1%E5%9E%8B">DOM2模型</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98">事件委托</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

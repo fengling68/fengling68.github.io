@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>DOM文档对象模型 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>DOM文档对象模型</h1>
+          <p class="article-meta">
+            2016-03-11
+            
+            <a href="https://h8396x.coding-pages.com/tag/ihMjX_vyp/index.html" class="tagitem">
+              javascript
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <h2 id="dom节点">DOM节点</h2>
+<pre><code>HTML的所有内容都是节点
+文档节点  元素节点  属性节点   文本节点
+父节点(parent)  子节点(child)  兄弟节点(sibling)  根节点(root)
+</code></pre>
+<h2 id="获取dom元素节点标签">获取DOM元素节点(标签)</h2>
+<pre><code>(任何元素都可以自定义属性name，在IE中只识别form表单中的name)
+
+1、getElementById(); 通过id来获取元素节点; 唯一
+2、getElementsByTagName(); 通过标签名称获取元素节点; 伪数组(不享有数组的方法)
+3、getElementsByClassName(); 通过类名获取元素节点; 伪数组(IE低版本有兼容性问题)
+4、getElementsByName(); 通过name属性值获取元素节点。
+5、document.querySelector();多种选择器获得元素节点，默认只选择第一个
+    var dom1 = document.querySelector(&quot;.myUl&quot;);    //选择第一个类
+    var dom2 = document.querySelector(&quot;#my_div&quot;);  //选择唯一的id
+    var dom3 = document.querySelector(&quot;input&quot;);    //选择第一个元素标签
+6、document.querySelectorAll();通过多种选择器获取页面中的所有元素节点。
+</code></pre>
+<h2 id="操作元素节点">操作元素节点</h2>
+<p><strong>获取/访问属性节点</strong></p>
+<pre><code>1、控制台输出    按钮-类型type
+    var inps = document.getElementsByTagName(&quot;input&quot;);
+    console.log(inps[0].type);
+
+2、输出按钮的内容
+   console.log(inps[0].value);
+
+3、在控制台输出div的类名  class不能用,用className
+    var divs = document.getElementsByTagName(&quot;div&quot;);
+    console.log(divs[0].className);
+</code></pre>
+<p><strong>设置属性节点方式一( . 语法)</strong></p>
+<pre><code>1、给div重设类名
+    divs[0].className = &quot;div&quot;;
+
+2、给图片设置路径
+    var imgs = document.getElementsByTagName(&quot;img&quot;);
+    imgs[0].src = &quot;429902.jpg&quot;;
+
+3、单选框、复选框。是通过布尔值设置默认选中
+
+        var inps = document.getElementsByTagName(&quot;input&quot;);
+        inps[1].checked = true;
+
+4、option，通过布尔值设置为默认选中
+    var opts = document.getElementsByTagName(&quot;option&quot;);
+    opts[1].selected = true;
+</code></pre>
+<p><strong>设置属性节点方式二(自带属性 || 自定义属性)</strong></p>
+<pre><code>setAttribute();   参数：属性，属性值 
+getAttribute();
+
+1、给按钮设置属性
+    var inps = document.getElementsByTagName(&quot;input&quot;);
+    inps[0].setAttribute(&quot;onclick&quot;,&quot;fn()&quot;);
+    function fn(){alert(123);}
+
+2、获取属性
+    var divs = document.getElementsByClassName(&quot;my_div&quot;);
+    console.log(divs[0].getAttribute(&quot;class&quot;));
+</code></pre>
+<h2 id="排它思想">排它思想</h2>
+<pre><code>var btns = document.getElementsByTagName(&quot;input&quot;);
+for(var i = 0 ; i &lt; btns.length ; i ++){
+    btns[i].onclick = function(){
+
+        //排他思想：在操作当前元素之前，先清除之前其他的样式
+        for(var j = 0 ; j &lt; btns.length ; j++){
+            //btns[j].className = &quot;old&quot;;
+            btns[j].setAttribute(&quot;class&quot;,&quot;old&quot;);
+        }
+
+        //this.style.backgroundColor = &quot;red&quot;;
+        //this.className = &quot;current&quot;;
+        this.setAttribute(&quot;class&quot;,&quot;current&quot;);
+    }
+}
+</code></pre>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/3DJ_Qk2p3/index.html">
+              <h3 class="post-title">
+                DOM层级关系
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/_yxgPIzqc/index.html">
+              <h3 class="post-title">
+                BOM浏览器模型
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：587</a></li>
+        <li><a href="javascript:;">阅读时间：3 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：587</a></li>
+        <li><a href="javascript:;">阅读时间：3 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#dom%E8%8A%82%E7%82%B9">DOM节点</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96dom%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9%E6%A0%87%E7%AD%BE">获取DOM元素节点(标签)</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E8%8A%82%E7%82%B9">操作元素节点</a></li>
+<li><a href="#%E6%8E%92%E5%AE%83%E6%80%9D%E6%83%B3">排它思想</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

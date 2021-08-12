@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>MVC和MVVM设计模式 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>MVC和MVVM设计模式</h1>
+          <p class="article-meta">
+            2017-02-01
+            
+            <a href="https://h8396x.coding-pages.com/tag/7j2TpSN8X/index.html" class="tagitem">
+              vue
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <h2 id="一-mvc设计模式">一、MVC设计模式</h2>
+<pre><code>Models模型主要关注的是业务数据，即管理一个业务应用的数据，它们既与用户界面无关也与表现层无关。
+
+JavaScript 的视图是关于构建和操作DOM元素，视图是对我们的数据的一种可视化展现。
+
+控制器是模型和视图之间的中介，典型的职责是当用户操作视图的时候同步更新模型。
+
+M = Model    模型,数据模型
+    Person = {
+        name
+        age
+        sex
+        ...
+    }
+    
+V = View     视图,(html+css)显示数据的界面                
+    div p span
+    
+C = Controller  控制器 
+    1、拿出数据显示到界面
+    2、界面有变化的时候，修改数据
+</code></pre>
+<ul>
+<li>
+<p>JavaScript 模板解决方案（例如Handlebars.js 和 Mustache）通常用于为视图定义模板作为标记，标记中包含有模板变量。标记要么存储在外部，要么存储在脚本标签里面，使用自定义的类型例如text/template。</p>
+</li>
+<li>
+<p>将模板存储在外部的时候，这样在构建大型引应用的时候可以是模板按照需要动态加载。</p>
+</li>
+</ul>
+<h2 id="二-mvp设计模式">二、MVP设计模式</h2>
+<pre><code>模型-视图-展示器(MVP)是MVC设计模式的一个衍生模式,它专注于提升展现逻辑。
+</code></pre>
+<h2 id="三-mvvm设计模式">三、MVVM设计模式</h2>
+<pre><code>MVVM是一种基于MVC和MVP的架构模式，它试图将用户界面（UI）从业务逻辑和行为中更加清晰地分离出来。
+
+M = Model       数据模型
+V = View        视图
+VM = ViewModel  数据绑定
+
+先写好数据，再写view界面，后写viewModel绑定
+核心：数据变化后，界面自动变化
+</code></pre>
+<h2 id="四-三种设计模式的比较">四、三种设计模式的比较</h2>
+<pre><code>MVP和MVVM都是MVC的衍生物。它和它的衍生物之间关键的不同之处在于每一层对于其它层的依赖，以及它们相互之间是如何紧密结合在一起的。
+
+在MVC中，视图位于我们架构的顶部，其背后是控制器。模型在控制器后面，而因此我们的视图了解得到我们的控制器，而控制器了解得到模型。这里，我们的视图有对模型的直接访问。然而将整个模型完全暴露给视图可能会有安全和性能损失，这取决于我们应用程序的复杂性。MVVM则尝试去避免这些问题。
+
+在MVP中，控制器的角色被代理器所取代，代理器和视图处于同样的地位，视图和模型的事件都被它侦听着并且接受它的调解。不同于MVVM，没有一个将视图绑定到视图模型的机制，因此我们转而依赖于每一个视图都实现一个允许代理器同视图去交互的接口。
+
+MVVM进一步允许我们创建一个模型的特定视图子集，包含了状态和逻辑信息，避免了将模型完全暴露给视图的必要。不同于MVP的代理器，视图模型并不需要去引用一个视图。视图可以绑定到视图模型的属性上面，视图模型则去将包含在模型中的数据暴露给视图。像我们所提到过的，对视图的抽象意味着其背后的代码需要较少的逻辑。
+
+对此的副作用之一就是视图模型和视图层之间新增的的用于翻译解释的一层会有性能损失。这种解释层的复杂度根据情况也会有所差异——它可能像复制数据一样简单，也可能会像我们希望用视图理解的一种形式去操作它们，那样复杂。由于整个模型是现成可用的，从而这种操作可以被避免掉，所以MVC没有这种问题。
+</code></pre>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/PtK3WSLxU/index.html">
+              <h3 class="post-title">
+                认识三大框架
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/BeK9Br7U1/index.html">
+              <h3 class="post-title">
+                同时配置github、gitee、coding的ssh
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：967</a></li>
+        <li><a href="javascript:;">阅读时间：4 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：967</a></li>
+        <li><a href="javascript:;">阅读时间：4 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%B8%80-mvc%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">一、MVC设计模式</a></li>
+<li><a href="#%E4%BA%8C-mvp%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">二、MVP设计模式</a></li>
+<li><a href="#%E4%B8%89-mvvm%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">三、MVVM设计模式</a></li>
+<li><a href="#%E5%9B%9B-%E4%B8%89%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83">四、三种设计模式的比较</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

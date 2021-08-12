@@ -1,0 +1,31 @@
+<% posts.forEach(function(post) { %>
+  <article class="article-list">
+    <div class="article-info">
+      <h2 class="article-title">
+        <a href="<%= post.link %>index.html"><%= post.title %></a>
+      </h2>
+      <p class="article-meta">
+        <%= post.dateFormat %>
+        <% post.tags.forEach(function(tag, tagIndex) { %>
+          <a href="<%= tag.link %>index.html" class="tagitem">
+            <%= tag.name %>
+          </a>
+        <% }); %>
+      </p>
+      <div class="text-lead">
+        <%- post.searchedPreview %>
+      </div>
+      <div class="">
+        <a href="<%= post.link %>index.html" class="readmore-link">
+          <button>
+            <%= 'Read More' %>
+          </button>
+        </a>
+      </div>
+    </div>
+    <% if (post.feature) { %>
+      <div class="article-img" style="background-image: url('<%= post.feature %>');"></div>
+    <% } %>
+  </article>
+<% }); %>
+

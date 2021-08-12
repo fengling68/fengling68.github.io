@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>JS函数 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>JS函数</h1>
+          <p class="article-meta">
+            2016-03-02
+            
+            <a href="https://h8396x.coding-pages.com/tag/ihMjX_vyp/index.html" class="tagitem">
+              javascript
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <h2 id="函数是一等公民">函数是一等公民</h2>
+<pre><code>函数命名规则标识符 命名规则 驼峰命名  语义化  可以$开头命名
+函数名称不要大写, 大写的是构造函数。
+</code></pre>
+<h2 id="什么是函数">什么是函数</h2>
+<pre><code>函数：具有特定功能的代码块
+功能：根据实际需要，声明对应功能函数
+优势：减少代码量，复用性高
+规则：函数不调用不执行
+</code></pre>
+<h2 id="函数分类">函数分类</h2>
+<pre><code>系统函数：alert()  parseInt()  prompt()
+自定义函数：
+</code></pre>
+<h2 id="自定义函数声明和调用">自定义函数声明和调用</h2>
+<pre><code>function 函数名(){}           //定义函数
+函数名();                     //调用函数
+</code></pre>
+<h2 id="参数分类形参-实参">参数分类：形参、实参</h2>
+<pre><code>形参：函数声明时，函数后面括号里的参数―变量名称。
+实参：函数调用时，函数后面括号里的参数
+
+`实参的实质：调用时实参对形参赋值`
+
+实参与形参个数一一匹配（个数、顺序）
+实参少于形参：不匹配的结果为undefined
+实参多于形参：结果为无
+有实参无形参：报错    
+</code></pre>
+<h2 id="记录监听实参的-arguments">记录监听实参的 arguments</h2>
+<pre><code>function fn(){
+    console.log( arguments[0] );      //第一个实参实参
+    console.log( arguments.length );  //实参的个数
+    console.log( fn.length );         //形参的个数
+    console.log( fn.callee.length );         //形参的个数
+}
+fn(a,b,c);
+</code></pre>
+<h2 id="函数关键字return">函数关键字return</h2>
+<pre><code>终止、结束程序
+返回值：字符串，数值，布尔值，变量，函数等
+无return关键字，但默认最后会执行return;结束函数，结果为undefined
+</code></pre>
+<h2 id="函数重载js中没有重载的概念">函数重载（JS中没有重载的概念）</h2>
+<pre><code>1. 同一个脚本中，出现了同名函数，后者会覆盖掉前者。
+2. 声明函数和调用函数顺序可以不同，一个函数内可以调用另一个函数。
+</code></pre>
+<h2 id="匿名函数没有名字的函数">匿名函数：没有名字的函数</h2>
+<pre><code>//JS高阶里面最常用
+var fn = function(){
+    console.log(123);
+}
+fn();
+</code></pre>
+<h2 id="作用域变量和函数起作用的区域或范围">作用域：变量和函数起作用的区域或范围。</h2>
+<pre><code>全局作用域：当前整个JS脚本   全局变量
+局部作用域(函数作用域)：函数内部，函数能限制作用域   局部变量
+`局部作用域下可以访问全局变量；全局作用域下不能访问局部变量。`
+
+作用域链规则：从本作用域链查找，没有向上一级作用域查找，最后找到全局作用域。还未查找到，not define报错。
+
+var a = 10;
+function fn1(){
+    var b = 20;
+    console.log(b);
+    function fn2(){
+        var c = 30;
+        console.log(a);    //可以调用 a , b ,c  
+        console.log(b);
+        console.log(c);
+    }
+    console.log(a);        //可以调用 a , b ，不能调用c
+    console.log(b);
+}
+console.log(a);            //可以调用 a   ，不能调用 b , c
+fn1();                     //只能调用fn1,通过fn1调用fn2
+</code></pre>
+<h2 id="js执行解析代码">JS执行解析代码</h2>
+<pre><code>顺序结构：从上到下逐行解析
+选择结构：选择分支，有选择性的解析执行
+循环结构：for,while,do-while
+
+1. JS解析：默认情况下，顺序执行。
+2. 预编译模式：优先抓取关键字var，把变量声明提前到逻辑最顶层，（不包括赋值）
+3. 块级作用域：{} ，for if 都不能起到限制作用域的作用
+
+    for(var i = 1 ; i &lt;= 10 ; i++ ){   //i 是全局变量
+        console.log(i);        //打印结果1~10
+    }
+    console.log(i);            //结果为 11
+
+4. 在函数内部，声明变量时，没有var,该变量隐式的成为了全局变量
+
+    function fn(){
+        d = 10;
+        console.log(d);    //结果为10
+    }
+    console.log(d);        //结果为10
+</code></pre>
+<h2 id="函数作用域问题">函数作用域问题</h2>
+<p>1、例题1</p>
+<pre><code>var aa = 10;
+function test () {
+    var aa = 20;
+}
+test();
+console.log(aa);     //结果为10     在全局作用域下找到 aa = 10
+</code></pre>
+<p>2、例题2</p>
+<pre><code>var num = 2;
+function fn1() {
+    var num = 5;
+    console.log(num);
+}
+
+fn1();               //结果为5      在函数作用域下找到 num = 5
+</code></pre>
+<p>3、例题3</p>
+<pre><code>var num = 2;
+function fn2() {
+    //var num;              //预编译先把var num;提到函数作用域最上方
+    console.log(num);       //结果为 undefined
+    var num = 5;  
+    console.log(num);       //结果为 5
+}
+fn2();
+</code></pre>
+<p>4、例题4</p>
+<pre><code>var num = 2;
+fn3();               //结果为undefined     声明函数和调用函数顺序可以不同
+function fn3()
+{
+    var num;
+    console.log(num);
+    num = 5;
+}
+fn3();               //结果为undefined
+</code></pre>
+<p>5、例题5</p>
+<pre><code>var a = 10;
+function fn4 () {
+    var b = 9;
+    console.log(a);        //结果 a = undefind
+    console.log(b);        //结果 b = 9 
+    var a = 30;
+}
+fn4();
+</code></pre>
+<h2 id="递归函数">递归函数</h2>
+<pre><code>函数内调用函数-调用自身，类似循环
+慎用递归，易死循环
+</code></pre>
+<p>1、用户任意输入数字，控制台一次递减1输出，输出到1结束</p>
+<pre><code>function printNum(num){
+    if(num == 0){   //临界断点
+       return;
+    }
+    alert(num);
+    num--;
+    printNum(sum);
+}
+printNum(5);
+</code></pre>
+<p>2、打印5的阶乘</p>
+<pre><code>function fn(num){
+    if(num == 1){
+        return 1;
+    }
+    return num*fn(num-1)
+}
+console.log(fn(5));
+</code></pre>
+<h2 id="函数扩充">函数扩充</h2>
+<p>1、直接打印函数名，输出的结果是函数名</p>
+<pre><code>var fn = function(){
+    console.log(123);
+};
+fn();
+console.log(fn);    //fn是变量名称
+
+function fn1(){
+    console.log(456);
+}
+console.log(fn1);
+</code></pre>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/Lr_2bdZJ2/index.html">
+              <h3 class="post-title">
+                匿名函数
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/LQFnfROAU/index.html">
+              <h3 class="post-title">
+                JS基础
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：1160</a></li>
+        <li><a href="javascript:;">阅读时间：5 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：1160</a></li>
+        <li><a href="javascript:;">阅读时间：5 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%BD%E6%95%B0%E6%98%AF%E4%B8%80%E7%AD%89%E5%85%AC%E6%B0%91">函数是一等公民</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0">什么是函数</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%88%86%E7%B1%BB">函数分类</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E5%92%8C%E8%B0%83%E7%94%A8">自定义函数声明和调用</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0%E5%88%86%E7%B1%BB%E5%BD%A2%E5%8F%82-%E5%AE%9E%E5%8F%82">参数分类：形参、实参</a></li>
+<li><a href="#%E8%AE%B0%E5%BD%95%E7%9B%91%E5%90%AC%E5%AE%9E%E5%8F%82%E7%9A%84-arguments">记录监听实参的 arguments</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%85%B3%E9%94%AE%E5%AD%97return">函数关键字return</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BDjs%E4%B8%AD%E6%B2%A1%E6%9C%89%E9%87%8D%E8%BD%BD%E7%9A%84%E6%A6%82%E5%BF%B5">函数重载（JS中没有重载的概念）</a></li>
+<li><a href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E6%B2%A1%E6%9C%89%E5%90%8D%E5%AD%97%E7%9A%84%E5%87%BD%E6%95%B0">匿名函数：没有名字的函数</a></li>
+<li><a href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E5%8C%BA%E5%9F%9F%E6%88%96%E8%8C%83%E5%9B%B4">作用域：变量和函数起作用的区域或范围。</a></li>
+<li><a href="#js%E6%89%A7%E8%A1%8C%E8%A7%A3%E6%9E%90%E4%BB%A3%E7%A0%81">JS执行解析代码</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%97%AE%E9%A2%98">函数作用域问题</a></li>
+<li><a href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0">递归函数</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E6%89%A9%E5%85%85">函数扩充</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>CSS使用小技巧 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>CSS使用小技巧</h1>
+          <p class="article-meta">
+            2016-02-09
+            
+            <a href="https://h8396x.coding-pages.com/tag/N6iZkQakr/index.html" class="tagitem">
+              css
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <h2 id="内外阴影box-shadow">内外阴影box-shadow</h2>
+<pre><code>box-shadow: 5px 5px 20px #ed0000;设置外阴影
+box-shadow: 5px 5px 20px #ed0000 inset;设置内阴影
+</code></pre>
+<p>多重边框</p>
+<pre><code>.div1 {
+    box-shadow: 0 0 0 6px red, 0 0 0 12px blue, 0 0 0 18px green, 0 0 0 24px purple;
+    height: 200px;
+    margin: 50px auto;
+    width: 400px
+}
+</code></pre>
+<h2 id="设置隐藏显示div">设置隐藏显示div</h2>
+<p>滑动门原理</p>
+<h2 id="css代码恶作剧">css代码恶作剧</h2>
+<pre><code>*{
+    cursor: none!important;
+}
+</code></pre>
+<h2 id="设置模糊文字">设置模糊文字</h2>
+<pre><code>color: transparent;
+text-shadow: #111 0 0 5px;
+</code></pre>
+<h2 id="设置长宽比固定元素响应式页面很常用">设置长宽比固定元素，响应式页面很常用</h2>
+<p>通过设置父级窗口的padding-bottom可以达到让容器保持一定的长度比的目的，这在响应式页面设计中比较有用，能够保持元素不变形</p>
+<pre><code>&lt;div style=&quot;width: 100%; position: relative; padding-bottom: 20%;&quot;&gt;
+    &lt;div style=&quot;position: absolute; left: 0; top: 0; right: 0; bottom: 0;background-color:yellow;&quot;&gt;
+        this content will have a constant aspect ratio that varies based on the width.
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="实时编辑css仅仅装x使用仅对body生效">实时编辑css（仅仅装x使用，仅对body生效）</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;style style=&quot;display:block&quot; contentEditable&gt;
+            body { color: blue }
+        &lt;/style&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="设置选中文字的颜色">设置选中文字的颜色</h2>
+<pre><code>::selection伪元素
+</code></pre>
+<h2 id="触发背景变淡">触发背景变淡</h2>
+<pre><code>.spectiveBlur{
+    position: absolute;
+    top: 50%;left: 50%;
+    width: 220px;line-height:160px;
+    transform: translate(-50%, -50%);
+    border-radius:10px;
+    overflow:hidden;
+    background:#E91E63;
+    color:#fff;
+    font-size:200%;
+    text-align:center;
+    cursor:pointer;
+    transition: transform .2s;
+}
+.spectiveBlur:hover{
+    box-shadow:0 0 0 1920px rgba(0,0,0,.7);
+    transform: translate(-50%, -50%) scale(2);
+}
+</code></pre>
+<h2 id="颜色渐变的高级应用">颜色渐变的高级应用</h2>
+<pre><code>`radial-gradient(#000 12.5px, transparent 12.5px)`
+表示颜色从半径多少开始变化，变化到半径多少为止。
+
+`linear-gradient(#000 100px, #fff 100px)`
+表示颜色从那个位置开始变化，变化到那个位置结束。
+
+ps：当设置background-image为渐变色的时候，配合background-position能实现意想不到的神奇效果
+
+    background-image:
+        radial-gradient(#000 12.5px, transparent 12.5px),
+        radial-gradient(#fff 12.5px, transparent 12.5px),
+        radial-gradient(#fff 50px, transparent 50px),
+        radial-gradient(#000 50px, transparent 50px),
+        linear-gradient(90deg，#000 100px, #fff 100px);
+
+指明上述四个半径变化的圆心在哪。
+
+    background-position:center 50px,center -50px,center 50px,center -50px,0 0;
+</code></pre>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/Jfwoptl3r/index.html">
+              <h3 class="post-title">
+                CSS3选择器
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/rsSRPctdn/index.html">
+              <h3 class="post-title">
+                CSS浮动和定位
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：500</a></li>
+        <li><a href="javascript:;">阅读时间：3 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：500</a></li>
+        <li><a href="javascript:;">阅读时间：3 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%86%85%E5%A4%96%E9%98%B4%E5%BD%B1box-shadow">内外阴影box-shadow</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%98%BE%E7%A4%BAdiv">设置隐藏显示div</a></li>
+<li><a href="#css%E4%BB%A3%E7%A0%81%E6%81%B6%E4%BD%9C%E5%89%A7">css代码恶作剧</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E6%A8%A1%E7%B3%8A%E6%96%87%E5%AD%97">设置模糊文字</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E9%95%BF%E5%AE%BD%E6%AF%94%E5%9B%BA%E5%AE%9A%E5%85%83%E7%B4%A0%E5%93%8D%E5%BA%94%E5%BC%8F%E9%A1%B5%E9%9D%A2%E5%BE%88%E5%B8%B8%E7%94%A8">设置长宽比固定元素，响应式页面很常用</a></li>
+<li><a href="#%E5%AE%9E%E6%97%B6%E7%BC%96%E8%BE%91css%E4%BB%85%E4%BB%85%E8%A3%85x%E4%BD%BF%E7%94%A8%E4%BB%85%E5%AF%B9body%E7%94%9F%E6%95%88">实时编辑css（仅仅装x使用，仅对body生效）</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E9%80%89%E4%B8%AD%E6%96%87%E5%AD%97%E7%9A%84%E9%A2%9C%E8%89%B2">设置选中文字的颜色</a></li>
+<li><a href="#%E8%A7%A6%E5%8F%91%E8%83%8C%E6%99%AF%E5%8F%98%E6%B7%A1">触发背景变淡</a></li>
+<li><a href="#%E9%A2%9C%E8%89%B2%E6%B8%90%E5%8F%98%E7%9A%84%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8">颜色渐变的高级应用</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

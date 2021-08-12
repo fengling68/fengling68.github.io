@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>正则表达式 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>正则表达式</h1>
+          <p class="article-meta">
+            2016-03-20
+            
+            <a href="https://h8396x.coding-pages.com/tag/ihMjX_vyp/index.html" class="tagitem">
+              javascript
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <ul>
+<li>正则表达式：一种模式，一种标准。检索一段文本是否符合要求。</li>
+<li>强大的字符匹配工具</li>
+<li>正则表达式具有贪婪模式：优先匹配最多的</li>
+</ul>
+<p>1、字面量方式</p>
+<pre><code>var reg1 = /字符/gi;
+</code></pre>
+<p>2、高级方式</p>
+<pre><code>var reg2 = new RegExp(&quot;字符&quot;,&quot;gi&quot;);
+g : 全局检
+i : 忽略大小写
+m : 多行匹配
+</code></pre>
+<h2 id="正则表达式常用方法">正则表达式常用方法</h2>
+<h3 id="1-test">1、test()</h3>
+<p>正则表达式.test(str);</p>
+<p>返回值：true || false</p>
+<pre><code>var reg1 = /box/gi;
+var str1 = &quot;this is a box.Box,Box&quot;;
+
+检索文本
+var result1 = reg1.test(str1);
+console.log(result1);    //true
+第二次检索，从第一次检索位置之后继续检索
+result1 = reg1.test(str1);
+console.log(result1);    //false
+</code></pre>
+<h3 id="2-exec">2、exec()</h3>
+<p>返回值：找到了,匹配正则表达式的指定字符信息 对应的下标存入数组；没找到,null</p>
+<pre><code>var reg2 = /bmw/gi;
+var str2 = &quot;I own a car of BMW,bmw,BMw&quot;;
+var result2 = reg2.exec(str2);
+console.log(result2);    //[&quot;BMW&quot;, index: 15, input: &quot;I own a car of BMW,bmw,BMw&quot;]
+
+若多次查找上次为null，下次继续从新开始查找
+</code></pre>
+<h3 id="3-compile-修改正则表达式">3、compile(); 修改正则表达式</h3>
+<p>参数一：修改后的模式   参数二：模式修饰符(根据需要g,i)</p>
+<pre><code>var reg3 = /abc/;
+var str3 = &quot;I am abc&quot;;
+console.log(reg3.test(str3));  //  true
+reg3.compile(&quot;def&quot;,&quot;gi&quot;);
+console.log(reg3);             //  /def/gi
+console.log(reg3.test(str3));  //  false
+</code></pre>
+<h2 id="字符串中使用正则表达式">字符串中使用正则表达式</h2>
+<h3 id="1-replace-替换原字符不发生改变">1、replace(); 替换，原字符不发生改变</h3>
+<p>参数一 old,参数二,new</p>
+<pre><code>var reg1 = /mbh/gi;
+var res1 = str1.replace(reg1,&quot;BYD&quot;);
+console.log(res1);    //I need a car of BYD,BYD,BYD
+console.log(str1);    //I need a car of mbh,mbh,MBH
+</code></pre>
+<h3 id="2-match-匹配">2、match()   匹配</h3>
+<p>返回值：查找到，返回下标;全局查找将找到的所有字符存入数组。<br>
+未找到，null</p>
+<pre><code>var reg2 = /kai/gi;
+var res2 = str2.match(reg2);
+console.log(res2);     //[&quot;kai&quot;, &quot;kai&quot;, &quot;KAI&quot;]
+</code></pre>
+<h3 id="3-search-搜查g-i未起到作用">3、search() 搜查g i未起到作用</h3>
+<p>返回值：查找到，字符对应的下标；未找到，返回 -1</p>
+<pre><code>ar reg3 = /is/gi;
+var res3 = str3.search(reg3);
+console.log(res3);           // 7
+</code></pre>
+<h3 id="4-split-字符转数组">4、split() 字符转数组</h3>
+<pre><code>var str4 = &quot;1,2,3&quot;;
+var reg4 = /,/;
+var arr = str4.split(reg4);
+console.log(arr);            //[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]
+</code></pre>
+<h2 id="过滤敏感词汇">过滤敏感词汇</h2>
+<pre><code>btn.onclick = function(){
+    var reg1 = new RegExp(txt.value,&quot;g&quot;);
+    textArea.value = textArea.value.replace(reg1,&quot;***&quot;);
+}
+</code></pre>
+<h2 id="正则表达式模式">正则表达式模式</h2>
+<ul>
+<li>
+<p><code>^$</code>模式</p>
+</li>
+<li>
+<p>用于表单验证，规定输入的内容规则。</p>
+</li>
+<li>
+<p>非<code>^$</code>模式</p>
+</li>
+<li>
+<p>用于匹配字符串</p>
+</li>
+</ul>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/6bJ2MvEhA/index.html">
+              <h3 class="post-title">
+                this关键字
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/Ctho-9te1/index.html">
+              <h3 class="post-title">
+                懒加载和滚动加载
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：588</a></li>
+        <li><a href="javascript:;">阅读时间：3 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：588</a></li>
+        <li><a href="javascript:;">阅读时间：3 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">正则表达式常用方法</a>
+<ul>
+<li><a href="#1-test">1、test()</a></li>
+<li><a href="#2-exec">2、exec()</a></li>
+<li><a href="#3-compile-%E4%BF%AE%E6%94%B9%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">3、compile(); 修改正则表达式</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">字符串中使用正则表达式</a>
+<ul>
+<li><a href="#1-replace-%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%AD%97%E7%AC%A6%E4%B8%8D%E5%8F%91%E7%94%9F%E6%94%B9%E5%8F%98">1、replace(); 替换，原字符不发生改变</a></li>
+<li><a href="#2-match-%E5%8C%B9%E9%85%8D">2、match()   匹配</a></li>
+<li><a href="#3-search-%E6%90%9C%E6%9F%A5g-i%E6%9C%AA%E8%B5%B7%E5%88%B0%E4%BD%9C%E7%94%A8">3、search() 搜查g i未起到作用</a></li>
+<li><a href="#4-split-%E5%AD%97%E7%AC%A6%E8%BD%AC%E6%95%B0%E7%BB%84">4、split() 字符转数组</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%87%E6%BB%A4%E6%95%8F%E6%84%9F%E8%AF%8D%E6%B1%87">过滤敏感词汇</a></li>
+<li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A8%A1%E5%BC%8F">正则表达式模式</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

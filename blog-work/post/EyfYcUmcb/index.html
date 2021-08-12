@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>对象 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>对象</h1>
+          <p class="article-meta">
+            2016-04-02
+            
+            <a href="https://h8396x.coding-pages.com/tag/ihMjX_vyp/index.html" class="tagitem">
+              javascript
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <pre><code>OO(object oriented)  面向对象
+OOP(object oriented programming) 面向对象编程
+
+面向对象实质: 面向对象是对面向过程的封装
+对象是一个独立的命名空间，不受外界影响。
+键值对 key:value;
+
+对象是一系列无序属性构成 属性名称:属性值;
+</code></pre>
+<h2 id="对象的创建">对象的创建</h2>
+<pre><code>//(1)字面量方式
+var obj = {
+    name:'荆天明',
+    age:18,
+    sex:'男',
+    say:function(){
+        console.log(&quot;秦时明月-&quot; + this.name);
+    }
+};
+
+
+//(2)工厂方式
+function factory(name,price){
+    var obj = {};    //空对象
+    obj.name = name;
+    obj.price = price;
+    return obj;
+}
+
+var bmw = factory(&quot;宝马&quot;,&quot;25万&quot;);    
+console.log(bmw);      //Object {name: &quot;宝马&quot;, price: &quot;25万&quot;}
+
+
+//(3)高级方式( new + 构造函数 方式)
+var obj = new Object();
+</code></pre>
+<h2 id="属性的访问">属性的访问</h2>
+<pre><code>//(1)增加属性
+obj.height = &quot;180cm&quot;;
+
+//(2)删除属性
+delete obj.sex;
+delete obj[&quot;sex&quot;];
+
+//(3)修改属性
+obj.name = &quot;盖聂&quot;;
+
+//(4)访问属性或方法
+console.log(obj.name);
+console.log(obj[&quot;name&quot;]);
+
+obj.say();
+obj[&quot;say&quot;]();
+
+//(5)遍历对象
+对象只能用for in遍历(拿到的是每个属性)
+for(var key in obj){
+    console.log(key);       //每个属性
+    console.log(obj[key]);  //每个属性值, 只能用中括号方式访问
+}
+</code></pre>
+<h2 id="抓错语句不会阻止下面的代码运行">抓错语句(不会阻止下面的代码运行)</h2>
+<pre><code>try{
+    //尝试处理的代码
+    console.log(height);
+}catch(e){
+    //抓取错误信息
+    console.log(e);
+}
+</code></pre>
+<h2 id="给对象obj添加对象属性">给对象obj添加对象属性</h2>
+<pre><code>var car = {
+    name:'变形金刚',
+    color:'yellow',
+    price:100000,
+    say:function(){
+        console.log(&quot;我是变形金刚&quot;);
+    },
+    run:function(){
+        console.log(&quot;我要跑了&quot;);
+    }
+};
+
+obj.car = car;
+console.log(car);
+
+//访问obj的car属性中的name值
+console.log(obj.car.name);
+console.log(obj[&quot;car&quot;][&quot;name&quot;]);
+</code></pre>
+<p><strong>访问对象不存在的属性, 结果为undefine, 弱类型的体现</strong></p>
+<h2 id="new-构造函数">new + 构造函数</h2>
+<pre><code>new String()
+new Array()
+new Date()
+new RegExp()
+new Map()
+
+//(1)创建构造函数
+function Animal(name,color){
+    this.name = name;
+    this.color = color;
+    this.say = function(){
+        console.log(&quot;我是&quot;+this.name);
+    }
+}
+
+//(2)创建对象
+var cat = new Animal(&quot;加菲猫&quot;,&quot;白色&quot;);
+
+//(3)属性访问
+console.log(cat);
+cat.say();
+
+构造函数：首字母大写
+一个构造函数，可以创建多个实例对象    一对多
+</code></pre>
+<h2 id="检测数据类型">检测数据类型</h2>
+<pre><code>(1)typeof: 能检测类型，但不能细化
+(2)instanceof: 检测某个实例对象与构造函数的关系(实例对象 instanceof 构造函数)
+(3)object.prototype.toString.call();
+    object String
+    object Array
+    object Function
+
+    object.prototype.toString.call(obj).slice(8,-1) === &quot;Array&quot;
+
+********************* 示例1 ************************************
+function Person(name,age){
+    this.name = name;
+    this.age = age;
+}
+
+var person1 = new Person(&quot;姬如千泷&quot;,18);
+console.log(typeof person1);                   // Object
+console.log(person1 instanceof Person);        // true
+
+******************** 示例2 *************************************
+var arr = [1,2,3];
+console.log(typeof arr);                       // Object
+console.log(arr instanceof Array);             // true
+
+******************** 示例3 *************************************
+function fn(){
+    console.log(123);
+}
+console.log(typeof Person);                    //function特殊的数据类型
+console.log(typeof fn);                        //function特殊的数据类型
+console.log(fn instanceof Function);           //true
+</code></pre>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/xZUkSaAie/index.html">
+              <h3 class="post-title">
+                prototype：原型
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/6bJ2MvEhA/index.html">
+              <h3 class="post-title">
+                this关键字
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：677</a></li>
+        <li><a href="javascript:;">阅读时间：4 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：677</a></li>
+        <li><a href="javascript:;">阅读时间：4 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA">对象的创建</a></li>
+<li><a href="#%E5%B1%9E%E6%80%A7%E7%9A%84%E8%AE%BF%E9%97%AE">属性的访问</a></li>
+<li><a href="#%E6%8A%93%E9%94%99%E8%AF%AD%E5%8F%A5%E4%B8%8D%E4%BC%9A%E9%98%BB%E6%AD%A2%E4%B8%8B%E9%9D%A2%E7%9A%84%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C">抓错语句(不会阻止下面的代码运行)</a></li>
+<li><a href="#%E7%BB%99%E5%AF%B9%E8%B1%A1obj%E6%B7%BB%E5%8A%A0%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7">给对象obj添加对象属性</a></li>
+<li><a href="#new-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">new + 构造函数</a></li>
+<li><a href="#%E6%A3%80%E6%B5%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">检测数据类型</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

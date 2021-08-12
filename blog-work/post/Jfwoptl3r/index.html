@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>CSS3选择器 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>CSS3选择器</h1>
+          <p class="article-meta">
+            2016-02-10
+            
+            <a href="https://h8396x.coding-pages.com/tag/N6iZkQakr/index.html" class="tagitem">
+              css
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <h2 id="通用兄弟选择器">通用兄弟选择器</h2>
+<p>selector1~selector2{}   可以不相邻</p>
+<p>例：div~p{ }   为所有相同的父元素中位于 div 元素之后的所有 p 元素设置样式</p>
+<pre><code>&lt;div&gt;&lt;/div&gt;
+   &lt;p&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;/p&gt;
+&lt;span&gt;&lt;/span&gt;
+   &lt;p&gt;&lt;/p&gt;
+</code></pre>
+<h2 id="属性选择器">属性选择器</h2>
+<p>1、元素[属性^=值]     ^ 以值开头的class</p>
+<p><code>例：div[class^=test]设置 class 属性值以 &quot;test&quot; 开头的所有 div 元素的样式</code></p>
+<p>2、元素[属性*=值]     *包含该值的class</p>
+<p><code>例：div[class*=test]设置 class 属性值包含 &quot;test&quot; 的所有 div 元素的样式</code></p>
+<p>3、元素[属性$=值]     $以该值结尾的class</p>
+<p><code>例：div[class$=test]设置 class 属性值以 &quot;test&quot; 结尾的所有 div 元素的样式</code></p>
+<p>伪类选择器：元素状态伪类   结构伪类   目标伪类    否定伪类</p>
+<h2 id="元素状态伪类选择器">元素状态伪类选择器</h2>
+<p>1、:enabled选择器匹配每个已启用的元素（大多用在表单元素上）</p>
+<p><code>input[type=&quot;text&quot;]:enabled为所有 type=&quot;text&quot; 的已启用的 input 元素设置样式</code></p>
+<p>2、:disabled选择器匹配每个被禁用的元素（大多用在表单元素上）</p>
+<p><code>input[type=&quot;text&quot;]:disabled为所有 type=&quot;text&quot; 的被禁用的 input 元素设置样式</code></p>
+<p>3、:checked选择器匹配每个已被选中的input元素（只用于单选按钮和复选框）</p>
+<p><code>input:checked{}为所有被选中的 input 元素设置样式</code><br>
+<code>目前只有Opera浏览器支持。</code></p>
+<p>4、::selection选择器匹配被用户选区的部分，只能向::selection选择器应用少量CSS属性，color、background、cursor、outline。</p>
+<pre><code>div::selection{
+    background-color:red;
+}
+</code></pre>
+<h2 id="结构伪类选择器">结构伪类选择器</h2>
+<p>1、:first-of-type 选择器匹配属于其父元素的特定类型的首个子元素的每个元素。</p>
+<pre><code>div p:first-of-type{color:red;}
+</code></pre>
+<p>2、:last-of-type 选择器匹配属于其父元素的特定类型的最后一个子元素的每个元素。</p>
+<pre><code>div p:last-of-type{color:red;}
+</code></pre>
+<p>3、:only-of-type 选择器匹配属于其父元素的特定类型的唯一子元素的每个元素。</p>
+<pre><code>div p:only-of-type{color:red;}
+</code></pre>
+<p>4、:nth-of-type(n) 选择器匹配属于父元素的特定类型的第n个子元素的每个元素。</p>
+<pre><code>p:nth-of-type(3){color:red;}
+</code></pre>
+<p>5、:nth-last-of-type(n) 选择器匹配属于父元素的特定类型的第n个子元素的每个元素，从最后一个子元素开始计数。</p>
+<pre><code>p:nth-last-of-type(3){color:red;}
+</code></pre>
+<p>6、:only-child 选择器匹配属于其父元素的唯一子元素的每个元素。</p>
+<pre><code>div p:only-child{color:red;}
+</code></pre>
+<p>7、:nth-child(n)选择器匹配属于其父元素的第n个子元素，不论元素的类型。</p>
+<pre><code>ul li:nth-child(2){color:red;}
+ul li:nth-child(odd){color:red;}    匹配下标是奇数的子元素
+ul li:nth-child(even){color:red;}   匹配下标是偶数的子元素
+</code></pre>
+<p>8、:nth-last-child(n)选择器匹配属于其元素的第n个子元素的每个元素，不论元素的类型，从最后一个子元素开始计数。</p>
+<pre><code>ul li:nth-last-child(2){color:red;}
+</code></pre>
+<p>9、:last-child选择器匹配属于其父元素的最后一个子元素的每个元素。</p>
+<pre><code>p:last-child{color:red;}
+</code></pre>
+<p>10、:root选择器匹配文档根元素</p>
+<pre><code>:root是CSS3的选择器，因此我们可以通过次选择器判断浏览器是否支持CSS3。
+</code></pre>
+<p>11、:empty选择器匹配没有子元素（包括文本节点）的每个元素。</p>
+<pre><code>div:empty{}
+</code></pre>
+<h2 id="目标伪类选择器">目标伪类选择器</h2>
+<p>URL后面跟有锚名称#，指向文档内某个具体的元素。这个被链接的元素就是目标元素。</p>
+<pre><code>:target选择器可用于选取当前活动的目标元素。
+&lt;a href=&quot;d1&quot;&gt;&lt;/a&gt;   &lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h2 id="否定伪类选择器">否定伪类选择器</h2>
+<p>:not()选择器匹配非指定元素/选择器的每个元素。</p>
+<pre><code>:not(p)设置非&lt;p&gt;元素的所有元素的样式。
+ul&gt;li:not(:last-child){color:red;}
+</code></pre>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/lmMg6czvv/index.html">
+              <h3 class="post-title">
+                CSS3多列、hack、优化
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/imP81JgMY/index.html">
+              <h3 class="post-title">
+                CSS使用小技巧
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：1010</a></li>
+        <li><a href="javascript:;">阅读时间：5 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：1010</a></li>
+        <li><a href="javascript:;">阅读时间：5 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%80%9A%E7%94%A8%E5%85%84%E5%BC%9F%E9%80%89%E6%8B%A9%E5%99%A8">通用兄弟选择器</a></li>
+<li><a href="#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8">属性选择器</a></li>
+<li><a href="#%E5%85%83%E7%B4%A0%E7%8A%B6%E6%80%81%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8">元素状态伪类选择器</a></li>
+<li><a href="#%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8">结构伪类选择器</a></li>
+<li><a href="#%E7%9B%AE%E6%A0%87%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8">目标伪类选择器</a></li>
+<li><a href="#%E5%90%A6%E5%AE%9A%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8">否定伪类选择器</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

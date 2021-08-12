@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>CSS3-3D | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>CSS3-3D</h1>
+          <p class="article-meta">
+            2016-02-13
+            
+            <a href="https://h8396x.coding-pages.com/tag/N6iZkQakr/index.html" class="tagitem">
+              css
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <h2 id="属性perspective">属性perspective</h2>
+<pre><code>单位：px；
+设置假定人眼到平面的距离，只影响3D元素。
+数越大，物体越远；数越小，物体越近。
+位置：加在父元素上，设置好后子元素就可以完成3D转换。
+</code></pre>
+<h2 id="属性transform-style">属性transform-style</h2>
+<pre><code>transform-style:preserve-3d;   //使被转换的子元素保留其3D转换
+</code></pre>
+<h2 id="3d-transform">3D-transform</h2>
+<pre><code>1、3D位移
+
+    transform:translateZ(100px);     //改变元素在Z轴上的距离,正负值
+    transform:translate3d(x,y,z);    //元素在X,Y,Z轴都发生变化
+
+2、3D旋转
+
+    transform:rotateX(deg);         //3D旋转必须设置具体方向
+    transform:rotateY(deg);
+    transform:rotateZ(deg);
+
+先旋转在移动，物体在旋转的过程中，坐标也会改变。
+可以先移动在旋转。
+</code></pre>
+<h2 id="过渡和四要素">过渡和四要素</h2>
+<pre><code>过渡：元素从一个状态到另一个状态的平滑变换过程。
+属性：transition
+触发：过渡效果由用户的行为进行触发（点击、鼠标悬停）
+</code></pre>
+<ol>
+<li>
+<p>过渡属性</p>
+<pre><code> transition-property:none/all/property;
+ 例：transition-property:background;
+</code></pre>
+</li>
+<li>
+<p>过渡时间</p>
+<pre><code> transition-duration:s/ms;
+</code></pre>
+</li>
+<li>
+<p>过渡函数</p>
+<pre><code> transition-timing-function:linear/ease/ease-in/ease-out/ease-in-out;
+                             匀速/慢快慢/慢开始/慢结束/慢开始结束
+</code></pre>
+</li>
+<li>
+<p>过渡延迟</p>
+<pre><code> transition-delay:s/ms;
+</code></pre>
+</li>
+</ol>
+<p><strong>统一设置过渡：transition:属性 时间 函数 延迟;</strong></p>
+<p><strong>移入移出都需要过渡放在div里，只有移入需要放在hover里。</strong></p>
+<h2 id="动画">动画</h2>
+<p>过渡，实现简单的动态效果；</p>
+<p>动画，实现复杂的动态效果。注意浏览器兼容。</p>
+<ol>
+<li>
+<p>声明动画</p>
+<pre><code> @keyframes name{
+     from{
+         background-color:red;
+     }
+     50%{
+         background-color:yellow;
+     }                                  
+     to{
+         background-color:blue;
+     }
+ }
+</code></pre>
+</li>
+<li>
+<p>调用动画</p>
+<pre><code> animation:name,s/ms,ease,infinite,alternate;  
+
+ /*名称:
+ 时长: 单位s/ms
+ 速度: linear  ease  ease-in  ease-out   ease-in-out
+ 延迟: 单位s/ms
+ 次数: 数值    infinite,无数次播放
+ 方向: normal   alternate,交替轮流*/
+</code></pre>
+</li>
+<li>
+<p>播放方向</p>
+<pre><code> alternate：奇数次from-to,偶数次to-from。
+</code></pre>
+</li>
+<li>
+<p>动画播放之前和之后的效果</p>
+<pre><code> none:默认
+ forwards:动画完成后，保持最后一个状态；
+ backwards:动画显示之前，保持在第一个状态；
+ both:动画完成后，动画显示前，都保持着相应的状态。
+</code></pre>
+</li>
+<li>
+<p>动画播放状态，用于播放过程中暂停动画。</p>
+<pre><code> animation-play-state:  ;
+ paused：暂停
+ running：播放
+</code></pre>
+</li>
+</ol>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/zQCvn79Aa/index.html">
+              <h3 class="post-title">
+                常见居中问题
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/oB57PlAY8/index.html">
+              <h3 class="post-title">
+                CSS3-2D
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：536</a></li>
+        <li><a href="javascript:;">阅读时间：3 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：536</a></li>
+        <li><a href="javascript:;">阅读时间：3 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%B1%9E%E6%80%A7perspective">属性perspective</a></li>
+<li><a href="#%E5%B1%9E%E6%80%A7transform-style">属性transform-style</a></li>
+<li><a href="#3d-transform">3D-transform</a></li>
+<li><a href="#%E8%BF%87%E6%B8%A1%E5%92%8C%E5%9B%9B%E8%A6%81%E7%B4%A0">过渡和四要素</a></li>
+<li><a href="#%E5%8A%A8%E7%94%BB">动画</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

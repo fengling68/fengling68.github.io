@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>Hilo之view、util、event | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>Hilo之view、util、event</h1>
+          <p class="article-meta">
+            2016-10-03
+            
+            <a href="https://h8396x.coding-pages.com/tag/WLgWrXuc4/index.html" class="tagitem">
+              hilo
+            </a>
+            
+            <a href="https://h8396x.coding-pages.com/tag/B0guisV2t/index.html" class="tagitem">
+              动画
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <h2 id="view">view</h2>
+<h3 id="1-stage-舞台">1、Stage 舞台</h3>
+<pre><code>var stage = new Hilo.Stage({
+    renderType: 'canvas',
+    container: document.getElementById(&quot;wrap&quot;),
+    width: 600,
+    height: 600
+})
+</code></pre>
+<h3 id="2-container-容器">2、Container 容器</h3>
+<pre><code>var container = new Hilo.Container({
+    x: 0,
+    y: 0,
+    width: 600,
+    height: 600,
+    background: '#000',
+    totation: 0,           // 顺时针旋转 0 deg
+}).addTo(stage);
+</code></pre>
+<h3 id="3-bitmap-静态位图">3、Bitmap 静态位图</h3>
+<pre><code>var bmp = new Hilo.Bitmap({
+    image: '../../img/error/error.png',
+    rect: [100,100,500,500],
+    x: 0,
+    y: 0
+}).addTo(stage);
+</code></pre>
+<h3 id="4-view设置渐变背景色">4、view（设置渐变背景色）</h3>
+<pre><code>var view = new Hilo.View({
+    x: 20,
+    y: 20,
+    width: 200,
+    height: 200
+}).addTo(container);
+
+// 只有canvas支持渐变色
+if(!Hilo.isFlash &amp;&amp; stage.renderer.renderType === 'canvas'){
+    var gradient = stage.renderer.context.createLinearGradient(0, 0, 0, view.height);
+    gradient.addColorStop(0, '#fc0');
+    gradient.addColorStop(0.5, '#ff0');
+    gradient.addColorStop(1.0, '#0f0');
+    view.background = gradient;
+}
+</code></pre>
+<h3 id="5-button-按钮绑定事件">5、Button 按钮(绑定事件)</h3>
+<pre><code>// DOM事件
+stage.enableDOMEvent([Hilo.event.POINTER_START, Hilo.event.POINTER_MOVE, Hilo.event.POINTER_END]);
+
+// 按钮
+var blueBtn = new Hilo.Button({
+    id: 'blueBtn',
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 50,
+    image: '',
+    background: 'blue',
+    upState: {rect:[0, 0, 64, 64]},
+    overState: {rect:[64, 0, 64, 64]},
+    downState: {rect:[128, 0, 64, 64]},
+    disabledState: {rect:[192, 0, 64, 64]}
+}).addTo(stage);
+// 按钮绑定事件 touchstart 和 touchend 事件
+blueBtn.on(Hilo.event.POINTER_START, function(e){
+    console.log(e.type, this);
+}).on(Hilo.event.POINTER_END, function(e){
+    console.log(e.type, this);
+});
+</code></pre>
+<h3 id="6-graphics-图形">6、Graphics 图形</h3>
+<pre><code>var g = new Hilo.Graphics({ 
+    width: 100, 
+    height: 100, 
+    x: 40, 
+    y: 20 
+});
+
+// 正方形
+g.lineStyle(1, &quot;#009898&quot;).beginFill(&quot;#0ff&quot;).drawRect(0.5, 0.5, 99, 99).endFill().addTo(stage);
+
+// 圆角正方形
+g.lineStyle(5, &quot;#009898&quot;).beginFill(&quot;#0ff&quot;).drawRoundRect(5, 5, 90, 90, 20).endFill().addTo(stage);
+
+// 圆
+g.lineStyle(2, &quot;#009898&quot;).beginRadialGradientFill(50, 50, 0, 50, 50, 50, [&quot;#fff&quot;, &quot;#4ffcfc&quot;], [0, 1]).drawCircle(2, 2, 48).endFill().addTo(stage);
+
+// 椭圆
+g.lineStyle(5, &quot;#009898&quot;).beginFill(&quot;#0ff&quot;).drawEllipse(5, 5, 90, 50).endFill().addTo(stage);
+
+// 带渐变色的长方形
+g.lineStyle(2, &quot;#009898&quot;).beginLinearGradientFill(0, 0, 60, 0, [&quot;#fff&quot;, &quot;#4ffcfc&quot;], [0.3, 1]).drawRect(2, 2, 66, 86).endFill().addTo(stage);
+
+// svg图形 
+var svgPath = &quot;M53 84 C53 84 51 84 51 84 C51 89 53 94 56 94 C64 94 71 89 71 84 C71 72 64 64 56 64 C42 64 31 72 31 84 C31 100 42 114 56 114 C75 114 91 100 91 84 C91 61 75 44 56 44 C31 44 11 61 11 84 C11 111 31 134 56 134 C86 134 111 111 111 84 C111 50 86 24 56 24&quot;;
+g.lineStyle(4, &quot;#02d1d1&quot;).drawSVGPath(svgPath).closePath().endFill().addTo(stage);
+</code></pre>
+<blockquote></blockquote>
+<pre><code>beginPath()                                                             开始路径
+lineStyle(1, &quot;#000&quot;)                                                    边框样式(粗细，颜色)
+beginFill(&quot;#0ff&quot;)                                                       开始填充颜色
+beginLinearGradientFill(0, 0, 60, 0, [&quot;#fff&quot;, &quot;#4ffcfc&quot;], [0.3, 1])     开始填充渐变色
+moveTo()                                                                移动画笔到开始位置
+lineTo()                                                                画线
+drawRect(0.5, 0.5, 99, 99)                                              画正方形
+drawRoundRect(5, 5, 90, 90, 20)                                         画带边角的正方形
+drawCircle(2, 2, 48)                                                    画圆
+drawEllipse(5, 5, 90, 50)                                               画椭圆
+drawSVGPath(svgPath)                                                    画svg图
+endFill()                                                               结束填充颜色
+closePath()                                                             闭合路径
+addTo()                                                                 添加到舞台或容器中
+</code></pre>
+<h3 id="7-domelement-dom元素封装">7、DOMElement dom元素封装</h3>
+<pre><code>var content = &quot;Hello World! Hilo是一款HTML5 2D游戏引擎，欢迎使用。&quot;;
+
+var rect = new Hilo.DOMElement({
+    id: 'rect',
+    element: Hilo.createElement('div', {                // 创建元素
+        innerHTML: content,                             // 设置文本内容
+        style: {                                        // 设置样式
+            backgroundColor: '#004eff',
+            position: 'absolute'
+        }
+    }),
+    width: 100,                                         // 宽高
+    height: 100,
+    x: 50,                                              // 初始位置
+    y: 70
+}).addTo(stage);
+</code></pre>
+<h3 id="8-text-简单文本">8、Text 简单文本</h3>
+<pre><code>var font = &quot;14px arial&quot;;
+var content = &quot;Hello World! Hilo是一款HTML5 2D游戏引擎，欢迎使用。&quot;;
+
+// 添加文本
+var text = new Hilo.Text({
+    x: 40,
+    y: 50,
+    width: 250,
+    height: 100,
+    font: font,
+    text: content,
+    lineSpacing: 0,
+}).addTo(stage);
+</code></pre>
+<h3 id="9-sprite-创建精灵图">9、Sprite 创建精灵图</h3>
+<pre><code>/******************* 创建（一条小鱼）精灵图 *******************/
+var fish = new Hilo.Sprite({
+    frames: atlas.getSprite('fish'),
+    x: Math.random()*stageWidth,    // 随机位置
+    y: Math.random()*stageHeight,
+    interval: 6,
+    timeBased: false,
+    loop: false,    // 是否循环，默认true
+    alpha:1,
+    tint:Math.random()*0xffffff,
+    pivotX:87,
+    pivotY:63
+}).addTo(stage);
+
+/*****************  创建多条运动的小鱼  *******************/
+// 小鱼运动的范围
+var maxX = stageWidth + 174;
+var maxY = stageHeight + 126;
+var minX = -174;
+var minY = -126;
+var num = 1;
+
+// 创建 5 条小鱼
+while(num--){
+    var fish = new Hilo.Sprite({
+        frames: atlas.getSprite('fish'),
+        x: Math.random()*stageWidth,
+        y: Math.random()*stageHeight,
+        rotation: Math.random()*360,
+        interval: 6,
+        onUpdate: function(){
+            // x 轴超出范围
+            if(this.x &gt; maxX){ this.x = minX; }
+            else if(this.x &lt; minX){ this.x = maxX; }
+            // y 轴超出范围
+            if(this.y &gt; maxY){ this.y = minY; }
+            else if(this.y &lt; minY){ this.y = maxY; }
+            // 小鱼运动
+            this.x += this.vx;
+            this.y += this.vy;
+        }
+    }).addTo(stage);
+
+    var speed = 2;
+    // &gt; 0 向下  &lt; 0 向上
+    fish.vy = Math.sin(fish.rotation*Math.PI/180) * speed;  
+    // &gt; 0 向右  &lt; 0 向左
+    fish.vx = Math.cos(fish.rotation*Math.PI/180) * speed;
+}
+</code></pre>
+<h2 id="util">util</h2>
+<h3 id="1-textureatlas-初始化精灵图">1、TextureAtlas 初始化精灵图</h3>
+<pre><code>// 初始化精灵图
+var atlas = new Hilo.TextureAtlas({
+    image: 'images/fish.png',        // 大背景图 
+    width: 174,
+    height: 1512,
+    frames: {                        
+        frameWidth: 174,             // 一个小图的宽
+        frameHeight: 126,            // 一个小图的高
+        numFrames: 12                // 小图的个数
+    },
+    sprites: {                       // 从第一张到第七张图变化
+        fish: {from:0, to:7}
+    }
+});
+</code></pre>
+<h3 id="2-ticker-定时器">2、Ticker 定时器</h3>
+<pre><code>var ticker = new Hilo.Ticker(60);
+ticker.addTick(stage);
+ticker.start();
+</code></pre>
+<h3 id="3-drag-拖拽">3、drag 拖拽</h3>
+<pre><code>// 创建一只小鱼的位图
+var bmp = new Hilo.Bitmap({
+    image: 'images/fish.png',
+    rect: [0, 0, 174, 126],
+    x: container.x,
+    y: container.y
+}).addTo(stage);
+
+// mix让view有拖拽功能
+Hilo.util.copy(bmp, Hilo.drag);
+// 设置推拽范围
+bmp.startDrag([0, 0, 300, 300]);    
+
+// 拖拽事件
+bmp.on(&quot;dragStart&quot;, function(e){ console.log(&quot;dragStart&quot;, e.detail.x, e.detail.y); });
+bmp.on(&quot;dragEnd&quot;,  function(e){ });
+bmp.on(&quot;dragMove&quot;, function(e){ });
+
+// 阻止默认事件
+document.ontouchstart = function(e){
+    e.preventDefault();
+}
+</code></pre>
+<h2 id="event">event</h2>
+<h3 id="1-mouseevent">1、mouseevent</h3>
+<pre><code>(1) 目前支持 mousemove, mouseup, mousedown, mouseover, mouseout, 支持事件冒泡;
+(2) 可以通过 e.eventTarget 和 e.eventCurrentTarget 获得触发鼠标事件的对象;
+(3) 建议使用 Hilo.event.POINTER_START, Hilo.event.POINTER_MOVE, Hilo.event.POINTER_END，它在pc上对应 mousemove, mouseup, mousedonw, 在手机上对应 touchstart, touchmove, touchend;
+
+// 定义dom事件
+stage.enableDOMEvent([Hilo.event.POINTER_START, Hilo.event.POINTER_MOVE, Hilo.event.POINTER_END]);
+
+// 绑定事件
+container.on(Hilo.event.POINTER_START, function(e){
+    console.log(&quot;target:&quot; + e.eventTarget.id, &quot;, currentTarget:&quot; + e.eventCurrentTarget.id);
+});
+
+container.on(Hilo.event.POINTER_MOVE, function(e){});
+
+container.on(&quot;mouseout&quot;, function(e){});
+
+container.on(&quot;mouseover&quot;, function(e){});
+</code></pre>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/kvOYoUCDe/index.html">
+              <h3 class="post-title">
+                hilo之game（相机和粒子系统）
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/1nm-GKUWj/index.html">
+              <h3 class="post-title">
+                Hilo属性
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：1308</a></li>
+        <li><a href="javascript:;">阅读时间：8 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：1308</a></li>
+        <li><a href="javascript:;">阅读时间：8 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#view">view</a>
+<ul>
+<li><a href="#1-stage-%E8%88%9E%E5%8F%B0">1、Stage 舞台</a></li>
+<li><a href="#2-container-%E5%AE%B9%E5%99%A8">2、Container 容器</a></li>
+<li><a href="#3-bitmap-%E9%9D%99%E6%80%81%E4%BD%8D%E5%9B%BE">3、Bitmap 静态位图</a></li>
+<li><a href="#4-view%E8%AE%BE%E7%BD%AE%E6%B8%90%E5%8F%98%E8%83%8C%E6%99%AF%E8%89%B2">4、view（设置渐变背景色）</a></li>
+<li><a href="#5-button-%E6%8C%89%E9%92%AE%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6">5、Button 按钮(绑定事件)</a></li>
+<li><a href="#6-graphics-%E5%9B%BE%E5%BD%A2">6、Graphics 图形</a></li>
+<li><a href="#7-domelement-dom%E5%85%83%E7%B4%A0%E5%B0%81%E8%A3%85">7、DOMElement dom元素封装</a></li>
+<li><a href="#8-text-%E7%AE%80%E5%8D%95%E6%96%87%E6%9C%AC">8、Text 简单文本</a></li>
+<li><a href="#9-sprite-%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%81%B5%E5%9B%BE">9、Sprite 创建精灵图</a></li>
+</ul>
+</li>
+<li><a href="#util">util</a>
+<ul>
+<li><a href="#1-textureatlas-%E5%88%9D%E5%A7%8B%E5%8C%96%E7%B2%BE%E7%81%B5%E5%9B%BE">1、TextureAtlas 初始化精灵图</a></li>
+<li><a href="#2-ticker-%E5%AE%9A%E6%97%B6%E5%99%A8">2、Ticker 定时器</a></li>
+<li><a href="#3-drag-%E6%8B%96%E6%8B%BD">3、drag 拖拽</a></li>
+</ul>
+</li>
+<li><a href="#event">event</a>
+<ul>
+<li><a href="#1-mouseevent">1、mouseevent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

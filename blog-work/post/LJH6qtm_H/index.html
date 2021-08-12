@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>HTML基础-1 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>HTML基础-1</h1>
+          <p class="article-meta">
+            2016-01-04
+            
+            <a href="https://h8396x.coding-pages.com/tag/fzHk7_HZr/index.html" class="tagitem">
+              html
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <h2 id="万维网">万维网</h2>
+<pre><code>前端是指页面的表现形式，浏览器负责解释html页面
+万维网联盟 WWW
+元素属性（元素的最完整表现）
+</code></pre>
+<h2 id="html文档结构">HTML文档结构</h2>
+<pre><code>&lt;!doctype html&gt;         文档声明
+&lt;html&gt;                  根元素
+    &lt;head&gt;               	头部
+        &lt;meta charset=&quot;UTF-8&quot;&gt;  声明元数据
+        &lt;title&gt;1111&lt;/title&gt;     网页标题
+    &lt;/head&gt;
+    &lt;body&gt; 主体
+        内容
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="doctype-html作用"><code>&lt;!doctype html&gt;</code>作用</h2>
+<pre><code>文档声明，让Web浏览器知道是使用哪个版本的HTML来解释HTML页面。
+</code></pre>
+<h2 id="块级元素和行内元素">块级元素和行内元素</h2>
+<pre><code>1、块级元素： div h1~h6 hr p...  table    ol...li...
+    默认情况下独占一行，元素前后会自动换行；
+    块级元素作用：布局
+
+2、行内元素： span b s i u...
+    默认情况下多个元素位于同一行，不会换行；
+    行内元素作用：修改内部内容的样式
+</code></pre>
+<h2 id="w3c万维网联盟">W3C万维网联盟</h2>
+<pre><code>World Wide Web Consortium,简称W3C，又称W3C理事会。
+W3C是Web技术领域最具权威和影响力的国际中立性技术标准机构，发布Web技术标准及实施指南。
+</code></pre>
+<h2 id="国外主流浏览器">国外主流浏览器</h2>
+<pre><code>Google chrome浏览器，Firefox浏览器，IE浏览器，Opera浏览器，Safari浏览器
+</code></pre>
+<h2 id="封闭标签和非封闭标签">封闭标签和非封闭标签</h2>
+<h3 id="1-封闭标签">1、封闭标签</h3>
+<pre><code>标题元素h1~h6    超链接a （`href=&quot;http://www.baidu.com&quot;`）
+段落元素p
+做布局div       （前三个都可以使用align属性） 
+文本元素加粗b  下划线u  斜体i  删除s和del  下标sub  上标sup
+修改内部样式span
+预格式化pre
+</code></pre>
+<h3 id="2-非封闭标签">2、非封闭标签</h3>
+<pre><code>转义字符（&amp;nbsp; &lt; &amp;lt;  &gt; &amp;gt;）
+换行br
+水平线hr（size、width、color、align）
+图片&lt;img/&gt;
+</code></pre>
+<h2 id="meta标签作用">meta标签作用</h2>
+<pre><code>1. 向搜索引擎说明你的网页关键词
+    `&lt;meta name=&quot;keywords&quot; content=&quot;&quot;/&gt;`
+
+2. 告诉搜索引擎你的站点的主要内容
+    `&lt;meta name=&quot;description&quot; content=&quot;&quot;/&gt;`
+
+3. 文件或链接检索
+    `&lt;meta name=&quot;robots&quot; content=&quot;all|none|index|noindex|follow|nofollow&quot;/&gt;`
+        all:文件将被检索，且页面上的链接可以被查询
+        index：文件将被检索
+        follow：页面上的链接可以被查询
+        none:文件将不被检索，且页面上的链接不可以被查询；
+        noindex:文件将不被检索，但页面上的链接可以被查询；
+        nofollow：文件将被检索，但页面上的链接不可以被查询。
+
+4. 移动端经常使用此标签
+    `&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0&quot;/&gt;`
+
+5. 定时让网页在指定的时间n内，跳转到指定页面
+    `&lt;meta http-equiv=&quot;refresh&quot; content=&quot;n;url=http://yourlink&quot;/&gt;`
+
+6. Edge:始终以最新的文档模式来渲染页面
+    `&lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=Edge&quot;/&gt;`
+</code></pre>
+<h2 id="元素嵌套标签嵌套">元素嵌套（标签嵌套）</h2>
+<pre><code>块级元素可以嵌套块级元素与行内元素
+P标签虽然是块级元素，但只能嵌套行内元素
+行内元素不能嵌套块级元素
+</code></pre>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/2voORPa2i/index.html">
+              <h3 class="post-title">
+                HTML基础-2
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/AfxqpbVyz/index.html">
+              <h3 class="post-title">
+                浏览器兼容问题
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：772</a></li>
+        <li><a href="javascript:;">阅读时间：4 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：772</a></li>
+        <li><a href="javascript:;">阅读时间：4 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%B8%87%E7%BB%B4%E7%BD%91">万维网</a></li>
+<li><a href="#html%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84">HTML文档结构</a></li>
+<li><a href="#doctype-html%E4%BD%9C%E7%94%A8"><code>&lt;!doctype html&gt;</code>作用</a></li>
+<li><a href="#%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E5%92%8C%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0">块级元素和行内元素</a></li>
+<li><a href="#w3c%E4%B8%87%E7%BB%B4%E7%BD%91%E8%81%94%E7%9B%9F">W3C万维网联盟</a></li>
+<li><a href="#%E5%9B%BD%E5%A4%96%E4%B8%BB%E6%B5%81%E6%B5%8F%E8%A7%88%E5%99%A8">国外主流浏览器</a></li>
+<li><a href="#%E5%B0%81%E9%97%AD%E6%A0%87%E7%AD%BE%E5%92%8C%E9%9D%9E%E5%B0%81%E9%97%AD%E6%A0%87%E7%AD%BE">封闭标签和非封闭标签</a>
+<ul>
+<li><a href="#1-%E5%B0%81%E9%97%AD%E6%A0%87%E7%AD%BE">1、封闭标签</a></li>
+<li><a href="#2-%E9%9D%9E%E5%B0%81%E9%97%AD%E6%A0%87%E7%AD%BE">2、非封闭标签</a></li>
+</ul>
+</li>
+<li><a href="#meta%E6%A0%87%E7%AD%BE%E4%BD%9C%E7%94%A8">meta标签作用</a></li>
+<li><a href="#%E5%85%83%E7%B4%A0%E5%B5%8C%E5%A5%97%E6%A0%87%E7%AD%BE%E5%B5%8C%E5%A5%97">元素嵌套（标签嵌套）</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>

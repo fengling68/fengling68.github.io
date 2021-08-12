@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" >
+
+<title>HTML基础-2 | 长安长安 </title>
+<meta name="description" content="🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://h8396x.coding-pages.com/favicon.ico?v=1602593800748">
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" /> -->
+<link rel="stylesheet" href="https://h8396x.coding-pages.com/styles/main.css" type="text/css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+</head>
+
+<body>
+  <div id="top" class="row flex-spaces">
+    <div class="sm-14 md-10 col">
+      <div class="paper">
+        <article class="article post-article-wrap">
+          <h1>HTML基础-2</h1>
+          <p class="article-meta">
+            2016-01-05
+            
+            <a href="https://h8396x.coding-pages.com/tag/fzHk7_HZr/index.html" class="tagitem">
+              html
+            </a>
+            
+          </p>
+          
+          <div class="post-content">
+            <h2 id="什么是url">什么是URL</h2>
+<pre><code>URL（Uniform Resource Locator）：统一资源定位器，路径
+URL作用：用来标识网络中的资源位置
+URL形式：绝对路径（完整地URL，很少用），相对路径
+</code></pre>
+<h2 id="相对路径">相对路径</h2>
+<pre><code>同级目录（直接找）logo.png
+子集目录（先进入）images/logo.png
+父级目录（先返回）../../images/logo.png 返回上一级
+</code></pre>
+<h2 id="图像格式">图像格式</h2>
+<pre><code>jpg、jpeg    采用有损压缩，压缩较大；
+gif        有损压缩，有较大失真，支持动画和透明图像；
+png        无损压缩，支持透明色，色彩丰富。
+</code></pre>
+<blockquote>
+<p>注意：前端切图通常保存成PNG-24</p>
+</blockquote>
+<h2 id="图像标签img">图像标签img</h2>
+<pre><code>src:图像路径（必备）
+alt：图像不显示时，显示的文本（必备） alt=&quot;山水画&quot;
+title：鼠标移入时显示的文本
+width   height
+</code></pre>
+<h2 id="链接a标签">链接a标签</h2>
+<h3 id="1-属性">1、属性</h3>
+<pre><code>href：链接的目的
+target：指定打开新网页的方式
+    - _self：在当前页面打开（默认），打开的页面会覆盖当前页面。
+    - _blank：在新标签页中打开，不会覆盖原有页面。
+name：定义锚点名称。
+</code></pre>
+<h3 id="2-在所有浏览器中链接的默认外观">2、在所有浏览器中，链接的默认外观</h3>
+<pre><code>未被访问带下划线蓝色；
+已被访问带下划线紫色；
+活动链接带下划线红色。
+</code></pre>
+<h3 id="3-链接的表现形式">3、链接的表现形式</h3>
+<pre><code>1. 页面间的跳转 `&lt;a href=&quot;页面路径&quot;&gt; 文本或图像 &lt;/a&gt;`
+2. 页面上资源的下载 `&lt;a href=&quot;xxx.rar&quot;&gt; 点击下载 &lt;/a&gt;`
+3. 返回页面顶部的空链接 `&lt;a href=&quot;#&quot;&gt;返回顶部&lt;/a&gt;`
+4. 电子邮件链接，打开本机邮件客户端，向指定地址发送email邮件(如未安装邮件客户端,则没有效果)`&lt;a href=&quot;mailto:xxx@qq.com&quot;&gt;联系我们&lt;/a&gt;`
+5. 链接到JavaScript单双引号嵌套`&lt;a href=&quot;javascript:window.alert('我是一个对话框')&quot;&gt;&lt;/a&gt;`
+</code></pre>
+<h3 id="4-链接锚点">4、链接锚点</h3>
+<ul>
+<li>锚点：在页面的任意位置处定义一个标识，随时随地都可以跳转到这个标识上</li>
+</ul>
+<ol>
+<li>
+<p>定义锚点：<code>&lt;a name=&quot;anchorName&quot;&gt;&lt;/a&gt;</code>   标签内部不需要放内容</p>
+</li>
+<li>
+<p>链接到本页面<br>
+<code>&lt;a href=&quot;#anchorName&quot;&gt;文本或图像&lt;/a&gt;</code><br>
+<code>&lt;a name=&quot;anchorName&quot;&gt;文本或图像&lt;/a&gt;</code></p>
+</li>
+<li>
+<p>链接到其他页面<br>
+<code>&lt;a href=&quot;url#otherName&quot;&gt;&lt;/a&gt;</code><br>
+<code>&lt;a name=&quot;otherName&quot;&gt;文本或图像&lt;/a&gt;</code></p>
+</li>
+</ol>
+<h2 id="表格">表格</h2>
+<pre><code>&lt;table&gt;          &lt;!-- 创建表格 --&gt;
+    &lt;caption&gt;表格标题&lt;/caption&gt;
+    &lt;tr&gt;           &lt;!-- 一行 --&gt;
+        &lt;td&gt;&lt;/td&gt;    &lt;!-- 两列 --&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<h3 id="1-table的属性">1、table的属性</h3>
+<pre><code>width   height   bgcolor   align(left right center)   border:边框，px像素
+cellpadding:内边距（单元格边框与内容之间的距离）
+cellspacing:外边距（单元格与单元格之间的距离）
+</code></pre>
+<h3 id="2-tr的属性">2、tr的属性</h3>
+<pre><code>align(left center right):设置该行内容的水平对齐方式    
+valign(top middle bottom):设置该行内容的垂直对齐方式
+</code></pre>
+<h3 id="3-td的属性">3、td的属性</h3>
+<pre><code>align    valign    width    height
+colspan:单元格跨列（向右合并单元格）
+rowspan:单元格跨行（向下合并单元格）
+</code></pre>
+<h3 id="4-表格的复杂应用">4、表格的复杂应用</h3>
+<pre><code>根据行的不同，划分成不同的组；表格的嵌套
+表头&lt;thead&gt;   表主题&lt;tbody&gt;   表尾&lt;tfoot&gt;
+表头标题&lt;th&gt;&lt;/th&gt;
+</code></pre>
+<h2 id="列表从上到下成列从左到右成行">列表（从上到下，成列；从左到右，成行）</h2>
+<h3 id="1-有序列表-单独成行做导航用">1、有序列表   单独成行，做导航用</h3>
+<pre><code>&lt;ol type=&quot;A&quot; start=&quot;2&quot;&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+type列表类型：数字(默认)  小写字母   大写字母   小写罗马数字   大写罗马数字
+start起始编号：一定是数字
+</code></pre>
+<h3 id="2-无序列表">2、无序列表</h3>
+<pre><code>&lt;ul type=&quot;circle&quot;&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+type列表类型：disc(实心圆，默认)  circle(空心圆)  square(实心矩形)
+</code></pre>
+<h3 id="3-自定义列表">3、自定义列表</h3>
+<pre><code>用于给出一类事物的解释，如名词解释。做图文混排布局。
+&lt;dl&gt;
+    &lt;dt&gt;列表内容标题&lt;/dt&gt;   &lt;!-- dt和dd不是嵌套，是并列关系 --&gt;
+    &lt;dd&gt;列表数据&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<h3 id="4-列表的嵌套">4、列表的嵌套</h3>
+
+          </div>
+        </article>
+      </div>
+      <div class="paper" data-aos="fade-in">
+        <div class="prevAndNext">
+          <div class="prev-post">
+            
+            <div class="prev">
+              上一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/c5bulMJZp/index.html">
+              <h3 class="post-title">
+                HTML基础-3
+              </h3>
+            </a>
+            
+          </div>
+
+          <div class="next-post">
+            
+            <div class="next">
+              下一篇
+            </div>
+            <a href="https://h8396x.coding-pages.com/post/LJH6qtm_H/index.html">
+              <h3 class="post-title">
+                HTML基础-1
+              </h3>
+            </a>
+            
+          </div>
+        </div>
+
+        <!-- 此处添加 valine 评论、disqus 评论、gittalk 评论 -->
+        
+
+
+
+
+
+
+  
+
+
+      </div>
+
+    </div>
+
+    <div class="sm-14 md-3 col" id="tocPerch">
+      <div class="sm-14 md-3 col sidebar sidebar-toc-real" id="tocReal">
+  <!-- 博客名、导航、头像 -->
+  <div class="paper info-container">
+    <h1><a href="https://h8396x.coding-pages.com">长安长安 </a></h1>
+    <div class="info-nav">
+      
+        <span>
+          
+            
+              <a href="/index.html" class="menu">首页</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/archives/index.html" class="menu">归档</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            
+              <a href="/post/about/index.html" class="menu">关于</a>
+            
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://9dp0em.coding-pages.com/notes/index.html" class="menu" target="_blank">集锦</a>
+          
+        </span>
+      
+        <span>
+          
+            <a href="https://vseqt1.coding-pages.com/dist/index.html" class="menu" target="_blank">工具</a>
+          
+        </span>
+      
+    </div>
+    <img src="https://h8396x.coding-pages.com/images/avatar.png?v=1602593800748" class="no-responsive avatar">
+    <div class="text-muted">🎐吾生也有涯，而知也无涯，以有涯随无涯，乐也。🎐</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <form id="gridea-search-form" data-update="1602593800748" action="https://h8396x.coding-pages.com/search/">
+      <input class="gridea-search-input" autocomplete="on" spellcheck="true" name="q" />
+    </form>
+  </div>
+  <!-- 文章统计 -->
+  <!-- <div class="paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：1051</a></li>
+        <li><a href="javascript:;">阅读时间：5 min read</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- 文章目录 -->
+  <div class="paper toc-paper">
+    <div class="sidebar-title">文章统计</div>
+    <div>
+      <ul>
+        <li><a href="javascript:;">字数统计：1051</a></li>
+        <li><a href="javascript:;">阅读时间：5 min read</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-title">文章目录</div>
+    <div class="toc-container">
+      <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFurl">什么是URL</a></li>
+<li><a href="#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84">相对路径</a></li>
+<li><a href="#%E5%9B%BE%E5%83%8F%E6%A0%BC%E5%BC%8F">图像格式</a></li>
+<li><a href="#%E5%9B%BE%E5%83%8F%E6%A0%87%E7%AD%BEimg">图像标签img</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5a%E6%A0%87%E7%AD%BE">链接a标签</a>
+<ul>
+<li><a href="#1-%E5%B1%9E%E6%80%A7">1、属性</a></li>
+<li><a href="#2-%E5%9C%A8%E6%89%80%E6%9C%89%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E9%93%BE%E6%8E%A5%E7%9A%84%E9%BB%98%E8%AE%A4%E5%A4%96%E8%A7%82">2、在所有浏览器中，链接的默认外观</a></li>
+<li><a href="#3-%E9%93%BE%E6%8E%A5%E7%9A%84%E8%A1%A8%E7%8E%B0%E5%BD%A2%E5%BC%8F">3、链接的表现形式</a></li>
+<li><a href="#4-%E9%93%BE%E6%8E%A5%E9%94%9A%E7%82%B9">4、链接锚点</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A1%A8%E6%A0%BC">表格</a>
+<ul>
+<li><a href="#1-table%E7%9A%84%E5%B1%9E%E6%80%A7">1、table的属性</a></li>
+<li><a href="#2-tr%E7%9A%84%E5%B1%9E%E6%80%A7">2、tr的属性</a></li>
+<li><a href="#3-td%E7%9A%84%E5%B1%9E%E6%80%A7">3、td的属性</a></li>
+<li><a href="#4-%E8%A1%A8%E6%A0%BC%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BA%94%E7%94%A8">4、表格的复杂应用</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%97%E8%A1%A8%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%88%90%E5%88%97%E4%BB%8E%E5%B7%A6%E5%88%B0%E5%8F%B3%E6%88%90%E8%A1%8C">列表（从上到下，成列；从左到右，成行）</a>
+<ul>
+<li><a href="#1-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8-%E5%8D%95%E7%8B%AC%E6%88%90%E8%A1%8C%E5%81%9A%E5%AF%BC%E8%88%AA%E7%94%A8">1、有序列表   单独成行，做导航用</a></li>
+<li><a href="#2-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8">2、无序列表</a></li>
+<li><a href="#3-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%97%E8%A1%A8">3、自定义列表</a></li>
+<li><a href="#4-%E5%88%97%E8%A1%A8%E7%9A%84%E5%B5%8C%E5%A5%97">4、列表的嵌套</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  
+    </div>
+  </div>
+
+  <!-- 看板白猫 -->
+  <div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+  <div class="hide-button">隐藏</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+  function loadScript(url, callback) {
+    let script = document.createElement('script');
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState === 'loaded' || script.readyState === 'complete') {
+            script.onreadystatechange = null;
+            callback();
+        }
+      } 
+    } else { // 其他浏览器
+      script.onload = function () {
+        callback();
+      }
+    }
+    script.src = url;
+    document.body.appendChild(script);
+  }
+
+  var ua = window.navigator.userAgent.toLowerCase();
+  var inWindow = !(/android|ipad|iphone|iPod/i.test(ua));
+  // 电脑端加载并显示看板猫，移动端很容易崩溃，所以并不建议在移动端展示哦～
+  if (inWindow) {
+    // const domain = 'https://h8396x.coding-pages.com';
+    const domain = 'https://h8396x.coding-pages.com';
+    var message_Path = `${domain}/media/live2d/`;
+    var link1 = `${domain}/media/live2d/live2d.js`;
+    var link2 = `${domain}/media/live2d/message.js`;
+
+    loadScript(link1, function(){
+      loadScript(link2, function(){
+        // 白天展示白猫，黑夜展示黑猫，嘿嘿嘿～
+        var hour = (new Date()).getHours();
+        if (hour > 6 && hour < 18) {
+          loadlive2d("live2d", `${domain}/media/live2d/modelWhiteCat/tororo.model.json`);
+        } else {
+          loadlive2d("live2d", `${domain}/media/live2d/modelBlackCat/hijiki.model.json`);
+        }
+      })
+    })
+  }
+</script>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad();
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          // console.log(link);
+          // console.log(`333: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.add("current");
+        } else {
+          // console.log(link);
+          // console.log(`444: ${nextSection.offsetTop} ---- ${fromTop}`);
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+// 如果是文章页设置右侧边栏 fixed 定位，且计算占位元素宽度后赋值；
+setTimeout(() => {
+  const tocReal = document.querySelector('#tocReal');
+  const tocPerch = document.querySelector('#tocPerch');
+  if (tocPerch && tocReal) {
+    tocReal.style.width = `${tocPerch.offsetWidth}px`;
+  }
+}, 0)
+</script>
+</body>
+
+</html>
