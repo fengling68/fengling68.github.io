@@ -3,7 +3,7 @@
 
 [💗 生活博客](https://fengling68.github.io/blog-life/)
 
-[🚩 技术博客](https://fengling68.github.io/blog-work/)
+[🚩 技术博客](https://fengling68.github.io/BlogsForLife/)
 
 [🚩 前端笔记](https://fengling68.github.io/notes/)
 
