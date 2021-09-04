@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS基础 | 前端集锦</title>
+    <meta name="description" content="一个收集整理前端知识点的简单网站">
+    <link rel="icon" href="/notes/headImg.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    
+    <link rel="preload" href="/notes/assets/css/0.styles.f3d08da2.css" as="style"><link rel="preload" href="/notes/assets/js/app.382e7989.js" as="script"><link rel="preload" href="/notes/assets/js/2.27e89b24.js" as="script"><link rel="preload" href="/notes/assets/js/107.9ab815aa.js" as="script"><link rel="prefetch" href="/notes/assets/js/10.125c7aba.js"><link rel="prefetch" href="/notes/assets/js/100.01e27c07.js"><link rel="prefetch" href="/notes/assets/js/101.1dd44061.js"><link rel="prefetch" href="/notes/assets/js/102.343be1d2.js"><link rel="prefetch" href="/notes/assets/js/103.1c38964f.js"><link rel="prefetch" href="/notes/assets/js/104.34ae8e93.js"><link rel="prefetch" href="/notes/assets/js/105.238e3274.js"><link rel="prefetch" href="/notes/assets/js/106.2aef7468.js"><link rel="prefetch" href="/notes/assets/js/108.04968814.js"><link rel="prefetch" href="/notes/assets/js/109.9146b270.js"><link rel="prefetch" href="/notes/assets/js/11.7004c0f6.js"><link rel="prefetch" href="/notes/assets/js/110.2f7bafd0.js"><link rel="prefetch" href="/notes/assets/js/111.e40f85cf.js"><link rel="prefetch" href="/notes/assets/js/112.11579a84.js"><link rel="prefetch" href="/notes/assets/js/113.4894d781.js"><link rel="prefetch" href="/notes/assets/js/114.86d4a4b6.js"><link rel="prefetch" href="/notes/assets/js/115.3c332d9e.js"><link rel="prefetch" href="/notes/assets/js/116.14fcb4f9.js"><link rel="prefetch" href="/notes/assets/js/117.9471efd3.js"><link rel="prefetch" href="/notes/assets/js/118.ddee68c8.js"><link rel="prefetch" href="/notes/assets/js/119.acc629e2.js"><link rel="prefetch" href="/notes/assets/js/12.15584e97.js"><link rel="prefetch" href="/notes/assets/js/120.7ebac80b.js"><link rel="prefetch" href="/notes/assets/js/121.342cb379.js"><link rel="prefetch" href="/notes/assets/js/122.050b8189.js"><link rel="prefetch" href="/notes/assets/js/123.0578afd7.js"><link rel="prefetch" href="/notes/assets/js/124.482ee516.js"><link rel="prefetch" href="/notes/assets/js/125.1551343b.js"><link rel="prefetch" href="/notes/assets/js/126.460caa7d.js"><link rel="prefetch" href="/notes/assets/js/127.78c5ce8b.js"><link rel="prefetch" href="/notes/assets/js/128.9416b6af.js"><link rel="prefetch" href="/notes/assets/js/129.c7ee1201.js"><link rel="prefetch" href="/notes/assets/js/13.64ef84b0.js"><link rel="prefetch" href="/notes/assets/js/130.f6e136b5.js"><link rel="prefetch" href="/notes/assets/js/131.b945b125.js"><link rel="prefetch" href="/notes/assets/js/132.01c8295e.js"><link rel="prefetch" href="/notes/assets/js/133.930e6c5d.js"><link rel="prefetch" href="/notes/assets/js/134.fd1ee5eb.js"><link rel="prefetch" href="/notes/assets/js/135.013bcab9.js"><link rel="prefetch" href="/notes/assets/js/136.e7d7dd12.js"><link rel="prefetch" href="/notes/assets/js/137.c45fb647.js"><link rel="prefetch" href="/notes/assets/js/138.4878d750.js"><link rel="prefetch" href="/notes/assets/js/139.0a200170.js"><link rel="prefetch" href="/notes/assets/js/14.215a5834.js"><link rel="prefetch" href="/notes/assets/js/140.d5dfdeac.js"><link rel="prefetch" href="/notes/assets/js/141.baa57f54.js"><link rel="prefetch" href="/notes/assets/js/142.1f41428a.js"><link rel="prefetch" href="/notes/assets/js/143.42960947.js"><link rel="prefetch" href="/notes/assets/js/144.77487800.js"><link rel="prefetch" href="/notes/assets/js/145.fc48ef2a.js"><link rel="prefetch" href="/notes/assets/js/146.6c38fbd2.js"><link rel="prefetch" href="/notes/assets/js/147.c6182632.js"><link rel="prefetch" href="/notes/assets/js/15.dcffd53f.js"><link rel="prefetch" href="/notes/assets/js/16.e7823540.js"><link rel="prefetch" href="/notes/assets/js/17.fe9c73d0.js"><link rel="prefetch" href="/notes/assets/js/18.d72d7b23.js"><link rel="prefetch" href="/notes/assets/js/19.8b40c33f.js"><link rel="prefetch" href="/notes/assets/js/20.e9068f62.js"><link rel="prefetch" href="/notes/assets/js/21.1940098e.js"><link rel="prefetch" href="/notes/assets/js/22.d6a2534a.js"><link rel="prefetch" href="/notes/assets/js/23.d2bdbdf2.js"><link rel="prefetch" href="/notes/assets/js/24.82f61d8f.js"><link rel="prefetch" href="/notes/assets/js/25.fe324a2b.js"><link rel="prefetch" href="/notes/assets/js/26.7f2d41c5.js"><link rel="prefetch" href="/notes/assets/js/27.98684307.js"><link rel="prefetch" href="/notes/assets/js/28.7fba9ed7.js"><link rel="prefetch" href="/notes/assets/js/29.7301cfc1.js"><link rel="prefetch" href="/notes/assets/js/3.c531a5c4.js"><link rel="prefetch" href="/notes/assets/js/30.fdf03af2.js"><link rel="prefetch" href="/notes/assets/js/31.d4f4177b.js"><link rel="prefetch" href="/notes/assets/js/32.7513650e.js"><link rel="prefetch" href="/notes/assets/js/33.146d2b44.js"><link rel="prefetch" href="/notes/assets/js/34.946e0463.js"><link rel="prefetch" href="/notes/assets/js/35.0346441c.js"><link rel="prefetch" href="/notes/assets/js/36.b0713691.js"><link rel="prefetch" href="/notes/assets/js/37.fb8d57f3.js"><link rel="prefetch" href="/notes/assets/js/38.b32c8c1c.js"><link rel="prefetch" href="/notes/assets/js/39.eccd03ec.js"><link rel="prefetch" href="/notes/assets/js/4.b3cc4be8.js"><link rel="prefetch" href="/notes/assets/js/40.2e167331.js"><link rel="prefetch" href="/notes/assets/js/41.9f018a56.js"><link rel="prefetch" href="/notes/assets/js/42.a0ab7a65.js"><link rel="prefetch" href="/notes/assets/js/43.d3fe3273.js"><link rel="prefetch" href="/notes/assets/js/44.811fdec8.js"><link rel="prefetch" href="/notes/assets/js/45.223a664c.js"><link rel="prefetch" href="/notes/assets/js/46.1e19a09f.js"><link rel="prefetch" href="/notes/assets/js/47.5c768528.js"><link rel="prefetch" href="/notes/assets/js/48.0b35408a.js"><link rel="prefetch" href="/notes/assets/js/49.86153fd6.js"><link rel="prefetch" href="/notes/assets/js/5.b848c9ca.js"><link rel="prefetch" href="/notes/assets/js/50.018bdb0c.js"><link rel="prefetch" href="/notes/assets/js/51.6dc3eb9f.js"><link rel="prefetch" href="/notes/assets/js/52.37491737.js"><link rel="prefetch" href="/notes/assets/js/53.d9d4974c.js"><link rel="prefetch" href="/notes/assets/js/54.12058195.js"><link rel="prefetch" href="/notes/assets/js/55.13496694.js"><link rel="prefetch" href="/notes/assets/js/56.82011a30.js"><link rel="prefetch" href="/notes/assets/js/57.6c1caeb1.js"><link rel="prefetch" href="/notes/assets/js/58.012e6081.js"><link rel="prefetch" href="/notes/assets/js/59.c52d4365.js"><link rel="prefetch" href="/notes/assets/js/6.f2af44b0.js"><link rel="prefetch" href="/notes/assets/js/60.55edb1c7.js"><link rel="prefetch" href="/notes/assets/js/61.e7abd869.js"><link rel="prefetch" href="/notes/assets/js/62.463404cb.js"><link rel="prefetch" href="/notes/assets/js/63.c8e43a63.js"><link rel="prefetch" href="/notes/assets/js/64.f76f9a6a.js"><link rel="prefetch" href="/notes/assets/js/65.1eba5f51.js"><link rel="prefetch" href="/notes/assets/js/66.c7972b76.js"><link rel="prefetch" href="/notes/assets/js/67.da3c9b74.js"><link rel="prefetch" href="/notes/assets/js/68.764da583.js"><link rel="prefetch" href="/notes/assets/js/69.4d9f45f4.js"><link rel="prefetch" href="/notes/assets/js/7.cc0a4861.js"><link rel="prefetch" href="/notes/assets/js/70.963e643a.js"><link rel="prefetch" href="/notes/assets/js/71.3da2b993.js"><link rel="prefetch" href="/notes/assets/js/72.72b83ee5.js"><link rel="prefetch" href="/notes/assets/js/73.712eaf13.js"><link rel="prefetch" href="/notes/assets/js/74.8ca14dfc.js"><link rel="prefetch" href="/notes/assets/js/75.e3b119fa.js"><link rel="prefetch" href="/notes/assets/js/76.0de60e96.js"><link rel="prefetch" href="/notes/assets/js/77.1433dffb.js"><link rel="prefetch" href="/notes/assets/js/78.08260272.js"><link rel="prefetch" href="/notes/assets/js/79.16e17011.js"><link rel="prefetch" href="/notes/assets/js/8.ac9a28bb.js"><link rel="prefetch" href="/notes/assets/js/80.17b76892.js"><link rel="prefetch" href="/notes/assets/js/81.f6aaa235.js"><link rel="prefetch" href="/notes/assets/js/82.342f592f.js"><link rel="prefetch" href="/notes/assets/js/83.3427951c.js"><link rel="prefetch" href="/notes/assets/js/84.5c69b7fc.js"><link rel="prefetch" href="/notes/assets/js/85.1e7850f0.js"><link rel="prefetch" href="/notes/assets/js/86.9c79a477.js"><link rel="prefetch" href="/notes/assets/js/87.c8e2a840.js"><link rel="prefetch" href="/notes/assets/js/88.085bb38c.js"><link rel="prefetch" href="/notes/assets/js/89.8b450f3e.js"><link rel="prefetch" href="/notes/assets/js/9.1b319133.js"><link rel="prefetch" href="/notes/assets/js/90.3e86178b.js"><link rel="prefetch" href="/notes/assets/js/91.0a318695.js"><link rel="prefetch" href="/notes/assets/js/92.f9c3de19.js"><link rel="prefetch" href="/notes/assets/js/93.327aafca.js"><link rel="prefetch" href="/notes/assets/js/94.555a65c4.js"><link rel="prefetch" href="/notes/assets/js/95.a2f7cb80.js"><link rel="prefetch" href="/notes/assets/js/96.05181ed5.js"><link rel="prefetch" href="/notes/assets/js/97.ece3ff7d.js"><link rel="prefetch" href="/notes/assets/js/98.96d45e1c.js"><link rel="prefetch" href="/notes/assets/js/99.e0f256eb.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.f3d08da2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><!----> <span class="site-name">前端集锦</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes/doc/doc.html" class="nav-link">文档速查</a></div><div class="nav-item"><a href="/notes/web/web.html" class="nav-link">前端知识</a></div><div class="nav-item"><a href="/notes/snippet/snippet.html" class="nav-link">代码片段</a></div><div class="nav-item"><a href="/notes/question/question.html" class="nav-link">面试集锦</a></div><div class="nav-item"><a href="/notes/a-life/life.html" class="nav-link">生活随记</a></div><div class="nav-item"><a href="/notes/z-other/other.html" class="nav-link">其他</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="链接" class="dropdown-title"><span class="title">链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://fengling68.github.io/tools/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  工具集市
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/guide/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress配置指南
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notes/doc/doc.html" class="nav-link">文档速查</a></div><div class="nav-item"><a href="/notes/web/web.html" class="nav-link">前端知识</a></div><div class="nav-item"><a href="/notes/snippet/snippet.html" class="nav-link">代码片段</a></div><div class="nav-item"><a href="/notes/question/question.html" class="nav-link">面试集锦</a></div><div class="nav-item"><a href="/notes/a-life/life.html" class="nav-link">生活随记</a></div><div class="nav-item"><a href="/notes/z-other/other.html" class="nav-link">其他</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="链接" class="dropdown-title"><span class="title">链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://fengling68.github.io/tools/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  工具集市
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://vuepress.vuejs.org/zh/guide/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress配置指南
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>HTML</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/web/a-html/01-PS基础.html" class="sidebar-link">ps基础</a></li><li><a href="/notes/web/a-html/02-浏览器兼容问题.html" class="sidebar-link">浏览器兼容问题</a></li><li><a href="/notes/web/a-html/03-HTML基础.html" class="sidebar-link">HTML基础1</a></li><li><a href="/notes/web/a-html/04-HTML基础.html" class="sidebar-link">HTML基础2</a></li><li><a href="/notes/web/a-html/05-HTML基础.html" class="sidebar-link">HTML基础3</a></li><li><a href="/notes/web/a-html/06-html基础.html" class="sidebar-link">HTML、CSS、JS知识点</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>CSS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/web/b-css/01-CSS基础.html" class="sidebar-link">CSS基础</a></li><li><a href="/notes/web/b-css/02-CSS属性.html" class="sidebar-link">CSS属性</a></li><li><a href="/notes/web/b-css/03-CSS框模型.html" class="sidebar-link">CSS框模型</a></li><li><a href="/notes/web/b-css/04-CSS背景.html" class="sidebar-link">CSS背景</a></li><li><a href="/notes/web/b-css/05-CSS渐变.html" class="sidebar-link">CSS渐变</a></li><li><a href="/notes/web/b-css/06-CSS文本格式化.html" class="sidebar-link">CSS文本格式化</a></li><li><a href="/notes/web/b-css/07-CSS表格和列表.html" class="sidebar-link">CSS表格和列表</a></li><li><a href="/notes/web/b-css/08-CSS浮动和定位.html" class="sidebar-link">CSS浮动和定位</a></li><li><a href="/notes/web/b-css/09-CSS使用小技巧.html" class="sidebar-link">CSS使用小技巧</a></li><li><a href="/notes/web/b-css/10-CSS3选择器.html" class="sidebar-link">CSS3选择器</a></li><li><a href="/notes/web/b-css/11-CSS3多列、hack、优化.html" class="sidebar-link">CSS3多列、hack、优化</a></li><li><a href="/notes/web/b-css/12-2D动画.html" class="sidebar-link">2D动画</a></li><li><a href="/notes/web/b-css/13-3D动画.html" class="sidebar-link">3D动画</a></li><li><a href="/notes/web/b-css/14-居中问题.html" class="sidebar-link">居中问题</a></li><li><a href="/notes/web/b-css/15-less.html" class="sidebar-link">less</a></li><li><a href="/notes/web/b-css/16-sass.html" class="sidebar-link">sass</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/web/c-javascript/01-JS基础.html" class="active sidebar-link">JS基础</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_0、sass和scss区别" class="sidebar-link">0、sass和scss区别</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_1、定义变量" class="sidebar-link">1、定义变量 $</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_2、使用变量-或" class="sidebar-link">2、使用变量 #或$</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_3、选择器嵌套和属性嵌套" class="sidebar-link">3、选择器嵌套和属性嵌套</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_4、父选择器" class="sidebar-link">4、父选择器 &amp;</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_5、定义重用代码块-mixin" class="sidebar-link">5、定义重用代码块 @mixin</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_6、调用重用代码块-include" class="sidebar-link">6、调用重用代码块 @include</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_7、选择器继承-extend" class="sidebar-link">7、选择器继承 @extend</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_8、数据类型运算" class="sidebar-link">8、数据类型运算</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_9、内置函数" class="sidebar-link">9、内置函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_1-字符串函数" class="sidebar-link">(1)字符串函数</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_2-数字函数" class="sidebar-link">(2)数字函数</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_3-list函数" class="sidebar-link">(3)list函数</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_4-map函数" class="sidebar-link">(4)map函数</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_5-introspection函数" class="sidebar-link">(5)Introspection函数</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_6-颜色函数" class="sidebar-link">(6)颜色函数</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_7-透明函数" class="sidebar-link">(7)透明函数</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_8-hsl函数" class="sidebar-link">(8)HSL函数</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_9-选择器函数" class="sidebar-link">(9)选择器函数</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_10-其他" class="sidebar-link">(10)其他</a></li></ul></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_10、自定义函数" class="sidebar-link">10、自定义函数</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_11、控制指令" class="sidebar-link">11、控制指令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_1-控制指令-——-if-else" class="sidebar-link">(1)控制指令 —— @if @else</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_2-控制指令-——-for" class="sidebar-link">(2)控制指令 —— @for</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_3-控制指令-——-each" class="sidebar-link">(3)控制指令 —— @each</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_4-控制指令-——-while" class="sidebar-link">(4)控制指令 —— @while</a></li></ul></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_12、规则" class="sidebar-link">12、规则</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_13、导入-scss-文件" class="sidebar-link">13、导入 .scss 文件</a></li><li class="sidebar-sub-header"><a href="/notes/web/c-javascript/01-JS基础.html#_14、四种输出格式" class="sidebar-link">14、四种输出格式</a></li></ul></li><li><a href="/notes/web/c-javascript/02-JS函数.html" class="sidebar-link">JS函数</a></li><li><a href="/notes/web/c-javascript/03-匿名函数.html" class="sidebar-link">匿名函数</a></li><li><a href="/notes/web/c-javascript/04-数组基础.html" class="sidebar-link">数组基础</a></li><li><a href="/notes/web/c-javascript/05-数组常用方法.html" class="sidebar-link">数组常用方法</a></li><li><a href="/notes/web/c-javascript/06-字符串方法.html" class="sidebar-link">字符串方法</a></li><li><a href="/notes/web/c-javascript/07-Math数学方法.html" class="sidebar-link">Math数学方法</a></li><li><a href="/notes/web/c-javascript/08-定时器.html" class="sidebar-link">定时器</a></li><li><a href="/notes/web/c-javascript/09-Date日期和时间.html" class="sidebar-link">Date日期和时间</a></li><li><a href="/notes/web/c-javascript/10-BOM浏览器模型.html" class="sidebar-link">BOM浏览器模型</a></li><li><a href="/notes/web/c-javascript/11-DOM文档对象模型.html" class="sidebar-link">DOM文档对象模型</a></li><li><a href="/notes/web/c-javascript/12-DOM层级关系.html" class="sidebar-link">DOM层级关系</a></li><li><a href="/notes/web/c-javascript/13-DOM元素操作.html" class="sidebar-link">DOM元素操作</a></li><li><a href="/notes/web/c-javascript/14-DOM样式和屏幕尺寸.html" class="sidebar-link">DOM样式和屏幕尺寸</a></li><li><a href="/notes/web/c-javascript/15-JS运动函数及封装.html" class="sidebar-link">JS运动函数及封装</a></li><li><a href="/notes/web/c-javascript/16-JS事件.html" class="sidebar-link">JS事件</a></li><li><a href="/notes/web/c-javascript/17-JS事件对象.html" class="sidebar-link">JS事件对象</a></li><li><a href="/notes/web/c-javascript/18-时间流和事件冒泡.html" class="sidebar-link">时间流和事件冒泡</a></li><li><a href="/notes/web/c-javascript/19-懒加载和滚动加载.html" class="sidebar-link">懒加载和滚动加载</a></li><li><a href="/notes/web/c-javascript/20-正则表达式.html" class="sidebar-link">正则表达式</a></li><li><a href="/notes/web/c-javascript/21-this关键字.html" class="sidebar-link">this关键字</a></li><li><a href="/notes/web/c-javascript/22-对象.html" class="sidebar-link">对象</a></li><li><a href="/notes/web/c-javascript/23-prototype原型.html" class="sidebar-link">prototype原型</a></li><li><a href="/notes/web/c-javascript/24-原型和闭包.html" class="sidebar-link">原型和闭包</a></li><li><a href="/notes/web/c-javascript/25-cookie.html" class="sidebar-link">cookie</a></li><li><a href="/notes/web/c-javascript/26-JSON基础.html" class="sidebar-link">JSON基础</a></li><li><a href="/notes/web/c-javascript/27-JSONP跨域请求.html" class="sidebar-link">JSONP跨域请求</a></li><li><a href="/notes/web/c-javascript/28-Ajax异步通信.html" class="sidebar-link">Ajax异步通信</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>杂项</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/web/z-others/ES6.html" class="sidebar-link">ES6（ES2015~ES2020）</a></li><li><a href="/notes/web/z-others/NPM发布包.html" class="sidebar-link">NPM发布一个工具包</a></li><li><a href="/notes/web/z-others/flex.html" class="sidebar-link">flex</a></li><li><a href="/notes/web/z-others/pwa.html" class="sidebar-link">PWA 渐进式Web应用</a></li><li><a href="/notes/web/z-others/云服务.html" class="sidebar-link">阿里云服务折腾记(更新中)</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="js基础"><a href="#js基础" class="header-anchor">#</a> JS基础</h1> <h2 id="_0、sass和scss区别"><a href="#_0、sass和scss区别" class="header-anchor">#</a> 0、sass和scss区别</h2> <pre><code>sass不允许出现 {} ， scss可以像css一样使用 {}
+
+//sass书写方式
+body
+    font-size: 12px
+    background: #000
+//scss书写方式
+body{
+    font-size: 12px;
+    background: #000;
+}
+</code></pre> <h2 id="_1、定义变量"><a href="#_1、定义变量" class="header-anchor">#</a> 1、定义变量 <code>$</code></h2> <pre><code>$float: left;
+</code></pre> <h2 id="_2、使用变量-或"><a href="#_2、使用变量-或" class="header-anchor">#</a> 2、使用变量 <code>#</code>或<code>$</code></h2> <pre><code>// 变量做属性名
+#{$float}: left;
+
+// 变量做属性值
+float: $left;
+</code></pre> <h2 id="_3、选择器嵌套和属性嵌套"><a href="#_3、选择器嵌套和属性嵌套" class="header-anchor">#</a> 3、选择器嵌套和属性嵌套</h2> <pre><code>body{
+    div{
+        font:{
+            weight:bold;
+            size:23px;
+        }
+    }
+}
+</code></pre> <h2 id="_4、父选择器"><a href="#_4、父选择器" class="header-anchor">#</a> 4、父选择器 <code>&amp;</code></h2> <pre><code>div{
+    width:100px;
+    height:100px
+    &amp;:after{
+        content:'';
+        background:red;
+        width:200px;
+        height:200px;
+    }
+    &amp;-child{
+        // 编译后为 div-child
+    }
+}
+</code></pre> <h2 id="_5、定义重用代码块-mixin"><a href="#_5、定义重用代码块-mixin" class="header-anchor">#</a> 5、定义重用代码块 <code>@mixin</code></h2> <pre><code>// 居中显示
+@mixin center($t, $b, $l, $r){
+    position: absolute;
+    margin: auto;
+    top: rpx($t);
+    bottom: rpx($b);
+    left: rpx($l);
+    right: rpx($r);
+}
+
+@include center(0, 0, 0, 0);
+</code></pre> <h2 id="_6、调用重用代码块-include"><a href="#_6、调用重用代码块-include" class="header-anchor">#</a> 6、调用重用代码块 <code>@include</code></h2> <pre><code>.box{
+    @include bg_dom('../img.png',30%,40%)
+}
+</code></pre> <h2 id="_7、选择器继承-extend"><a href="#_7、选择器继承-extend" class="header-anchor">#</a> 7、选择器继承 <code>@extend</code></h2> <pre><code>.father {
+    border: 1px solid red;
+    background-color: #fdd;
+}
+.son {
+    @extend .father;
+    border-width: 3px;
+}
+</code></pre> <h2 id="_8、数据类型运算"><a href="#_8、数据类型运算" class="header-anchor">#</a> 8、数据类型运算</h2> <pre><code>所有: == , !=
+数字: +, -, *, /, %, &lt;, &gt;, &lt;=, &gt;=
+字符: + #{}
+颜色: +, *
+布尔: and, or, not
+空值:
+数组:
+maps:
+</code></pre> <h2 id="_9、内置函数"><a href="#_9、内置函数" class="header-anchor">#</a> 9、内置函数</h2> <pre><code>image-width()                   获取图片的宽度
+image-height()                  获取图片的高度
+unit()                          获取一个值所使用的单位
+lighten(red,10%)                使颜色变淡
+darken(red,20%)                 使颜色变深
+inline_image('../img.png')      将图片转换成base64格式
+...
+</code></pre> <h3 id="_1-字符串函数"><a href="#_1-字符串函数" class="header-anchor">#</a> (1)字符串函数</h3> <pre><code>unquote($string)                            ：删除字符串中的引号；
+quote($string)                              ：给字符串添加引号；
+str-length($string)                         : 返回字符串长度；
+str-insert($string, $insert, $index)        : 在$string中的第$insert中插入字符串$insert；
+str-index($string, $substring)              : 查找字符串$substring并返回其下标；
+str-slice($string, $start-at, [$end-at])    : 截取字符串（开始位置、结束位置）；
+to-upper-case($string)                      : 转为大写字母；
+to-lower-case($string)                      : 转为小写字母。
+</code></pre> <h3 id="_2-数字函数"><a href="#_2-数字函数" class="header-anchor">#</a> (2)数字函数</h3> <pre><code>percentage($value)                          ：将一个不带单位的数转换成百分比值；
+round($value)                               ：将数值四舍五入，转换成一个最接近的整数；
+ceil($value)                                ：将大于自己的小数转换成下一位整数；
+floor($value)                               ：将一个数去除他的小数部分；
+abs($value)                                 ：返回一个数的绝对值；
+min($numbers…)                              ：找出几个数值之间的最小值；
+max($numbers…)                              ：找出几个数值之间的最大值；
+random()                                    ：生成一个随机数。
+</code></pre> <h3 id="_3-list函数"><a href="#_3-list函数" class="header-anchor">#</a> (3)list函数</h3> <pre><code>length($list)                               ：返回一个列表的长度值；
+nth($list, $n)                              ：返回一个列表中指定的某个标签值
+join($list1, $list2, [$separator])          ：将两个列给连接在一起，变成一个列表；
+append($list1, $val, [$separator])          ：将某个值放在列表的最后；
+zip($lists…)                                ：将几个列表结合成一个多维的列表；
+index($list, $value)                        ：返回一个值在列表中的位置值；
+list-separator($list)                       : 是否有分隔符；
+is-bracketed($list)                         : 是否有方括号[]。
+</code></pre> <h3 id="_4-map函数"><a href="#_4-map函数" class="header-anchor">#</a> (4)map函数</h3> <pre><code>map-get($map,$key)                          ：根据$key返回对应的map值；
+map-merge($map1,$map2)                      ：合并map1和map2；
+map-remove($map,$key)                       ：返回删除$key值后的新map；
+map-keys($map)                              ：返回map中的所有key；
+map-values($map)                            ：返回map中的所有value；
+map-has-key($map,$key)                      ：map中是否有改key；
+keywords($args)                             ： Returns the keywords passed to a function that takes variable arguments.
+</code></pre> <h3 id="_5-introspection函数"><a href="#_5-introspection函数" class="header-anchor">#</a> (5)Introspection函数</h3> <pre><code>feature-exists($feature)                    ：某属性是否在当前sass中；
+variable-exists($name)                      ：某变量是否在当前sass中；
+global-variable-exists($name)               ：某变量是否在全局环境中；
+function-exists($name)                      ：某函数是否存在；
+mixin-exists($name)                         ：某mixin是否存在；
+content-exists()                            ：当前的mixin是否通过了一个内容块；
+type-of($value)                             ：返回一个值的类型；
+unit($number)                               ：返回一个值的单位；
+unitless($number)                           ：判断一个值是否有带位；
+comparable($number-1, $number-2)            ：判断两个值是否可以做加、减和合并；
+call($function, $args…)                     ：动态绑定get-function返回的函数；
+get-function($name, $css: false)            ：查找给定名称的函数；
+inspect($value)                             : Returns the string representation of a value as it would be represented in Sass.
+</code></pre> <h3 id="_6-颜色函数"><a href="#_6-颜色函数" class="header-anchor">#</a> (6)颜色函数</h3> <pre><code>rgb($red, $green, $blue)                    ：创建颜色；
+rgba($red, $green, $blue, $alpha)           ：创建颜色包含透明度；
+red($color)                                 ：获取颜色中的红色分量；
+green()                                     ：获取颜色中的绿色分量；
+blue()                                      ：获取颜色中的蓝色分量；
+Mix()                                       ：将两种颜色混合在一起。
+
+&lt;!-- 其他三种较复杂参数 --&gt;
+adjust-color($color, [$red], [$green], [$blue], [$hue], [$saturation], [$lightness], [$alpha])
+scale-color($color, [$red], [$green], [$blue], [$saturation], [$lightness], [$alpha])
+change-color($color, [$red], [$green], [$blue], [$hue], [$saturation], [$lightness], [$alpha])
+</code></pre> <h3 id="_7-透明函数"><a href="#_7-透明函数" class="header-anchor">#</a> (7)透明函数</h3> <pre><code>alpha($color)                               ：获得颜色的透明度；
+rgba($color, $alpha)                        ：设置颜色的透明度；
+opacify($color, $amout)                     ：使颜色变得不透明；
+fade-out($color, $amount)                   ：使颜色更透明；
+transparent($color, $amount)                ：使颜色更透明；
+</code></pre> <h3 id="_8-hsl函数"><a href="#_8-hsl函数" class="header-anchor">#</a> (8)HSL函数</h3> <pre><code>hsl($hue, $saturation, $lightness)          ：从色调、饱和度、亮度创建一个颜色；
+hsla($hue, $saturation, $lightness, $alpha) ：从色调、饱和度、亮度、透明度创建一个颜色；
+hue($color)                                 ：获取颜色的hue值;
+saturation($color)                          ：获取颜色的饱和度值；
+lightness($color)                           ：获取颜色的亮度；
+adjust-hue($color, $degrees)                ：改变颜色的色调；
+lighten($color, $amount)                    ：使颜色变亮；
+darken($color, $amount)                     ：使颜色变暗；
+saturate($color, $amount)                   ：增加饱和度；
+desaturate($color, $amount)                 ：减小饱和度；
+grayscale()                                 ：将颜色转成灰度；
+complement($color)                          ：返回颜色的互补色；
+invert($color, [$weight])                   ：范湖颜色的对立色
+</code></pre> <h3 id="_9-选择器函数"><a href="#_9-选择器函数" class="header-anchor">#</a> (9)选择器函数</h3> <pre><code>selector-nest($selectors…)                  ：将选择器嵌套在另一个下面；
+selector-append($selectors…)                ：追加选择器(无空格)；
+selector-extend($selector, $extendee, $extender)        ：在 $selector中用$extender继承$extendee；
+selector-replace($selector, $original, $replacement)    ：在$selector中用$replacement替换$original；
+selector-unify($selector1, $selector2)      ：统一选择器；
+is-superselector($super, $sub)              ：$super是否匹配所有的$sub；
+simple-selectors($selector)                 ：返回包含复合选择器的简单选择器；
+selector-parse($selector)                   ：将选择器解析为＆返回的格式。
+</code></pre> <h3 id="_10-其他"><a href="#_10-其他" class="header-anchor">#</a> (10)其他</h3> <pre><code>if($condition, $if-true, $if-false)         ：根据条件$condition返回true和false；
+unique-id()                                 ：返回css唯一标识。
+</code></pre> <h2 id="_10、自定义函数"><a href="#_10、自定义函数" class="header-anchor">#</a> 10、自定义函数</h2> <pre><code>//项目中用到的计算rem值得函数
+@function func($t) {
+    @if (unit($t)==1) {
+        @return $t*10;
+    } @else if (unit($t)==2) {
+        @return $t*100;
+    } @else {
+        @return $t;
+    }
+}
+
+&lt;!-- 使用 --&gt;
+width: func(1);
+</code></pre> <h2 id="_11、控制指令"><a href="#_11、控制指令" class="header-anchor">#</a> 11、控制指令</h2> <h3 id="_1-控制指令-——-if-else"><a href="#_1-控制指令-——-if-else" class="header-anchor">#</a> (1)控制指令 —— @if @else</h3> <pre><code>$type: y;
+@if $type == x{
+    color: red
+}
+@else if $type == y{
+    color: yellow
+}
+@else{
+    color: green
+}
+</code></pre> <h3 id="_2-控制指令-——-for"><a href="#_2-控制指令-——-for" class="header-anchor">#</a> (2)控制指令 —— @for</h3> <pre><code>// through : [1,3]
+@for $i from 1 through 3 {
+    .item-#{$i} { 
+        width: 2em * $i; 
+    }
+}
+
+// to : [1,3)
+@for $i from 1 through 3 {
+    .item-#{$i} { 
+        width: 2em * $i; 
+    }
+}
+</code></pre> <h3 id="_3-控制指令-——-each"><a href="#_3-控制指令-——-each" class="header-anchor">#</a> (3)控制指令 —— @each</h3> <pre><code>&lt;!-- 应用一：数组 --&gt;
+@each $animal in puma, sea-slug, egret, salamander {
+    .#{$animal}-icon {
+        background-image: url('/images/#{$animal}.png');
+    }
+}
+
+&lt;!-- 应用二：多个数组 --&gt;
+@each $animal, $color, $cursor in (name1, black, default),
+                                  (name2, blue,  pointer),
+                                  (name3, white, move) {
+    .#{$animal}-icon {
+        background-image: url('/images/#{$animal}.png');
+        border: 2px solid $color;
+        cursor: $cursor;
+    }
+}
+
+&lt;!-- 应用三：对象 --&gt;
+@each $header, $size in (h1: 2em, h2: 1.5em, h3: 1.2em) {
+    #{$header} {
+        font-size: $size;
+    }
+}
+</code></pre> <h3 id="_4-控制指令-——-while"><a href="#_4-控制指令-——-while" class="header-anchor">#</a> (4)控制指令 —— @while</h3> <pre><code>$i: 6;
+@while $i &gt; 0 {
+    .item-#{$i} { width: 2em * $i; }
+    $i: $i - 2;
+}
+</code></pre> <h2 id="_12、规则"><a href="#_12、规则" class="header-anchor">#</a> 12、规则</h2> <p>@import	<br>
+@media	<br>
+@extend	<br>
+@at-root	跳出嵌套<br>
+@debug	<br>
+@warn	<br>
+@error</p> <h2 id="_13、导入-scss-文件"><a href="#_13、导入-scss-文件" class="header-anchor">#</a> 13、导入 .scss 文件</h2> <pre><code>&lt;!-- 导入并编译 --&gt;
+@import &quot;base.scss&quot;, &quot;header.scss&quot;;
+
+&lt;!-- 导入但不编译 --&gt;
+@import &quot;_base.scss&quot;, &quot;_header.scss&quot;;
+
+&lt;!-- 嵌套到样式内 --&gt;
+#main {
+    @import &quot;example.scss&quot;;
+}
+</code></pre> <h2 id="_14、四种输出格式"><a href="#_14、四种输出格式" class="header-anchor">#</a> 14、四种输出格式</h2> <pre><code>:nested      嵌套
+:expanded    选择器不缩进
+:compact     每条CSS规则占一行
+:compressed  压缩
+</code></pre></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes/web/b-css/16-sass.html" class="prev">sass</a></span> <span class="next"><a href="/notes/web/c-javascript/02-JS函数.html">JS函数</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notes/assets/js/app.382e7989.js" defer></script><script src="/notes/assets/js/2.27e89b24.js" defer></script><script src="/notes/assets/js/107.9ab815aa.js" defer></script>
+  </body>
+</html>
