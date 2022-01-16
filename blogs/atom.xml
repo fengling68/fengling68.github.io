@@ -3,7 +3,7 @@
   <id>https://fengling68.github.io/blogs/</id>
   <title>前端集锦</title>
   <subtitle>一个收集整理前端知识点的简单网站</subtitle>
-  <updated>2022-01-11T13:39:14.280Z</updated>
+  <updated>2022-01-16T06:03:14.345Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://fengling68.github.io/blogs/atom.xml"/>
   <link rel="alternate" href="https://fengling68.github.io/blogs/"/>
@@ -11,7 +11,7 @@
     <title type="html">devTools调试</title>
     <id>https://fengling68.github.io/blogs/doc/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/DevTools/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/DevTools/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="devtools调试"> devTools调试</h1>
 <h3 id="常用命令"> 常用命令</h3>
 <div><pre><code>Cmd <span>+</span> Shift <span>+</span> <span>P</span>
@@ -29,13 +29,13 @@ document<span>.</span>designMode <span>=</span> <span>'on'</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">linux命令</title>
     <id>https://fengling68.github.io/blogs/doc/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/linux%E5%91%BD%E4%BB%A4/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/linux%E5%91%BD%E4%BB%A4/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="linux命令"> linux命令</h1>
 <h2 id="目录结构"> 目录结构</h2>
 <table>
@@ -179,13 +179,13 @@ document<span>.</span>designMode <span>=</span> <span>'on'</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">npm命令</title>
     <id>https://fengling68.github.io/blogs/doc/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/npm%E5%91%BD%E4%BB%A4/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/npm%E5%91%BD%E4%BB%A4/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="npm命令"> npm命令</h1>
 <p><a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer">NPM官网</a></p>
 <h2 id="查询设置镜像"> 查询设置镜像</h2>
@@ -218,13 +218,13 @@ document<span>.</span>designMode <span>=</span> <span>'on'</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">sh可执行文件</title>
     <id>https://fengling68.github.io/blogs/doc/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/sh%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/sh%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="sh可执行文件"> sh可执行文件</h1>
 <h2 id="创建可执行文件"> 创建可执行文件</h2>
 <ol>
@@ -325,13 +325,13 @@ document<span>.</span>designMode <span>=</span> <span>'on'</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">mac常用命令</title>
     <id>https://fengling68.github.io/blogs/doc/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="mac常用命令"> mac常用命令</h1>
 <h2 id="mac-隐藏终端前的计算机名"> mac 隐藏终端前的计算机名</h2>
 <div><pre><code><span>sudo</span> <span>vim</span> /etc/bashrc
@@ -393,13 +393,13 @@ tree -a -h
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">网站汇总</title>
     <id>https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/01-%E4%B9%A6%E7%AD%BE%E6%B1%87%E6%80%BB/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/01-%E4%B9%A6%E7%AD%BE%E6%B1%87%E6%80%BB/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="网站汇总"> 网站汇总</h1>
 <h2 id="导航"> 导航</h2>
 <p><a href="https://cn.bing.com/" target="_blank" rel="noopener noreferrer">Bing</a></p>
@@ -482,13 +482,13 @@ tree -a -h
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">前端技术</title>
     <id>https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/01-%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/01-%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="前端技术"> 前端技术</h1>
 <h2 id="分享"> 分享</h2>
 <p><a href="https://weekly.zoo.team/" target="_blank" rel="noopener noreferrer">Zoo Weekly! 政采云前端小报</a></p>
@@ -563,13 +563,13 @@ tree -a -h
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">常用工具</title>
     <id>https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/01-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/01-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="常用工具"> 常用工具</h1>
 <h2 id="合集"> 合集</h2>
 <p><a href="https://c.runoob.com/" target="_blank" rel="noopener noreferrer">菜鸟工具</a></p>
@@ -637,13 +637,13 @@ tree -a -h
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">优质博客</title>
     <id>https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/02-%E4%BC%98%E8%B4%A8%E5%8D%9A%E5%AE%A2/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/02-%E4%BC%98%E8%B4%A8%E5%8D%9A%E5%AE%A2/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="优质博客"> 优质博客</h1>
 <h2 id="博客搭建"> 博客搭建</h2>
 <p><a href="https://vuepress.vuejs.org/zh/guide/" target="_blank" rel="noopener noreferrer">vuepress</a></p>
@@ -676,13 +676,13 @@ tree -a -h
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">常用插件</title>
     <id>https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/02-%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/02-%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="常用插件"> 常用插件</h1>
 <h2 id="chrome插件"> Chrome插件</h2>
 <ul>
@@ -730,6 +730,7 @@ tree -a -h
 <li>Sass</li>
 <li>Stylus</li>
 <li>Vetur</li>
+<li>Image preview</li>
 </ul>
 <h2 id="webpack插件"> Webpack插件</h2>
 <ul>
@@ -746,13 +747,13 @@ tree -a -h
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">应用or插件</title>
     <id>https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/02-%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/02-%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="应用or插件"> 应用or插件</h1>
 <h2 id="mac"> MAC</h2>
 <h3 id="必备"> 必备</h3>
@@ -778,6 +779,7 @@ tree -a -h
 <li>Wallpaper Wizard（壁纸）</li>
 <li>思诗壁纸</li>
 <li>网易邮箱大师</li>
+<li>滴答清单</li>
 </ul>
 <h3 id="设计剪辑"> 设计剪辑</h3>
 <ul>
@@ -914,13 +916,13 @@ tree -a -h
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Github项目</title>
     <id>https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/03-Github%E9%A1%B9%E7%9B%AE/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/03-Github%E9%A1%B9%E7%9B%AE/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="github项目"> Github项目</h1>
 <h2 id="git教程"> Git教程</h2>
 <p><a href="https://www.bootcss.com/p/git-guide/" target="_blank" rel="noopener noreferrer">Git简易指南</a></p>
@@ -955,13 +957,13 @@ tree -a -h
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">JS常用API合集</title>
     <id>https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/JS%E5%B8%B8%E7%94%A8API/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E6%96%87%E6%A1%A3%E9%80%9F%E6%9F%A5/JS%E5%B8%B8%E7%94%A8API/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="js常用api合集"> JS常用API合集</h1>
 <h2 id="一、节点"> 一、节点</h2>
 <h2 id="_1-1-节点属性"> 1.1 节点属性</h2>
@@ -1428,13 +1430,13 @@ console<span>.</span><span>clear</span><span>(</span><span>)</span>  <span>// �
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">VSCode配置</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/VSCode%E9%85%8D%E7%BD%AE/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/VSCode%E9%85%8D%E7%BD%AE/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="vscode配置"> VSCode配置</h1>
 <h2 id="配置-eslint-自动修复"> 配置 ESLint 自动修复</h2>
 <ol>
@@ -1472,8 +1474,18 @@ console<span>.</span><span>clear</span><span>(</span><span>)</span>  <span>// �
 </div><h2 id="配置-korofileheader"> 配置 KoroFileHeader</h2>
 <p>快捷命令</p>
 <ul>
-<li>文件注释：<code>Control + command + .</code></li>
-<li>函数注释：<code>option + command + /</code></li>
+<li>
+<p>文件注释：<code>control + command + .</code></p>
+</li>
+<li>
+<p>函数注释：<code>option + command + /</code></p>
+</li>
+<li>
+<p>cursorTip</p>
+</li>
+<li>
+<p>fileheader</p>
+</li>
 </ul>
 <p>配置</p>
 <div><pre><code><span>"fileheader.configObj"</span><span>:</span> <span>{</span>
@@ -1508,13 +1520,13 @@ console<span>.</span><span>clear</span><span>(</span><span>)</span>  <span>// �
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">VuePress相关</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/VuePress%E9%85%8D%E7%BD%AE%E7%AF%87/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/VuePress%E9%85%8D%E7%BD%AE%E7%AF%87/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="vuepress相关"> VuePress相关</h1>
 <h2 id="配置"> 配置</h2>
 <p><a href="https://zhuanlan.zhihu.com/p/70474479" target="_blank" rel="noopener noreferrer">vuepress中实现代码折叠、高亮</a></p>
@@ -1534,13 +1546,13 @@ console<span>.</span><span>clear</span><span>(</span><span>)</span>  <span>// �
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">emoji表情</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/emoji/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/emoji/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="emoji表情"> emoji表情</h1>
 <table>
 <thead>
@@ -4154,13 +4166,13 @@ console<span>.</span><span>clear</span><span>(</span><span>)</span>  <span>// �
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">eslintrc文件配置</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/eslintrc%E6%96%87%E4%BB%B6/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/eslintrc%E6%96%87%E4%BB%B6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="eslintrc文件配置"> eslintrc文件配置</h1>
 <h2 id="eslint规则"> eslint规则</h2>
 <p><a href="https://juejin.im/post/5efc44225188252e4e0789c6" target="_blank" rel="noopener noreferrer">掘金文章 - eslint代码规范配置（含详细规则介绍和示例说明）</a></p>
@@ -4369,13 +4381,13 @@ console<span>.</span><span>clear</span><span>(</span><span>)</span>  <span>// �
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">gitignore文件配置</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/gitignore%E6%96%87%E4%BB%B6/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/gitignore%E6%96%87%E4%BB%B6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="gitignore文件配置"> gitignore文件配置</h1>
 <h2 id="_1、规则优先级"> 1、规则优先级</h2>
 <p>命令行 &gt; 当前目录 &gt; 父级目录 &gt; ... &gt; $GIT_DIR/info/exclude &gt; core.excludesfile</p>
@@ -4414,13 +4426,13 @@ git commit -m &#39;update .gitignore&#39;
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">md高亮语言</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/hignlight/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/hignlight/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="md高亮语言"> md高亮语言</h1>
 <table>
 <thead>
@@ -4792,13 +4804,13 @@ git commit -m &#39;update .gitignore&#39;
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">iterm2+ohmyzsh</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/iterm2+ohmyzsh/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/iterm2+ohmyzsh/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="iterm2-ohmyzsh"> iterm2+ohmyzsh</h1>
 <h2 id="推荐阅读"> 推荐阅读</h2>
 <p><a href="https://zhuanlan.zhihu.com/p/87051231" target="_blank" rel="noopener noreferrer">构建 iTerm2 环境</a></p>
@@ -4889,13 +4901,13 @@ wezm
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">字符集（整理自网络）</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/%E5%AD%97%E7%AC%A6%E9%9B%86/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%85%8D%E7%BD%AE%E9%80%9F%E6%9F%A5/%E5%AD%97%E7%AC%A6%E9%9B%86/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="字符集-整理自网络"> 字符集（整理自网络）</h1>
 <h2 id="javascript转义符"> JavaScript转义符</h2>
 <table>
@@ -7217,13 +7229,13 @@ wezm
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Git常用命令和问题</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8C%E9%97%AE%E9%A2%98/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8C%E9%97%AE%E9%A2%98/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="git常用命令和问题"> Git常用命令和问题</h1>
 <p>本文档多为个人学习生活中最常用到的命令汇总，和遇见的问题及解决方案，大部分在其他网络博客或文章中都有提及，只是每次碰到相同问题还是要重新查文档，很不方便，因此将遇到的问题汇总至本文档里。方便学习和查找。</p>
 <h2 id="推荐资料"> 推荐资料</h2>
@@ -7354,13 +7366,13 @@ window系统解决方案可参考此文章：<a href="https://www.jianshu.com/p/
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">常见开发问题</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/%E5%B8%B8%E8%A7%81%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/%E5%B8%B8%E8%A7%81%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="常见开发问题"> 常见开发问题</h1>
 <h2 id="electron-element-ui表格渲染失败"> electron: element-ui表格渲染失败</h2>
 <div><pre><code><span>const</span> originHref <span>=</span> <span>"原文链接: https://blog.csdn.net/qq_17285877/article/details/96095936#_6"</span><span>;</span>
@@ -7430,13 +7442,13 @@ exited with code ERR_ELECTRON_BUILDER_CANNOT_EXECUTE
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">常见移动端bug</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/%E5%B8%B8%E8%A7%81%E7%A7%BB%E5%8A%A8%E7%AB%AFbug/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/%E5%B8%B8%E8%A7%81%E7%A7%BB%E5%8A%A8%E7%AB%AFbug/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="常见移动端bug"> 常见移动端bug</h1>
 <h2 id="弹层内容滑动时body跟着滑动-ios"> 弹层内容滑动时body跟着滑动（ios）</h2>
 <div><pre><code><span>data</span><span>(</span><span>)</span> <span>{</span>
@@ -7543,13 +7555,13 @@ time <span>=</span> time<span>.</span><span>replace</span><span>(</span><span><s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">手机调试</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/%E6%89%8B%E6%9C%BA%E8%B0%83%E8%AF%95/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/%E6%89%8B%E6%9C%BA%E8%B0%83%E8%AF%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="手机调试"> 手机调试</h1>
 <h2 id="chrome调试android手机"> chrome调试android手机</h2>
 <h3 id="调试需知"> 调试需知</h3>
@@ -7613,13 +7625,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">杂七杂八</title>
     <id>https://fengling68.github.io/blogs/doc/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/</id>
     <link href="https://fengling68.github.io/blogs/doc/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="杂七杂八"> 杂七杂八</h1>
 <h2 id="ios安装ipa安装包"> ios安装ipa安装包</h2>
 <p><a href="https://www.jianshu.com/p/dfb63e792cf6?from=singlemessage" target="_blank" rel="noopener noreferrer">ios安装ipa安装包</a></p>
@@ -7632,13 +7644,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">动漫清单</title>
     <id>https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E5%8A%A8%E6%BC%AB%E6%B8%85%E5%8D%95/</id>
     <link href="https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E5%8A%A8%E6%BC%AB%E6%B8%85%E5%8D%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="动漫清单"> 动漫清单</h1>
 <p>重要的人，不能忘记的人，不想忘记的人。你，是谁？</p>
 <h2 id="动漫"> 动漫</h2>
@@ -7698,13 +7710,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">小说清单</title>
     <id>https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E5%B0%8F%E8%AF%B4%E6%B8%85%E5%8D%95/</id>
     <link href="https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E5%B0%8F%E8%AF%B4%E6%B8%85%E5%8D%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="小说清单"> 小说清单</h1>
 <p>大概从高考完后开始看小说，从最初的现代言情到古代言情，从空间种田到穿越重生，从悬疑相术到玄幻奇幻，有些小说让人回味无穷，有些作者本本精品，这里记录本人曾看过的不错的小说。</p>
 <h2 id="小说"> 小说</h2>
@@ -7721,13 +7733,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">影视清单</title>
     <id>https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E5%BD%B1%E8%A7%86%E6%B8%85%E5%8D%95/</id>
     <link href="https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E5%BD%B1%E8%A7%86%E6%B8%85%E5%8D%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="影视清单"> 影视清单</h1>
 <h2 id="电影"> 电影</h2>
 <ul>
@@ -7770,13 +7782,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">待看指南</title>
     <id>https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E5%BE%85%E7%9C%8B%E6%8C%87%E5%8D%97/</id>
     <link href="https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E5%BE%85%E7%9C%8B%E6%8C%87%E5%8D%97/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="待看指南"> 待看指南</h1>
 <h2 id="漫画"> 漫画</h2>
 <ul>
@@ -8026,13 +8038,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">漫画清单</title>
     <id>https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E6%BC%AB%E7%94%BB%E6%B8%85%E5%8D%95/</id>
     <link href="https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E6%BC%AB%E7%94%BB%E6%B8%85%E5%8D%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="漫画清单"> 漫画清单</h1>
 <ul>
 <li><input type="checkbox" checked="checked" disabled="disabled" id="task-item-0"><label for="task-item-0"> 一品芝麻狐</label></li>
@@ -8057,13 +8069,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">网站收藏</title>
     <id>https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E8%A7%86%E9%A2%91%E7%BD%91%E5%9D%80%E6%94%B6%E8%97%8F/</id>
     <link href="https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E8%A7%86%E9%A2%91%E7%BD%91%E5%9D%80%E6%94%B6%E8%97%8F/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="网站收藏"> 网站收藏</h1>
 <h2 id="电子书"> 电子书</h2>
 <p><a href="https://www.r5k.com/" target="_blank" rel="noopener noreferrer">任我看小说网</a></p>
@@ -8085,13 +8097,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">语录集锦</title>
     <id>https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E8%AF%AD%E5%BD%95%E9%9B%86%E9%94%A6/</id>
     <link href="https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E8%AF%AD%E5%BD%95%E9%9B%86%E9%94%A6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="语录集锦"> 语录集锦</h1>
 <h2 id="语录收集网站"> 语录收集网站</h2>
 <p><a href="https://www.juzikong.com/discovery/hot" target="_blank" rel="noopener noreferrer">句子控</a></p>
@@ -8128,13 +8140,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">高情商的50种约会方式</title>
     <id>https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E9%AB%98%E6%83%85%E5%95%86%E7%BA%A6%E4%BC%9A%E6%96%B9%E5%BC%8F/</id>
     <link href="https://fengling68.github.io/blogs/life/%E6%B8%85%E5%8D%95/%E9%AB%98%E6%83%85%E5%95%86%E7%BA%A6%E4%BC%9A%E6%96%B9%E5%BC%8F/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="高情商的50种约会方式"> 高情商的50种约会方式</h1>
 <p>很意外的在一张图片上看到的“高情商的50种约会方式”，非原创这里备份一下，哈哈哈😊</p>
 <h2 id="景观类"> 景观类</h2>
@@ -8151,13 +8163,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">哪吒之魔童降世</title>
     <id>https://fengling68.github.io/blogs/life/%E8%AF%BB%E4%B9%A6%E8%A7%82%E5%BD%B1/%E5%93%AA%E5%90%92%E4%B9%8B%E9%AD%94%E7%AB%A5%E9%99%8D%E4%B8%96/</id>
     <link href="https://fengling68.github.io/blogs/life/%E8%AF%BB%E4%B9%A6%E8%A7%82%E5%BD%B1/%E5%93%AA%E5%90%92%E4%B9%8B%E9%AD%94%E7%AB%A5%E9%99%8D%E4%B8%96/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="哪吒之魔童降世"> 哪吒之魔童降世</h1>
 <p>《哪吒之魔童降世》于2019年7月26日在中国内地上映，一经上映便受到多方关注，票房更是节节高升，截止到2019年10月10日，以49.7亿元的票房成绩在总票房排行榜上位列第二，仅次于《战狼2》。很喜欢动漫的我也去观看了这部影片，因而写下这篇文章记录影片相关信息。</p>
 <p>我和室友是在2019年7月28日晚上去影院看的《哪吒之魔童降世》，个人很喜欢这部动漫电影，里面胖胖的太乙真人，生而为魔的丑萌哪吒，背负龙族命运的龙太子，还有殷夫人、李靖、申公豹等角色丰富个性鲜明的人物。故事中有笑点也有泪点，让人跟着哪吒的命运而跌宕起伏，看的过瘾。</p>
@@ -8200,13 +8212,13 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">猫狗手账记录</title>
     <id>https://fengling68.github.io/blogs/life/%E9%9A%8F%E7%AC%94/%E7%8C%AB%E7%8B%97%E6%89%8B%E8%B4%A6%E8%AE%B0%E5%BD%95/</id>
     <link href="https://fengling68.github.io/blogs/life/%E9%9A%8F%E7%AC%94/%E7%8C%AB%E7%8B%97%E6%89%8B%E8%B4%A6%E8%AE%B0%E5%BD%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="猫狗手账记录"> 猫狗手账记录</h1>
 <p>这是一张用“时光手账”app创建的“那些猫猫狗狗们”的手账图。生活中总会有些小感动、小乐趣，借助有趣的app记录生活的点点滴滴，很不错哦～</p>
 <p><img src="https://fengling68.github.io/imgbed/images/1576936407-1440x4540.jpeg" alt="WechatIMG5" /></p>
@@ -8214,23 +8226,23 @@ bundle id 示例2：com.dev.ljp.second
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Home</title>
     <id>https://fengling68.github.io/blogs/</id>
     <link href="https://fengling68.github.io/blogs/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">常用代码</title>
     <id>https://fengling68.github.io/blogs/snippet/css/01-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/</id>
     <link href="https://fengling68.github.io/blogs/snippet/css/01-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="常用代码"> 常用代码</h1>
 <h2 id="img无src时隐藏"> img无src时隐藏</h2>
 <div><pre><code><span>img[src=""],
@@ -8575,17 +8587,33 @@ img:not([src])</span> <span>{</span>
 <span>}</span>
 </code></pre>
 </div><p><img src="https://fengling68.github.io/imgbed/images/1578920981-532x226.png" alt="文字遮罩预览" /></p>
-]]></content>
+<h2 id="input输入光标颜色"> input输入光标颜色</h2>
+<div><pre><code><span>input</span> <span>{</span>
+  <span>caret-color</span><span>:</span> red<span>;</span>
+<span>}</span>
+</code></pre>
+</div><h2 id="解决ios端z-index层级问题"> 解决ios端z-index层级问题</h2>
+<div><pre><code><span>.parent</span> <span>{</span>
+  <span>position</span><span>:</span> absolute<span>;</span>
+  <span>z-index</span><span>:</span> 10<span>;</span>
+  <span>transform</span><span>:</span> <span>translateZ</span><span>(</span>1px<span>)</span><span>;</span>
+  <span>.child</span> <span>{</span>
+    <span>backface-visibility</span><span>:</span> hidden<span>;</span>
+    <span>-webkit-backface-visibility</span><span>:</span> hidden<span>;</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+</div>]]></content>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Canvas</title>
     <id>https://fengling68.github.io/blogs/snippet/css/canvas%E7%94%BB%E5%9B%BE/</id>
     <link href="https://fengling68.github.io/blogs/snippet/css/canvas%E7%94%BB%E5%9B%BE/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="canvas"> Canvas</h1>
 <h2 id="获取设备分辨率"> 获取设备分辨率</h2>
 <div><pre><code><span>getPixelRatio</span><span>(</span><span>context</span><span>)</span> <span>{</span>
@@ -8767,13 +8795,13 @@ context<span>.</span>shadowBlur <span>=</span> <span>0</span><span>;</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Lottie</title>
     <id>https://fengling68.github.io/blogs/snippet/css/lottie%E5%8A%A8%E7%94%BB/</id>
     <link href="https://fengling68.github.io/blogs/snippet/css/lottie%E5%8A%A8%E7%94%BB/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="lottie"> Lottie</h1>
 <p>很久之前写过的一个Lottie动画demo，这里贴下demo。</p>
 <h2 id="使用步骤"> 使用步骤</h2>
@@ -8909,13 +8937,13 @@ context<span>.</span>shadowBlur <span>=</span> <span>0</span><span>;</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">常用代码</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/01-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/01-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="常用代码"> 常用代码</h1>
 <h2 id="处理错误图片"> 处理错误图片</h2>
 <div><pre><code>@error<span>=</span><span>"handleImgError($event)"</span>
@@ -9164,13 +9192,44 @@ pre <span>{</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
+  </entry>
+  <entry>
+    <title type="html">常用代码2</title>
+    <id>https://fengling68.github.io/blogs/snippet/javascript/02-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/</id>
+    <link href="https://fengling68.github.io/blogs/snippet/javascript/02-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/"/>
+    <updated>2022-01-16T06:01:39.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="常用代码2"> 常用代码2</h1>
+<h2 id="获取对象中的值"> 获取对象中的值</h2>
+<div><pre><code><span>/**
+ * @description: 获取对象中的值
+ * @param {Array} path a.b.c=[a, b, c] a.b[0].c[1]=[a, b, 0, c, 1]
+ * @return {Object} obj
+ */</span>
+<span>function</span> <span>getJsonValue</span><span>(</span><span>path <span>=</span> <span>[</span><span>]</span><span>,</span> obj <span>=</span> <span>{</span><span>}</span></span><span>)</span> <span>{</span>
+  <span>return</span> path<span>.</span><span>reduce</span><span>(</span><span>(</span><span>obj<span>,</span> item</span><span>)</span> <span>=></span> <span>{</span>
+    <span>try</span> <span>{</span>
+      <span>return</span> obj<span>[</span>item<span>]</span><span>;</span>
+    <span>}</span> <span>catch</span> <span>(</span>error<span>)</span> <span>{</span>
+      <span>return</span> obj <span>===</span> <span>undefined</span> <span>?</span> <span>undefined</span> <span>:</span> <span>null</span><span>;</span>
+    <span>}</span>
+  <span>}</span><span>,</span> obj<span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+</div><h2 id="console-log加样式"> console.log加样式</h2>
+<div><pre><code>console<span>.</span><span>log</span><span>(</span><span><span>`</span><span>%c 文本文本文本</span><span>`</span></span><span>,</span> <span>'background: red; color:#fff;'</span><span>)</span><span>;</span>
+</code></pre>
+</div>]]></content>
+    <contributor>
+      <name/>
+    </contributor>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">UserAgent</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/UserAgent/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/UserAgent/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="useragent"> UserAgent</h1>
 <h2 id="ua是什么"> UA是什么</h2>
 <p>User Agent中文名为用户代理，简称 UA，它是一个特殊字符串头，使得服务器能够识别客户使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎、浏览器语言、浏览器插件等。</p>
@@ -9220,13 +9279,13 @@ pre <span>{</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Date转换</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/date/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/date/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="date转换"> Date转换</h1>
 <h2 id="获取时间戳"> 获取时间戳</h2>
 <div><pre><code>Math<span>.</span><span>floor</span><span>(</span><span>new</span> <span>Date</span><span>(</span><span>)</span><span>.</span><span>getTime</span><span>(</span><span>)</span> <span>/</span> <span>1000</span><span>)</span><span>;</span>
@@ -9305,13 +9364,13 @@ Date<span>.</span><span>parse</span><span>(</span><span>new</span> <span>Date</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">img图片相关</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/img%E5%9B%BE%E7%89%87%E7%9B%B8%E5%85%B3/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/img%E5%9B%BE%E7%89%87%E7%9B%B8%E5%85%B3/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="img图片相关"> img图片相关</h1>
 <h2 id="检测图片链接是否存在"> 检测图片链接是否存在</h2>
 <div><pre><code><span>function</span> <span>validateImage</span><span>(</span><span>src<span>,</span> cb</span><span>)</span> <span>{</span>
@@ -9362,13 +9421,13 @@ Date<span>.</span><span>parse</span><span>(</span><span>new</span> <span>Date</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">引入所有文件</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/importAll%E6%96%87%E4%BB%B6/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/importAll%E6%96%87%E4%BB%B6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="引入所有文件"> 引入所有文件</h1>
 <div><pre><code><span>/******** importAll.js *********/</span>
 <span>let</span> cache <span>=</span> <span>{</span><span>}</span><span>;</span>
@@ -9394,13 +9453,13 @@ Date<span>.</span><span>parse</span><span>(</span><span>new</span> <span>Date</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">input键盘输入</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/input%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/input%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="input键盘输入"> input键盘输入</h1>
 <h2 id="调起数字键盘"> 调起数字键盘</h2>
 <div><pre><code><span>// ios端bug：弹窗数字键盘但可以输入非数字字符</span>
@@ -9445,13 +9504,13 @@ Date<span>.</span><span>parse</span><span>(</span><span>new</span> <span>Date</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">location相关</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/location/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/location/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="location相关"> location相关</h1>
 <h2 id="删除url上某参数并替换当前url"> 删除url上某参数并替换当前url</h2>
 <div><pre><code><span>function</span> <span>deleteUrlParams</span><span>(</span><span>param</span><span>)</span> <span>{</span>
@@ -9470,13 +9529,13 @@ Date<span>.</span><span>parse</span><span>(</span><span>new</span> <span>Date</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">判断元素滚动位置</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/%E5%88%A4%E6%96%AD%E5%85%83%E7%B4%A0%E6%BB%9A%E5%8A%A8%E4%BD%8D%E7%BD%AE/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/%E5%88%A4%E6%96%AD%E5%85%83%E7%B4%A0%E6%BB%9A%E5%8A%A8%E4%BD%8D%E7%BD%AE/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="判断元素滚动位置"> 判断元素滚动位置</h1>
 <h2 id="判断某元素是否在视口内"> 判断某元素是否在视口内</h2>
 <div><pre><code><span>// 设置变量</span>
@@ -9586,13 +9645,13 @@ window<span>.</span><span>onscroll</span> <span>=</span> <span>(</span><span>)</
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">判断有无emoji</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/%E5%88%A4%E6%96%AD%E6%9C%89%E6%97%A0emoji/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/%E5%88%A4%E6%96%AD%E6%9C%89%E6%97%A0emoji/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="判断有无emoji"> 判断有无emoji</h1>
 <p>项目中显示文案超长截取时，当字符中有emoji表情会截取异常，在网上看到一篇博文很好的解决了这个问题，这里简单贴下代码。</p>
 <div><pre><code><span>export</span> <span>function</span> <span>unicodeCut</span><span>(</span><span>val<span>,</span> isSplit</span><span>)</span> <span>{</span>
@@ -9643,13 +9702,13 @@ window<span>.</span><span>onscroll</span> <span>=</span> <span>(</span><span>)</
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">数组相关</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/%E6%95%B0%E7%BB%84%E7%9B%B8%E5%85%B3/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/%E6%95%B0%E7%BB%84%E7%9B%B8%E5%85%B3/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="数组相关"> 数组相关</h1>
 <h2 id="数组填充"> 数组填充</h2>
 <div><pre><code><span>const</span> initArr <span>=</span> <span>[</span><span>8</span><span>,</span> <span>8</span><span>,</span> <span>8</span><span>]</span><span>;</span>
@@ -9660,13 +9719,13 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>...</span
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">动画转盘抽奖等</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/%E6%96%87%E5%AD%97%E5%BC%AF%E6%9B%B2%E6%95%88%E6%9E%9C/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/%E6%96%87%E5%AD%97%E5%BC%AF%E6%9B%B2%E6%95%88%E6%9E%9C/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="动画转盘抽奖等"> 动画转盘抽奖等</h1>
 <h2 id="转盘计算奖品旋转位置"> 转盘计算奖品旋转位置</h2>
 <div><pre><code><span>computingAngle</span><span>(</span><span>awards</span><span>)</span> <span>{</span>
@@ -9760,13 +9819,13 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>...</span
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">深浅拷贝</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="深浅拷贝"> 深浅拷贝</h1>
 <h2 id="封装方法"> 封装方法</h2>
 <div><pre><code><span>function</span> <span>clone</span> <span>(</span><span>data</span><span>)</span> <span>{</span>
@@ -9876,13 +9935,13 @@ console<span>.</span><span>log</span><span>(</span><span>'obj3'</span><span>,</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">金额处理</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/%E9%87%91%E9%A2%9D%E5%A4%84%E7%90%86/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/%E9%87%91%E9%A2%9D%E5%A4%84%E7%90%86/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="金额处理"> 金额处理</h1>
 <h2 id="金额-分-转换-元-处理"> 金额'分'转换'元'处理</h2>
 <div><pre><code><span>priceHandle</span><span>(</span><span>price</span><span>)</span> <span>{</span>
@@ -9908,13 +9967,13 @@ console<span>.</span><span>log</span><span>(</span><span>'obj3'</span><span>,</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">随机骰子</title>
     <id>https://fengling68.github.io/blogs/snippet/javascript/%E9%9A%8F%E6%9C%BA%E9%AA%B0%E5%AD%90/</id>
     <link href="https://fengling68.github.io/blogs/snippet/javascript/%E9%9A%8F%E6%9C%BA%E9%AA%B0%E5%AD%90/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="随机骰子"> 随机骰子</h1>
 <div><pre><code><span>// 随机数值</span>
 <span>function</span> <span>randomNum</span><span>(</span><span>min<span>,</span> max</span><span>)</span> <span>{</span>
@@ -9977,13 +10036,13 @@ console<span>.</span><span>log</span><span>(</span><span>{</span>diceNum<span>,<
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">文件读取相关</title>
     <id>https://fengling68.github.io/blogs/snippet/node/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</id>
     <link href="https://fengling68.github.io/blogs/snippet/node/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="文件读取相关"> 文件读取相关</h1>
 <h2 id="读取某文件夹下的所有文件名"> 读取某文件夹下的所有文件名</h2>
 <p>网友提供的方法，仅做笔记记录，来源：<a href="https://segmentfault.com/q/1010000008827322" target="_blank" rel="noopener noreferrer">https://segmentfault.com/q/1010000008827322</a></p>
@@ -10014,13 +10073,13 @@ console<span>.</span><span>log</span><span>(</span><span>{</span>diceNum<span>,<
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">chrome浏览器相关</title>
     <id>https://fengling68.github.io/blogs/snippet/other/chrome/</id>
     <link href="https://fengling68.github.io/blogs/snippet/other/chrome/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="chrome浏览器相关"> chrome浏览器相关</h1>
 <h2 id="浏览器变编辑器"> 浏览器变编辑器</h2>
 <div><pre><code><span># 浏览器网址栏输入</span>
@@ -10030,13 +10089,13 @@ data:text/html,<span>&lt;</span>html contenteditable<span>></span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Chrome书签调试</title>
     <id>https://fengling68.github.io/blogs/snippet/other/chrome%E4%B9%A6%E7%AD%BE/</id>
     <link href="https://fengling68.github.io/blogs/snippet/other/chrome%E4%B9%A6%E7%AD%BE/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="chrome书签调试"> Chrome书签调试</h1>
 <p>在掘金上看到一篇借助Chrome书签添加调试代码的文章，感觉非常棒，这里只摘记了核心创建步骤和示例代码，详细内容可查看作者原文。</p>
 <h2 id="添加书签步骤"> 添加书签步骤</h2>
@@ -10085,13 +10144,13 @@ data:text/html,<span>&lt;</span>html contenteditable<span>></span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">md表格生成</title>
     <id>https://fengling68.github.io/blogs/snippet/other/md%E8%A1%A8%E6%A0%BC%E7%94%9F%E6%88%90/</id>
     <link href="https://fengling68.github.io/blogs/snippet/other/md%E8%A1%A8%E6%A0%BC%E7%94%9F%E6%88%90/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="md表格生成"> md表格生成</h1>
 <p>本示例并不具备通用性，仅在一次场景中使用到，此处记录下，以备查阅。</p>
 <div><pre><code><span>var</span> data <span>=</span> <span>[</span>
@@ -10118,13 +10177,13 @@ console<span>.</span><span>log</span><span>(</span>str<span>)</span><span>;</spa
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">tampermonkey油猴</title>
     <id>https://fengling68.github.io/blogs/snippet/other/tampermonkey%E6%B2%B9%E7%8C%B4/</id>
     <link href="https://fengling68.github.io/blogs/snippet/other/tampermonkey%E6%B2%B9%E7%8C%B4/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="tampermonkey油猴"> tampermonkey油猴</h1>
 <h2 id="元数据块"> 元数据块</h2>
 <h3 id="固定格式"> 固定格式</h3>
@@ -10310,13 +10369,13 @@ console<span>.</span><span>log</span><span>(</span>str<span>)</span><span>;</spa
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">简单文件模板</title>
     <id>https://fengling68.github.io/blogs/snippet/other/template/</id>
     <link href="https://fengling68.github.io/blogs/snippet/other/template/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="简单文件模板"> 简单文件模板</h1>
 <h2 id="class-js"> Class.js</h2>
 <div><pre><code><span>export</span> <span>default</span> <span>class</span> <span>Common</span><span>{</span>
@@ -10396,13 +10455,13 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">下载文件</title>
     <id>https://fengling68.github.io/blogs/snippet/other/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</id>
     <link href="https://fengling68.github.io/blogs/snippet/other/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="下载文件"> 下载文件</h1>
 <h2 id="浏览器下载图片"> 浏览器下载图片</h2>
 <p>一般来说前端实现的思路就是通过动态创建a标签，设置其download属性，最后删除a就好了，对于不是图片的文件一般都可以下载，但是如果是图片，有些浏览器会自动打开图片，所以我们需要手动把它转化为data:URLs或blob:URLs，基于这个原理，我们可以用fileReader，也可以用fetch-URL.createObjectURL，这里经过大量测试我采用后者：</p>
@@ -10428,13 +10487,49 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
+  </entry>
+  <entry>
+    <title type="html">常用代码</title>
+    <id>https://fengling68.github.io/blogs/snippet/vue/01-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/</id>
+    <link href="https://fengling68.github.io/blogs/snippet/vue/01-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/"/>
+    <updated>2022-01-16T06:01:39.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="常用代码"> 常用代码</h1>
+<h2 id="序列帧样式适配"> 序列帧样式适配</h2>
+<div><pre><code><span>computed</span><span>:</span> <span>{</span>
+  <span>raiseStyle</span><span>(</span><span>)</span> <span>{</span>
+    <span>const</span> innerWidth <span>=</span> window<span>.</span>innerWidth <span>||</span> <span>375</span><span>;</span>
+    <span>return</span> <span>{</span>
+      <span>transform</span><span>:</span> <span><span>`</span><span>scale(</span><span><span>${</span><span>(</span><span>0.5</span> <span>*</span> innerWidth<span>)</span> <span>/</span> <span>375</span><span>}</span></span><span>)</span><span>`</span></span>
+    <span>}</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+</div><h2 id="scroll监听改变背景色"> scroll监听改变背景色</h2>
+<div><pre><code>window<span>.</span><span>addEventListener</span><span>(</span><span>'scroll'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>const</span> scrollTop <span>=</span> document<span>.</span>documentElement<span>.</span>scrollTop <span>||</span> document<span>.</span>body<span>.</span>scrollTop<span>;</span>
+  dom<span>.</span>style<span>.</span>backgroundColor <span>=</span> scrollTop <span>></span> <span>50</span> <span>?</span> <span>rgba</span><span>(</span><span>255</span><span>,</span> <span>0</span><span>,</span> <span>0</span><span>,</span> <span>1</span><span>)</span> <span>:</span> <span>'transparent'</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+</div><h2 id="pagehide监听暂停视频"> pagehide监听暂停视频</h2>
+<div><pre><code>window<span>.</span><span>addEventListener</span><span>(</span><span>'visibilitychange'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>const</span> <span>{</span> vedioRef <span>}</span> <span>=</span> <span>this</span><span>.</span>$refs<span>;</span>
+  <span>if</span> <span>(</span>vedioRef <span>&amp;&amp;</span> <span>!</span>vedioRef<span>.</span>paused<span>)</span> <span>{</span>
+    vedioRef<span>.</span><span>pause</span><span>(</span><span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span><span>)</span>
+</code></pre>
+</div>]]></content>
+    <contributor>
+      <name/>
+    </contributor>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">组件妙用</title>
     <id>https://fengling68.github.io/blogs/snippet/vue/%E7%BB%84%E4%BB%B6%E5%A6%99%E7%94%A8/</id>
     <link href="https://fengling68.github.io/blogs/snippet/vue/%E7%BB%84%E4%BB%B6%E5%A6%99%E7%94%A8/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="组件妙用"> 组件妙用</h1>
 <h2 id="动态-v-for-组件"> 动态 v-for 组件</h2>
 <div><pre><code><span><span><span>&lt;</span>component</span>
@@ -10464,13 +10559,13 @@ this.$emit('update:childData', newValue);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">兄弟组件通信EventBus.js</title>
     <id>https://fengling68.github.io/blogs/snippet/vue/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</id>
     <link href="https://fengling68.github.io/blogs/snippet/vue/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h2 id="兄弟组件通信eventbus-js"> 兄弟组件通信EventBus.js</h2>
 <div><pre><code><span>import</span> Vue <span>from</span> <span>'vue'</span>
 <span>export</span> <span>const</span> EventBus <span>=</span> <span>new</span> <span>Vue</span><span>(</span><span>)</span><span>;</span>
@@ -10484,13 +10579,13 @@ EventBus<span>.</span><span>$on</span><span>(</span><span>'event'</span><span>,<
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">路由切换动画</title>
     <id>https://fengling68.github.io/blogs/snippet/vue/%E8%B7%AF%E7%94%B1%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB/</id>
     <link href="https://fengling68.github.io/blogs/snippet/vue/%E8%B7%AF%E7%94%B1%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="路由切换动画"> 路由切换动画</h1>
 <div><pre><code><span>&lt;</span>transition <span>:</span>name<span>=</span><span>"transitionName"</span><span>></span>
   <span>&lt;</span>router<span>-</span>view <span>class</span><span>=</span><span>"transitionBody"</span><span>></span><span>&lt;</span><span>/</span>router<span>-</span>view<span>></span>
@@ -10530,13 +10625,13 @@ EventBus<span>.</span><span>$on</span><span>(</span><span>'event'</span><span>,<
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">微信相关</title>
     <id>https://fengling68.github.io/blogs/snippet/weixin/weinxin/</id>
     <link href="https://fengling68.github.io/blogs/snippet/weixin/weinxin/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="微信相关"> 微信相关</h1>
 <h2 id="关闭当前会话层"> 关闭当前会话层</h2>
 <div><pre><code><span>if</span> <span>(</span>window<span>.</span>WeixinJSBridge<span>)</span> <span>{</span>
@@ -10547,13 +10642,13 @@ EventBus<span>.</span><span>$on</span><span>(</span><span>'event'</span><span>,<
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">ps基础</title>
     <id>https://fengling68.github.io/blogs/web/a-html/01-PS%E5%9F%BA%E7%A1%80/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/01-PS%E5%9F%BA%E7%A1%80/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="ps基础"> ps基础</h1>
 <h2 id="前端必备ps技能"> 前端必备PS技能</h2>
 <ol>
@@ -10623,13 +10718,13 @@ PS插件CSSPs：获取CSS样式
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">浏览器兼容问题</title>
     <id>https://fengling68.github.io/blogs/web/a-html/02-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/02-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="浏览器兼容问题"> 浏览器兼容问题</h1>
 <h2 id="浏览器"> 浏览器</h2>
 <div><pre><code>几种常见的浏览器：IE、Firefox、Safari、Chrome及Opera（壳浏览器）
@@ -10840,13 +10935,13 @@ Google 官方提供了对 Google Frame 插件安装情况的检测，这里直�
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">HTML基础1</title>
     <id>https://fengling68.github.io/blogs/web/a-html/03-HTML%E5%9F%BA%E7%A1%80/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/03-HTML%E5%9F%BA%E7%A1%80/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="html基础1"> HTML基础1</h1>
 <h2 id="万维网"> 万维网</h2>
 <div><pre><code>前端是指页面的表现形式，浏览器负责解释html页面
@@ -10933,13 +11028,13 @@ P标签虽然是块级元素，但只能嵌套行内元素
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">HTML基础2</title>
     <id>https://fengling68.github.io/blogs/web/a-html/04-HTML%E5%9F%BA%E7%A1%80/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/04-HTML%E5%9F%BA%E7%A1%80/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="html基础2"> HTML基础2</h1>
 <h2 id="什么是url"> 什么是URL</h2>
 <div><pre><code>URL（Uniform Resource Locator）：统一资源定位器，路径
@@ -11063,13 +11158,13 @@ type列表类型：disc(实心圆，默认)  circle(空心圆)  square(实心矩
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">HTML基础3</title>
     <id>https://fengling68.github.io/blogs/web/a-html/05-HTML%E5%9F%BA%E7%A1%80/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/05-HTML%E5%9F%BA%E7%A1%80/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="html基础3"> HTML基础3</h1>
 <h2 id="结构标记"> 结构标记</h2>
 <h3 id="_1、作用"> 1、作用</h3>
@@ -11199,13 +11294,13 @@ option属性：value   selected(预选中)
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">HTML、CSS、JS知识点</title>
     <id>https://fengling68.github.io/blogs/web/a-html/06-html%E5%9F%BA%E7%A1%80/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/06-html%E5%9F%BA%E7%A1%80/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="html、css、js知识点"> HTML、CSS、JS知识点</h1>
 <h2 id="html-篇"> HTML 篇</h2>
 <h3 id="_1、web语义化-和-seo"> 1、Web语义化 和 SEO</h3>
@@ -11476,13 +11571,13 @@ document也提供了很多api来查找特定的dom对象，比如getElementById,
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">video和audio</title>
     <id>https://fengling68.github.io/blogs/web/a-html/07-video%E5%92%8Caudio/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/07-video%E5%92%8Caudio/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="video和audio"> video和audio</h1>
 <h2 id="一、音频-audio-视频-video"> 一、音频(audio) 视频(video)</h2>
 <div><pre><code>&lt;audio src=&quot;media/loveyou.ogg&quot; controls=&quot;controls&quot; autoplay=&quot;autoplay&quot; loop=&quot;loop&quot;&gt;&lt;/audio&gt;
@@ -11527,13 +11622,13 @@ progress           当浏览器正在下载音频/视频时
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">rem、移动端事件、html加载</title>
     <id>https://fengling68.github.io/blogs/web/a-html/08-rem%E3%80%81%E7%A7%BB%E5%8A%A8%E7%AB%AF%E4%BA%8B%E4%BB%B6%E3%80%81html%E5%8A%A0%E8%BD%BD/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/08-rem%E3%80%81%E7%A7%BB%E5%8A%A8%E7%AB%AF%E4%BA%8B%E4%BB%B6%E3%80%81html%E5%8A%A0%E8%BD%BD/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="rem、移动端事件、html加载"> rem、移动端事件、html加载</h1>
 <h2 id="一、rem、em、px的关系"> 一、rem、em、px的关系</h2>
 <h3 id="_1、什么是rem"> 1、什么是rem？</h3>
@@ -11609,13 +11704,13 @@ document.documentElement.clientWidth得到设备实际宽度
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">audio音乐播放</title>
     <id>https://fengling68.github.io/blogs/web/a-html/09-music/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/09-music/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="audio音乐播放"> audio音乐播放</h1>
 <h2 id="audio有进度条版"> audio有进度条版</h2>
 <div><pre><code>// html部分
@@ -12082,13 +12177,13 @@ document.documentElement.clientWidth得到设备实际宽度
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">video视频组件</title>
     <id>https://fengling68.github.io/blogs/web/a-html/10-video/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/10-video/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="video视频组件"> video视频组件</h1>
 <div><pre><code><span><span><span>&lt;</span>template</span><span>></span></span>
   <span><span><span>&lt;</span>div</span> <span>class</span><span><span>=</span><span>"</span>wrap<span>"</span></span> <span>@click.prevent.stop</span><span>></span></span>
@@ -12272,13 +12367,13 @@ document.documentElement.clientWidth得到设备实际宽度
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">upload上传</title>
     <id>https://fengling68.github.io/blogs/web/a-html/11-upload/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/11-upload/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="upload上传"> upload上传</h1>
 <div><pre><code><span><span>&lt;!</span><span>DOCTYPE</span> <span>html</span><span>></span></span>
 <span><span><span>&lt;</span>html</span> <span>lang</span><span><span>=</span><span>"</span>en<span>"</span></span><span>></span></span>
@@ -12483,13 +12578,13 @@ document.documentElement.clientWidth得到设备实际宽度
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">flex</title>
     <id>https://fengling68.github.io/blogs/web/a-html/flex/</id>
     <link href="https://fengling68.github.io/blogs/web/a-html/flex/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="flex"> flex</h1>
 <p>仅个人学习总结之作，可能存在问题，使用过程中会不断优化。</p>
 <h2 id="一、基本知识点"> 一、基本知识点</h2>
@@ -12795,13 +12890,13 @@ stretch          如果没有高度或者高度自动，自动撑满整个容器
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS基础</title>
     <id>https://fengling68.github.io/blogs/web/b-css/01-CSS%E5%9F%BA%E7%A1%80/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/01-CSS%E5%9F%BA%E7%A1%80/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css基础"> CSS基础</h1>
 <h2 id="什么是css"> 什么是CSS？</h2>
 <div><pre><code>CSS：Cascading Style Sheet   层叠样式表、级联样式表、样式表
@@ -12957,13 +13052,13 @@ div.first{}
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS属性</title>
     <id>https://fengling68.github.io/blogs/web/b-css/02-CSS%E5%B1%9E%E6%80%A7/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/02-CSS%E5%B1%9E%E6%80%A7/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css属性"> CSS属性</h1>
 <h2 id="颜色"> 颜色</h2>
 <div><pre><code>rgb颜色(red,green,blue)  rgb(0,0,0)黑色    rgb(255,255,255)白色
@@ -13053,13 +13148,13 @@ border-image-repeat  边框的平铺方式（repeat：平铺；round：铺满；
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS框模型</title>
     <id>https://fengling68.github.io/blogs/web/b-css/03-CSS%E6%A1%86%E6%A8%A1%E5%9E%8B/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/03-CSS%E6%A1%86%E6%A8%A1%E5%9E%8B/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css框模型"> CSS框模型</h1>
 <h2 id="盒子模型-方框模型、盒子属性"> 盒子模型(方框模型、盒子属性)</h2>
 <div><pre><code>主要设置元素的：
@@ -13125,13 +13220,13 @@ margin:20px 0;
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS背景</title>
     <id>https://fengling68.github.io/blogs/web/b-css/04-CSS%E8%83%8C%E6%99%AF/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/04-CSS%E8%83%8C%E6%99%AF/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css背景"> CSS背景</h1>
 <h2 id="背景颜色"> 背景颜色</h2>
 <div><pre><code>background-color：red;       background-color不能继承
@@ -13211,13 +13306,13 @@ background-clip:center-box;   背景显示在内容区域
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS渐变</title>
     <id>https://fengling68.github.io/blogs/web/b-css/05-CSS%E6%B8%90%E5%8F%98/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/05-CSS%E6%B8%90%E5%8F%98/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css渐变"> CSS渐变</h1>
 <h2 id="渐变"> 渐变</h2>
 <p>渐变通过background-image设置</p>
@@ -13255,13 +13350,13 @@ position：原点所在的坐标（left，top，bottom，right，center）
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS文本格式化</title>
     <id>https://fengling68.github.io/blogs/web/b-css/06-CSS%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E5%8C%96/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/06-CSS%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E5%8C%96/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css文本格式化"> CSS文本格式化</h1>
 <h2 id="控制字体"> 控制字体</h2>
 <p>1、指定字体</p>
@@ -13342,13 +13437,13 @@ ellipsis:用...来表示未显示的内容
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS表格和列表</title>
     <id>https://fengling68.github.io/blogs/web/b-css/07-CSS%E8%A1%A8%E6%A0%BC%E5%92%8C%E5%88%97%E8%A1%A8/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/07-CSS%E8%A1%A8%E6%A0%BC%E5%92%8C%E5%88%97%E8%A1%A8/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css表格和列表"> CSS表格和列表</h1>
 <h2 id="常用样式"> 常用样式</h2>
 <div><pre><code>文本、字体格式化属性
@@ -13424,13 +13519,13 @@ ol{list-style:none;}
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS浮动和定位</title>
     <id>https://fengling68.github.io/blogs/web/b-css/08-CSS%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%9A%E4%BD%8D/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/08-CSS%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%9A%E4%BD%8D/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css浮动和定位"> CSS浮动和定位</h1>
 <h2 id="定位分类"> 定位分类</h2>
 <p>定位：元素在网页中出现的位置</p>
@@ -13501,13 +13596,13 @@ clear:left/right/both
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS使用小技巧</title>
     <id>https://fengling68.github.io/blogs/web/b-css/09-CSS%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/09-CSS%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css使用小技巧"> CSS使用小技巧</h1>
 <h2 id="内外阴影box-shadow"> 内外阴影box-shadow</h2>
 <div><pre><code>box-shadow: 5px 5px 20px #ed0000;设置外阴影
@@ -13597,13 +13692,13 @@ ps：当设置background-image为渐变色的时候，配合background-position�
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS3选择器</title>
     <id>https://fengling68.github.io/blogs/web/b-css/10-CSS3%E9%80%89%E6%8B%A9%E5%99%A8/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/10-CSS3%E9%80%89%E6%8B%A9%E5%99%A8/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css3选择器"> CSS3选择器</h1>
 <h2 id="通用兄弟选择器"> 通用兄弟选择器</h2>
 <p>selector1~selector2{}   可以不相邻</p>
@@ -13685,13 +13780,13 @@ ul&gt;li:not(:last-child){color:red;}
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS3多列、hack、优化</title>
     <id>https://fengling68.github.io/blogs/web/b-css/11-CSS3%E5%A4%9A%E5%88%97%E3%80%81hack%E3%80%81%E4%BC%98%E5%8C%96/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/11-CSS3%E5%A4%9A%E5%88%97%E3%80%81hack%E3%80%81%E4%BC%98%E5%8C%96/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css3多列、hack、优化"> CSS3多列、hack、优化</h1>
 <h2 id="多列"> 多列</h2>
 <div><pre><code>column-count:3;   &lt;!-- 元素被分隔的列数 --&gt;
@@ -13782,13 +13877,13 @@ _           IE6
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">2D动画</title>
     <id>https://fengling68.github.io/blogs/web/b-css/12-2D%E5%8A%A8%E7%94%BB/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/12-2D%E5%8A%A8%E7%94%BB/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="_2d动画"> 2D动画</h1>
 <div><pre><code>转换是使元素改变形状、尺寸和位置的一种效果。
 移动、缩放、旋转、拉伸倾斜
@@ -13839,13 +13934,13 @@ transform:skewY(40deg,40deg);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">3D动画</title>
     <id>https://fengling68.github.io/blogs/web/b-css/13-3D%E5%8A%A8%E7%94%BB/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/13-3D%E5%8A%A8%E7%94%BB/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="_3d动画"> 3D动画</h1>
 <h2 id="属性perspective"> 属性perspective</h2>
 <div><pre><code>单位：px；
@@ -13958,13 +14053,13 @@ transform:skewY(40deg,40deg);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">居中问题</title>
     <id>https://fengling68.github.io/blogs/web/b-css/14-%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/14-%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="居中问题"> 居中问题</h1>
 <h2 id="文字水平居中"> 文字水平居中</h2>
 <div><pre><code>//适用于文字、链接、inline、inline-block、inline-table和inline-flex的元素。
@@ -14102,13 +14197,13 @@ transform:skewY(40deg,40deg);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">less</title>
     <id>https://fengling68.github.io/blogs/web/b-css/15-less/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/15-less/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="less"> less</h1>
 <h2 id="三种使用方式"> 三种使用方式</h2>
 <div><pre><code>1、引入less文件，将写好的less文件，编译为CSS文件 ———— 基本不用
@@ -14263,13 +14358,13 @@ transform:skewY(40deg,40deg);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">sass</title>
     <id>https://fengling68.github.io/blogs/web/b-css/16-sass/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/16-sass/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="sass"> sass</h1>
 <h2 id="_0、sass-和-scss-区别"> 0、sass 和 scss 区别</h2>
 <p>sass 不允许出现 {} ， scss 可以像 css 一样使用 {}。</p>
@@ -14576,13 +14671,13 @@ inline_<span>image</span><span>(</span><span>'../img.png'</span><span>)</span>  
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">sass常用方法</title>
     <id>https://fengling68.github.io/blogs/web/b-css/17-sass%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</id>
     <link href="https://fengling68.github.io/blogs/web/b-css/17-sass%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="sass常用方法"> sass常用方法</h1>
 <h2 id="渲染多张图片"> 渲染多张图片</h2>
 <div><pre><code><span>.more-image</span> <span>{</span>
@@ -14616,13 +14711,13 @@ inline_<span>image</span><span>(</span><span>'../img.png'</span><span>)</span>  
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">JS基础</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/01-JS%E5%9F%BA%E7%A1%80/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/01-JS%E5%9F%BA%E7%A1%80/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="js基础"> JS基础</h1>
 <h2 id="_0、sass和scss区别"> 0、sass和scss区别</h2>
 <div><pre><code>sass不允许出现 {} ， scss可以像css一样使用 {}
@@ -14928,13 +15023,13 @@ width: func(1);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">JS函数</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/02-JS%E5%87%BD%E6%95%B0/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/02-JS%E5%87%BD%E6%95%B0/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="js函数"> JS函数</h1>
 <h2 id="函数是一等公民"> 函数是一等公民</h2>
 <div><pre><code>函数命名规则标识符 命名规则 驼峰命名  语义化  可以$开头命名
@@ -15125,13 +15220,13 @@ console.log(fn1);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">匿名函数</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/03-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/03-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="匿名函数"> 匿名函数</h1>
 <h2 id="匿名函数-2"> 匿名函数</h2>
 <div><pre><code>引用数据类型(3种)：对象，数组，对象
@@ -15204,13 +15299,13 @@ var a = 10;
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">数组基础</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/04-%E6%95%B0%E7%BB%84%E5%9F%BA%E7%A1%80/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/04-%E6%95%B0%E7%BB%84%E5%9F%BA%E7%A1%80/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="数组基础"> 数组基础</h1>
 <div><pre><code>数组Array：值的有序集合
 数组中的数据————元素 元素之间,隔开
@@ -15365,13 +15460,13 @@ alert(&quot;最大值是：&quot;+fn(60,40,77));
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">数组常用方法</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/05-%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/05-%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="数组常用方法"> 数组常用方法</h1>
 <p>var arr = [10,'hello',true, [20 , 30 , 40] ];   //二维数组</p>
 <h2 id="push-方法"> push()方法</h2>
@@ -15517,13 +15612,13 @@ console.log(arr);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">字符串方法</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/06-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/06-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="字符串方法"> 字符串方法</h1>
 <h2 id="字符串的创建方式"> 字符串的创建方式</h2>
 <p>1、字面量方式</p>
@@ -15674,13 +15769,13 @@ substring();            截取字符串：参数2，结束位置
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Math数学方法</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/07-Math%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/07-Math%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="math数学方法"> Math数学方法</h1>
 <h2 id="math-random"> Math.random()</h2>
 <div><pre><code>随机数：0 - 1 （不包括1）
@@ -15718,13 +15813,13 @@ console.log(Math.round(&quot;-1.3&quot;));   // 结果 -1
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">定时器</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/08-%E5%AE%9A%E6%97%B6%E5%99%A8/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/08-%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="定时器"> 定时器</h1>
 <h2 id="settimeout"> setTimeout()</h2>
 <div><pre><code>setTimeout设置为0，代表立即插入队列，但不是立即执行。setTimeout并不能保证执行的时间，是否执行取决于JavaScript的线程是拥挤还是空闲。
@@ -15770,13 +15865,13 @@ clearInterval(timer);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Date日期和时间</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/09-Date%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/09-Date%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="date日期和时间"> Date日期和时间</h1>
 <h2 id="创建日期"> 创建日期</h2>
 <div><pre><code>var date1 = new Date();
@@ -15850,13 +15945,13 @@ console.log(date2);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">BOM浏览器模型</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/10-BOM%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A8%A1%E5%9E%8B/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/10-BOM%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A8%A1%E5%9E%8B/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="bom浏览器模型"> BOM浏览器模型</h1>
 <h2 id="js三大模块"> JS三大模块</h2>
 <ul>
@@ -15915,13 +16010,13 @@ window.location.reload();
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">DOM文档对象模型</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/11-DOM%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/11-DOM%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="dom文档对象模型"> DOM文档对象模型</h1>
 <h2 id="dom节点"> DOM节点</h2>
 <div><pre><code>HTML的所有内容都是节点
@@ -16005,13 +16100,13 @@ for(var i = 0 ; i &lt; btns.length ; i ++){
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">DOM层级关系</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/12-DOM%E5%B1%82%E7%BA%A7%E5%85%B3%E7%B3%BB/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/12-DOM%E5%B1%82%E7%BA%A7%E5%85%B3%E7%B3%BB/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="dom层级关系"> DOM层级关系</h1>
 <h2 id="表单元素"> 表单元素</h2>
 <ul>
@@ -16121,13 +16216,13 @@ for(var i = 0 ; i &lt; arr.length ; i++){
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">DOM元素操作</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/13-DOM%E5%85%83%E7%B4%A0%E6%93%8D%E4%BD%9C/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/13-DOM%E5%85%83%E7%B4%A0%E6%93%8D%E4%BD%9C/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="dom元素操作"> DOM元素操作</h1>
 <p>元素节点的操作：创建、添加、插入、删除、替换、复制</p>
 <div><pre><code>&lt;!DOCTYPE html&gt;
@@ -16229,81 +16324,13 @@ for(var i = 0 ; i &lt; arr.length ; i++){
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
-  </entry>
-  <entry>
-    <title type="html">JS运动函数及封装</title>
-    <id>https://fengling68.github.io/blogs/web/c-javascript/15-JS%E8%BF%90%E5%8A%A8%E5%87%BD%E6%95%B0%E5%8F%8A%E5%B0%81%E8%A3%85/</id>
-    <link href="https://fengling68.github.io/blogs/web/c-javascript/15-JS%E8%BF%90%E5%8A%A8%E5%87%BD%E6%95%B0%E5%8F%8A%E5%B0%81%E8%A3%85/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="js运动函数及封装"> JS运动函数及封装</h1>
-<h2 id="图片滚动"> 图片滚动</h2>
-<div><pre><code>var timer;
-btn.onclick = function(){
-    setInterval(function(){
-        div.style.left = div.offsetLeft + 10 + &quot;px&quot;;
-        if(div.offsetLeft &gt; 200){
-            clearInterval(timer);
-            div.style.left = &quot;200px&quot;;
-        }
-    },100);
-}
-
-
-//元素当前位置：元素.offsetLeft/offsetTop + &quot;px&quot;;
-</code></pre>
-</div><h2 id="运动公式"> 运动公式</h2>
-<p>(1)匀速运动公式</p>
-<div><pre><code>元素.style.top/left = 元素.offsetLeft/offsetTop  +/-  10 + &quot;px&quot;;
-</code></pre>
-</div><p>(2)缓速运动公式</p>
-<div><pre><code>元素.style.top/left = 元素.offsetLeft/offsetTop + (target-当前位置) / 10 + &quot;px&quot;;
-</code></pre>
-</div><h2 id="匀速运动函数"> 匀速运动函数</h2>
-<div><pre><code>var timer;
-function animate(ele,target){
-    clearInterval(ele.timer);   //归属者ele
-    var speed = (target &gt; ele.offsetLeft) ? 10 : -10;
-
-    ele.timer = setInterval(function(){
-        var result = target - ele.offsetLeft;
-        ele.style.left = ele.offsetLeft + speed + &quot;px&quot;;
-
-        if( Math.abs(result) &lt;= 10 ){
-            clearInterval(ele.timer);
-            ele.style.left = target + &quot;px&quot;;
-        }
-    },100);
-}
-</code></pre>
-</div><h2 id="缓速运动函数"> 缓速运动函数</h2>
-<div><pre><code>var timer;
-function animate(obj,target){
-    clearInterval(obj.timer);   //归属者obj
-
-    obj.timer = setInterval(function(){
-        var speed = (target - obj.offsetLeft) / 10;
-        speed = (speed &gt; 0) ? Math.ceil(speed) : Math.floor(speed);
-        obj.style.left = obj.offsetLeft + speed + &quot;px&quot;;
-
-        if(target == obj.offsetLeft){
-            clearInterval(obj.timer);
-            obj.style.left = target + &quot;px&quot;;
-        }
-    },20);
-}
-</code></pre>
-</div>]]></content>
-    <contributor>
-      <name/>
-    </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">JS事件对象</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/17-JS%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/17-JS%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="js事件对象"> JS事件对象</h1>
 <h2 id="事件对象"> 事件对象</h2>
 <div><pre><code>信息库：该事件的所有信息属性和方法，如鼠标位置或键盘键码
@@ -16346,13 +16373,13 @@ function animate(obj,target){
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">时间流和事件冒泡</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/18-%E6%97%B6%E9%97%B4%E6%B5%81%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/18-%E6%97%B6%E9%97%B4%E6%B5%81%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="时间流和事件冒泡"> 时间流和事件冒泡</h1>
 <h2 id="事件流"> 事件流</h2>
 <ul>
@@ -16524,13 +16551,13 @@ function preventDefault(e){
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">懒加载和滚动加载</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/19-%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%BB%9A%E5%8A%A8%E5%8A%A0%E8%BD%BD/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/19-%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%BB%9A%E5%8A%A8%E5%8A%A0%E8%BD%BD/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="懒加载和滚动加载"> 懒加载和滚动加载</h1>
 <h2 id="懒加载"> 懒加载</h2>
 <div><pre><code>/*******************  懒加载 lazyLoad  ********************/
@@ -16638,13 +16665,13 @@ $(window).on('scroll',function(){
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">正则表达式</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/20-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/20-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="正则表达式"> 正则表达式</h1>
 <ul>
 <li>正则表达式：一种模式，一种标准。检索一段文本是否符合要求。</li>
@@ -16744,13 +16771,13 @@ console.log(arr);            //[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">this关键字</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/21-this%E5%85%B3%E9%94%AE%E5%AD%97/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/21-this%E5%85%B3%E9%94%AE%E5%AD%97/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="this关键字"> this关键字</h1>
 <div><pre><code>this对象：每个函数中都会有this对象。 context:上下文对象
 this总是指向调用该函数的对象。
@@ -16834,13 +16861,13 @@ sum.apply( obj , [30 , 40] );
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">对象</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/22-%E5%AF%B9%E8%B1%A1/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/22-%E5%AF%B9%E8%B1%A1/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="对象"> 对象</h1>
 <div><pre><code>OO(object oriented)  面向对象
 OOP(object oriented programming) 面向对象编程
@@ -16996,13 +17023,13 @@ console.log(fn instanceof Function);           //true
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">prototype原型</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/23-prototype%E5%8E%9F%E5%9E%8B/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/23-prototype%E5%8E%9F%E5%9E%8B/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="prototype原型"> prototype原型</h1>
 <h2 id="原型的基本知识"> 原型的基本知识</h2>
 <h3 id="_1、创建构造函数-都有一个-属性-prototype-属性值-是对象"> 1、创建构造函数(都有一个 属性：prototype ; 属性值 : 是对象)</h3>
@@ -17116,13 +17143,13 @@ console.log(son);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">原型和闭包</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/24-%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/24-%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="原型和闭包"> 原型和闭包</h1>
 <p>每个函数(对象)都有prototype属性，是对象属性的集合，默认只有constructor属性；
 每个函数(对象)都有_proto_属性，隐世原型，它指向创建该对象的函数的prototype。</p>
@@ -17201,13 +17228,13 @@ for(item in f1){
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">cookie</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/25-cookie/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/25-cookie/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="cookie"> cookie</h1>
 <h2 id="http协议"> HTTP协议</h2>
 <div><pre><code>超文本传输协议, 是一个应用层的协议，由请求和响应构成。
@@ -17336,13 +17363,13 @@ alert(val);
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">JSON基础</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/26-JSON%E5%9F%BA%E7%A1%80/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/26-JSON%E5%9F%BA%E7%A1%80/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="json基础"> JSON基础</h1>
 <h2 id="json-javascript-object-notation"> JSON(JavaScript Object Notation)</h2>
 <div><pre><code>是一种轻量级的数据交换格式，广泛的用于互联网数据的传输。
@@ -17418,13 +17445,13 @@ var json = '{&quot;name&quot;:&quot;zhangsan&quot;}';
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">JSONP跨域请求</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/27-JSONP%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/27-JSONP%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="jsonp跨域请求"> JSONP跨域请求</h1>
 <h2 id="同源策略-同域策略"> 同源策略(同域策略)</h2>
 <div><pre><code>同源/同域：指URL地址的协议、IP地址、端口号相同。
@@ -17500,13 +17527,13 @@ function jsonpCallback(resp){
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Ajax异步通信</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/28-Ajax%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/28-Ajax%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="ajax异步通信"> Ajax异步通信</h1>
 <div><pre><code>事件是异步的
 </code></pre>
@@ -17613,13 +17640,13 @@ responseXML: XML格式
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">原生Ajax</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/29-%E5%8E%9F%E7%94%9FAjax/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/29-%E5%8E%9F%E7%94%9FAjax/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="原生ajax"> 原生Ajax</h1>
 <h1 id="ajax异步通信"> Ajax异步通信</h1>
 <div><pre><code>客户端与服务器端请求、发送数据
@@ -17789,13 +17816,13 @@ function ajax2(data) {
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">jQuery中ajax</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/30-jQuery%E4%B8%ADajax/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/30-jQuery%E4%B8%ADajax/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="jquery中ajax"> jQuery中ajax</h1>
 <h2 id="ajax请求"> ajax请求</h2>
 <ul>
@@ -17874,13 +17901,13 @@ error：function(XMLHttpRequest、textStatus、errorThrown){}返回
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">canvas画图</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/01-Canvas%E7%94%BB%E5%9B%BE/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/01-Canvas%E7%94%BB%E5%9B%BE/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="canvas画图"> canvas画图</h1>
 <h2 id="canvas和svg的区别"> Canvas和SVG的区别？</h2>
 <ol>
@@ -18070,13 +18097,13 @@ ctx.closePath();
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">canvas做纹理图</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/02-Canvas%E5%81%9A%E7%BA%B9%E7%90%86%E5%9B%BE/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/02-Canvas%E5%81%9A%E7%BA%B9%E7%90%86%E5%9B%BE/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="canvas做纹理图"> canvas做纹理图</h1>
 <h2 id="index-html文件"> index.html文件</h2>
 <div><pre><code>&lt;html lang=&quot;en&quot;&gt;
@@ -18306,13 +18333,13 @@ function initCanvas() {
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">three.js简单示例</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/03-ThreeJS%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/03-ThreeJS%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="three-js简单示例"> three.js简单示例</h1>
 <p>/*
 使用相机将场景渲染到网页上
@@ -18457,13 +18484,13 @@ function initLine() {
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">ThreeJS画有纹理的物体</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/04-ThreeJS%E7%94%BB%E6%9C%89%E7%BA%B9%E7%90%86%E7%9A%84%E7%89%A9%E4%BD%93/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/04-ThreeJS%E7%94%BB%E6%9C%89%E7%BA%B9%E7%90%86%E7%9A%84%E7%89%A9%E4%BD%93/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="threejs画有纹理的物体"> ThreeJS画有纹理的物体</h1>
 <div><pre><code>/* 
     1、初始化场景
@@ -18545,13 +18572,13 @@ function initRect() {
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">ThreeJS带网格的3D运动物体</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/05-ThreeJS%E5%B8%A6%E7%BD%91%E6%A0%BC%E7%9A%843D%E8%BF%90%E5%8A%A8%E7%89%A9%E4%BD%93/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/05-ThreeJS%E5%B8%A6%E7%BD%91%E6%A0%BC%E7%9A%843D%E8%BF%90%E5%8A%A8%E7%89%A9%E4%BD%93/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="threejs带网格的3d运动物体"> ThreeJS带网格的3D运动物体</h1>
 <h2 id="index-html文件"> index.html文件</h2>
 <div><pre><code>&lt;!DOCTYPE html&gt;
@@ -18696,13 +18723,13 @@ function initObject() {
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Hilo认识</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/11-Hilo%E8%AE%A4%E8%AF%86/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/11-Hilo%E8%AE%A4%E8%AF%86/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <summary type="html"><![CDATA[<h1 id="hilo认识"> Hilo认识</h1>
 <p>Hilo是阿里开发的一款游戏框架，这是摘要啊，Hilo是阿里开发的一款游戏框架，这是摘要啊，Hilo是阿里开发的一款游戏框架，这是摘要啊，Hilo是阿里开发的一款游戏框架，这是摘要啊，Hilo是阿里开发的一款游戏框架，这是摘要啊，Hilo是阿里开发的一款游戏框架，这是摘要啊，Hilo是阿里开发的一款游戏框架，这是摘要啊。</p>
 ]]></summary>
@@ -18779,13 +18806,13 @@ view                        视图
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Hilo属性</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/12-Hilo%E5%B1%9E%E6%80%A7/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/12-Hilo%E5%B1%9E%E6%80%A7/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="hilo属性"> Hilo属性</h1>
 <h2 id="_1、align-对齐方式9种"> 1、align 对齐方式9种</h2>
 <div><pre><code>// 创建容器
@@ -18929,13 +18956,13 @@ window.onresize = function(){
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Hilo之view、util、event</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/13-Hilo%E4%B9%8Bview%E3%80%81util%E3%80%81event/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/13-Hilo%E4%B9%8Bview%E3%80%81util%E3%80%81event/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="hilo之view、util、event"> Hilo之view、util、event</h1>
 <h2 id="view"> view</h2>
 <h3 id="_1、stage-舞台"> 1、Stage 舞台</h3>
@@ -19203,13 +19230,13 @@ container.on(&quot;mouseover&quot;, function(e){});
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">hilo之game（相机和粒子系统）</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/14-hilo%E4%B9%8Bgame/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/14-hilo%E4%B9%8Bgame/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="hilo之game-相机和粒子系统"> hilo之game（相机和粒子系统）</h1>
 <h2 id="_1、camera-普通相机"> 1、Camera 普通相机</h2>
 <div><pre><code>// 创建tween类
@@ -19385,13 +19412,13 @@ ticker.addTick({
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">hilo之loader篇</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/15-hilo%E4%B9%8Bloader%E7%AF%87/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/15-hilo%E4%B9%8Bloader%E7%AF%87/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="hilo之loader篇"> hilo之loader篇</h1>
 <h2 id="loaderqueue-下载队列"> LoaderQueue 下载队列</h2>
 <div><pre><code>// 创建下载队列
@@ -19560,13 +19587,13 @@ function boxMove(ratio, tween){
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Lottie结合AE实时渲染动画</title>
     <id>https://fengling68.github.io/blogs/web/d-animation/21-Lottie%E7%BB%93%E5%90%88AE%E5%AE%9E%E6%97%B6%E6%B8%B2%E6%9F%93%E5%8A%A8%E7%94%BB/</id>
     <link href="https://fengling68.github.io/blogs/web/d-animation/21-Lottie%E7%BB%93%E5%90%88AE%E5%AE%9E%E6%97%B6%E6%B8%B2%E6%9F%93%E5%8A%A8%E7%94%BB/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="lottie结合ae实时渲染动画"> Lottie结合AE实时渲染动画</h1>
 <h2 id="_1、lottie-vue文件"> 1、lottie.vue文件</h2>
 <div><pre><code>/* 
@@ -19696,13 +19723,13 @@ export default {
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">MVC和MVVM设计模式</title>
     <id>https://fengling68.github.io/blogs/web/e-framework/01-MVC%E5%92%8CMVVM%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</id>
     <link href="https://fengling68.github.io/blogs/web/e-framework/01-MVC%E5%92%8CMVVM%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="mvc和mvvm设计模式"> MVC和MVVM设计模式</h1>
 <h2 id="一、mvc设计模式"> 一、MVC设计模式</h2>
 <div><pre><code>Models模型主要关注的是业务数据，即管理一个业务应用的数据，它们既与用户界面无关也与表现层无关。
@@ -19762,13 +19789,13 @@ MVVM进一步允许我们创建一个模型的特定视图子集，包含了状�
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">认识三大框架</title>
     <id>https://fengling68.github.io/blogs/web/e-framework/02-%E8%AE%A4%E8%AF%86%E4%B8%89%E5%A4%A7%E6%A1%86%E6%9E%B6/</id>
     <link href="https://fengling68.github.io/blogs/web/e-framework/02-%E8%AE%A4%E8%AF%86%E4%B8%89%E5%A4%A7%E6%A1%86%E6%9E%B6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="认识三大框架"> 认识三大框架</h1>
 <h2 id="框架和库的区别"> 框架和库的区别</h2>
 <div><pre><code>库：
@@ -19885,13 +19912,13 @@ Angular ( Model View Controller )
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">ES6（ES2015~ES2020）</title>
     <id>https://fengling68.github.io/blogs/web/f-es6/ES6/</id>
     <link href="https://fengling68.github.io/blogs/web/f-es6/ES6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="es6-es2015-es2020"> ES6（ES2015~ES2020）</h1>
 <h2 id="文章教程"> 文章教程</h2>
 <p><a href="https://es6.ruanyifeng.com/" target="_blank" rel="noopener noreferrer">ES6 入门教程 (阮一峰)</a></p>
@@ -20039,13 +20066,13 @@ Point <span>===</span> <span>Point</span><span>.</span>prototype<span>.</span>co
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">MySql安装</title>
     <id>https://fengling68.github.io/blogs/web/g-service/01-MySql%E5%AE%89%E8%A3%85/</id>
     <link href="https://fengling68.github.io/blogs/web/g-service/01-MySql%E5%AE%89%E8%A3%85/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="mysql安装"> MySql安装</h1>
 <h2 id="一、下载安装"> 一、下载安装</h2>
 <div><pre><code>官网下载地址：https://dev.mysql.com/downloads/mysql/
@@ -20079,13 +20106,13 @@ show tables
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">mongodb</title>
     <id>https://fengling68.github.io/blogs/web/g-service/02-mongodb/</id>
     <link href="https://fengling68.github.io/blogs/web/g-service/02-mongodb/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="mongodb"> mongodb</h1>
 <h2 id="_1、安装和启动"> 1、安装和启动</h2>
 <div><pre><code># 进入 /usr/local
@@ -20154,13 +20181,13 @@ source ~/.zshrc
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">window7下leanote二进制部署</title>
     <id>https://fengling68.github.io/blogs/web/g-service/03-window7%E4%B8%8Bleanote%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2/</id>
     <link href="https://fengling68.github.io/blogs/web/g-service/03-window7%E4%B8%8Bleanote%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="window7下leanote二进制部署"> window7下leanote二进制部署</h1>
 <blockquote>
 <p>教程：https://51.ruyo.net/2922.html</p>
@@ -20219,13 +20246,13 @@ db.auth(&quot;admin&quot;, &quot;password&quot;)
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">electron-vue入门</title>
     <id>https://fengling68.github.io/blogs/web/g-service/04-electron-vue%E5%85%A5%E9%97%A8/</id>
     <link href="https://fengling68.github.io/blogs/web/g-service/04-electron-vue%E5%85%A5%E9%97%A8/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="electron-vue入门"> electron-vue入门</h1>
 <h2 id="一、安装和启动"> 一、安装和启动</h2>
 <div><pre><code># 安装 vue-cli和脚手架样板代码
@@ -20362,13 +20389,13 @@ dialog.showErrorBox('错误弹窗', '这是一个错误弹窗');
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">阿里云服务折腾记(更新中)</title>
     <id>https://fengling68.github.io/blogs/web/g-service/%E4%BA%91%E6%9C%8D%E5%8A%A1/</id>
     <link href="https://fengling68.github.io/blogs/web/g-service/%E4%BA%91%E6%9C%8D%E5%8A%A1/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="阿里云服务折腾记-更新中"> 阿里云服务折腾记(更新中)</h1>
 <p>本来想找一篇服务器配置较全面的教程来学习，结果搜索到的多是某一知识点的文章，遂决定边折腾边记录一篇从购买服务器、域名到搭建 ftp、nginx 等的文章。文中涉及的知识点、命令等多是从网上众多文章教程整合而来，图片是本人配置过程中的截图。</p>
 
@@ -20940,13 +20967,13 @@ http://xxx.xxx.xxx.xxx/tools/index.html
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">题：闭包打印数字</title>
     <id>https://fengling68.github.io/blogs/web/y-code/day001/</id>
     <link href="https://fengling68.github.io/blogs/web/y-code/day001/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="闭包打印数字"> 闭包打印数字</h1>
 <h2 id="var-settimeout"> var + setTimeout</h2>
 <div><pre><code><span>for</span><span>(</span><span>var</span> i <span>=</span> <span>0</span><span>;</span> i<span>&lt;</span> <span>5</span><span>;</span> i<span>++</span> <span>)</span><span>{</span>
@@ -20989,13 +21016,13 @@ http://xxx.xxx.xxx.xxx/tools/index.html
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">题：字符串中单词出现次数</title>
     <id>https://fengling68.github.io/blogs/web/y-code/day002/</id>
     <link href="https://fengling68.github.io/blogs/web/y-code/day002/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="字符串中单词出现次数"> 字符串中单词出现次数</h1>
 <h2 id="问题描述"> 问题描述</h2>
 <div><pre><code><span>// 给出如下字符串，请输出字符串中每个单词出现的次数</span>
@@ -21047,13 +21074,13 @@ console<span>.</span><span>log</span><span>(</span>transformArr<span>)</span><sp
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">题：由2-9字符串返回字母组合</title>
     <id>https://fengling68.github.io/blogs/web/y-code/day003/</id>
     <link href="https://fengling68.github.io/blogs/web/y-code/day003/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="由2-9字符串返回字母组合"> 由2-9字符串返回字母组合</h1>
 <blockquote>
 <p><span style="color: #3eaf7c;">问题描述：</span> 给定由2-9组成的字符串，返回所有字母组合，2-9的映射关系可参考手机键盘。<br/>
@@ -21089,13 +21116,13 @@ console<span>.</span><span>log</span><span>(</span><span>handle</span><span>(</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">题：正则实现 trim 去空格</title>
     <id>https://fengling68.github.io/blogs/web/y-code/day004/</id>
     <link href="https://fengling68.github.io/blogs/web/y-code/day004/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="正则实现-trim-去空格"> 正则实现 trim 去空格</h1>
 <h2 id="原型方式"> 原型方式</h2>
 <div><pre><code><span>// 加到 String 对象的内置方法中</span>
@@ -21131,13 +21158,13 @@ console<span>.</span><span>log</span><span>(</span><span>'%c%s'</span><span>,</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">题：同/异步任务、宏/微任务</title>
     <id>https://fengling68.github.io/blogs/web/y-code/day005/</id>
     <link href="https://fengling68.github.io/blogs/web/y-code/day005/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="同步任务、异步任务、宏任务、微任务"> 同步任务、异步任务、宏任务、微任务</h1>
 <h2 id="示例题-懵"> 示例题（懵）</h2>
 <div><pre><code><span>async</span> <span>function</span> <span>async1</span><span>(</span><span>)</span> <span>{</span>
@@ -21330,13 +21357,13 @@ console<span>.</span><span>log</span><span>(</span><span>'end'</span><span>)</sp
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">面试合集</title>
     <id>https://fengling68.github.io/blogs/web/y-technology/000-question/</id>
     <link href="https://fengling68.github.io/blogs/web/y-technology/000-question/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="面试合集"> 面试合集</h1>
 <h2 id="资源"> 资源</h2>
 <h3 id="github"> GitHub</h3>
@@ -21372,13 +21399,13 @@ console<span>.</span><span>log</span><span>(</span><span>'end'</span><span>)</sp
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">HTML</title>
     <id>https://fengling68.github.io/blogs/web/y-technology/001-html/</id>
     <link href="https://fengling68.github.io/blogs/web/y-technology/001-html/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="html"> HTML</h1>
 <h2 id="viewport"> viewport</h2>
 <div><pre><code><span><span><span>&lt;</span>meta</span> <span>name</span><span><span>=</span><span>"</span>viewport<span>"</span></span> <span>content</span><span><span>=</span><span>"</span>width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover<span>"</span></span> <span>/></span></span>
@@ -21413,13 +21440,13 @@ canvas<span>.</span><span>toDataURL</span><span>(</span><span>)</span><span>;</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">CSS</title>
     <id>https://fengling68.github.io/blogs/web/y-technology/002-css/</id>
     <link href="https://fengling68.github.io/blogs/web/y-technology/002-css/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="css"> CSS</h1>
 <h2 id="盒模型"> 盒模型</h2>
 <p><code>CSS</code> 盒模型本质上是一个盒子，封装周围的 <code>HTML</code> 元素，包括：外边距、边框、内边距、内容。</p>
@@ -21632,13 +21659,13 @@ docEl<span>.</span>style<span>.</span>fontSize <span>=</span> fontsize<span>;</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">JavaScript</title>
     <id>https://fengling68.github.io/blogs/web/y-technology/003-javascript/</id>
     <link href="https://fengling68.github.io/blogs/web/y-technology/003-javascript/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="javascript"> JavaScript</h1>
 <h2 id="数据类型"> 数据类型</h2>
 <p>基本数据类型：<code>String、Number、Boolean、Null、undefined、Symbol（es6新增，表示独一无二的值）、BigInt（es6? 新增）</code></p>
@@ -21848,90 +21875,37 @@ document<span>.</span><span>getElementById</span><span>(</span><span>"parent"</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
-  </entry>
-  <entry>
-    <title type="html">ECMAScript6</title>
-    <id>https://fengling68.github.io/blogs/web/y-technology/005-es6/</id>
-    <link href="https://fengling68.github.io/blogs/web/y-technology/005-es6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="ecmascript6"> ECMAScript6</h1>
-]]></content>
-    <contributor>
-      <name/>
-    </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">TypeScript</title>
     <id>https://fengling68.github.io/blogs/web/y-technology/004-typescript/</id>
     <link href="https://fengling68.github.io/blogs/web/y-technology/004-typescript/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="typescript"> TypeScript</h1>
 ]]></content>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
-    <title type="html">Webpack</title>
-    <id>https://fengling68.github.io/blogs/web/y-technology/007-webpack/</id>
-    <link href="https://fengling68.github.io/blogs/web/y-technology/007-webpack/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="webpack"> Webpack</h1>
-<h2 id="配置字段"> 配置字段</h2>
-<p><code>entry</code> 入口</p>
-<p><code>output</code> 出口</p>
-<p><code>Module</code> 模块</p>
-<p><code>Chunk</code> 代码块</p>
-<p><code>Loader</code> 模块转换器</p>
-<p><code>Plugins</code> 扩展插件</p>
-<h2 id="执行流程"> 执行流程</h2>
-<p><code>初始化</code>：解析 <code>webpack</code> 配置参数，生产 <code>Compiler</code> 实例；</p>
-<p><code>注册插件</code>：调用插件 <code>apply</code> 方法，给插件传入 <code>compiler</code> 实例的引用，插件通过 <code>compiler</code> 调用 <code>Webpack</code> 提供的 <code>API</code>，让插件可以监听后续的所有事件节点；</p>
-<p><code>读取入口</code>：读取入口文件；</p>
-<p><code>解析文件</code>：使用 <code>loader</code> 将文件解析成抽象语法树 <code>AST</code>；</p>
-<p><code>生成依赖图谱</code>：找出每个文件的依赖项（遍历）；</p>
-<p><code>输出</code>：根据转换好的代码，生成 <code>chunk</code>；</p>
-<p><code>打包</code>：生成最后打包的文件；</p>
-<h2 id="webpack-编译文件过大"> Webpack 编译文件过大</h2>
-<p><a href="https://juejin.im/post/5a9d17446fb9a028d374e733" target="_blank" rel="noopener noreferrer">webpack打包之后的文件过大的解决方法</a></p>
-<p>1、区分开发环境和生产环境配置；</p>
-<p>2、在 <code>prod</code> 环境下关闭 <code>source-map</code>；</p>
-<p>3、使用 <code>extract-text-webpack-plugin</code> 插件单独打包 <code>css</code> 文件；</p>
-<p>4、使用 <code>UglifyJSPlugin</code> 插件压缩 <code>js</code> 文件；</p>
-<p>5、使用 <code>CommonsChunkPlugin</code> 插件提取公共依赖；</p>
-<p>6、使用 <code>compression-webpack-plugin</code> 插件开启 <code>gzip</code> 压缩；</p>
-<p>7、使用 <code>html-webpack-plugin</code> 插件开启html压缩，自动添加上面生成的静态资源；</p>
-<p>8、使用 <code>webpack-bundle-analyzer</code> 插件分析并优化依赖包；</p>
-<h2 id="webpack-编译速度慢"> Webpack 编译速度慢</h2>
-<p><a href="https://www.cnblogs.com/yangsg/p/10601604.html" target="_blank" rel="noopener noreferrer">webpack4提升180%编译速度</a></p>
-<p>1、使用 <code>webpack 4</code> 进行打包；</p>
-<p>2、配置 <code>externals</code> 来将依赖的库指向全局变量，使 <code>webpack</code> 不再打包这个库，而是全局引入插件后使用；</p>
-<p>3、使用 <code>CommonsChunkPlugin</code> 插件将共有的模块打包成一个文件；</p>
-<h2 id="webpack-loader"> Webpack loader</h2>
-<p><a href="https://www.webpackjs.com/api/loaders/" target="_blank" rel="noopener noreferrer">loader API</a></p>
-<p><code>webpack</code> 用来预处理模块的，在一个模块被引入之前，会预先使用 <code>loader</code> 处理模块的内容。</p>
-<p>1、<code>file-loader</code>：打包图片、字体；</p>
-<p>2、<code>url-loader</code>：打包图片，会将 base64 打包到 js 文件中；</p>
-<p>3、<code>css-loader</code>：理清多个css文件之间的引用关系，最后合并为一个；</p>
-<p>4、<code>style-loader</code>：将css样式挂载到head的style标签中；</p>
-<p>5、<code>sass-loader</code>：将scss文件编译为css；</p>
-<p>6、<code>less-loader</code>：解析 less 文件样式；</p>
-<p>7、<code>postcss-loader</code>：为样式加上浏览器前缀；</p>
-<p>8、<code>babel-loader</code>：让下一代的 js 文件转换成现代浏览器能够支持的 js 文件；</p>
+    <title type="html">ECMAScript6</title>
+    <id>https://fengling68.github.io/blogs/web/y-technology/005-es6/</id>
+    <link href="https://fengling68.github.io/blogs/web/y-technology/005-es6/"/>
+    <updated>2022-01-16T06:01:39.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="ecmascript6"> ECMAScript6</h1>
 ]]></content>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Vue</title>
     <id>https://fengling68.github.io/blogs/web/y-technology/006-vue/</id>
     <link href="https://fengling68.github.io/blogs/web/y-technology/006-vue/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="vue"> Vue</h1>
 <h2 id="生命周期"> 生命周期</h2>
 <p><code>beforeCreadted</code></p>
@@ -22016,13 +21990,66 @@ document<span>.</span><span>getElementById</span><span>(</span><span>"parent"</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
+  </entry>
+  <entry>
+    <title type="html">Webpack</title>
+    <id>https://fengling68.github.io/blogs/web/y-technology/007-webpack/</id>
+    <link href="https://fengling68.github.io/blogs/web/y-technology/007-webpack/"/>
+    <updated>2022-01-16T06:01:39.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="webpack"> Webpack</h1>
+<h2 id="配置字段"> 配置字段</h2>
+<p><code>entry</code> 入口</p>
+<p><code>output</code> 出口</p>
+<p><code>Module</code> 模块</p>
+<p><code>Chunk</code> 代码块</p>
+<p><code>Loader</code> 模块转换器</p>
+<p><code>Plugins</code> 扩展插件</p>
+<h2 id="执行流程"> 执行流程</h2>
+<p><code>初始化</code>：解析 <code>webpack</code> 配置参数，生产 <code>Compiler</code> 实例；</p>
+<p><code>注册插件</code>：调用插件 <code>apply</code> 方法，给插件传入 <code>compiler</code> 实例的引用，插件通过 <code>compiler</code> 调用 <code>Webpack</code> 提供的 <code>API</code>，让插件可以监听后续的所有事件节点；</p>
+<p><code>读取入口</code>：读取入口文件；</p>
+<p><code>解析文件</code>：使用 <code>loader</code> 将文件解析成抽象语法树 <code>AST</code>；</p>
+<p><code>生成依赖图谱</code>：找出每个文件的依赖项（遍历）；</p>
+<p><code>输出</code>：根据转换好的代码，生成 <code>chunk</code>；</p>
+<p><code>打包</code>：生成最后打包的文件；</p>
+<h2 id="webpack-编译文件过大"> Webpack 编译文件过大</h2>
+<p><a href="https://juejin.im/post/5a9d17446fb9a028d374e733" target="_blank" rel="noopener noreferrer">webpack打包之后的文件过大的解决方法</a></p>
+<p>1、区分开发环境和生产环境配置；</p>
+<p>2、在 <code>prod</code> 环境下关闭 <code>source-map</code>；</p>
+<p>3、使用 <code>extract-text-webpack-plugin</code> 插件单独打包 <code>css</code> 文件；</p>
+<p>4、使用 <code>UglifyJSPlugin</code> 插件压缩 <code>js</code> 文件；</p>
+<p>5、使用 <code>CommonsChunkPlugin</code> 插件提取公共依赖；</p>
+<p>6、使用 <code>compression-webpack-plugin</code> 插件开启 <code>gzip</code> 压缩；</p>
+<p>7、使用 <code>html-webpack-plugin</code> 插件开启html压缩，自动添加上面生成的静态资源；</p>
+<p>8、使用 <code>webpack-bundle-analyzer</code> 插件分析并优化依赖包；</p>
+<h2 id="webpack-编译速度慢"> Webpack 编译速度慢</h2>
+<p><a href="https://www.cnblogs.com/yangsg/p/10601604.html" target="_blank" rel="noopener noreferrer">webpack4提升180%编译速度</a></p>
+<p>1、使用 <code>webpack 4</code> 进行打包；</p>
+<p>2、配置 <code>externals</code> 来将依赖的库指向全局变量，使 <code>webpack</code> 不再打包这个库，而是全局引入插件后使用；</p>
+<p>3、使用 <code>CommonsChunkPlugin</code> 插件将共有的模块打包成一个文件；</p>
+<h2 id="webpack-loader"> Webpack loader</h2>
+<p><a href="https://www.webpackjs.com/api/loaders/" target="_blank" rel="noopener noreferrer">loader API</a></p>
+<p><code>webpack</code> 用来预处理模块的，在一个模块被引入之前，会预先使用 <code>loader</code> 处理模块的内容。</p>
+<p>1、<code>file-loader</code>：打包图片、字体；</p>
+<p>2、<code>url-loader</code>：打包图片，会将 base64 打包到 js 文件中；</p>
+<p>3、<code>css-loader</code>：理清多个css文件之间的引用关系，最后合并为一个；</p>
+<p>4、<code>style-loader</code>：将css样式挂载到head的style标签中；</p>
+<p>5、<code>sass-loader</code>：将scss文件编译为css；</p>
+<p>6、<code>less-loader</code>：解析 less 文件样式；</p>
+<p>7、<code>postcss-loader</code>：为样式加上浏览器前缀；</p>
+<p>8、<code>babel-loader</code>：让下一代的 js 文件转换成现代浏览器能够支持的 js 文件；</p>
+]]></content>
+    <contributor>
+      <name/>
+    </contributor>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">请求&amp;网络相关</title>
     <id>https://fengling68.github.io/blogs/web/y-technology/008-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</id>
     <link href="https://fengling68.github.io/blogs/web/y-technology/008-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="请求-网络相关"> 请求&amp;网络相关</h1>
 <h2 id="get-和-post-区别"> GET 和 POST 区别</h2>
 <p><a href="https://www.zhihu.com/question/28586791" target="_blank" rel="noopener noreferrer">GET 和 POST 到底有什么区别？</a></p>
@@ -22226,13 +22253,13 @@ document<span>.</span><span>getElementById</span><span>(</span><span>"parent"</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">性能优化</title>
     <id>https://fengling68.github.io/blogs/web/y-technology/009-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</id>
     <link href="https://fengling68.github.io/blogs/web/y-technology/009-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="性能优化"> 性能优化</h1>
 <h2 id="推荐文章"> 推荐文章</h2>
 <p><a href="https://segmentfault.com/a/1190000020867090" target="_blank" rel="noopener noreferrer">前端性能优化指南</a></p>
@@ -22243,13 +22270,13 @@ document<span>.</span><span>getElementById</span><span>(</span><span>"parent"</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">前端路线图</title>
     <id>https://fengling68.github.io/blogs/web/z-others/01-web/</id>
     <link href="https://fengling68.github.io/blogs/web/z-others/01-web/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="前端路线图"> 前端路线图</h1>
 <blockquote>
 <p>摘自掘金</p>
@@ -22259,13 +22286,76 @@ document<span>.</span><span>getElementById</span><span>(</span><span>"parent"</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
+  </entry>
+  <entry>
+    <title type="html">EventSource</title>
+    <id>https://fengling68.github.io/blogs/web/z-others/EventSource/</id>
+    <link href="https://fengling68.github.io/blogs/web/z-others/EventSource/"/>
+    <updated>2022-01-16T06:01:39.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="eventsource"> EventSource</h1>
+<h2 id="javascript"> javascript</h2>
+<div><pre><code><span>if</span> <span>(</span><span>'EventSource'</span> <span>in</span> window<span>)</span> <span>{</span>
+  <span>const</span> source <span>=</span> <span>new</span> <span>EventSource</span><span>(</span><span>'http://127.0.0.1:8080/stream'</span><span>)</span><span>;</span>
+  <span>const</span> <span>{</span> readyState <span>}</span> <span>=</span> source<span>;</span>
+
+  source<span>.</span><span>onopen</span> <span>=</span> <span>function</span> <span>(</span><span>event</span><span>)</span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span><span>'event'</span><span>,</span> event<span>)</span><span>;</span>
+  <span>}</span><span>;</span>
+
+  source<span>.</span><span>onmessage</span> <span>=</span> <span>function</span> <span>(</span><span>event</span><span>)</span> <span>{</span>
+    <span>const</span> <span>{</span> data <span>}</span> <span>=</span> event<span>;</span>
+    console<span>.</span><span>log</span><span>(</span><span>'data'</span><span>,</span> data<span>)</span><span>;</span>
+  <span>}</span><span>;</span>
+
+  source<span>.</span><span>onerror</span> <span>=</span> <span>function</span> <span>(</span><span>error</span><span>)</span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span><span>'error'</span><span>,</span> error<span>)</span><span>;</span>
+  <span>}</span><span>;</span>
+
+  <span>// source.close();</span>
+<span>}</span>
+</code></pre>
+</div><h2 id="node"> node</h2>
+<div><pre><code><span>const</span> http <span>=</span> <span>require</span><span>(</span>'http<span>)</span><span>;</span>
+
+http<span>.</span><span>createServe</span><span>(</span><span>function</span> <span>(</span><span>req<span>,</span> res</span><span>)</span> <span>{</span>
+  <span>const</span> fileName <span>=</span> <span>'.'</span> <span>+</span> req<span>.</span>url<span>;</span>
+
+  <span>if</span> <span>(</span>fileName <span>===</span> <span>'./stream'</span><span>)</span> <span>{</span>
+    res<span>.</span><span>writeHead</span><span>(</span><span>200</span><span>,</span> <span>{</span>
+      <span>'Content-Type'</span><span>:</span> <span>'text/event-stream'</span><span>,</span>
+      <span>'Cache-Control'</span><span>:</span> <span>'no-cache'</span><span>,</span>
+      <span>'Connection'</span><span>:</span> <span>'keep-alive'</span><span>,</span>
+      <span>'Access-Control-Allow-Origin'</span><span>:</span> <span>'*'</span><span>,</span>
+    <span>}</span><span>)</span><span>;</span>
+    res<span>.</span><span>write</span><span>(</span><span>'retry: 10000\n'</span><span>)</span><span>;</span>
+    res<span>.</span><span>write</span><span>(</span><span>'event: connectTime\n'</span><span>)</span><span>;</span>
+    res<span>.</span><span>write</span><span>(</span><span>'data: '</span> <span>+</span> <span>(</span><span>new</span> <span>Date</span><span>(</span><span>)</span><span>)</span> <span>+</span> <span>'\n\n'</span><span>)</span><span>;</span>
+
+    <span>const</span> interval <span>=</span> <span>setInterval</span><span>(</span><span>function</span><span>(</span><span>)</span> <span>{</span>
+      res<span>.</span><span>write</span><span>(</span><span>'data: '</span> <span>+</span> <span>(</span><span>new</span> <span>Date</span><span>(</span><span>)</span><span>)</span> <span>+</span> <span>'\n\n'</span><span>)</span><span>;</span>
+    <span>}</span><span>,</span> <span>1000</span> <span>*</span> <span>100</span><span>)</span><span>;</span>
+
+    req<span>.</span><span>addListener</span><span>(</span><span>'close'</span><span>,</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
+      <span>clearInterval</span><span>(</span>interval<span>)</span><span>;</span>
+    <span>}</span><span>,</span> <span>false</span><span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span><span>)</span><span>.</span><span>listen</span><span>(</span><span>8080</span><span>,</span> <span>'127.0.0.1'</span><span>)</span><span>;</span>
+</code></pre>
+</div><h2 id="文档"> 文档</h2>
+<p>MDN: https://developer.mozilla.org/zh-CN/docs/Web/API/EventSource</p>
+<p>SSE: http://www.ruanyifeng.com/blog/2017/05/server-sent_events.html</p>
+]]></content>
+    <contributor>
+      <name/>
+    </contributor>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">Gridea配置相关教程</title>
     <id>https://fengling68.github.io/blogs/web/z-others/Gridea%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B/</id>
     <link href="https://fengling68.github.io/blogs/web/z-others/Gridea%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="gridea配置相关教程"> Gridea配置相关教程</h1>
 <p>Gridea 博客加上Valine评论系统：https://kveln.cn/post/qE678A4ce/</p>
 <p>Gridea 博客增加搜索功能：https://tangkaichuan.cn/search-for-gridea-blog/</p>
@@ -22422,13 +22512,13 @@ document<span>.</span><span>getElementById</span><span>(</span><span>"parent"</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">NPM发布一个工具包</title>
     <id>https://fengling68.github.io/blogs/web/z-others/NPM%E5%8F%91%E5%B8%83%E5%8C%85/</id>
     <link href="https://fengling68.github.io/blogs/web/z-others/NPM%E5%8F%91%E5%B8%83%E5%8C%85/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="npm发布一个工具包"> NPM发布一个工具包</h1>
 <h2 id="简单步骤介绍"> 简单步骤介绍</h2>
 <ol>
@@ -22550,6 +22640,9 @@ yarn<span>-</span>error<span>.</span>log<span>*</span>
 <span># 发布到npm</span>
 <span>npm</span> login
 <span>npm</span> publish
+
+<span># 给npm添加权限</span>
+<span>npm</span> owner <span>add</span> username packagename
 <span>..</span>.
 
 </code></pre>
@@ -22557,13 +22650,13 @@ yarn<span>-</span>error<span>.</span>log<span>*</span>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">代码片段</title>
     <id>https://fengling68.github.io/blogs/web/z-others/code/</id>
     <link href="https://fengling68.github.io/blogs/web/z-others/code/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h2 id="代码片段"> 代码片段</h2>
 <div><pre><code><span>(</span><span>function</span> <span>(</span><span>hasTitle<span>,</span> psdWidth</span><span>)</span> <span>{</span>
   psdWidth <span>=</span> psdWidth <span>||</span> <span>640</span><span>;</span>
@@ -22649,13 +22742,13 @@ window<span>.</span><span>addEventListener</span><span>(</span><span>'scroll'</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">PWA 渐进式Web应用</title>
     <id>https://fengling68.github.io/blogs/web/z-others/pwa/</id>
     <link href="https://fengling68.github.io/blogs/web/z-others/pwa/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="pwa-渐进式web应用"> PWA 渐进式Web应用</h1>
 <h2 id="pwa简介"> PWA简介</h2>
 <h3 id="定义"> 定义</h3>
@@ -22876,13 +22969,13 @@ self<span>.</span><span>addEventListener</span><span>(</span><span>'activate'</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">上传头像的三种方法</title>
     <id>https://fengling68.github.io/blogs/web/z-others/%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/</id>
     <link href="https://fengling68.github.io/blogs/web/z-others/%E4%B8%8A%E4%BC%A0%E5%A4%B4%E5%83%8F%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="上传头像的三种方法"> 上传头像的三种方法</h1>
 <h2 id="一、form表单上传文件-原生js"> 一、form表单上传文件(原生JS)</h2>
 <h3 id="_1、html部分"> 1、HTML部分</h3>
@@ -23073,13 +23166,13 @@ self<span>.</span><span>addEventListener</span><span>(</span><span>'activate'</s
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">同时配置github、gitee、coding的ssh</title>
     <id>https://fengling68.github.io/blogs/web/z-others/%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEgithub%E3%80%81gitee%E3%80%81coding%E7%9A%84ssh/</id>
     <link href="https://fengling68.github.io/blogs/web/z-others/%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEgithub%E3%80%81gitee%E3%80%81coding%E7%9A%84ssh/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="同时配置github、gitee、coding的ssh"> 同时配置github、gitee、coding的ssh</h1>
 <h2 id="_1、创建rsa文件"> 1、创建rsa文件</h2>
 <div><pre><code>cd ~/.ssh
@@ -23130,13 +23223,13 @@ ssh -T git@git.coding.net
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">常用插件</title>
     <id>https://fengling68.github.io/blogs/web/z-others/%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</id>
     <link href="https://fengling68.github.io/blogs/web/z-others/%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="常用插件"> 常用插件</h1>
 <h2 id="swiper轮播图"> Swiper轮播图</h2>
 <h3 id="_1、css部分"> 1、CSS部分</h3>
@@ -24172,13 +24265,13 @@ markdown-it-sub</p>
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">自定义和压缩字体</title>
     <id>https://fengling68.github.io/blogs/web/z-others/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%92%8C%E5%8E%8B%E7%BC%A9%E5%AD%97%E4%BD%93/</id>
     <link href="https://fengling68.github.io/blogs/web/z-others/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%92%8C%E5%8E%8B%E7%BC%A9%E5%AD%97%E4%BD%93/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="自定义和压缩字体"> 自定义和压缩字体</h1>
 <h2 id="自定义字体"> 自定义字体</h2>
 <div><pre><code><span><span>@font-face</span></span> <span>{</span>
@@ -24251,13 +24344,81 @@ font-spider ./index.html
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
+  </entry>
+  <entry>
+    <title type="html">JS运动函数及封装</title>
+    <id>https://fengling68.github.io/blogs/web/c-javascript/15-JS%E8%BF%90%E5%8A%A8%E5%87%BD%E6%95%B0%E5%8F%8A%E5%B0%81%E8%A3%85/</id>
+    <link href="https://fengling68.github.io/blogs/web/c-javascript/15-JS%E8%BF%90%E5%8A%A8%E5%87%BD%E6%95%B0%E5%8F%8A%E5%B0%81%E8%A3%85/"/>
+    <updated>2022-01-16T06:01:39.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="js运动函数及封装"> JS运动函数及封装</h1>
+<h2 id="图片滚动"> 图片滚动</h2>
+<div><pre><code>var timer;
+btn.onclick = function(){
+    setInterval(function(){
+        div.style.left = div.offsetLeft + 10 + &quot;px&quot;;
+        if(div.offsetLeft &gt; 200){
+            clearInterval(timer);
+            div.style.left = &quot;200px&quot;;
+        }
+    },100);
+}
+
+
+//元素当前位置：元素.offsetLeft/offsetTop + &quot;px&quot;;
+</code></pre>
+</div><h2 id="运动公式"> 运动公式</h2>
+<p>(1)匀速运动公式</p>
+<div><pre><code>元素.style.top/left = 元素.offsetLeft/offsetTop  +/-  10 + &quot;px&quot;;
+</code></pre>
+</div><p>(2)缓速运动公式</p>
+<div><pre><code>元素.style.top/left = 元素.offsetLeft/offsetTop + (target-当前位置) / 10 + &quot;px&quot;;
+</code></pre>
+</div><h2 id="匀速运动函数"> 匀速运动函数</h2>
+<div><pre><code>var timer;
+function animate(ele,target){
+    clearInterval(ele.timer);   //归属者ele
+    var speed = (target &gt; ele.offsetLeft) ? 10 : -10;
+
+    ele.timer = setInterval(function(){
+        var result = target - ele.offsetLeft;
+        ele.style.left = ele.offsetLeft + speed + &quot;px&quot;;
+
+        if( Math.abs(result) &lt;= 10 ){
+            clearInterval(ele.timer);
+            ele.style.left = target + &quot;px&quot;;
+        }
+    },100);
+}
+</code></pre>
+</div><h2 id="缓速运动函数"> 缓速运动函数</h2>
+<div><pre><code>var timer;
+function animate(obj,target){
+    clearInterval(obj.timer);   //归属者obj
+
+    obj.timer = setInterval(function(){
+        var speed = (target - obj.offsetLeft) / 10;
+        speed = (speed &gt; 0) ? Math.ceil(speed) : Math.floor(speed);
+        obj.style.left = obj.offsetLeft + speed + &quot;px&quot;;
+
+        if(target == obj.offsetLeft){
+            clearInterval(obj.timer);
+            obj.style.left = target + &quot;px&quot;;
+        }
+    },20);
+}
+</code></pre>
+</div>]]></content>
+    <contributor>
+      <name/>
+    </contributor>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">DOM样式和屏幕尺寸</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/14-DOM%E6%A0%B7%E5%BC%8F%E5%92%8C%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/14-DOM%E6%A0%B7%E5%BC%8F%E5%92%8C%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="dom样式和屏幕尺寸"> DOM样式和屏幕尺寸</h1>
 <h2 id="css样式操作"> CSS样式操作</h2>
 <div><pre><code>在JS中，如果样式名称有连字符，去掉连字符，驼峰命名
@@ -24333,13 +24494,13 @@ getSize();
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
   <entry>
     <title type="html">JS事件</title>
     <id>https://fengling68.github.io/blogs/web/c-javascript/16-JS%E4%BA%8B%E4%BB%B6/</id>
     <link href="https://fengling68.github.io/blogs/web/c-javascript/16-JS%E4%BA%8B%E4%BB%B6/"/>
-    <updated>2022-01-11T13:37:55.000Z</updated>
+    <updated>2022-01-16T06:01:39.000Z</updated>
     <content type="html"><![CDATA[<h1 id="js事件"> JS事件</h1>
 <h2 id="什么是事件"> 什么是事件</h2>
 <div><pre><code>用户或浏览器执行的某个动作
@@ -24440,6 +24601,6 @@ JS : 入口函数 window.onload = function(){}
     <contributor>
       <name/>
     </contributor>
-    <published>2022-01-11T13:37:55.000Z</published>
+    <published>2022-01-16T06:01:39.000Z</published>
   </entry>
 </feed>
