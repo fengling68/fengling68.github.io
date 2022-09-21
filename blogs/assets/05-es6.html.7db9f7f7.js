@@ -1,0 +1,1 @@
+import{_ as t,o as c,c as a,b as e,d as s}from"./app.ae676a5c.js";const r={},o=e("h1",{id:"ecmascript6",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#ecmascript6","aria-hidden":"true"},"#"),s(" ECMAScript6")],-1),_=[o];function n(d,i){return c(),a("div",null,_)}const l=t(r,[["render",n],["__file","05-es6.html.vue"]]);export{l as default};
