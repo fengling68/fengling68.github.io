@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-977cced4","path":"/web-blog/%E9%85%8D%E7%BD%AE/emoji.html","title":"emoji\u8868\u60C5","lang":"en-US","frontmatter":{"pageClass":"custom-page-class"},"excerpt":"","headers":[],"git":{"updatedTime":1663857811000},"filePathRelative":"web-blog/\u914D\u7F6E/emoji.md"}');export{e as data};

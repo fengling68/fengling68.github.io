@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1bf2d32a","path":"/web-snippet/css/svg-fan-shape.html","title":"svg\u5B9E\u73B0\u6247\u5F62\u8499\u5C42","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1663857811000},"filePathRelative":"web-snippet/css/svg-fan-shape.md"}');export{e as data};
