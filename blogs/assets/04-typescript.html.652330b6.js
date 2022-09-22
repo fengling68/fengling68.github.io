@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-29069d6e","path":"/web-interview/technology/04-typescript.html","title":"TypeScript","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1663776209000,"contributors":[{"name":"fengling68","email":"lvjianping_268@163.com","commits":1}]},"filePathRelative":"web-interview/technology/04-typescript.md"}');export{e as data};
