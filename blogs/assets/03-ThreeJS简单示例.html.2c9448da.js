@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-5d2b9d1b","path":"/web-blog/d-animation/03-ThreeJS%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B.html","title":"three.js\u7B80\u5355\u793A\u4F8B","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1663857811000},"filePathRelative":"web-blog/d-animation/03-ThreeJS\u7B80\u5355\u793A\u4F8B.md"}');export{e as data};
