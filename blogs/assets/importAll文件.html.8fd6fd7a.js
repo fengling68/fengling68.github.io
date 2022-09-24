@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-0954fd6a","path":"/web-snippet/javascript/importAll%E6%96%87%E4%BB%B6.html","title":"\u5F15\u5165\u6240\u6709\u6587\u4EF6","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1663945835000},"filePathRelative":"web-snippet/javascript/importAll\u6587\u4EF6.md"}');export{t as data};
