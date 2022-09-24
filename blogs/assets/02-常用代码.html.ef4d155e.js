@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-c2a51276","path":"/web-snippet/css/02-%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81.html","title":"\u5E38\u7528\u4EE3\u7801","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1664035835000},"filePathRelative":"web-snippet/css/02-\u5E38\u7528\u4EE3\u7801.md"}');export{e as data};

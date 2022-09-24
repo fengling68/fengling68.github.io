@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-2baf8614","path":"/web-interview/technology/05-es6.html","title":"ECMAScript6","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1664035249000},"filePathRelative":"web-interview/technology/05-es6.md"}');export{e as data};
