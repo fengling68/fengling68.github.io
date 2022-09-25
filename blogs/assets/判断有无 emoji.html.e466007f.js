@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-76c7ff8a","path":"/web-snippet/javascript/%E5%88%A4%E6%96%AD%E6%9C%89%E6%97%A0%20emoji.html","title":"\u5224\u65AD\u6709\u65E0 emoji","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1664082874000},"filePathRelative":"web-snippet/javascript/\u5224\u65AD\u6709\u65E0 emoji.md"}');export{e as data};
