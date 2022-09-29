@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-0f7d1154","path":"/draft-box/javascript/13-DOM%E5%85%83%E7%B4%A0%E6%93%8D%E4%BD%9C.html","title":"DOM\u5143\u7D20\u64CD\u4F5C","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1664466407000},"filePathRelative":"draft-box/javascript/13-DOM\u5143\u7D20\u64CD\u4F5C.md"}');export{t as data};

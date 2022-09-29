@@ -8,7 +8,7 @@
   "theme_color": "#3eaf7c",
   "icons": [
     {
-      "src": "/image/icons/avatar.png",
+      "src": "/blogs/image/icons/avatar.png",
       "sizes": "320x320",
       "type": "image/png"
     }
