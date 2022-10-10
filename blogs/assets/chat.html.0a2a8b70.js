@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5c4d59a8","path":"/chat.html","title":"","lang":"en-US","frontmatter":{"chatTerm":"blogs chat room","chat":true,"sidebar":false,"toc":false},"excerpt":"","headers":[],"git":{"updatedTime":1665412849000},"filePathRelative":"chat.md","readingTime":{"minutes":0.05,"words":10}}');export{e as data};
