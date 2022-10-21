@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-4eea49c3","path":"/life-learn/","title":"\u4E00\u6587\u5B66\u5802","lang":"en-US","frontmatter":{"date":"2018-08-08T00:00:00.000Z"},"excerpt":"","headers":[],"git":{"updatedTime":1666190135000},"filePathRelative":"life-learn/readme.md","readingTime":{"minutes":0.16,"words":31}}');export{e as data};
