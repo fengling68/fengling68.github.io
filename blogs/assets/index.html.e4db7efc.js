@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-2e059bd2","path":"/job-interview/","title":"\u524D\u7AEF\u30FB\u9762\u8BD5\u5C0F\u518C","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1666500426000},"filePathRelative":"job-interview/readme.md","readingTime":{"minutes":0.12,"words":24}}');export{e as data};
