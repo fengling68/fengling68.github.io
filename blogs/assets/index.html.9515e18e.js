@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-51357657","path":"/life-movie/","title":"\u5F71\u97F3","lang":"en-US","frontmatter":{"date":"2018-08-08T00:00:00.000Z"},"excerpt":"","headers":[],"git":{"updatedTime":1666796207000},"filePathRelative":"life-movie/readme.md","readingTime":{"minutes":0.03,"words":6}}');export{e as data};
