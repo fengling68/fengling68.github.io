@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3362bbb2","path":"/life-learn/%E7%9B%AE%E5%BD%95/%E8%8A%B1%E8%AF%AD.html","title":"\u82B1\u8BED","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1667134947000},"filePathRelative":"life-learn/\u76EE\u5F55/\u82B1\u8BED.md","readingTime":{"minutes":0.01,"words":2}}');export{e as data};
