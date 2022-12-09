@@ -1,2 +1,0 @@
-import{_ as e,o as a,c as t,f as c}from"./app.988d0af1.js";const r={},d=c(`<h1 id="mac-常用快捷键" tabindex="-1"><a class="header-anchor" href="#mac-常用快捷键" aria-hidden="true">#</a> mac 常用快捷键</h1><h2 id="访达显示隐藏-文件" tabindex="-1"><a class="header-anchor" href="#访达显示隐藏-文件" aria-hidden="true">#</a> 访达显示隐藏 . 文件</h2><div class="language-text" data-ext="text"><pre class="language-text"><code>command + shift + .
-</code></pre></div>`,3),n=[d];function s(_,o){return a(),t("div",null,n)}const h=e(r,[["render",s],["__file","mac 常用快捷键.html.vue"]]);export{h as default};
