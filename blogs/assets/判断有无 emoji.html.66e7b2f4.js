@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-2720eef5","path":"/job-snippet/03-javascript/%E5%88%A4%E6%96%AD%E6%9C%89%E6%97%A0%20emoji.html","title":"判断有无 emoji","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1672148921000},"filePathRelative":"job-snippet/03-javascript/判断有无 emoji.md","readingTime":{"minutes":1.11,"words":221}}');export{e as data};
