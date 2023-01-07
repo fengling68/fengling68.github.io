@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3e785f78","path":"/job-snippet/03-javascript/%E9%9A%8F%E6%9C%BA%E9%AA%B0%E5%AD%90.html","title":"随机骰子","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1673072259000},"filePathRelative":"job-snippet/03-javascript/随机骰子.md","readingTime":{"minutes":0.93,"words":186}}');export{e as data};
