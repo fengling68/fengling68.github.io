@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-4e2172dc","path":"/draft/javascript/13-DOM%E5%85%83%E7%B4%A0%E6%93%8D%E4%BD%9C.html","title":"DOM元素操作","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1673530147000},"filePathRelative":"draft/javascript/13-DOM元素操作.md","readingTime":{"minutes":2.56,"words":512}}');export{t as data};
