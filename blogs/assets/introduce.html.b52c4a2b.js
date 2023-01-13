@@ -1,0 +1,1 @@
+import{_ as t,o as c,c as o,a as e,b as a}from"./app.873480e4.js";const n={},r=e("h1",{id:"前端・面试小册",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#前端・面试小册","aria-hidden":"true"},"#"),a(" 前端・面试小册")],-1),s=e("p",null,"前端面试知识点笔试题备忘，不计入归档页。",-1),_=[r,s];function d(i,l){return c(),o("div",null,_)}const u=t(n,[["render",d],["__file","introduce.html.vue"]]);export{u as default};
