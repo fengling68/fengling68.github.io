@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-449fdf7f","path":"/job-snippet/04-vue/%E8%B7%AF%E7%94%B1%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB.html","title":"路由切换动画","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1675774994000},"filePathRelative":"job-snippet/04-vue/路由切换动画.md","readingTime":{"minutes":0.5,"words":99}}');export{e as data};
