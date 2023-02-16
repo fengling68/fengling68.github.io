@@ -1,0 +1,1 @@
+import{_ as t,o as a,c,a as e,b as o}from"./app.fa375d3e.js";const r={},n=e("h1",{id:"梦境穿梭",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#梦境穿梭","aria-hidden":"true"},"#"),o(" 梦境穿梭")],-1),s=[n];function _(d,i){return a(),c("div",null,s)}const l=t(r,[["render",_],["__file","introduce.html.vue"]]);export{l as default};
