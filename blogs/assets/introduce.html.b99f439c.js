@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-d835ca06","path":"/life-play/introduce.html","title":"视听娱乐","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1676549961000},"filePathRelative":"life-play/introduce.md","readingTime":{"minutes":0.02,"words":4}}');export{e as data};

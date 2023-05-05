@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-5a123bfe","path":"/life-dream/introduce.html","title":"梦境穿梭","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1676549961000},"filePathRelative":"life-dream/introduce.md","readingTime":{"minutes":0.02,"words":4}}');export{e as data};
