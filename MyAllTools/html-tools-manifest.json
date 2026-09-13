@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-09-13T09:44:55.776Z",
+  "base": "html-tools",
+  "total": 4,
+  "tree": [
+    {
+      "type": "dir",
+      "name": "股票",
+      "path": "html-tools/股票",
+      "children": [
+        {
+          "type": "file",
+          "name": "A股板块全景手册 · 2026-09-09",
+          "file": "A股板块全景手册-20260909.html",
+          "path": "html-tools/股票/A股板块全景手册-20260909.html",
+          "url": "html-tools/股票/A股板块全景手册-20260909.html",
+          "size": 1650257,
+          "updatedAt": "2026-09-13T09:44:49.795Z",
+          "desc": ""
+        },
+        {
+          "type": "file",
+          "name": "A股板块全景手册 · 2026-09-10",
+          "file": "A股板块全景手册-20260910.html",
+          "path": "html-tools/股票/A股板块全景手册-20260910.html",
+          "url": "html-tools/股票/A股板块全景手册-20260910.html",
+          "size": 1704796,
+          "updatedAt": "2026-09-13T09:44:49.809Z",
+          "desc": ""
+        },
+        {
+          "type": "file",
+          "name": "A股涨停复盘 · 2026-09-10",
+          "file": "A股涨停复盘-20260910.html",
+          "path": "html-tools/股票/A股涨停复盘-20260910.html",
+          "url": "html-tools/股票/A股涨停复盘-20260910.html",
+          "size": 213370,
+          "updatedAt": "2026-09-13T09:44:49.810Z",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "CSS",
+      "path": "html-tools/CSS",
+      "children": [
+        {
+          "type": "file",
+          "name": "CSS 加载动画合集 · 8 种纯 CSS Loading",
+          "file": "加载动画合集.html",
+          "path": "html-tools/CSS/加载动画合集.html",
+          "url": "html-tools/CSS/加载动画合集.html",
+          "size": 24655,
+          "updatedAt": "2026-09-13T09:44:49.789Z",
+          "desc": ""
+        }
+      ]
+    }
+  ]
+}

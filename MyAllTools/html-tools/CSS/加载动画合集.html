@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="ThSedI67Xtx4KjW7PZPCb2">
+<head data-page-node-id="ZGRIEG0Cet0MmwrM6yYoFC">
+<meta charset="UTF-8" data-page-node-id="5H66yRcA45eQQfslYasVgM">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="YozqrJI39KmYlwOoskg0K8">
+<title>CSS 加载动画合集 · 8 种纯 CSS Loading</title>
+
+<!-- ============ 页面框架样式（非复制内容） ============ -->
+<style>
+  :root {
+    --bg: #0b0e14;
+    --card: #141925;
+    --card-border: rgba(255, 255, 255, 0.07);
+    --text: #e6eaf2;
+    --text-2: #8b94a7;
+    --accent: #6ea8fe;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background:
+      radial-gradient(900px 400px at 15% -5%, rgba(110, 168, 254, 0.09), transparent 60%),
+      radial-gradient(900px 400px at 85% -5%, rgba(167, 139, 250, 0.08), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+    min-height: 100vh;
+    padding: 48px 24px 64px;
+  }
+
+  .page { max-width: 1240px; margin: 0 auto; }
+
+  /* ---------- 头部 ---------- */
+  header { text-align: center; margin-bottom: 40px; }
+
+  header h1 {
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: linear-gradient(90deg, #6ea8fe, #a78bfa, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  header p {
+    margin-top: 12px;
+    color: var(--text-2);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .motion-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    padding: 5px 14px;
+    border: 1px solid var(--card-border);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 12px;
+    color: var(--text-2);
+  }
+
+  .motion-badge::before {
+    content: "";
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+  }
+
+  /* 减弱动态模式下切换徽标文案 */
+  .badge-off { display: inline; }
+  .badge-on  { display: none; }
+
+  /* ---------- 卡片网格 ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    animation: card-in 0.5s ease-out both;
+    transition: transform 200ms ease, border-color 200ms ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+
+  .card:nth-child(1) { animation-delay: 0.00s; }
+  .card:nth-child(2) { animation-delay: 0.05s; }
+  .card:nth-child(3) { animation-delay: 0.10s; }
+  .card:nth-child(4) { animation-delay: 0.15s; }
+  .card:nth-child(5) { animation-delay: 0.20s; }
+  .card:nth-child(6) { animation-delay: 0.25s; }
+  .card:nth-child(7) { animation-delay: 0.30s; }
+  .card:nth-child(8) { animation-delay: 0.35s; }
+
+  @keyframes card-in {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .preview {
+    height: 150px;
+    display: grid;
+    place-items: center;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 16px 16px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .meta {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 18px 18px;
+  }
+
+  .meta .num {
+    font-size: 11px;
+    color: var(--text-2);
+    letter-spacing: 0.12em;
+    margin-bottom: 4px;
+  }
+
+  .meta h2 { font-size: 16px; font-weight: 600; }
+
+  .meta p {
+    margin-top: 5px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+
+  .copy-btn {
+    flex-shrink: 0;
+    padding: 7px 14px;
+    font-size: 12.5px;
+    font-family: inherit;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+  }
+
+  .copy-btn:hover {
+    background: rgba(110, 168, 254, 0.14);
+    border-color: rgba(110, 168, 254, 0.45);
+  }
+
+  .copy-btn:active { transform: scale(0.96); }
+
+  .copy-btn.copied {
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.5);
+    background: rgba(74, 222, 128, 0.1);
+  }
+
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--text-2);
+    line-height: 1.8;
+  }
+
+  footer code {
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 12px;
+  }
+
+  /* ---------- 减弱动态降级 ----------
+     循环动画统一「暂停在代表性关键帧」：
+     交错时序均采用负延迟书写，暂停时自然定格在各自的相位上，
+     避免冻结在 0%（可能不可见）的状态。 */
+  @media (prefers-reduced-motion: reduce) {
+    .badge-off { display: none; }
+    .badge-on  { display: inline; }
+    .motion-badge::before { background: #fbbf24; }
+
+    .card { animation: none; }
+    .card:hover { transform: none; }
+    .copy-btn:active { transform: none; }
+  }
+</style>
+
+<!-- ================= 01 旋转圆环（可复制） ================= -->
+<style id="css-ring">
+/* 旋转圆环：双色描边 + 匀速旋转，经典加载指示器 */
+.ld-ring {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 4px solid rgba(110, 168, 254, 0.15);
+  border-top-color: #6ea8fe;
+  border-right-color: rgba(110, 168, 254, 0.45);
+  animation: ld-ring-spin 0.9s linear infinite;
+  will-change: transform;
+}
+
+@keyframes ld-ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 减弱动态：暂停在 80° 相位 */
+@media (prefers-reduced-motion: reduce) {
+  .ld-ring { animation-play-state: paused; animation-delay: -0.2s; }
+}
+</style>
+
+<!-- ================= 02 脉冲圆点（可复制） ================= -->
+<style id="css-dots">
+/* 脉冲圆点：三点缩放交错，简约节奏感 */
+.ld-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.ld-dots i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: ld-dots-pulse 1.2s ease-in-out infinite;
+}
+
+/* 负延迟交错：页面加载即处于节奏中，暂停时定格在各自相位 */
+.ld-dots i:nth-child(2) { animation-delay: -1.05s; }
+.ld-dots i:nth-child(3) { animation-delay: -0.90s; }
+
+@keyframes ld-dots-pulse {
+  0%, 60%, 100% { transform: scale(0.55); opacity: 0.35; }
+  30%           { transform: scale(1);    opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ld-dots i { animation-play-state: paused; }
+}
+</style>
+
+<!-- ================= 03 弹跳柱条（可复制） ================= -->
+<style id="css-bars">
+/* 弹跳柱条：五柱 scaleY 交错弹跳，音频可视化风格 */
+.ld-bars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 52px;
+}
+
+.ld-bars i {
+  width: 8px;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #f472b6, #f43f5e);
+  animation: ld-bars-bounce 1s ease-in-out infinite;
+}
+
+.ld-bars i:nth-child(1) { animation-delay: -0.00s; }
+.ld-bars i:nth-child(2) { animation-delay: -0.10s; }
+.ld-bars i:nth-child(3) { animation-delay: -0.20s; }
+.ld-bars i:nth-child(4) { animation-delay: -0.30s; }
+.ld-bars i:nth-child(5) { animation-delay: -0.40s; }
+
+@keyframes ld-bars-bounce {
+  0%, 100% { transform: scaleY(0.28); }
+  50%      { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ld-bars i { animation-play-state: paused; }
+}
+</style>
+
+<!-- ================= 04 波纹圆圈（可复制） ================= -->
+<style id="css-ripple">
+/* 波纹圆圈：涟漪交错扩散，雷达探测感 */
+.ld-ripple {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+/* 中心信标（静态） */
+.ld-ripple::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 10px; height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: #22d3ee;
+}
+
+.ld-ripple i {
+  position: absolute;
+  inset: 0;
+  border: 3px solid #22d3ee;
+  border-radius: 50%;
+  opacity: 0;
+  animation: ld-ripple-wave 2.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.ld-ripple i:nth-child(1) { animation-delay: -0.35s; }
+.ld-ripple i:nth-child(2) { animation-delay: -1.05s; }
+.ld-ripple i:nth-child(3) { animation-delay: -1.75s; }
+
+@keyframes ld-ripple-wave {
+  0%   { transform: scale(0.15); opacity: 0; }
+  25%  { opacity: 0.9; }
+  100% { transform: scale(1);    opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ld-ripple i { animation-play-state: paused; }
+}
+</style>
+
+<!-- ================= 05 渐变锥形旋转器（可复制） ================= -->
+<style id="css-conic">
+/* 渐变锥形旋转器：conic-gradient + mask 成环，旋转形成拖尾，现代质感 */
+.ld-conic {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 90deg,
+    rgba(167, 139, 250, 0) 0deg,
+    rgba(167, 139, 250, 0.85) 290deg,
+    #d8b4fe 360deg
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 6px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 6px));
+  animation: ld-conic-spin 0.9s linear infinite;
+  will-change: transform;
+}
+
+@keyframes ld-conic-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ld-conic { animation-play-state: paused; animation-delay: -0.3s; }
+}
+</style>
+
+<!-- ================= 06 打字指示器（可复制） ================= -->
+<style id="css-typing">
+/* 打字指示器：聊天气泡 + 三点浮沉，对话 UI 必备 */
+.ld-typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 13px 16px;
+  background: #1f2937;
+  border-radius: 18px;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.ld-typing i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #93c5fd;
+  animation: ld-typing-bounce 1.2s ease-in-out infinite;
+}
+
+.ld-typing i:nth-child(2) { animation-delay: -1.02s; }
+.ld-typing i:nth-child(3) { animation-delay: -0.84s; }
+
+@keyframes ld-typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30%           { transform: translateY(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ld-typing i { animation-play-state: paused; }
+}
+</style>
+
+<!-- ================= 07 骨架屏微光（可复制） ================= -->
+<style id="css-skeleton">
+/* 骨架屏微光：扫光沿 X 轴平移（transform 驱动），加载过渡自然 */
+.ld-skeleton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 210px;
+}
+
+.sk-avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #20293a;
+  overflow: hidden;
+}
+
+.sk-lines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sk-line {
+  position: relative;
+  height: 10px;
+  border-radius: 5px;
+  background: #20293a;
+  overflow: hidden;
+}
+
+.sk-line--w60 { width: 60%; }
+.sk-line--w100 { width: 100%; }
+.sk-line--w80 { width: 80%; }
+
+/* 扫光层：从左侧 -100% 平移到右侧 100% */
+.sk-avatar::after,
+.sk-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.09), transparent);
+  animation: ld-sk-shimmer 1.8s ease-in-out infinite;
+}
+
+/* 负延迟：暂停时扫光恰好停在画面中部 */
+.sk-avatar::after { animation-delay: -0.9s; }
+
+@keyframes ld-sk-shimmer {
+  to { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk-avatar::after,
+  .sk-line::after { animation-play-state: paused; }
+}
+</style>
+
+<!-- ================= 08 DNA 双螺旋（可复制） ================= -->
+<style id="css-dna">
+/* DNA 双螺旋：两条链横向简谐摆动，相位错开半周期，形成交叉缠绕 */
+.ld-dna {
+  position: relative;
+  width: 80px;
+  height: 108px;
+}
+
+.ld-dna .strand {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ld-dna .strand i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: ld-dna-swing 1.4s ease-in-out infinite alternate;
+}
+
+.ld-dna .strand-a i { background: #38bdf8; }
+.ld-dna .strand-b i { background: #fb7185; }
+
+/* 链 A：相位沿纵向递进，形成行波 */
+.ld-dna .strand-a i:nth-child(1) { animation-delay: -0.00s; }
+.ld-dna .strand-a i:nth-child(2) { animation-delay: -0.12s; }
+.ld-dna .strand-a i:nth-child(3) { animation-delay: -0.24s; }
+.ld-dna .strand-a i:nth-child(4) { animation-delay: -0.36s; }
+.ld-dna .strand-a i:nth-child(5) { animation-delay: -0.48s; }
+.ld-dna .strand-a i:nth-child(6) { animation-delay: -0.60s; }
+
+/* 链 B：整体再错开半个周期（0.7s） */
+.ld-dna .strand-b i:nth-child(1) { animation-delay: -0.70s; }
+.ld-dna .strand-b i:nth-child(2) { animation-delay: -0.82s; }
+.ld-dna .strand-b i:nth-child(3) { animation-delay: -0.94s; }
+.ld-dna .strand-b i:nth-child(4) { animation-delay: -1.06s; }
+.ld-dna .strand-b i:nth-child(5) { animation-delay: -1.18s; }
+.ld-dna .strand-b i:nth-child(6) { animation-delay: -1.30s; }
+
+@keyframes ld-dna-swing {
+  from { transform: translateX(-22px); }
+  to   { transform: translateX(22px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ld-dna .strand i { animation-play-state: paused; }
+}
+</style>
+</head>
+
+<body data-page-node-id="ujGc1DkaT4qCoKoZIk5kyH">
+<div class="page" data-page-node-id="N2n0ceQUrcDe5QvDHYTiVN">
+
+  <header data-page-node-id="qLzU3WMDJ9Ce2QtSJpFS03">
+    <h1 data-page-node-id="bAJQZtvGFfLdVKBgGKtrsZ">CSS 加载动画合集</h1>
+    <p data-page-node-id="2hTc5OHzEYjzVPPAL95qCp">8 种纯 CSS 实现的加载动画 · 单文件 · 零依赖 · 仅用 keyframes + transform<br data-page-node-id="RQrYWAj0gXVEG4Q0Vnkqzy">
+       自动响应 <code data-page-node-id="HpiYxgdjPZ8z7fmnhKdBIB">prefers-reduced-motion</code> 系统偏好</p>
+    <div class="motion-badge" data-page-node-id="ZlM9DJVhn4KhOVKGe1P8xN">
+      <span class="badge-off" data-page-node-id="CjJ7HEfUe8uADAdqtE5gVH">动态效果：完整播放</span>
+      <span class="badge-on" data-page-node-id="O0RkTiRHMNp9coWhjrxrz3">已检测到「减弱动态效果」偏好，动画已暂停在静态帧</span>
+    </div>
+  </header>
+
+  <main class="grid" data-page-node-id="lQiMAFlXYAsh1ss6dkfGyu">
+
+    <!-- 01 旋转圆环 -->
+    <section class="card" data-page-node-id="Pwu835MAGVl81fngUD1quu">
+      <div class="preview" data-page-node-id="C4LXcCwIBwNLFicdQgy9tt"><div class="ld-ring" data-page-node-id="6AoIlA6sWRZM41o7A5g4eM"></div></div>
+      <div class="meta" data-page-node-id="YF0T1rvG8iVNEup85CyzOj">
+        <div data-page-node-id="KRQPwC1M8pjiGgOAAoOJAK">
+          <div class="num" data-page-node-id="zlLr2DR0SMGOgCJQUJ21h3">01 / SPINNER</div>
+          <h2 data-page-node-id="tqCI1dJcbpGHNypCMU2QBH">旋转圆环</h2>
+          <p data-page-node-id="4YLvNxba4PgjpwHvOrasf2">渐变边框旋转，经典加载指示器</p>
+        </div>
+        <button class="copy-btn" data-css="css-ring" data-page-node-id="oH0uZNXlox1jRC1FTSUcL5">复制 CSS</button>
+      </div>
+    </section>
+
+    <!-- 02 脉冲圆点 -->
+    <section class="card" data-page-node-id="SA9A8zWLtFqXiSmFnvZGRY">
+      <div class="preview" data-page-node-id="etOxU3D7Muu51okRAEJjkQ">
+        <div class="ld-dots" data-page-node-id="8wD8BjaAgV1UeysfcsoFi7"><i data-page-node-id="AiOckAGxXk219nuoEojVQr"></i><i data-page-node-id="ZMvyDjb81tMNvV1TOEfAp0"></i><i data-page-node-id="eFmVALKH0zl6SbER2l8JWS"></i></div>
+      </div>
+      <div class="meta" data-page-node-id="bffO0Q4pGYkSYnFqzw9vta">
+        <div data-page-node-id="K5ZLIUCN1Em8LSUoatD7ax">
+          <div class="num" data-page-node-id="RKDLEvkY2TV6nXKwUt2k5x">02 / PULSE DOTS</div>
+          <h2 data-page-node-id="GZuzBQbQrkqBkCFEAldKON">脉冲圆点</h2>
+          <p data-page-node-id="uF4VbAhb0K7Ilrvm5PQFUT">三点缩放，简约节奏感</p>
+        </div>
+        <button class="copy-btn" data-css="css-dots" data-page-node-id="73f6YDzZDMil5KPE7oZmA7">复制 CSS</button>
+      </div>
+    </section>
+
+    <!-- 03 弹跳柱条 -->
+    <section class="card" data-page-node-id="yEKuOg3soBCcJp5zPMddug">
+      <div class="preview" data-page-node-id="JHPBfqXL5PB4c4z2EI9sfL">
+        <div class="ld-bars" data-page-node-id="TZ7rPgBFn4JCfORSugbrZY"><i data-page-node-id="wh7FRk2hY3ZDCNuLbVoRY4"></i><i data-page-node-id="TO2wHrFq5mTgKtnDqZ4qML"></i><i data-page-node-id="7UjTeg2GD21nOuBa5jGxKn"></i><i data-page-node-id="m631EkBz2uJjASAOtKXYI0"></i><i data-page-node-id="aC8wsLMG4VbMP5luPH8JVE"></i></div>
+      </div>
+      <div class="meta" data-page-node-id="zECCxFDXimmQEUx54b435G">
+        <div data-page-node-id="HaQcvPBCqjxEfQGFcIwDU1">
+          <div class="num" data-page-node-id="oolpKGBdg2SP1fKLWWPVjg">03 / BARS</div>
+          <h2 data-page-node-id="BRwEEMYwfPsyDxaBVA6Y8y">弹跳柱条</h2>
+          <p data-page-node-id="FcnCfk0ZoAVsJI5LjDII4P">五柱交错弹跳，音频可视化风格</p>
+        </div>
+        <button class="copy-btn" data-css="css-bars" data-page-node-id="CCwoXOL0phrg7w2kEUcH2h">复制 CSS</button>
+      </div>
+    </section>
+
+    <!-- 04 波纹圆圈 -->
+    <section class="card" data-page-node-id="spP68DIQdHBqqL30Aho2ow">
+      <div class="preview" data-page-node-id="heYcBBuFCDE0wnJEyODJcQ">
+        <div class="ld-ripple" data-page-node-id="6wQ5AqeLTK91YpJsTHaAHL"><i data-page-node-id="kuYZk2BKFgeHwXqPE1i49t"></i><i data-page-node-id="jy3wyM8LMXRJykBMhBqr0A"></i><i data-page-node-id="5aF1QDpe6jbe3K4FY2m2BC"></i></div>
+      </div>
+      <div class="meta" data-page-node-id="v6B5XzQCMJTGE8gqiBgKll">
+        <div data-page-node-id="O9HiiA8eR68CspxDhvS3eo">
+          <div class="num" data-page-node-id="KEEy3BsEIXMTA28za0VIi4">04 / RIPPLE</div>
+          <h2 data-page-node-id="IjsBLkXwQ1QaKH8iTpFsQo">波纹圆圈</h2>
+          <p data-page-node-id="PaRuHU9V8RaWXzHxOoRAtc">涟漪扩散效果，雷达探测感</p>
+        </div>
+        <button class="copy-btn" data-css="css-ripple" data-page-node-id="IBykFfvVuzK7onaaGZq430">复制 CSS</button>
+      </div>
+    </section>
+
+    <!-- 05 渐变锥形旋转器 -->
+    <section class="card" data-page-node-id="oab8XJMs5nPfUaEyUgT7pr">
+      <div class="preview" data-page-node-id="OJNtdZUQjAk6T3PNg7uDCj"><div class="ld-conic" data-page-node-id="dH0nBXVf9269juhZ9d0wqf"></div></div>
+      <div class="meta" data-page-node-id="PPDZv73NaeTmrVjHAQjOqS">
+        <div data-page-node-id="FNirV4yEoNZbvvm0EbFFvF">
+          <div class="num" data-page-node-id="0xC5KkGAzyjUQCNnkAyHIF">05 / CONIC</div>
+          <h2 data-page-node-id="PhzcsfKRfVa5u4pGrcBEZr">渐变锥形旋转器</h2>
+          <p data-page-node-id="pCpEiM3HYvseCOo2KhKQLI">锥形渐变旋转，现代质感</p>
+        </div>
+        <button class="copy-btn" data-css="css-conic" data-page-node-id="dcnNgzFIqYqREnCDTitKK8">复制 CSS</button>
+      </div>
+    </section>
+
+    <!-- 06 打字指示器 -->
+    <section class="card" data-page-node-id="6V7qlprVmKaM5JYF8g7aiK">
+      <div class="preview" data-page-node-id="1J8xGTn36qurHlRuZkKUSG">
+        <div class="ld-typing" data-page-node-id="uZBtaCOOMk4gEeO7SrUAhB"><i data-page-node-id="L4Q8DmAYI0Jo6dh7pnwTba"></i><i data-page-node-id="Pk2eJRC7vp9DI2QExmkKR6"></i><i data-page-node-id="aZKeZ1wva5TiBrqu2CDhMG"></i></div>
+      </div>
+      <div class="meta" data-page-node-id="Fi5ToQyuF14vrYAxg9M4tW">
+        <div data-page-node-id="WLZB14vlaTtIi2zO4tDufa">
+          <div class="num" data-page-node-id="ir0asfzMgExMldavZdAdHF">06 / TYPING</div>
+          <h2 data-page-node-id="alEpJXLcJinyuBEh5EjbfM">打字指示器</h2>
+          <p data-page-node-id="zQS3AblY0tyIknUVvPFqM0">聊天输入指示器，对话 UI 必备</p>
+        </div>
+        <button class="copy-btn" data-css="css-typing" data-page-node-id="sCLCwEOAxoZdr8GpIFQZEO">复制 CSS</button>
+      </div>
+    </section>
+
+    <!-- 07 骨架屏微光 -->
+    <section class="card" data-page-node-id="SgiCSqCbzVhe6MRrsmvE4y">
+      <div class="preview" data-page-node-id="iMzHhLFOiZ6DDad6GCoQI1">
+        <div class="ld-skeleton" data-page-node-id="9VkQAxCCG7c0qgwNvwEMo9">
+          <div class="sk-avatar" data-page-node-id="mwjLRUhzAdbNHEI22hgPUv"></div>
+          <div class="sk-lines" data-page-node-id="7qkSEHhcCOHDk1EbSp7bm3">
+            <div class="sk-line sk-line--w60" data-page-node-id="yq35DLQv8r3m0ldtahe047"></div>
+            <div class="sk-line sk-line--w100" data-page-node-id="6TrbkgP2GdVCuQb2DsSGme"></div>
+            <div class="sk-line sk-line--w80" data-page-node-id="aAl5QnPJ8gI8ovQgvhYccy"></div>
+          </div>
+        </div>
+      </div>
+      <div class="meta" data-page-node-id="gyNnrXEc1WwUCieSYwK7SE">
+        <div data-page-node-id="GdlBsPiRQPoojolhvraLDH">
+          <div class="num" data-page-node-id="2S8qhAZY5smiOKT1uEeuA9">07 / SKELETON</div>
+          <h2 data-page-node-id="o3wax8KWLlrlrBc3LeN0IO">骨架屏微光</h2>
+          <p data-page-node-id="rjHDBDopCSwdtEAj6aiV5d">占位内容扫光效果，加载过渡自然</p>
+        </div>
+        <button class="copy-btn" data-css="css-skeleton" data-page-node-id="ydSxfgpUy3LNaCHnCzu9gy">复制 CSS</button>
+      </div>
+    </section>
+
+    <!-- 08 DNA 双螺旋 -->
+    <section class="card" data-page-node-id="1rhkD1Lzt0Dc7MWWLkTrYx">
+      <div class="preview" data-page-node-id="TSuckYRVOumD3pdeQK2MVJ">
+        <div class="ld-dna" data-page-node-id="hf9LfUB9vwWw2U3dDqsisf">
+          <div class="strand strand-a" data-page-node-id="opVCadDEm2a8Q4L4e3Dp0A"><i data-page-node-id="HXBF9nzAbhoiFhQAK8OT6w"></i><i data-page-node-id="N5CBGNKWwxJUyE2iQUOGCx"></i><i data-page-node-id="OKOAcqKuPkF97DV5sAcnNf"></i><i data-page-node-id="HEbZWgWFsl5RysLy8dXquQ"></i><i data-page-node-id="I70p4FEhSzrWFdh963FBcJ"></i><i data-page-node-id="hZwvquM9zHAQWU0wIk2Rf4"></i></div>
+          <div class="strand strand-b" data-page-node-id="CIe6afXtRZZDk2n47xpMFn"><i data-page-node-id="YBaGvO46fQ22c7Iu4WRupk"></i><i data-page-node-id="wwaFeNxSQQ3SbEQh6coEph"></i><i data-page-node-id="AhlBo9fOAxWiv9HqTRHMeY"></i><i data-page-node-id="BYFR5uvGmkkiuim6QIQUrq"></i><i data-page-node-id="hSpqhopyMlbULs6vBMDCz4"></i><i data-page-node-id="cRNivDE9FI47c0QCmun85w"></i></div>
+        </div>
+      </div>
+      <div class="meta" data-page-node-id="UCpcxIumDEmuZdrpbUCNsR">
+        <div data-page-node-id="sK9WnApV8kBKIwCghe959J">
+          <div class="num" data-page-node-id="IFTt0ZZIq2tOoJ2QKDKjwI">08 / DNA HELIX</div>
+          <h2 data-page-node-id="6JjrpTDaoNFH90n0TcsTVE">DNA 双螺旋</h2>
+          <p data-page-node-id="NGYvpiXAG2aROwy7afZKTZ">双链旋转动画，科技生物感</p>
+        </div>
+        <button class="copy-btn" data-css="css-dna" data-page-node-id="y7AJnBu8qufvDE1sZIUb05">复制 CSS</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer data-page-node-id="BE91Tw9E8YxcQwZ9greIn1">
+    点击「复制 CSS」即可获取对应动画的完整样式代码（含 keyframes 与降级声明），可直接粘贴到项目中使用。<br data-page-node-id="l8QfPtGHcHmYNETxiJSpDB">
+    所有动画仅驱动 <code data-page-node-id="NIvfhYt2wbyiwm3axaFI0m">transform</code> / <code data-page-node-id="PfyF2N6F7BgCxesuwpG8ES">opacity</code>，由 GPU 合成，不触发重排重绘。
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var timers = {};
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    ta.remove();
+  }
+
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var source = document.getElementById(btn.dataset.css);
+      var css = source ? source.textContent.trim() : '';
+
+      var done = function () {
+        btn.classList.add('copied');
+        btn.textContent = '已复制 ✓';
+        clearTimeout(timers[btn.dataset.css]);
+        timers[btn.dataset.css] = setTimeout(function () {
+          btn.classList.remove('copied');
+          btn.textContent = '复制 CSS';
+        }, 1600);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(css).then(done, function () { fallbackCopy(css); done(); });
+      } else {
+        fallbackCopy(css);
+        done();
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
