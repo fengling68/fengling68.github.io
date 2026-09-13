@@ -9,7 +9,5 @@
 ## 我的网站
 [📖 前端笔记](https://fengling68.github.io/blogs/)
 
-[🔧 工具集市](https://fengling68.github.io/tools/)
-
-[💗 一百件事](https://fengling68.github.io/100things/)
+[🔧 工具集市](https://fengling68.github.io/MyAllTools/)
 
