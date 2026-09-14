@@ -12,8 +12,10 @@
 (function () {
   var DAYS = [];
   var di = 0;          // 当前日期索引
-  var combined = [];   // 当前日 [zt..., dt...]
+  var combined = [];   // 当前日 [zt..., dt...]（已按排序拼接）
   var cur = 0;         // 当前选中个股在 combined 中的索引
+  var SZT = [];        // 当前日涨停股（按连板数降序）
+  var SDT = [];        // 当前日跌停股（按连跌天数升序）
 
   function getAttr() { return window.ZT_ATTR || []; }
   function esc(s) {
@@ -42,6 +44,14 @@
   }
   function fx(v, d, s) {
     return (v === null || v === undefined) ? '—' : v.toFixed(d) + (s || '');
+  }
+  // 判断个股是否含「板块资金净额 + 概念」完整数据（快照来源）；
+  // 浏览器实时拉取的东方财富个股仅含行业，无净额/概念，走简化分支。
+  function hasRich(s) {
+    if (!s) return false;
+    if (s.cons && s.cons.length) return true;
+    if (s.inds && s.inds.length && s.inds[0].net !== null && s.inds[0].net !== undefined) return true;
+    return false;
   }
   function isToday(ds) {
     var t = new Date();
@@ -106,33 +116,37 @@
   }
 
   function renderMeta() {
-    var s = DAYS[di].summary;
-    var txt = DAYS[di].date + ' 收盘 · 涨停 ' + s.zt + ' 只 / 跌停 ' + s.dt + ' 只';
+    var day = DAYS[di];
+    var s = day.summary;
+    var txt = day.date + ' 收盘 · 涨停 ' + s.zt + ' 只 / 跌停 ' + s.dt + ' 只';
     if (s.up != null) txt += ' · 上涨 ' + s.up + ' / 下跌 ' + s.down;
     if (s.amount != null) txt += ' · 两市成交 ' + s.amount.toLocaleString('en-US') + ' 亿';
-    if (DAYS[di].source === 'em') txt += ' · 数据：东方财富接口实时获取';
+    if (day.ztLive || day.dtLive) {
+      if (day.ztLive) txt += ' · 涨停：东方财富实时';
+      txt += day.dtLive ? ' · 跌停：东方财富实时' : ' · 跌停：本地快照（接口未提供）';
+    } else {
+      txt += ' · 数据：本地快照（东方财富跌停接口未提供）';
+    }
     document.getElementById('metaInfo').textContent = txt;
   }
 
   function buildTags() {
-    var day = DAYS[di];
-    combined = buildCombined(day);
     var h = '';
-    if (day.zt.length) {
-      h += '<span class="sep-tag">涨停 ' + day.zt.length + '</span>';
-      for (var i = 0; i < day.zt.length; i++) {
-        var s = day.zt[i];
+    if (SZT.length) {
+      h += '<span class="sep-tag">涨停 ' + SZT.length + '（按连板数降序）</span>';
+      for (var i = 0; i < SZT.length; i++) {
+        var s = SZT[i];
         var cls = s.b >= 3 ? 'b3' : (s.b === 2 ? 'b2' : 'b1');
         var yz = s.yz ? '<i class="yzdot">一字</i>' : '';
         h += '<span class="ztag' + (i === cur ? ' on' : '') + '" data-i="' + i + '">' + esc(s.name)
           + '<em class="bd ' + cls + '">' + (s.b || 0) + '板</em>' + yz + '</span>';
       }
     }
-    if (day.dt.length) {
-      h += '<span class="sep-tag">跌停 ' + day.dt.length + '</span>';
-      for (var j = 0; j < day.dt.length; j++) {
-        var t = day.dt[j];
-        var idx = day.zt.length + j;
+    if (SDT.length) {
+      h += '<span class="sep-tag">跌停 ' + SDT.length + '（按连跌天数升序）</span>';
+      for (var j = 0; j < SDT.length; j++) {
+        var t = SDT[j];
+        var idx = SZT.length + j;
         var dc = t.db >= 3 ? 'd3' : (t.db === 2 ? 'd2' : 'd1');
         var yz2 = t.yz ? '<i class="yzdot">一字</i>' : '';
         h += '<span class="dtag' + (idx === cur ? ' on' : '') + '" data-i="' + idx + '">' + esc(t.name)
@@ -211,7 +225,7 @@
     for (var j = 0; j < (s.cons || []).length && ctags.length < 8; j++) { if (!isAttr(s.cons[j].n)) ctags.push(s.cons[j].n); }
     if (ctags.length) h += '<div class="hint" style="margin:0 0 4px">核心概念：' + esc(ctags.join(' · ')) + '</div>';
 
-    if (DAYS[di].source === 'em') {
+    if (!hasRich(s)) {
       // EM 来源：仅含个股所属行业与封板信息，无板块净额/概念，走简化分支
       var ind = (s.inds && s.inds[0] && s.inds[0].n) ? s.inds[0].n : '—';
       h += '<div class="dsec">所属行业<span>东方财富涨停/跌停池返回</span></div>'
@@ -232,7 +246,11 @@
 
   function setDay(i) {
     di = i; cur = 0;
-    combined = buildCombined(DAYS[di]);
+    var day = DAYS[di];
+    // 涨停按连板数从大到小，跌停按连跌天数从小到大
+    SZT = (day.zt || []).slice().sort(function (a, b) { return (b.b || 0) - (a.b || 0); });
+    SDT = (day.dt || []).slice().sort(function (a, b) { return (a.db || 0) - (b.db || 0); });
+    combined = SZT.concat(SDT);
     renderDates(); renderMeta(); renderKPIs(); renderTldr(); renderTitle();
     buildTags(); renderDetail();
     window.__curDayIndex = di;

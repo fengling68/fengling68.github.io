@@ -5578,7 +5578,7 @@ function bar(id, data, colorFn, unit) {
   if (!el) return;
   var ch = echarts.init(el);
   ch.setOption({
-    grid: { left: 62, right: 46, top: 12, bottom: 12, containLabel: false },
+    grid: { left: 6, right: 16, top: 12, bottom: 38, containLabel: true },
     tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
     xAxis: { type: 'value', name: unit, nameTextStyle: { fontSize: 10 },
              nameGap: 6, axisLabel: { fontSize: 9 } },
