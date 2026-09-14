@@ -119,15 +119,16 @@ table.dt td.zn{white-space:normal;font-size:10.5px;color:#5a6070;min-width:130px
   3. 行业归属采用申万二级（并向上标注一级）；概念归属由全量概念板块成份股反查得到，同一只个股可同时属于多个概念。<br>
   4. 板块资金为主力净流入（当日 / 近 5 日 / 近 20 日），单位为亿元；成交额为当日板块合计；「上涨/总数」为该板块当日上涨家数 / 成份股总数。<br>
   5. 「涨停跌停股标签」中，<span style="color:#c0392b">红色为涨停（角标为连板数）</span>，<span style="color:#12a150">绿色为跌停（角标为连跌天数）</span>，点击任一标签即切换该股的个股明细 + 所属行业与资金 + 所属概念与资金。所选交易日为当日快照时，价格等字段会叠加腾讯实时行情。<br>
-  6. <b>数据时点</b>：所选交易日 收盘；历史日的板块主力净流入无快照，对应列显示「—」，板块涨跌/成交额仍为该日真实值。来源：腾讯自选股数据接口（westock CLI）。数据可能存在延迟，以交易所官方数据为准。<br>
+  6. <b>数据时点</b>：所选交易日 收盘。涨停/跌停清单由浏览器打开时通过东方财富公开接口（push2ex）按日期实时拉取，覆盖今天之前最近 5 个交易日；连板/连跌/一字由接口返回。板块主力净流入与所属概念接口未提供，仅本地历史快照日才展示（显示「—」）。数据可能存在延迟，以交易所官方数据为准。<br>
   <div class="disc"><b>免责声明</b>：以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。涨停/跌停股波动剧烈，追高或抄底风险显著，任何投资决策应结合个人风险承受能力、资金状况和投资目标独立判断，必要时咨询持牌专业机构。过往表现不预示未来收益。</div>
 </div></div>
   <span class="hdiv"></span>
   <div class="sub" id="metaInfo"></div>
   <div class="badges">
     <span class="badge">涨停判定：涨跌幅达限制</span>
-    <span class="badge">连板/连跌：近 10 日日 K 连续计数</span>
-    <span class="badge">概念归属：全量概念成份股反查</span>
+    <span class="badge">连板/连跌：东方财富涨停/跌停池</span>
+    <span class="badge">数据：浏览器实时拉取（东方财富）</span>
+    <span class="badge" id="liveStatus">加载中…</span>
   </div>
 </div></header>
 
@@ -141,7 +142,6 @@ table.dt td.zn{white-space:normal;font-size:10.5px;color:#5a6070;min-width:130px
 <div id="detail"></div>
 
 </div>
-<script src="./StockUpDownReview/data.js"></script>
 <script src="./StockUpDownReview/render.js"></script>
 <script src="./StockUpDownReview/live.js"></script>
 <script>
