@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T14:06:40.770Z",
+  "generatedAt": "2026-09-14T05:09:48.245Z",
   "base": "htmlTool",
   "total": 4,
   "tree": [
@@ -10,32 +10,32 @@
       "children": [
         {
           "type": "file",
-          "name": "A股板块全景手册 · 2026-09-09",
-          "file": "A股板块全景手册-20260909.html",
-          "path": "htmlTool/股票/A股板块全景手册-20260909.html",
-          "url": "htmlTool/股票/A股板块全景手册-20260909.html",
-          "size": 1650257,
-          "updatedAt": "2026-09-13T14:06:35.597Z",
+          "name": "A股板块全景手册",
+          "file": "StockSector.html",
+          "path": "htmlTool/股票/StockSector.html",
+          "url": "htmlTool/股票/StockSector.html",
+          "size": 1734916,
+          "updatedAt": "2026-09-14T05:09:41.866Z",
           "desc": ""
         },
         {
           "type": "file",
-          "name": "A股板块全景手册 · 2026-09-10",
-          "file": "A股板块全景手册-20260910.html",
-          "path": "htmlTool/股票/A股板块全景手册-20260910.html",
-          "url": "htmlTool/股票/A股板块全景手册-20260910.html",
-          "size": 1704796,
-          "updatedAt": "2026-09-13T14:06:35.607Z",
+          "name": "A股选股面板 · 实时",
+          "file": "StockSelection.html",
+          "path": "htmlTool/股票/StockSelection.html",
+          "url": "htmlTool/股票/StockSelection.html",
+          "size": 6386,
+          "updatedAt": "2026-09-14T05:09:41.866Z",
           "desc": ""
         },
         {
           "type": "file",
-          "name": "A股涨停复盘 · 2026-09-10",
-          "file": "A股涨停复盘-20260910.html",
-          "path": "htmlTool/股票/A股涨停复盘-20260910.html",
-          "url": "htmlTool/股票/A股涨停复盘-20260910.html",
-          "size": 213370,
-          "updatedAt": "2026-09-13T14:06:35.607Z",
+          "name": "A股涨停复盘",
+          "file": "StockUpDownReview.html",
+          "path": "htmlTool/股票/StockUpDownReview.html",
+          "url": "htmlTool/股票/StockUpDownReview.html",
+          "size": 10011,
+          "updatedAt": "2026-09-14T05:09:41.867Z",
           "desc": ""
         }
       ]
@@ -51,8 +51,8 @@
           "file": "加载动画合集.html",
           "path": "htmlTool/CSS/加载动画合集.html",
           "url": "htmlTool/CSS/加载动画合集.html",
-          "size": 24655,
-          "updatedAt": "2026-09-13T14:06:35.591Z",
+          "size": 23974,
+          "updatedAt": "2026-09-14T05:09:41.864Z",
           "desc": ""
         }
       ]

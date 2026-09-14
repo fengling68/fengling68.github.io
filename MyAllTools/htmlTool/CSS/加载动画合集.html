@@ -169,21 +169,6 @@
     background: rgba(74, 222, 128, 0.1);
   }
 
-  footer {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 12.5px;
-    color: var(--text-2);
-    line-height: 1.8;
-  }
-
-  footer code {
-    padding: 1px 6px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.06);
-    font-size: 12px;
-  }
-
   /* ---------- 减弱动态降级 ----------
      循环动画统一「暂停在代表性关键帧」：
      交错时序均采用负延迟书写，暂停时自然定格在各自的相位上，
@@ -517,7 +502,7 @@
 
   <header data-page-node-id="qLzU3WMDJ9Ce2QtSJpFS03">
     <h1 data-page-node-id="bAJQZtvGFfLdVKBgGKtrsZ">CSS 加载动画合集</h1>
-    <p data-page-node-id="2hTc5OHzEYjzVPPAL95qCp">8 种纯 CSS 实现的加载动画 · 单文件 · 零依赖 · 仅用 keyframes + transform<br data-page-node-id="RQrYWAj0gXVEG4Q0Vnkqzy">
+    <p data-page-node-id="2hTc5OHzEYjzVPPAL95qCp">纯 CSS 实现的加载动画 · 单文件 · 零依赖 · 仅用 keyframes + transform + opacity，由 GPU 合成不触发重排重绘。<br data-page-node-id="RQrYWAj0gXVEG4Q0Vnkqzy">
        自动响应 <code data-page-node-id="HpiYxgdjPZ8z7fmnhKdBIB">prefers-reduced-motion</code> 系统偏好</p>
     <div class="motion-badge" data-page-node-id="ZlM9DJVhn4KhOVKGe1P8xN">
       <span class="badge-off" data-page-node-id="CjJ7HEfUe8uADAdqtE5gVH">动态效果：完整播放</span>
@@ -654,12 +639,6 @@
     </section>
 
   </main>
-
-  <footer data-page-node-id="BE91Tw9E8YxcQwZ9greIn1">
-    点击「复制 CSS」即可获取对应动画的完整样式代码（含 keyframes 与降级声明），可直接粘贴到项目中使用。<br data-page-node-id="l8QfPtGHcHmYNETxiJSpDB">
-    所有动画仅驱动 <code data-page-node-id="NIvfhYt2wbyiwm3axaFI0m">transform</code> / <code data-page-node-id="PfyF2N6F7BgCxesuwpG8ES">opacity</code>，由 GPU 合成，不触发重排重绘。
-  </footer>
-
 </div>
 
 <script>
