@@ -85,6 +85,21 @@ td.tagline{text-align:left;color:#6b7280;font-size:10.5px;white-space:normal}
 @keyframes fadeIn{from{opacity:.4}to{opacity:1}}
 .pop{animation:fadeIn .12s ease-out}
 @media(max-width:1200px){.col-opt{display:none}}
+/* 股东户数实时抽屉 */
+.drawer{position:fixed;top:0;right:0;height:100vh;width:360px;max-width:90vw;background:#fff;
+  box-shadow:-8px 0 24px rgba(20,30,45,.18);transform:translateX(100%);transition:transform .2s ease;
+  z-index:80;display:flex;flex-direction:column}
+.drawer.on{transform:translateX(0)}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;
+  background:#1b3a5c;color:#fff;font-size:13px}
+.drawer .dx{cursor:pointer;font-size:18px;line-height:1;opacity:.85;font-weight:700}
+.drawer .dh b{font-weight:600}
+.drawer .db{padding:10px 14px;color:#454b53;border-bottom:1px solid #eef2f6;font-size:12px}
+.drawer .dload{padding:18px 14px;color:#8a9099;font-size:12px}
+.drawer .dgrid{display:grid;grid-template-columns:auto 1fr;gap:9px 14px;padding:14px}
+.drawer .rk{color:#6b7280;font-size:11.5px;white-space:nowrap}
+.drawer .rv{color:#1c2026;font-size:12px;text-align:right}
+.drawer .dnote{padding:0 14px 14px;color:#9aa0a8;font-size:10.5px;line-height:1.7}
 </style>
 </head>
 <body>
@@ -115,15 +130,16 @@ td.tagline{text-align:left;color:#6b7280;font-size:10.5px;white-space:normal}
   <div class="empty" id="empty" style="display:none">该分类下暂无股票</div>
 </div>
 
-<script src="./StockSelection/picks-data.js"></script>
-<script src="./StockSelection/holders.js"></script>
+<div class="drawer" id="holderDrawer"></div>
+
+<script src="./StockSelection/static-data.js"></script>
 <script src="./StockSelection/render.js"></script>
 <script src="./StockSelection/live.js"></script>
 <script>
 if (!window.PICK_DATA) {
   document.getElementById('empty').style.display = '';
   document.getElementById('empty').textContent =
-    '数据文件未加载：请确认 StockSelection-picks-data.js / StockSelection-holders.js 与本页面在同一目录。';
+    '数据加载失败：未能从实时接口获取选股数据（请检查网络后刷新本页面）。';
 }
 </script>
 </body>

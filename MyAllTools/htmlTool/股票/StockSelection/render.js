@@ -1,19 +1,16 @@
-// 选股面板渲染逻辑（被 app.js 与 live.js 共用）
+// 选股面板渲染逻辑（被 live.js 调用）。数据全部由 live.js 实时获取，本文件仅负责渲染。
 // 调用： window.__renderPick(window.PICK_DATA)
 window.__renderPick = function (D) {
-  var H = window.HOLDER_DATA || {};
   if (!D) return;
 
 
   var COLS = [
     { t: '代码', k: 0, c: 'code l', ci: 1 },
-    { t: '名称', k: 1, c: 'nm l', ci: 1 },
+    { t: '名称', k: 1, c: 'nm l', ci: 1, click: 1 },
     { t: '命中标记', cz: 1, c: 'tagline l' },
     { t: '国资标签', cg: 1, c: 'tagline l' },
     { t: '价格', k: 2, fix: 2 },
     { t: '涨跌%', k: 3, cls: 'chg' },
-    { t: '5日%', k: 11, cls: 'chg' },
-    { t: '年内%', k: 12, cls: 'chg' },
     { t: '成交额(亿)', k: 10 },
     { t: '换手%', k: 9 },
     { t: '总市值(亿)', k: 4 },
@@ -22,13 +19,7 @@ window.__renderPick = function (D) {
     { t: 'PB', k: 7, opt: 1 },
     { t: '股息率%', k: 8, hi: 5 },
     { t: '申万二级', k: 15, c: 'ind l', opt: 1, sort: function (s) { return s[15] || ''; } },
-    { t: '申万一级', k: 16, c: 'ind l', sort: function (s) { return s[16] || ''; } },
-    { t: '52周低', k: 14, opt: 1 },
-    { t: '52周高', k: 13, opt: 1 },
-    { t: '股东户数', hn: 1 },
-    { t: '户数环比%', hc: 1, cls: 'chg' },
-    { t: '户均市值(万)', ha: 1 },
-    { t: '报告期', hpd: 1 }
+    { t: '申万一级', k: 16, c: 'ind l', sort: function (s) { return s[16] || ''; } }
   ];
 
   var cur1 = 0, cur2 = 0, curF = 'all', kw = '', sortKey = -1, sortAsc = false;
@@ -54,11 +45,11 @@ window.__renderPick = function (D) {
 
   /* ---------- 顶部信息 ---------- */
   document.getElementById('metaInfo').textContent =
-    '选股池 ' + D.date + ' 收盘快照 · 全市场 ' + D.universe + ' 只 · 入选 ' + D.count + ' 只 · 价格实时';
+    '实时选股 · ' + D.date + ' · 全市场 ' + D.universe + ' 只 · 入选 ' + D.count + ' 只 · 行情实时刷新';
   document.getElementById('badges').innerHTML =
-    '<span class="badge">选股池：' + D.date + ' 收盘快照</span>' +
-    '<span class="badge">散户数据：最新股东户数 ' + Object.keys(H).length + ' 只（披露快照·非实时）</span>' +
+    '<span class="badge">选股逻辑：浏览器实时计算</span>' +
     '<span class="badge">价格：腾讯接口实时</span>' +
+    '<span class="badge">股东户数：点击个股查询</span>' +
     '<span class="badge">红涨 / 绿跌</span>';
 
   /* ---------- 一级 Tab ---------- */
@@ -149,9 +140,6 @@ window.__renderPick = function (D) {
 
   function sortVal(s, col) {
     if (col.ci) return col.k === 0 ? s[0] : s[1];
-    if (col.hn) { var h = H[s[0]]; return h && h.n ? h.n : -1; }
-    if (col.hc) { var h2 = H[s[0]]; return h2 && h2.chg !== null ? h2.chg : -999; }
-    if (col.ha) { var h3 = H[s[0]]; return h3 && h3.avg ? h3.avg * (s[2] || 0) / 1e4 : -1; }
     if (col.sort) return col.sort(s);
     var v = num(s[col.k]);
     return (v === null || isNaN(v)) ? -1e9 : v;
@@ -185,7 +173,7 @@ window.__renderPick = function (D) {
   /* ---------- 表格行 ---------- */
   var tbody = document.getElementById('tbody');
   function rowHtml(s) {
-    var tb = D.tabs[cur1], h = '<tr>', hd = H[s[0]] || {};
+    var tb = D.tabs[cur1], h = '<tr>';
     COLS.forEach(function (c) {
       if (c.cz && !tb.filter) return;
       if (c.cg && !tb.tag) return;
@@ -207,17 +195,6 @@ window.__renderPick = function (D) {
         v = gs.map(function (x) { return '<span class="gtag">' + esc(x) + '</span>'; }).join('');
         h += '<td class="tagline">' + (v || '—') + '</td>'; return;
       }
-      if (c.hn) { v = hd.n ? fmtInt(hd.n) : '—'; h += '<td>' + v + '</td>'; return; }
-      if (c.hc) {
-        v = (hd.chg === null || hd.chg === undefined) ? '—' :
-          '<span class="' + cls(hd.chg) + '">' + (hd.chg > 0 ? '+' : '') + fmt(hd.chg) + '</span>';
-        h += '<td>' + v + '</td>'; return;
-      }
-      if (c.ha) {
-        v = hd.avg ? fmt(hd.avg * (s[2] || 0) / 1e4, 1) : '—';
-        h += '<td>' + v + '</td>'; return;
-      }
-      if (c.hpd) { v = hd.d ? hd.d : '—'; h += '<td>' + v + '</td>'; return; }
       if (c.cls === 'chg') {
         cl = cls(s[c.k]);
         v = s[c.k] === null || s[c.k] === undefined ? '—' :
@@ -264,7 +241,18 @@ window.__renderPick = function (D) {
     document.getElementById('loading').style.display = rows.length > shown ? '' : 'none';
     var end = Math.min(shown + PAGE, rows.length), h = '';
     for (var i = shown; i < end; i++) h += rowHtml(rows[i]);
+    var start = tbody.children.length;
     tbody.insertAdjacentHTML('beforeend', h);
+    for (var j = start; j < tbody.children.length; j++) {
+      (function (el, idx) {
+        el.style.cursor = 'pointer';
+        el.title = '点击查看实时股东户数';
+        el.onclick = function () {
+          var s = rows[idx];
+          if (window.__pickRow) window.__pickRow(s[0], s[1]);
+        };
+      })(tbody.children[j], shown + (j - start));
+    }
     shown = end;
   }
 
@@ -276,22 +264,17 @@ window.__renderPick = function (D) {
   });
 
   /* ---------- 说明：标题栏「?」悬浮提示（点击展开 / 点击别处收起） ---------- */
-  /* 股东户数最新披露期：动态取众数，避免写死日期 */
-  var _hc = {};
-  Object.keys(H).forEach(function (k) { var d = H[k] && H[k].d; if (d) _hc[d] = (_hc[d] || 0) + 1; });
-  var _ha = Object.keys(_hc).sort(function (a, b) { return _hc[b] - _hc[a]; });
-  var holderMode = _ha.length ? _ha[0] : '—';
   var helpPop = document.getElementById('helpPop');
   helpPop.innerHTML =
-    '<b>口径</b>：选股池与筛选结果为 ' + D.date + ' 收盘快照（重跑 build_pick.py 刷新）；' +
-    '价格 / 涨跌幅% / 成交额 / PE / 市值 / PB 等已通过腾讯公开接口（qt.gtimg.cn）实时刷新覆盖。<br>' +
-    '<b>股东户数（非实时）</b>：数据来自上市公司定期报告 / 互动平台披露，更新频率低（季报、中报、临时披露），<b>无法实时刷新</b>；' +
-    '下表「报告期」列为各股<b>最新披露报告期</b>（整体最新一期多为 ' + holderMode + '），' +
-    '户数环比 = 最新期较上一期变化，户均市值 = 户均持股数 × 实时收盘价。<br>' +
+    '<b>口径</b>：本页<b>无任何预生成死文件</b>。选股池与筛选结果由页面在<b>浏览器内实时计算</b>：' +
+    '全市场代码 / 名称 / 股息率(TTM) 取自东方财富批量行情（clist），价格 / 涨跌幅% / 成交额 / PE / 市值 / PB 等通过腾讯公开接口（qt.gtimg.cn）实时叠加；' +
+    '生肖 / 高分红 / 央地国资 / 国企改革四类筛选均按当日行情重算。<br>' +
+    '<b>股东户数（点击查询）</b>：点击任意一行，实时拉取东方财富 F10 最新一期股东户数（总户数、户数环比、户均持股 / 市值、筹码集中度）；' +
+    '股东户数按上市公司报告期披露，<b>非逐笔实时</b>，但每次点击取到的都是最新披露值。<br>' +
     '<b>筛选</b>：生肖按名称「同字 / 同音（拼音一致）/ 生肖主题词」三类命中；高分红按股息率 TTM 分档（2% ~ 8% 以上共 7 档）；' +
     '央地国资按「中字头、央企央资、大央企重组、军工央企」及各地方国资改革概念成份股归并；' +
     '国企改革为独立维度（' + ((D.tabs[3] || {}).codes || []).length + ' 只），按央企系 / 地方国资 / 中字头 / 大央企重组 / 军工央企 / 国资云 / 其他拆分。<br>' +
-    '<b>数据</b>：腾讯自选股数据接口（westock CLI），可能存在延迟，以交易所和上市公司公告为准。' +
+    '<b>数据</b>：东方财富 / 腾讯公开行情接口，可能存在延迟，以交易所和上市公司公告为准。' +
     '本页仅为公开数据整理与展示，不构成投资建议，市场有风险，投资需谨慎。';
 
   var helpBtn = document.getElementById('helpBtn');
