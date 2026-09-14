@@ -1,10 +1,10 @@
-/* 选股面板 · 实时数据加载（2026-09 重构：无预生成死代码）
- * 数据全部页面实时获取：
- *  - 全市场代码 + 股息率(TTM)：东方财富批量行情 clist（1~6 次请求）
- *  - 价格/涨跌幅/PE/PB/总市值/流通市值/成交额/换手：腾讯 qt.gtimg.cn（沿用已验证的叠加逻辑）
- *  - 生肖/国企/行业：静态分类参照（static-data.js，非行情快照）
- * 选股逻辑（生肖/高分红/央地国资/国企改革）在浏览器内按当日行情实时重算，
- * 不再依赖 picks-data.js。股东户数改为点击个股时实时拉取东方财富 F10。 */
+/* 选股面板 · 实时数据加载
+ * 数据全部页面实时获取，且只走东方财富一路（约 30~66 次请求，较旧版 90+ 大幅减少）：
+ *  - 全市场代码/名称/价格/涨跌幅/成交额/换手/总市值/流通市值/PE(TTM)/市净率/股息率(TTM)
+ *    全部由东财 clist 分页一次取齐（f133=股息率TTM，f115=市盈率TTM，注意二者易混淆）；
+ *  - 生肖/国企/行业：静态分类参照（static-data.js，非行情快照）；
+ *  - 股东户数：点击个股时实时拉取东方财富 F10。
+ * 选股逻辑（生肖/高分红/央地国资/国企改革）在浏览器内按当日行情实时重算。 */
 (function () {
   var ZD = window.ZODIAC_DATA || [];
   var ZNAMES = window.ZODIAC_NAMES || [];
@@ -14,6 +14,7 @@
   // ---------- 工具 ----------
   function prefix(c) {
     if (/^(sh|sz|bj)/.test(c)) return c;
+    if (/^(43|83|87|92)/.test(c)) return 'bj' + c;   // 北交所
     if (/^[6]/.test(c)) return 'sh' + c;
     if (/^[03]/.test(c)) return 'sz' + c;
     if (/^[84]/.test(c)) return 'bj' + c;
@@ -26,13 +27,13 @@
   }
 
   // ---------- JSONP ----------
-  function jsonp(url, cbName) {
+  function jsonp(url, cbName, timeoutMs) {
     cbName = cbName || 'cb';
     return new Promise(function (resolve, reject) {
       var cb = '__cb_' + Math.random().toString(36).slice(2);
       var s = document.createElement('script');
       s.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + cbName + '=' + cb + '&_=' + Date.now();
-      var timer = setTimeout(function () { cleanup(); reject(new Error('timeout')); }, 12000);
+      var timer = setTimeout(function () { cleanup(); reject(new Error('timeout')); }, timeoutMs || 12000);
       window[cb] = function (data) { cleanup(); resolve(data); };
       s.onerror = function () { cleanup(); reject(new Error('neterr')); };
       function cleanup() {
@@ -45,78 +46,128 @@
   }
 
   // ---------- 1) clist：全市场代码 + 名称 + 股息率 ----------
-  function fetchClist() {
-    var fs = 'm:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23';
-    var fields = 'f12,f14,f115';
+  /* 服务端可能限流/每页条数不定，做三层自适应：
+   * ① 主机轮换：push2 → 1.push2 → push2delay（镜像）；
+   * ② 每页条数自适应：先探测 pz=200 能返回多少，≥150 用 200，否则 100；
+   * ③ 节流 + 失败重试：3 路并发、页间 50ms 间隔、失败页重试一次；
+   * 高频请求会触发东财访问限制，宁可慢一点也不能打满。 */
+  var UT = 'bd1d9ddb04089700cf9c27f6f7426281';   // 东财公开 web 令牌
+  var HOSTS = ['push2.eastmoney.com', '1.push2.eastmoney.com', 'push2delay.eastmoney.com'];
+  var FS_BJ = 'm:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23,m:0+t:81+s:2048';   // 含北交所
+  var FS_STD = 'm:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23';                  // 兜底
+
+  function clistUrl(host, pz, fs, pn) {
+    return 'https://' + host + '/api/qt/clist/get?ut=' + UT +
+      '&fs=' + fs + '&fields=f12,f14,f2,f3,f6,f8,f20,f21,f23,f115,f133&pn=' + pn +
+      '&pz=' + pz + '&po=1&np=1&fltt=2&invt=2';
+  }
+  function probe(host, fs) {
+    return jsonp(clistUrl(host, 200, fs, 1), 'cb', 4000).then(function (d) {
+      var diff = d && d.data && d.data.diff;
+      return diff ? diff.length : 0;
+    }, function () { return 0; });
+  }
+  function fetchAllOn(host, pz, fs) {
     var out = {};
+    var totalPages = Math.min(70, Math.ceil(6500 / pz));
+    var queue = [];
+    for (var p = 1; p <= totalPages; p++) queue.push(p);  /* 探测页数据被丢弃，pn=1 也要正式取一遍 */
+    var retried = {}, nextIdx = 0, got = 0, fails = 0, active = 0, finished = false;
     function page(pn) {
-      var u = 'https://push2.eastmoney.com/api/qt/clist/get?fs=' + fs +
-        '&fields=' + fields + '&pn=' + pn + '&pz=1000&po=1&np=1&fltt=2&invt=2';
-      return jsonp(u).then(function (d) {
-        if (!d || !d.data || !d.data.diff) return 0;
-        d.data.diff.forEach(function (x) {
+      return jsonp(clistUrl(host, pz, fs, pn), 'cb', 6000).then(function (d) {
+        var diff = d && d.data && d.data.diff;
+        /* 按服务端返回的 total 裁剪分页队列，避免发出空页请求 */
+        var tot = d && d.data && d.data.total;
+        if (tot > 0) {
+          var need = Math.ceil(tot / pz);
+          if (need < totalPages) {
+            totalPages = need;
+            queue = queue.filter(function (q) { return q <= need; });
+          }
+        }
+        if (!diff || !diff.length) return 0;
+        diff.forEach(function (x) {
           var code = prefix(String(x.f12));
-          out[code] = { name: x.f14 != null ? String(x.f14).trim() : code,
-                        dv: num(x.f115) };
+          /* 字段口径（实测验证）：
+           * f115 = 市盈率TTM（负数=亏损），f133 = 股息率TTM（东财口径，特殊分红会阶段性抬高）。
+           * 旧版误把 f115 当股息率，导致"股息率"列全是 20+ 的 PE 值。 */
+          var dv = num(x.f133);
+          if (dv !== null && dv >= 50) dv = null;   // 防御：股息率不可能 ≥50%
+          out[code] = {
+            name: x.f14 != null ? String(x.f14).trim() : code,
+            p: num(x.f2), chg: num(x.f3),
+            pe: num(x.f115), pb: num(x.f23),
+            mv: num(x.f20) != null ? +(num(x.f20) / 1e8).toFixed(1) : null,   // 元 -> 亿
+            cv: num(x.f21) != null ? +(num(x.f21) / 1e8).toFixed(1) : null,
+            amt: num(x.f6) != null ? +(num(x.f6) / 1e8).toFixed(2) : null,
+            tr: num(x.f8),
+            dv: dv
+          };
         });
-        return d.data.diff.length;
-      }, function () { return 0; });
+        return diff.length;
+      }, function () { return -1; });
     }
-    return page(1).then(function (n) {
-      if (n < 1000) return out;
-      var chains = [];
-      for (var i = 2; i <= Math.ceil(6000 / 1000); i++) chains.push(page(i));
-      return Promise.all(chains).then(function () { return out; });
+    function show() {
+      setStatus('拉取全市场实时行情… ' + got + ' 只' + (fails ? '（' + fails + ' 页重试中）' : ''));
+    }
+    function launch(pn) {
+      active++;
+      page(pn).then(function (n) {
+        active--;
+        if (n < 0) {
+          fails++;
+          if (!retried[pn]) { retried[pn] = 1; queue.push(pn); }
+        } else { got += n; }
+        show();
+        setTimeout(pump, 50);
+      });
+    }
+    function pump() {
+      if (finished) return;
+      /* 前 3 个请求全部失败视为该主机不可达，快速换下一个 */
+      if (fails >= 3 && got === 0) { finished = true; failResolve(); return; }
+      while (active < 3 && nextIdx < queue.length) launch(queue[nextIdx++]);
+      if (active === 0 && nextIdx >= queue.length) { finished = true; resolve(out); }
+    }
+    var resolve, failResolve;
+    var p = new Promise(function (res, rej) { resolve = res; failResolve = rej; });
+    show();
+    pump();
+    return p;
+  }
+  function probeChain(host) {
+    /* 用探测返回的实际条数作为 pz（服务端上限可能是 100 或 200），上限钳到 200 */
+    return probe(host, FS_BJ).then(function (n) {
+      if (n >= 50) return { host: host, pz: Math.min(200, n), fs: FS_BJ };
+      return probe(host, FS_STD).then(function (m) {
+        if (m >= 50) return { host: host, pz: Math.min(200, m), fs: FS_STD };
+        throw new Error('probe fail');
+      });
     });
   }
-
-  // ---------- 2) 腾讯：行情叠加（沿用已验证逻辑） ----------
-  function overlayTencent(Q) {
-    var codes = Object.keys(Q);
-    var BATCH = 100, i = 0, ok = 0, fail = 0, qtime = '';
-    return new Promise(function (resolve) {
-      function parseVar(code) {
-        var raw = window['v_' + code];
-        if (typeof raw !== 'string') return null;
-        var m = raw.match(/^"([\s\S]*)"$/);
-        var str = m ? m[1] : raw;
-        if (!str || str.indexOf('~') < 0) return null;
-        return str.split('~');
-      }
-      function overlay(code) {
-        var a = parseVar(code);
-        if (!a) { fail++; return; }
-        var s = Q[code]; if (!s) return;
-        var n = function (v) { return (v === '' || v == null) ? null : Number(v); };
-        s.p = n(a[3]); s.chg = n(a[32]);
-        s.mv = n(a[45]); s.cv = n(a[44]);
-        s.pe = n(a[39]); s.pb = n(a[46]);
-        s.amt = n(a[57]) != null ? n(a[57]) / 1e4 : null; // 万元->亿
-        s.tr = n(a[38]);
-        if (!qtime && a[30]) qtime = a[30];
-        ok++;
-      }
-      function next() {
-        if (i >= codes.length) { resolve({ ok: ok, fail: fail, qtime: qtime }); return; }
-        document.getElementById('liveStatus').textContent =
-          '拉取实时行情… ' + Math.min(i + BATCH, codes.length) + '/' + codes.length;
-        var batch = codes.slice(i, i + BATCH);
-        var s = document.createElement('script');
-        s.type = 'text/javascript'; s.charset = 'gbk';
-        s.src = 'https://qt.gtimg.cn/q=' + batch.join(',') + '&_=' + Date.now();
-        s.onload = s.onerror = function () {
-          try { document.body.removeChild(s); } catch (e) {}
-          batch.forEach(overlay);
-          i += BATCH;
-          setTimeout(next, 0);
-        };
-        document.body.appendChild(s);
-      }
-      next();
-    });
+  function seqTry(i) {  /* 顺序兜底：逐台探测 + 取数 */
+    var host = HOSTS[i];
+    if (!host) return Promise.reject(new Error('所有东财主机均不可达'));
+    return probeChain(host).then(function (st) { return fetchAllOn(st.host, st.pz, st.fs); })
+      .catch(function () { return seqTry(i + 1); });
+  }
+  function fetchClist() {
+    setStatus('连接东方财富行情接口…');
+    /* 三台主机并行探测，谁先可用谁上；全部失败或取数失败再顺序兜底 */
+    return new Promise(function (resolve, reject) {
+      var pending = HOSTS.length, settled = false;
+      HOSTS.forEach(function (host) {
+        probeChain(host).then(function (st) {
+          if (!settled) { settled = true; resolve(st); }
+        }, function () {
+          if (--pending === 0 && !settled) reject(new Error('所有东财主机均不可达'));
+        });
+      });
+    }).then(function (st) { return fetchAllOn(st.host, st.pz, st.fs); })
+      .catch(function () { return seqTry(0); });
   }
 
-  // ---------- 3) 选股逻辑（端口自 build_pick.py） ----------
+  // ---------- 2) 选股逻辑（端口自 build_pick.py） ----------
   function zodiacMatch(name) {
     var clean = cleanName(name);
     var hits = [];
@@ -154,8 +205,8 @@
       });
       return { id: 'z' + i, name: z.z, codes: cs, extra: byT };
     });
-    var zDef = zodiacSubs.reduce(function (best, s, i) {
-      return s.codes.length > zodiacSubs[best].codes.length ? i : best; }, 0);
+    // 默认选中第一个生肖“鼠”（index 0）；render.js 的 firstNonEmpty 优先取 def
+    var zDef = 0;
 
     // 高分红
     var byDiv = codes.filter(function (c) { return (Q[c].dv || 0) > 0; })
@@ -206,7 +257,7 @@
     var refCent = refAll.filter(function (c) { return cent.indexOf(c) >= 0; });
     var refLoc = refAll.filter(function (c) { return loc.indexOf(c) >= 0; });
     var refRest = refAll.filter(function (c) { return cent.indexOf(c) < 0 && loc.indexOf(c) < 0; });
-    refAll.forEach(function (c) { if (soeMap[c].indexOf('国企改革') < 0) addLabel(c, '国企改革'); });
+    refAll.forEach(function (c) { if ((soeMap[c] || []).indexOf('国企改革') < 0) addLabel(c, '国企改革'); });
     uni(['国资云概念']).forEach(function (c) { if ((soeMap[c] || []).indexOf('国资云') < 0) addLabel(c, '国资云'); });
     var refSubs = [
       { id: 'r_cent', name: '央企系改革', codes: refCent },
@@ -228,10 +279,11 @@
 
     function pack(c) {
       var s = Q[c], ind = IND[c] || ['', ''];
+      /* 腾讯 a[44]/a[45] 市值单位已是「亿」，无需换算 */
       return [c, s.name,
         s.p, s.chg,
-        s.mv != null ? +(s.mv / 1e8).toFixed(1) : null,
-        s.cv != null ? +(s.cv / 1e8).toFixed(1) : null,
+        s.mv != null ? +s.mv.toFixed(1) : null,
+        s.cv != null ? +s.cv.toFixed(1) : null,
         s.pe, s.pb, s.dv, s.tr,
         s.amt != null ? +s.amt.toFixed(2) : null,
         null, null, null, null,
@@ -308,25 +360,30 @@
   function setStatus(t) { var el = document.getElementById('liveStatus'); if (el) el.textContent = t; }
   setStatus('正在获取全市场实时数据…');
   fetchClist().then(function (Q) {
-    if (!Object.keys(Q).length) {
+    var n = Object.keys(Q).length;
+    if (!n) {
       setStatus('全市场数据获取失败');
       var e = document.getElementById('empty');
-      if (e) { e.style.display = ''; e.textContent = '东方财富接口未返回，无法加载选股数据（请检查网络后刷新）。'; }
+      if (e) { e.style.display = ''; e.textContent = '东方财富行情接口不可达（可能被网络环境或访问限制拦截）。请稍后刷新重试，或更换网络后重试。'; }
       return;
     }
-    setStatus('拉取实时行情… 0/' + Object.keys(Q).length);
-    overlayTencent(Q).then(function (r) {
-      var sel = buildSelection(Q);
-      var today = new Date();
-      var ds = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
-      var D = {
-        date: ds, universe: Object.keys(Q).length, count: Object.keys(sel.stocks).length,
-        zodiacNames: ZNAMES, tabs: sel.tabs, stocks: sel.stocks, meta: sel.meta
-      };
-      window.PICK_DATA = D;
-      window.__renderPick(D);
-      setStatus('实时选股完成 · ' + Object.keys(sel.stocks).length + ' 只入选 · 行情已实时刷新');
-    });
+    var sel;
+    try { sel = buildSelection(Q); }
+    catch (err) {
+      setStatus('选股计算异常：' + (err && err.message ? err.message : err));
+      return;
+    }
+    var today = new Date();
+    var ds = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+    var D = {
+      date: ds, universe: Object.keys(Q).length, count: Object.keys(sel.stocks).length,
+      zodiacNames: ZNAMES, tabs: sel.tabs, stocks: sel.stocks, meta: sel.meta
+    };
+    window.PICK_DATA = D;
+    var e2 = document.getElementById('empty');
+    if (e2) e2.style.display = 'none';
+    window.__renderPick(D);
+    setStatus('实时选股完成 · 全市场 ' + D.universe + ' 只 · ' + D.count + ' 只入选 · 行情/股息率为东财实时值');
   }).catch(function (e) {
     setStatus('加载异常：' + (e && e.message ? e.message : e));
   });
