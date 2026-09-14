@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T16:43:55.877Z",
+  "generatedAt": "2026-09-14T16:44:34.955Z",
   "base": "htmlTool",
   "total": 3,
   "tree": [
@@ -15,7 +15,7 @@
           "path": "htmlTool/股票/StockSector.html",
           "url": "htmlTool/股票/StockSector.html",
           "size": 1736928,
-          "updatedAt": "2026-09-14T16:43:50.737Z",
+          "updatedAt": "2026-09-14T16:44:29.594Z",
           "desc": ""
         },
         {
@@ -25,7 +25,7 @@
           "path": "htmlTool/股票/StockSelection.html",
           "url": "htmlTool/股票/StockSelection.html",
           "size": 7350,
-          "updatedAt": "2026-09-14T16:43:50.739Z",
+          "updatedAt": "2026-09-14T16:44:29.595Z",
           "desc": ""
         }
       ]
@@ -37,12 +37,12 @@
       "children": [
         {
           "type": "file",
-          "name": "CSS 加载动画合集 · 8 种纯 CSS Loading",
+          "name": "CSS 加载动画合集",
           "file": "加载动画合集.html",
           "path": "htmlTool/CSS/加载动画合集.html",
           "url": "htmlTool/CSS/加载动画合集.html",
-          "size": 23974,
-          "updatedAt": "2026-09-14T16:43:50.731Z",
+          "size": 23950,
+          "updatedAt": "2026-09-14T16:44:29.587Z",
           "desc": ""
         }
       ]
