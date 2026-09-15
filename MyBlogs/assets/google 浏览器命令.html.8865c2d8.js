@@ -1,0 +1,11 @@
+import{_ as n,o as s,c as t,f as e}from"./app.c2c029cd.js";const o={};function p(c,a){return s(),t("div",null,[...a[0]||(a[0]=[e(`<h1 id="google-浏览器命令" tabindex="-1"><a class="header-anchor" href="#google-浏览器命令" aria-hidden="true">#</a> google 浏览器命令</h1><h2 id="常用命令" tabindex="-1"><a class="header-anchor" href="#常用命令" aria-hidden="true">#</a> 常用命令</h2><div class="language-javascript" data-ext="js"><pre class="language-javascript"><code>Cmd <span class="token operator">+</span> Shift <span class="token operator">+</span> <span class="token constant">P</span>
+
+<span class="token function">copy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+<span class="token function">values</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+<span class="token function">table</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+</code></pre></div><h2 id="编辑页面任意文本-二选一" tabindex="-1"><a class="header-anchor" href="#编辑页面任意文本-二选一" aria-hidden="true">#</a> 编辑页面任意文本(二选一)</h2><div class="language-javascript" data-ext="js"><pre class="language-javascript"><code>document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>contentEditable<span class="token operator">=</span><span class="token string">&#39;true&#39;</span>
+document<span class="token punctuation">.</span>designMode <span class="token operator">=</span> <span class="token string">&#39;on&#39;</span>
+</code></pre></div><h2 id="一行代码网页置黑" tabindex="-1"><a class="header-anchor" href="#一行代码网页置黑" aria-hidden="true">#</a> 一行代码网页置黑</h2><div class="language-javascript" data-ext="js"><pre class="language-javascript"><code><span class="token comment">// 控制台输入</span>
+document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>style<span class="token punctuation">.</span>filter<span class="token operator">=</span><span class="token string">&#39;invert(85%) hue-rotate(180deg)&#39;</span><span class="token punctuation">;</span>
+</code></pre></div>`,7)])])}const i=n(o,[["render",p],["__file","google 浏览器命令.html.vue"]]);export{i as default};
