@@ -1,10 +1,15 @@
-/* 选股面板 · 实时数据加载
- * 数据全部页面实时获取，且只走东方财富一路（约 30~66 次请求，较旧版 90+ 大幅减少）：
- *  - 全市场代码/名称/价格/涨跌幅/成交额/换手/总市值/流通市值/PE(TTM)/市净率/股息率(TTM)
- *    全部由东财 clist 分页一次取齐（f133=股息率TTM，f115=市盈率TTM，注意二者易混淆）；
- *  - 生肖/国企/行业：静态分类参照（static-data.js，非行情快照）；
- *  - 股东户数：点击个股时实时拉取东方财富 F10。
- * 选股逻辑（生肖/高分红/央地国资/国企改革）在浏览器内按当日行情实时重算。 */
+/* 选股面板 · 实时数据加载（v2 · 候选集优化）
+ * 核心思路：东财 clist 单页硬上限约 100 条，全市场 ~5500 只若整页扫描必然 30~55+ 次请求。
+ * 故不再每次加载都扫描全市场，而是「先确定候选代码集，再只拉候选股的实时行情」：
+ *   - 生肖：名称命中，需全市场名称 → 做一次名称扫描并缓存候选集（名称极少变动，缓存 7 天）；
+ *          也可用离线预生成 members.js（window.PRECOMP_MEMBERS）彻底免扫描。
+ *   - 央地国资 / 国企改革：成员来自静态 SOE_MEM，0 请求。
+ *   - 高分红：由 buildSelection 按当日实时 f133 重算，0 额外请求。
+ *   - 实时行情：只对「生肖候选 ∪ 国资候选 ∪ 高分红候选」取并集，经 ulist.np 按 secids 批量拉取
+ *     （每批 ~400 只，约 3~6 次请求，行情为东财实时值）。
+ * 因此：首次加载（无缓存且未预生成）约 30~55 次（一次性名称扫描），之后每次加载仅 ulist.np 约 3~6 次；
+ *       若已用 gen-stock-members.mjs 预生成 members.js，则每次加载都只有 ulist.np 的 3~6 次。
+ * 新增筛选 tab 不会增加请求：所有 tab 均从这一次候选集 + 实时行情中浏览器内重算。 */
 (function () {
   var ZD = window.ZODIAC_DATA || [];
   var ZNAMES = window.ZODIAC_NAMES || [];
@@ -20,10 +25,25 @@
     if (/^[84]/.test(c)) return 'bj' + c;
     return c;
   }
+  /* ulist.np 的 secids 需「市场.代码」数字格式（沪=1 / 深=0 / 北=0），而非字母前缀 sh600000。
+     例：sh600000→1.600000，sz000001→0.000001，bj920122→0.920122 */
+  function secid(c) {
+    c = String(c == null ? '' : c);
+    if (c.indexOf('.') >= 0) return c;                 // 已是 market.code
+    if (/^(sh|sz|bj)/.test(c)) c = c.slice(2);         // 去字母前缀
+    if (/^92/.test(c)) return '0.' + c;                // 北交所 92 开头（须先于 9 判定，否则会误归沪市）
+    if (/^[569]/.test(c)) return '1.' + c;             // 沪市（6/5/9 开头：9 含 900 B股、689 科创板等）
+    return '0.' + c;                                   // 深市 / 北交所（0/3/2/4/8 等）
+  }
   function num(v) { return (v === '' || v == null || v === '-' || isNaN(Number(v))) ? null : Number(v); }
   function cleanName(n) {
     return String(n == null ? '' : n).replace(/ /g, '').replace(/\*/g, '')
       .replace(/ST/g, '').replace(/st/g, '').replace(/-/g, '');
+  }
+  function uniq(arr) {
+    var s = {}, o = [];
+    for (var i = 0; i < arr.length; i++) if (!s[arr[i]]) { s[arr[i]] = 1; o.push(arr[i]); }
+    return o;
   }
 
   // ---------- JSONP ----------
@@ -45,38 +65,43 @@
     });
   }
 
-  // ---------- 1) clist：全市场代码 + 名称 + 股息率 ----------
-  /* 服务端可能限流/每页条数不定，做三层自适应：
-   * ① 主机轮换：push2 → 1.push2 → push2delay（镜像）；
-   * ② 每页条数自适应：先探测 pz=200 能返回多少，≥150 用 200，否则 100；
-   * ③ 节流 + 失败重试：3 路并发、页间 50ms 间隔、失败页重试一次；
-   * 高频请求会触发东财访问限制，宁可慢一点也不能打满。 */
+  // ---------- 常量 ----------
   var UT = 'bd1d9ddb04089700cf9c27f6f7426281';   // 东财公开 web 令牌
   var HOSTS = ['push2.eastmoney.com', '1.push2.eastmoney.com', 'push2delay.eastmoney.com'];
   var FS_BJ = 'm:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23,m:0+t:81+s:2048';   // 含北交所
   var FS_STD = 'm:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23';                  // 兜底
+  var FIELDS = 'f12,f14,f2,f3,f6,f8,f20,f21,f23,f115,f133';
+  var BATCH = 300;   // ulist.np 每批 secids 数量（候选并集约 1500~1900 只 → 5~7 次请求，稳 <10）
 
+  // ---------- URL 构造 ----------
   function clistUrl(host, pz, fs, pn) {
     return 'https://' + host + '/api/qt/clist/get?ut=' + UT +
-      '&fs=' + fs + '&fields=f12,f14,f2,f3,f6,f8,f20,f21,f23,f115,f133&pn=' + pn +
+      '&fs=' + fs + '&fields=' + FIELDS + '&pn=' + pn +
       '&pz=' + pz + '&po=1&np=1&fltt=2&invt=2';
   }
-  function probe(host, fs) {
-    return jsonp(clistUrl(host, 200, fs, 1), 'cb', 4000).then(function (d) {
+  function ulistUrl(host, secids) {
+    return 'https://' + host + '/api/qt/ulist.np/get?ut=' + UT +
+      '&fields=' + FIELDS + '&secids=' + secids + '&fltt=2&invt=2';
+  }
+
+  /* 探测单页实际能返回多少条（服务端上限可能 100 / 200），并据此确定 pz */
+  function probePz(host, fs) {
+    return jsonp(clistUrl(host, 1000, fs, 1), 'cb', 5000).then(function (d) {
       var diff = d && d.data && d.data.diff;
       return diff ? diff.length : 0;
     }, function () { return 0; });
   }
-  function fetchAllOn(host, pz, fs) {
+
+  /* 用一台主机顺序取数（失败换下一台）；pz 由探测结果决定 */
+  function fetchOnHost(host, pz, fs, onPage, onProgress) {
     var out = {};
-    var totalPages = Math.min(70, Math.ceil(6500 / pz));
+    var totalPages = Math.min(80, Math.ceil(7000 / pz));
     var queue = [];
-    for (var p = 1; p <= totalPages; p++) queue.push(p);  /* 探测页数据被丢弃，pn=1 也要正式取一遍 */
+    for (var p = 1; p <= totalPages; p++) queue.push(p);
     var retried = {}, nextIdx = 0, got = 0, fails = 0, active = 0, finished = false;
     function page(pn) {
       return jsonp(clistUrl(host, pz, fs, pn), 'cb', 6000).then(function (d) {
         var diff = d && d.data && d.data.diff;
-        /* 按服务端返回的 total 裁剪分页队列，避免发出空页请求 */
         var tot = d && d.data && d.data.total;
         if (tot > 0) {
           var need = Math.ceil(tot / pz);
@@ -86,88 +111,94 @@
           }
         }
         if (!diff || !diff.length) return 0;
-        diff.forEach(function (x) {
-          var code = prefix(String(x.f12));
-          /* 字段口径（实测验证）：
-           * f115 = 市盈率TTM（负数=亏损），f133 = 股息率TTM（东财口径，特殊分红会阶段性抬高）。
-           * 旧版误把 f115 当股息率，导致"股息率"列全是 20+ 的 PE 值。 */
-          var dv = num(x.f133);
-          if (dv !== null && dv >= 50) dv = null;   // 防御：股息率不可能 ≥50%
-          out[code] = {
-            name: x.f14 != null ? String(x.f14).trim() : code,
-            p: num(x.f2), chg: num(x.f3),
-            pe: num(x.f115), pb: num(x.f23),
-            mv: num(x.f20) != null ? +(num(x.f20) / 1e8).toFixed(1) : null,   // 元 -> 亿
-            cv: num(x.f21) != null ? +(num(x.f21) / 1e8).toFixed(1) : null,
-            amt: num(x.f6) != null ? +(num(x.f6) / 1e8).toFixed(2) : null,
-            tr: num(x.f8),
-            dv: dv
-          };
-        });
+        diff.forEach(function (x) { onPage(x, out); });
         return diff.length;
       }, function () { return -1; });
     }
-    function show() {
-      setStatus('拉取全市场实时行情… ' + got + ' 只' + (fails ? '（' + fails + ' 页重试中）' : ''));
-    }
-    function launch(pn) {
-      active++;
-      page(pn).then(function (n) {
-        active--;
-        if (n < 0) {
-          fails++;
-          if (!retried[pn]) { retried[pn] = 1; queue.push(pn); }
-        } else { got += n; }
-        show();
-        setTimeout(pump, 50);
-      });
-    }
-    function pump() {
-      if (finished) return;
-      /* 前 3 个请求全部失败视为该主机不可达，快速换下一个 */
-      if (fails >= 3 && got === 0) { finished = true; failResolve(); return; }
-      while (active < 3 && nextIdx < queue.length) launch(queue[nextIdx++]);
-      if (active === 0 && nextIdx >= queue.length) { finished = true; resolve(out); }
-    }
-    var resolve, failResolve;
-    var p = new Promise(function (res, rej) { resolve = res; failResolve = rej; });
-    show();
-    pump();
-    return p;
-  }
-  function probeChain(host) {
-    /* 用探测返回的实际条数作为 pz（服务端上限可能是 100 或 200），上限钳到 200 */
-    return probe(host, FS_BJ).then(function (n) {
-      if (n >= 50) return { host: host, pz: Math.min(200, n), fs: FS_BJ };
-      return probe(host, FS_STD).then(function (m) {
-        if (m >= 50) return { host: host, pz: Math.min(200, m), fs: FS_STD };
-        throw new Error('probe fail');
-      });
+    return new Promise(function (resolve) {
+      function show() { if (onProgress) onProgress(got, fails); }
+      function launch(pn) {
+        active++;
+        page(pn).then(function (n) {
+          active--;
+          if (n < 0) {
+            fails++;
+            if (!retried[pn]) { retried[pn] = 1; queue.push(pn); }
+          } else { got += n; }
+          show();
+          setTimeout(pump, 40);
+        });
+      }
+      function pump() {
+        if (finished) return;
+        if (fails >= 3 && got === 0) { finished = true; resolve(out); return; }
+        while (active < 4 && nextIdx < queue.length) launch(queue[nextIdx++]);
+        if (active === 0 && nextIdx >= queue.length) { finished = true; resolve(out); }
+      }
+      show();
+      pump();
     });
   }
-  function seqTry(i) {  /* 顺序兜底：逐台探测 + 取数 */
-    var host = HOSTS[i];
-    if (!host) return Promise.reject(new Error('所有东财主机均不可达'));
-    return probeChain(host).then(function (st) { return fetchAllOn(st.host, st.pz, st.fs); })
-      .catch(function () { return seqTry(i + 1); });
-  }
-  function fetchClist() {
-    setStatus('连接东方财富行情接口…');
-    /* 三台主机并行探测，谁先可用谁上；全部失败或取数失败再顺序兜底 */
+
+  /* 顺序探测 + 取数（多主机兜底） */
+  function scanClist(fs, onPage, onProgress) {
+    function tryHost(i) {
+      if (i >= HOSTS.length) return Promise.reject(new Error('所有东财主机均不可达'));
+      var host = HOSTS[i];
+      return probePz(host, fs).then(function (n) {
+        if (n < 20) throw new Error('probe empty');
+        var pz = n;   // 用服务端实际返回条数作为单页上限
+        return fetchOnHost(host, pz, fs, onPage, onProgress);
+      }).catch(function () { return tryHost(i + 1); });
+    }
+    // 三台并行探测，谁先可用谁上
     return new Promise(function (resolve, reject) {
       var pending = HOSTS.length, settled = false;
       HOSTS.forEach(function (host) {
-        probeChain(host).then(function (st) {
-          if (!settled) { settled = true; resolve(st); }
+        probePz(host, fs).then(function (n) {
+          if (settled) return;
+          if (n < 20) { if (--pending === 0 && !settled) reject(new Error('所有东财主机均不可达')); return; }
+          settled = true;
+          resolve(fetchOnHost(host, n, fs, onPage, onProgress));
         }, function () {
           if (--pending === 0 && !settled) reject(new Error('所有东财主机均不可达'));
         });
       });
-    }).then(function (st) { return fetchAllOn(st.host, st.pz, st.fs); })
-      .catch(function () { return seqTry(0); });
+    });
   }
 
-  // ---------- 2) 选股逻辑（端口自 build_pick.py） ----------
+  // ---------- 候选集：名称扫描（一次性，缓存） ----------
+  var LS_KEY = 'ss_sel_members_v2';
+  var CACHE_TTL = 7 * 24 * 3600 * 1000;   // 名称/生肖成员 7 天内稳定
+
+  function loadMembersCache() {
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      if (!raw) return null;
+      var m = JSON.parse(raw);
+      if (!m || !m.zodiacCodes || (Date.now() - (m.ts || 0) > CACHE_TTL)) return null;
+      return m;
+    } catch (e) { return null; }
+  }
+  function saveMembersCache(m) {
+    try { m.ts = Date.now(); localStorage.setItem(LS_KEY, JSON.stringify(m)); } catch (e) {}
+  }
+
+  function precompMembers() {
+    // 由 scripts/gen-stock-members.mjs 离线生成的 members.js 提供，可彻底免去名称扫描
+    var p = window.PRECOMP_MEMBERS;
+    if (!p || !p.zodiacCodes) return null;
+    return { zodiacCodes: p.zodiacCodes, divCodes: p.divCodes || [], soeUnion: p.soeUnion || null, precomp: true };
+  }
+
+  function soeUnion() {
+    var s = {};
+    Object.keys(SOE).forEach(function (k) {
+      (SOE[k] || []).forEach(function (c) { s[c] = 1; });
+    });
+    return Object.keys(s);
+  }
+
   function zodiacMatch(name) {
     var clean = cleanName(name);
     var hits = [];
@@ -185,6 +216,79 @@
     return hits;
   }
 
+  /* 全市场名称 + 股息率 一次性扫描：产出 zodiacCodes / divCodes */
+  function scanMembers() {
+    var zset = {}, dset = {};
+    setStatus('扫描全市场名称 / 股息率（一次性，将缓存）…');
+    return scanClist(FS_BJ, function (x, out) {
+      var code = prefix(String(x.f12));
+      var name = x.f14 != null ? String(x.f14).trim() : '';
+      var hits = zodiacMatch(name);
+      if (hits.length) zset[code] = 1;
+      var dv = num(x.f133);
+      if (dv !== null && dv >= 2 && dv < 50) dset[code] = 1;   // 高分红候选（≥2%，防御 ≥50%）
+    }, function (got, fails) {
+      setStatus('扫描全市场… ' + got + ' 只' + (fails ? '（' + fails + ' 页重试中）' : ''));
+    }).then(function () {
+      return { zodiacCodes: Object.keys(zset), divCodes: Object.keys(dset) };
+    });
+  }
+
+  // ---------- 实时行情：ulist.np 批量拉取候选集 ----------
+  function fetchLiveQuotes(codes) {
+    setStatus('拉取入选个股实时行情… ' + codes.length + ' 只');
+    var out = {};
+    var chunks = [];
+    for (var i = 0; i < codes.length; i += BATCH) chunks.push(codes.slice(i, i + BATCH));
+    var done = 0;
+    function tryHostList(ci, hi) {
+      if (hi >= HOSTS.length) return Promise.reject(new Error('ulist 主机不可达'));
+      var host = HOSTS[hi];
+      var secids = chunks[ci].map(secid).join(',');
+      return jsonp(ulistUrl(host, secids), 'cb', 7000).then(function (d) {
+        var diff = d && d.data && d.data.diff;
+        if (!diff || !Array.isArray(diff)) {
+          // 请求成功但无数据：多为 secids 格式问题或该批无有效标的，告警以便排查
+          console.warn('[StockSelection] ulist.np 空响应 host=' + host + ' 样本secids=' + secids.slice(0, 80));
+          return;
+        }
+        diff.forEach(function (x) {
+          var code = prefix(String(x.f12));
+          var dv = num(x.f133);
+          if (dv !== null && dv >= 50) dv = null;
+          out[code] = {
+            name: x.f14 != null ? String(x.f14).trim() : code,
+            p: num(x.f2), chg: num(x.f3),
+            pe: num(x.f115), pb: num(x.f23),
+            mv: num(x.f20) != null ? +(num(x.f20) / 1e8).toFixed(1) : null,
+            cv: num(x.f21) != null ? +(num(x.f21) / 1e8).toFixed(1) : null,
+            amt: num(x.f6) != null ? +(num(x.f6) / 1e8).toFixed(2) : null,
+            tr: num(x.f8),
+            dv: dv
+          };
+        });
+      }, function () { throw new Error('neterr'); });
+    }
+    function runChunk(ci) {
+      if (ci >= chunks.length) return Promise.resolve();
+      var hi = 0;
+      function attempt() {
+        return tryHostList(ci, hi).catch(function () {
+          hi++;
+          if (hi >= HOSTS.length) return Promise.reject(new Error('ulist 主机不可达'));
+          return attempt();
+        });
+      }
+      return attempt().then(function () {
+        done++;
+        setStatus('拉取入选个股实时行情… ' + done + '/' + chunks.length + ' 批');
+        return runChunk(ci + 1);
+      });
+    }
+    return runChunk(0).then(function () { return out; });
+  }
+
+  // ---------- 选股逻辑（端口自 build_pick.py） ----------
   function buildSelection(Q) {
     var codes = Object.keys(Q);
     // 生肖
@@ -205,7 +309,6 @@
       });
       return { id: 'z' + i, name: z.z, codes: cs, extra: byT };
     });
-    // 默认选中第一个生肖“鼠”（index 0）；render.js 的 firstNonEmpty 优先取 def
     var zDef = 0;
 
     // 高分红
@@ -279,7 +382,6 @@
 
     function pack(c) {
       var s = Q[c], ind = IND[c] || ['', ''];
-      /* 腾讯 a[44]/a[45] 市值单位已是「亿」，无需换算 */
       return [c, s.name,
         s.p, s.chg,
         s.mv != null ? +s.mv.toFixed(1) : null,
@@ -291,9 +393,7 @@
     }
     var stocks = {};
     needCodes.forEach(function (c) { stocks[c] = pack(c); });
-    var meta = {
-      z: {}, g: {}
-    };
+    var meta = { z: {}, g: {} };
     needCodes.forEach(function (c) {
       if (zHit[c]) meta.z[c] = zHit[c];
       if (soeMap[c]) meta.g[c] = soeMap[c];
@@ -349,7 +449,7 @@
   function row(k, v) { return '<div class="rk">' + k + '</div><div class="rv">' + v + '</div>'; }
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>]/g, function (c) {
-      return c === '&' ? '&amp;' : (c === '<' ? '&lt;' : '&gt;'); });
+      return c === '&' ? '&amp;' : (c === '<' ? '&lt;' : (c === '>') ? '&gt;' : c); });
   }
   window.__pickRow = showHolder;
   window.__closeHolder = function () {
@@ -358,33 +458,75 @@
 
   // ---------- 主流程 ----------
   function setStatus(t) { var el = document.getElementById('liveStatus'); if (el) el.textContent = t; }
-  setStatus('正在获取全市场实时数据…');
-  fetchClist().then(function (Q) {
-    var n = Object.keys(Q).length;
-    if (!n) {
-      setStatus('全市场数据获取失败');
-      var e = document.getElementById('empty');
-      if (e) { e.style.display = ''; e.textContent = '东方财富行情接口不可达（可能被网络环境或访问限制拦截）。请稍后刷新重试，或更换网络后重试。'; }
-      return;
+
+  /* 尝试加载离线预生成的 members.js（由 scripts/gen-stock-members.mjs 生成）。
+     存在则彻底免去一次性名称扫描，每次加载都只有 ulist.np 的 3~6 次；不存在则忽略。 */
+  function loadPrecomp() {
+    return new Promise(function (res) {
+      try {
+        var base = (document.currentScript && document.currentScript.src) || location.href;
+        var url = new URL('./members.js', base).href;
+        var s = document.createElement('script');
+        s.src = url;
+        s.onload = function () { res(); };
+        s.onerror = function () { res(); };   // 文件不存在也继续（走缓存/扫描兜底）
+        document.head.appendChild(s);
+      } catch (e) { res(); }
+    });
+  }
+
+  function run() {
+    setStatus('正在准备选股候选集…');
+    var members = precompMembers() || loadMembersCache();
+    var pendingScan = false;
+    var chain = Promise.resolve(members);
+    if (!members || !members.zodiacCodes || !members.zodiacCodes.length) {
+      pendingScan = true;
+      chain = scanMembers().then(function (m) { saveMembersCache(m); return m; });
     }
-    var sel;
-    try { sel = buildSelection(Q); }
-    catch (err) {
-      setStatus('选股计算异常：' + (err && err.message ? err.message : err));
-      return;
-    }
-    var today = new Date();
-    var ds = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
-    var D = {
-      date: ds, universe: Object.keys(Q).length, count: Object.keys(sel.stocks).length,
-      zodiacNames: ZNAMES, tabs: sel.tabs, stocks: sel.stocks, meta: sel.meta
-    };
-    window.PICK_DATA = D;
-    var e2 = document.getElementById('empty');
-    if (e2) e2.style.display = 'none';
-    window.__renderPick(D);
-    setStatus('实时选股完成 · 全市场 ' + D.universe + ' 只 · ' + D.count + ' 只入选 · 行情/股息率为东财实时值');
-  }).catch(function (e) {
-    setStatus('加载异常：' + (e && e.message ? e.message : e));
-  });
+    return chain.then(function (m) {
+      var soe = m.soeUnion && m.soeUnion.length ? m.soeUnion : soeUnion();
+      var zodiacCodes = m.zodiacCodes || [];
+      var divCodes = m.divCodes || [];
+      var union = uniq(zodiacCodes.concat(soe, divCodes));
+      if (!union.length) throw new Error('候选集为空');
+      setStatus('候选集 ' + union.length + ' 只 · 拉取实时行情…');
+      return fetchLiveQuotes(union).then(function (Q) {
+        if (!Object.keys(Q).length) throw new Error('实时行情为空');
+        return Q;
+      });
+    }).then(function (Q) {
+      var sel;
+      try { sel = buildSelection(Q); }
+      catch (err) {
+        setStatus('选股计算异常：' + (err && err.message ? err.message : err));
+        return;
+      }
+      var today = new Date();
+      var ds = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+      var D = {
+        date: ds, universe: Object.keys(Q).length, count: Object.keys(sel.stocks).length,
+        zodiacNames: ZNAMES, tabs: sel.tabs, stocks: sel.stocks, meta: sel.meta
+      };
+      window.PICK_DATA = D;
+      var e2 = document.getElementById('empty');
+      if (e2) e2.style.display = 'none';
+      window.__renderPick(D);
+      var extra = pendingScan ? '（本次含一次性名称扫描，之后加载仅约 3~6 次）' : '';
+      setStatus('实时选股完成 · 候选 ' + D.universe + ' 只 · 入选 ' + D.count + ' 只 · 行情/股息率为东财实时值' + extra);
+    }).catch(function (e) {
+      setStatus('加载异常：' + (e && e.message ? e.message : e));
+      var em = document.getElementById('empty');
+      if (em) {
+        em.style.display = '';
+        var msg = (e && e.message === '实时行情为空')
+          ? '候选集已就绪，但东方财富行情接口未返回任何数据（可能限流或 secids 未被识别）。请稍后刷新重试；若持续出现，请按 F12 查看 Console 中 ulist.np 的请求与响应。'
+          : '东方财富行情接口不可达（可能被网络环境或访问限制拦截），或候选集获取失败。请稍后刷新重试，或更换网络后重试。';
+        em.textContent = msg;
+      }
+    });
+  }
+
+  setStatus('正在获取实时数据…');
+  loadPrecomp().then(run);
 })();

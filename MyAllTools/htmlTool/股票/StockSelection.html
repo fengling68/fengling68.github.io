@@ -136,7 +136,8 @@ td.tagline{text-align:left;color:#6b7280;font-size:10.5px;white-space:normal}
 <script src="./StockSelection/static-data.js"></script>
 <script src="./StockSelection/render.js"></script>
 <script src="./StockSelection/live.js"></script>
-<!-- 数据由 live.js 实时拉取：东方财富 clist 分页多轮取齐（多主机轮换，约 30~66 次请求），
+<!-- 数据由 live.js 实时拉取：先取候选集（生肖名称扫描缓存 / 国资静态分类），
+     再经 ulist.np 批量拉取候选集实时行情（约 3~6 次请求，含可选 members.js 预生成则首次亦 ≤6 次）；
      加载进度显示于页头 liveStatus；失败时由 live.js 在 #empty 提示。 -->
 </body>
 </html>

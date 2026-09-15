@@ -45,7 +45,7 @@ window.__renderPick = function (D) {
 
   /* ---------- 顶部信息 ---------- */
   document.getElementById('metaInfo').textContent =
-    '实时选股 · ' + D.date + ' · 全市场 ' + D.universe + ' 只 · 入选 ' + D.count + ' 只 · 行情实时刷新';
+    '实时选股 · ' + D.date + ' · 候选 ' + D.universe + ' 只 · 入选 ' + D.count + ' 只 · 行情实时刷新';
   document.getElementById('badges').innerHTML =
     '<span class="badge">选股逻辑：浏览器实时计算</span>' +
     '<span class="badge">行情：东方财富实时</span>' +
@@ -267,8 +267,9 @@ window.__renderPick = function (D) {
   var helpPop = document.getElementById('helpPop');
   helpPop.innerHTML =
     '<b>口径</b>：本页无预生成死文件，选股与筛选结果由浏览器按当日行情实时计算。' +
-    '全市场（沪 / 深 / 北交所）代码、名称、价格、涨跌幅、成交额、换手、总市值、流通市值、PE(TTM)、PB、股息率(TTM) 均取自东方财富 clist，分页多轮取齐（多主机轮换，约 30~66 次请求）；' +
-    '生肖 / 高分红 / 央地国资 / 国企改革四类筛选按当日行情重算。<br>' +
+    '东财 clist 单页硬上限约 100 条，故不再整页扫描全市场：先确定候选代码集（生肖来自名称扫描并缓存 7 天、国资来自静态分类），' +
+    '再仅对「生肖 ∪ 国资 ∪ 高分红」候选集经 ulist.np 批量拉取实时行情（约 3~6 次请求，行情 / 股息率均为东财实时值）；' +
+    '若用 scripts/gen-stock-members.mjs 预生成 members.js，则首次加载也仅 3~6 次。<br>' +
     '<b>股东户数</b>：点击任意一行，实时拉取东方财富 F10 最新一期股东户数（总户数、环比、户均持股 / 市值、筹码集中度）；按报告期披露，非逐笔实时。<br>' +
     '<b>筛选</b>：生肖按名称同字 / 同音（拼音一致）/ 生肖主题词命中；高分红按股息率 TTM 分档（2%~8% 以上 7 档）；' +
     '央地国资按中字头、央企央资、大央企重组、军工央企及各地方国资改革概念归并；国企改革为独立维度（' + ((D.tabs[3] || {}).codes || []).length + ' 只）。<br>' +
