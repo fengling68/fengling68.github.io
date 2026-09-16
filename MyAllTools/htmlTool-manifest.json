@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T15:29:58.599Z",
+  "generatedAt": "2026-09-16T10:04:33.483Z",
   "base": "htmlTool",
   "total": 3,
   "tree": [
@@ -14,8 +14,8 @@
           "file": "StockSector.html",
           "path": "htmlTool/股票/StockSector.html",
           "url": "htmlTool/股票/StockSector.html",
-          "size": 1739946,
-          "updatedAt": "2026-09-15T15:29:53.788Z",
+          "size": 1738743,
+          "updatedAt": "2026-09-16T10:04:28.209Z",
           "desc": ""
         },
         {
@@ -25,7 +25,7 @@
           "path": "htmlTool/股票/StockSelection.html",
           "url": "htmlTool/股票/StockSelection.html",
           "size": 7471,
-          "updatedAt": "2026-09-15T15:29:53.790Z",
+          "updatedAt": "2026-09-16T10:04:28.212Z",
           "desc": ""
         }
       ]
@@ -42,7 +42,7 @@
           "path": "htmlTool/CSS/加载动画合集.html",
           "url": "htmlTool/CSS/加载动画合集.html",
           "size": 23950,
-          "updatedAt": "2026-09-15T15:29:53.781Z",
+          "updatedAt": "2026-09-16T10:04:28.205Z",
           "desc": ""
         }
       ]
