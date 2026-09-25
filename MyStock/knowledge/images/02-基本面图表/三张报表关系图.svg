@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" font-family="PingFang SC, HarmonyOS Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbfcfd"/><stop offset="1" stop-color="#f2f5f7"/>
+    </linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#17405f"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg5)"/>
+
+  <text x="80" y="88" font-size="34" font-weight="600" fill="#1b2026">三张报表的联动关系</text>
+  <text x="80" y="126" font-size="18" fill="#7a828e">资产负债表看家底、利润表看赚钱能力、现金流量表验证利润是否真实到账</text>
+
+  <!-- 三张报表卡片 -->
+  <g>
+    <rect x="80" y="250" width="330" height="380" rx="14" fill="#ffffff"/>
+    <rect x="80" y="250" width="330" height="56" rx="14" fill="#17405f"/>
+    <rect x="80" y="290" width="330" height="16" fill="#17405f"/>
+    <text x="245" y="288" font-size="21" font-weight="600" fill="#ffffff" text-anchor="middle">资产负债表</text>
+    <g font-size="17" fill="#48505c">
+      <text x="108" y="346">资产 = 负债 + 所有者权益</text>
+      <text x="108" y="384">· 货币资金 / 有息负债</text>
+      <text x="108" y="420">· 应收账款增速</text>
+      <text x="108" y="456">· 存货与商誉质量</text>
+      <text x="108" y="492">· 资产负债率（同业对比）</text>
+    </g>
+    <text x="108" y="566" font-size="16" fill="#7a828e">时点快照 · 回答「有多少家底」</text>
+  </g>
+
+  <g>
+    <rect x="455" y="250" width="330" height="380" rx="14" fill="#ffffff"/>
+    <rect x="455" y="250" width="330" height="56" rx="14" fill="#2a6c9e"/>
+    <rect x="455" y="290" width="330" height="16" fill="#2a6c9e"/>
+    <text x="620" y="288" font-size="21" font-weight="600" fill="#ffffff" text-anchor="middle">利润表</text>
+    <g font-size="17" fill="#48505c">
+      <text x="483" y="346">收入 − 成本 − 费用 = 利润</text>
+      <text x="483" y="384">· 营收增速与结构</text>
+      <text x="483" y="420">· 毛利率（定价权）</text>
+      <text x="483" y="456">· 三费费用率</text>
+      <text x="483" y="492">· 扣非净利润</text>
+    </g>
+    <text x="483" y="566" font-size="16" fill="#7a828e">期间流量 · 回答「赚了多少」</text>
+  </g>
+
+  <g>
+    <rect x="830" y="250" width="290" height="380" rx="14" fill="#ffffff"/>
+    <rect x="830" y="250" width="290" height="56" rx="14" fill="#3b5f4a"/>
+    <rect x="830" y="290" width="290" height="16" fill="#3b5f4a"/>
+    <text x="975" y="288" font-size="21" font-weight="600" fill="#ffffff" text-anchor="middle">现金流量表</text>
+    <g font-size="17" fill="#48505c">
+      <text x="858" y="346">经营 / 投资 / 筹资</text>
+      <text x="858" y="384">· 经营现金流净额</text>
+      <text x="858" y="420">· 销售收现比</text>
+      <text x="858" y="456">· 资本开支强度</text>
+      <text x="858" y="492">· 分红覆盖倍数</text>
+    </g>
+    <text x="858" y="566" font-size="16" fill="#7a828e">期间流量 · 回答「钱到账了吗」</text>
+  </g>
+
+  <!-- 联动箭头 -->
+  <line x1="410" y1="400" x2="452" y2="400" stroke="#17405f" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="452" y1="440" x2="410" y2="440" stroke="#17405f" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="785" y1="400" x2="827" y2="400" stroke="#17405f" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="827" y1="440" x2="785" y2="440" stroke="#17405f" stroke-width="3" marker-end="url(#ar)"/>
+
+  <text x="255" y="700" font-size="18" fill="#17405f">净利润结转 → 所有者权益（留存收益）</text>
+  <text x="255" y="730" font-size="18" fill="#17405f">经营活动现金流 / 净利润 &gt; 1 → 利润有现金支撑</text>
+  <text x="255" y="760" font-size="18" fill="#e02b2b">长期背离（利润高增、现金流为负）→ 优先怀疑收入质量</text>
+
+  <rect x="80" y="690" width="1040" height="100" rx="12" fill="#eef4f8"/>
+  <text x="108" y="726" font-size="18" fill="#17405f">三表交叉验证的核心：把「赚了多少」与「收回多少」放在一起看，很难同时被修饰。</text>
+  <text x="108" y="762" font-size="18" fill="#17405f">任何单表异常都能在另外两张表中找到对应的痕迹。</text>
+</svg>

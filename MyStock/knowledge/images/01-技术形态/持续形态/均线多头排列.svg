@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" font-family="PingFang SC, HarmonyOS Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbfcfd"/><stop offset="1" stop-color="#f2f5f7"/>
+    </linearGradient>
+    <linearGradient id="fill" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#17405f" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="#17405f" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg4)"/>
+
+  <g stroke="#e6ebef" stroke-width="1">
+    <line x1="80" y1="200" x2="1120" y2="200"/><line x1="80" y1="320" x2="1120" y2="320"/>
+    <line x1="80" y1="440" x2="1120" y2="440"/><line x1="80" y1="560" x2="1120" y2="560"/>
+    <line x1="80" y1="680" x2="1120" y2="680"/>
+  </g>
+
+  <text x="80" y="88" font-size="34" font-weight="600" fill="#1b2026">均线多头排列 · 趋势结构</text>
+  <text x="80" y="126" font-size="18" fill="#7a828e">短周期均线在上、长周期均线在下，且全部向上 —— 上涨有序、回踩有力</text>
+
+  <!-- 均线束区域 -->
+  <path d="M120 740 C 340 690 450 630 590 560 S 890 410 1080 350 L1080 190 C 860 250 560 400 420 470 C 320 540 200 620 120 620 Z" fill="url(#fill)"/>
+
+  <!-- 四条均线 -->
+  <path d="M120 620 C 320 540 420 470 560 400 S 860 250 1080 190" stroke="#e02b2b" stroke-width="4" fill="none"/>
+  <path d="M120 660 C 320 590 430 520 570 450 S 870 300 1080 240" stroke="#e6a23c" stroke-width="4" fill="none"/>
+  <path d="M120 700 C 330 640 440 570 580 500 S 880 350 1080 290" stroke="#2a6c9e" stroke-width="4" fill="none"/>
+  <path d="M120 740 C 340 690 450 630 590 560 S 890 410 1080 350" stroke="#8a949e" stroke-width="4" fill="none"/>
+
+  <!-- 图例 -->
+  <g font-size="18" fill="#1b2026">
+    <rect x="820" y="560" width="240" height="200" rx="10" fill="#ffffff" opacity="0.94"/>
+    <line x1="844" y1="596" x2="884" y2="596" stroke="#e02b2b" stroke-width="4"/><text x="896" y="602">MA5</text>
+    <line x1="844" y1="636" x2="884" y2="636" stroke="#e6a23c" stroke-width="4"/><text x="896" y="642">MA10</text>
+    <line x1="844" y1="676" x2="884" y2="676" stroke="#2a6c9e" stroke-width="4"/><text x="896" y="682">MA20</text>
+    <line x1="844" y1="716" x2="884" y2="716" stroke="#8a949e" stroke-width="4"/><text x="896" y="722">MA60</text>
+  </g>
+
+  <!-- 回踩标注 -->
+  <circle cx="590" cy="560" r="8" fill="#17405f"/>
+  <line x1="590" y1="560" x2="470" y2="440" stroke="#17405f" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="240" y="424" font-size="18" fill="#17405f">回踩 MA20 不破并放量收阳</text>
+  <text x="240" y="452" font-size="18" fill="#17405f">= 顺势加仓点</text>
+
+  <text x="80" y="836" font-size="17" fill="#17405f">多头排列的效率最高：任何时点回踩 MA20 获得支撑的概率显著高于震荡市。</text>
+  <text x="80" y="866" font-size="17" fill="#e02b2b">反之，均线纠缠（互相缠绕）时该体系失效，应降低仓位、缩短持有周期。</text>
+</svg>

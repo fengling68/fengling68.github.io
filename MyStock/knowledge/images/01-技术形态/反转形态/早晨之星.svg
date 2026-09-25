@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" font-family="PingFang SC, HarmonyOS Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbfcfd"/><stop offset="1" stop-color="#f2f5f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <!-- 网格 -->
+  <g stroke="#e6ebef" stroke-width="1">
+    <line x1="80" y1="180" x2="1120" y2="180"/><line x1="80" y1="280" x2="1120" y2="280"/>
+    <line x1="80" y1="380" x2="1120" y2="380"/><line x1="80" y1="480" x2="1120" y2="480"/>
+    <line x1="80" y1="580" x2="1120" y2="580"/><line x1="80" y1="680" x2="1120" y2="680"/>
+    <line x1="80" y1="780" x2="1120" y2="780"/>
+  </g>
+  <line x1="80" y1="800" x2="1120" y2="800" stroke="#d7dee4" stroke-width="2"/>
+
+  <!-- 标题 -->
+  <text x="80" y="88" font-size="34" font-weight="600" fill="#1b2026">早晨之星 · 底部反转形态</text>
+  <text x="80" y="126" font-size="18" fill="#7a828e">三根 K 线的多空转换：长阴 → 十字星 → 长阳，出现在下跌末端时有效性最高</text>
+
+  <!-- 支撑线 -->
+  <line x1="80" y1="668" x2="1120" y2="668" stroke="#b9c3cc" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="1128" y="672" font-size="16" fill="#7a828e">支撑</text>
+  <text x="1128" y="694" font-size="16" fill="#7a828e">位</text>
+
+  <!-- 第一根：长阴线（绿） -->
+  <g>
+    <line x1="280" y1="330" x2="280" y2="620" stroke="#0e9e52" stroke-width="4"/>
+    <rect x="255" y="370" width="50" height="220" rx="3" fill="#0e9e52"/>
+    <text x="280" y="836" font-size="19" fill="#48505c" text-anchor="middle">第一日 · 长阴线</text>
+    <text x="280" y="862" font-size="16" fill="#7a828e" text-anchor="middle">空方主导，恐慌抛售</text>
+    <text x="255" y="352" font-size="17" fill="#0e9e52">实体长、几无下影</text>
+  </g>
+
+  <!-- 第二根：十字星 -->
+  <g>
+    <line x1="580" y1="470" x2="580" y2="668" stroke="#8a949e" stroke-width="4"/>
+    <rect x="556" y="590" width="48" height="12" rx="3" fill="#8a949e"/>
+    <text x="580" y="836" font-size="19" fill="#48505c" text-anchor="middle">第二日 · 十字星</text>
+    <text x="580" y="862" font-size="16" fill="#7a828e" text-anchor="middle">多空分歧，抛压衰减</text>
+    <text x="600" y="466" font-size="17" fill="#7a828e">上影试探</text>
+    <text x="470" y="646" font-size="17" fill="#7a828e">下影承接</text>
+    <line x1="566" y1="640" x2="520" y2="640" stroke="#c3ccd4" stroke-width="2"/>
+  </g>
+
+  <!-- 第三根：长阳线（红） -->
+  <g>
+    <line x1="880" y1="286" x2="880" y2="596" stroke="#e02b2b" stroke-width="4"/>
+    <rect x="856" y="320" width="48" height="230" rx="3" fill="#e02b2b"/>
+    <text x="880" y="836" font-size="19" fill="#48505c" text-anchor="middle">第三日 · 长阳线</text>
+    <text x="880" y="862" font-size="16" fill="#7a828e" text-anchor="middle">放量反攻，收复失地</text>
+    <text x="912" y="308" font-size="17" fill="#e02b2b">收盘高于第一日实体中点</text>
+  </g>
+
+  <!-- 反转区间标注 -->
+  <rect x="236" y="286" width="688" height="392" rx="10" fill="none" stroke="#17405f" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="248" y="778" font-size="17" fill="#17405f">反转确认区间：第三日收盘站上第二日最高价，且成交量放大</text>
+</svg>

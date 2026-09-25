@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" font-family="PingFang SC, HarmonyOS Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbfcfd"/><stop offset="1" stop-color="#f2f5f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg2)"/>
+
+  <g stroke="#e6ebef" stroke-width="1">
+    <line x1="80" y1="180" x2="1120" y2="180"/><line x1="80" y1="280" x2="1120" y2="280"/>
+    <line x1="80" y1="380" x2="1120" y2="380"/><line x1="80" y1="480" x2="1120" y2="480"/>
+    <line x1="80" y1="580" x2="1120" y2="580"/><line x1="80" y1="680" x2="1120" y2="680"/>
+  </g>
+  <line x1="80" y1="790" x2="1120" y2="790" stroke="#d7dee4" stroke-width="2"/>
+
+  <text x="80" y="88" font-size="34" font-weight="600" fill="#1b2026">锤子线 · 下影线探底</text>
+  <text x="80" y="126" font-size="18" fill="#7a828e">长下影 + 小实体 + 几乎无上影：下方承接力度强于上方抛压</text>
+
+  <!-- 下跌趋势线 -->
+  <path d="M120 240 L560 520" stroke="#c3ccd4" stroke-width="3" stroke-dasharray="10 8" fill="none"/>
+  <text x="150" y="228" font-size="17" fill="#7a828e">下跌趋势</text>
+
+  <!-- 锤子线 -->
+  <g>
+    <line x1="700" y1="470" x2="700" y2="760" stroke="#e02b2b" stroke-width="5"/>
+    <rect x="672" y="520" width="56" height="52" rx="4" fill="#e02b2b"/>
+    <text x="748" y="536" font-size="18" fill="#1b2026">小实体（开收盘接近）</text>
+    <text x="748" y="700" font-size="18" fill="#1b2026">下影线 ≥ 实体 2 倍</text>
+    <line x1="700" y1="700" x2="742" y2="694" stroke="#c3ccd4" stroke-width="2"/>
+    <text x="700" y="812" font-size="19" fill="#48505c" text-anchor="middle">锤子线</text>
+  </g>
+
+  <!-- 对比：上吊线 -->
+  <g>
+    <line x1="980" y1="440" x2="980" y2="730" stroke="#0e9e52" stroke-width="5"/>
+    <rect x="952" y="450" width="56" height="52" rx="4" fill="#0e9e52"/>
+    <text x="980" y="812" font-size="19" fill="#48505c" text-anchor="middle">同一形态 · 高位出现</text>
+    <text x="980" y="838" font-size="16" fill="#e02b2b" text-anchor="middle">= 上吊线，警惕见顶</text>
+  </g>
+
+  <!-- 关键提示 -->
+  <rect x="80" y="150" width="0" height="0"/>
+  <text x="80" y="868" font-size="17" fill="#17405f">要点：形态相同，位置决定含义 —— 低位锤子线看反转，高位长下影看派发。</text>
+</svg>

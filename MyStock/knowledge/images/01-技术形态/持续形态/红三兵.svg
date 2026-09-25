@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" font-family="PingFang SC, HarmonyOS Sans SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbfcfd"/><stop offset="1" stop-color="#f2f5f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg3)"/>
+
+  <g stroke="#e6ebef" stroke-width="1">
+    <line x1="80" y1="180" x2="1120" y2="180"/><line x1="80" y1="280" x2="1120" y2="280"/>
+    <line x1="80" y1="380" x2="1120" y2="380"/><line x1="80" y1="480" x2="1120" y2="480"/>
+    <line x1="80" y1="580" x2="1120" y2="580"/><line x1="80" y1="680" x2="1120" y2="680"/>
+  </g>
+  <line x1="80" y1="760" x2="1120" y2="760" stroke="#d7dee4" stroke-width="2"/>
+
+  <text x="80" y="88" font-size="34" font-weight="600" fill="#1b2026">红三兵 · 趋势延续</text>
+  <text x="80" y="126" font-size="18" fill="#7a828e">连续三根收盘递增的阳线，实体饱满、上影短小，代表买方持续推进</text>
+
+  <!-- 三根递升阳线 -->
+  <g>
+    <line x1="300" y1="470" x2="300" y2="700" stroke="#e02b2b" stroke-width="4"/>
+    <rect x="272" y="520" width="56" height="150" rx="4" fill="#e02b2b"/>
+    <text x="300" y="790" font-size="19" fill="#48505c" text-anchor="middle">第一日 · 中阳启动</text>
+    <text x="300" y="816" font-size="16" fill="#7a828e" text-anchor="middle">收盘高于前一日</text>
+  </g>
+  <g>
+    <line x1="560" y1="380" x2="560" y2="580" stroke="#e02b2b" stroke-width="4"/>
+    <rect x="532" y="404" width="56" height="140" rx="4" fill="#e02b2b"/>
+    <text x="560" y="790" font-size="19" fill="#48505c" text-anchor="middle">第二日 · 稳步跟进</text>
+    <text x="560" y="816" font-size="16" fill="#7a828e" text-anchor="middle">开盘位于前日实体内</text>
+  </g>
+  <g>
+    <line x1="820" y1="270" x2="820" y2="460" stroke="#e02b2b" stroke-width="4"/>
+    <rect x="792" y="292" width="56" height="136" rx="4" fill="#e02b2b"/>
+    <text x="820" y="790" font-size="19" fill="#48505c" text-anchor="middle">第三日 · 再创新高</text>
+    <text x="820" y="816" font-size="16" fill="#7a828e" text-anchor="middle">收盘为三日最高</text>
+  </g>
+
+  <!-- 量能柱 -->
+  <g fill="#c9d6df">
+    <rect x="276" y="720" width="48" height="30" rx="2"/>
+    <rect x="536" y="706" width="48" height="44" rx="2"/>
+    <rect x="796" y="690" width="48" height="60" rx="2"/>
+  </g>
+  <text x="880" y="740" font-size="16" fill="#7a828e">成交量温和放大</text>
+
+  <!-- 走势箭头 -->
+  <path d="M180 700 L980 250" stroke="#17405f" stroke-width="3" fill="none" stroke-dasharray="4 6"/>
+  <text x="880" y="220" font-size="17" fill="#17405f">上升通道</text>
+
+  <text x="80" y="868" font-size="17" fill="#17405f">失效信号：第三日出现长上影或放巨量滞涨，说明上方抛压涌现，需减仓应对。</text>
+</svg>
