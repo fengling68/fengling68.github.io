@@ -1,0 +1,1 @@
+function B(t){if(!t||t<0)return"0 B";if(t<1024)return`${t} B`;const i=["KB","MB","GB","TB"];let e=t/1024,r=0;for(;e>=1024&&r<i.length-1;)e/=1024,r++;return`${e.toFixed(e<10?2:1)} ${i[r]}`}export{B as f};
