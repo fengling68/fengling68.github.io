@@ -1,0 +1,232 @@
+# 常用 · 书签导航页（.link）：由 aLibraryPrivate/书签/导航/常用.md 转换而来
+# 规则见「AAA示例/自定义文件规则.md」；源文件的每个 `## 分类` → 条目的 tags
+# （文件内分类：内容区按标签分组、每组带小标题；未打标签的归最后的「其他」组）
+title: 常用
+desc: 常用站点速查：导航 / 我的 / 记录 / 读写 / 剪辑 / 音乐 / 视频 / 资讯 / 小说 / 收藏
+tags: 导航, 常用
+showLogo: true
+
+- name: 学吧导航 ❤️
+  url: https://www.xue8nav.com/
+  logo: https://www.xue8nav.com/wp-content/uploads/2020/01/app-icon-1.png
+  desc: 学吧导航，超过四十万学习爱好者都在用的专业学习网址大全学霸导航，汇集了国内外优质的学习网站和平台。网站囊括了综合平台、…
+  tags: 导航
+- name: AI工具集
+  url: https://ai-bot.cn/?ref=xue8nav.com
+  logo: https://ai-bot.cn/wp-content/uploads/2023/04/ai-bot-baidu-logo.png
+  desc: AI工具集官网收录了国内外数百个AI工具，该导航网站包括AI写作工具、AI图像生成和背景移除、AI视频制作、AI音频转…
+  tags: 导航
+- name: 闪击工作台
+  url: https://nav.sankki.com/#/index
+  tags: 导航
+- name: 妙书签
+  url: https://websiteshare.cn/#/workbench
+  logo: https://websiteshare.cn/assets/favicon-CbfEsAxH.ico
+  desc: 书签收藏待办
+  tags: 导航
+- name: 我的博客 ❤️
+  url: https://fengling68.github.io/MyBlogs
+  logo: https://fengling68.github.io/MyBlogs/image/avatar.png
+  desc: 风月无古今，情怀自浅深，唯心所造。
+  tags: 我的
+- name: 我的资料库 ❤️
+  url: https://fengling68.github.io/MyLibrary/
+  logo: https://fengling68.github.io/MyLibrary/favicon.svg
+  desc: 个人数字知识库
+  tags: 我的
+- name: 我的工具 ❤️
+  url: https://fengling68.github.io/MyAllTools/
+  logo: https://fengling68.github.io/MyAllTools/favicon.svg
+  desc: 个人小工具集合
+  tags: 我的
+- name: 我的股票 ❤️
+  url: https://fengling68.github.io/MyStock/
+  logo: https://fengling68.github.io/MyStock/favicon.svg
+  desc: 个人股票投资分析
+  tags: 我的
+- name: GitHub
+  url: https://github.com/fengling68?tab=repositories&q=&type=&language=&sort=name
+  logo: https://github.com/apple-touch-icon.png
+  desc: fengling68 has 2 repositories available. Follow their code …
+  tags: 我的
+- name: 中国科技云数据胶囊
+  url: https://data.cstcloud.cn/my/data/all
+  logo: https://data.cstcloud.cn/favicon.svg
+  desc: 加载中... 数据胶囊
+  tags: 我的
+- name: 一本日记 💎
+  url: https://1diary.me/
+  logo: https://1diary.me/diary.ico
+  desc: 一本日记
+  tags: 记录
+- name: 知犀导图 💎
+  url: https://www.zhixi.com/space?page=owner
+  logo: https://www.zhixi.com/favicon.ico
+  desc: 知犀思维导图官网模板社区专业为您免费提供精美思维导图模板，点击模板即可在线编辑制作，支持一键导出与云端存储， 助力您的…
+  tags: 记录
+- name: 语雀
+  url: https://www.yuque.com/dashboard/books
+  logo: https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*sRUdR543RjcAAAAAAAAAAAAADvuFAQ/original
+  desc: 十万阿里人都在用的笔记与文档知识库，面向企业、组织或个人，提供全新的体系化知识管理，打造轻松流畅的工作协同。金融级数据…
+  tags: 记录
+- name: 微信读书 💎
+  url: https://weread.qq.com/
+  logo: https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/appleTouchIcon/apple-touch-icon-152x152.png
+  desc: 微信读书提供海量正版书籍、小说、漫画、公众号、听书，多设备同步实现跨屏阅读。与微信好友一起发现更多精品好书，随时交流感…
+  tags: 读写
+- name: 墨星写作 💎
+  url: https://www.mx-xz.com/
+  logo: https://www.mx-xz.com/apple-touch-icon.png
+  desc: 墨星写作网(原中国作者素材库)主要提供各类小说写作技巧学习，网文小说写作素材资料查阅以及各类写作辅助生成工具，致力于打…
+  tags: 读写
+- name: 一席
+  url: https://yixi.tv/#/home
+  desc: 一席
+  tags: 读写
+- name: 稿定设计 💎
+  url: https://www.gaoding.com/
+  desc: 海量设计模板加持不会PS也能轻松搞定设计，在线设计海报、简历、PPT、名片、宣传单、邀请函、Logo等多种设计需求场景…
+  tags: 剪辑
+- name: 万兴喵影 💎
+  url: https://miao.wondershare.cn/help/faq.html
+  logo: https://images.wondershare.cn/miao-zh-square-green.png
+  desc: 帮助中心
+  tags: 剪辑
+- name: 喵影教程
+  url: https://www.bilibili.com/video/av53264784?zw
+  logo: https://i0.hdslb.com/bfs/archive/69f534a9648f3ecec03caf99d6b806ecb6381878.jpg@57w_57h
+  desc: 新版喵影工厂视频教程系列终于来啦！对视频教程中不清楚的点可以在评论区互动哦~下载喵影工厂：shencut.com, 视…
+  tags: 剪辑
+- name: 即梦AI
+  url: https://jimeng.jianying.com/ai-tool/home/
+  logo: https://lf3-lv-buz.vlabstatic.com/obj/image-lvweb-buz/common/images/dreamina-v5.ico
+  desc: 即梦AI是一个AI创作平台，可激发艺术创意、提升绘画和视频创作体验。您可以利用AI智能，将想象变为现实。即梦AI支持文…
+  tags: 剪辑
+- name: Seedance
+  url: https://www.volcengine.com/activity/seedance
+  logo: https://portal.volccdn.com/obj/volcfe/misc/favicon.png
+  tags: 剪辑
+- name: 海绵音乐
+  url: https://www.haimian.com/?utm_source=ai-bot.cn
+  logo: https://lf-hm-scm.haimianyinyue.com/obj/haimian-scm/doria/swing/static/image/icon.png
+  desc: 海绵音乐是抖音旗下的免费 AI 音乐创作产品，输入一句话即可快速生成原创音乐、仿写热门歌曲，还支持对话写歌、AI写词、…
+  tags: 音乐
+- name: 音述
+  url: https://www.yinshu.me/
+  logo: https://www.yinshu.me/favicon.ico?favicon.52d6a513.ico
+  desc: 用一句话生成完整 AI 歌曲，体验音述AI音乐创作。
+  tags: 音乐
+- name: mureka
+  url: https://www.mureka.cn/home
+  logo: https://www.mureka.cn/favicon.ico
+  desc: Discover how to create stunning AI-generated music with Mur…
+  tags: 音乐
+- name: 自由钢琴
+  url: https://www.autopiano.cn/
+  tags: 音乐
+- name: 哔哩哔哩
+  url: https://www.bilibili.com/
+  logo: https://i0.hdslb.com/bfs/static/jinkela/long/images/512.png
+  desc: 哔哩哔哩（bilibili.com)是国内知名的视频弹幕网站，这里有及时的动漫新番，活跃的ACG氛围，有创意的Up主。…
+  tags: 视频
+- name: 速速动漫
+  url: http://susudm8.com/
+  desc: 404 Not Found
+  tags: 视频
+- name: 电影天堂
+  url: https://www.dygod.net/index.html
+  logo: https://www.dygod.net/favicon.ico
+  desc: ��Ӱ����:�����Ӱ����,��Ʒ������
+  tags: 视频
+- name: 奇米奇米
+  url: http://www.qimiqimi.net/type/guoman.html
+  desc: Redirecting...
+  tags: 视频
+- name: 新片场
+  url: https://www.xinpianchang.com/?from=navigator
+  desc: 新片场汇聚全球原创优质视频及创作人，提供4K、无广告、无水印视频观看，专业的视频艺术学习教程，正版视觉素材交易等，与百…
+  tags: 视频
+- name: 电影日历
+  url: https://www.cikeee.com/
+  tags: 视频
+- name: 今日热榜
+  url: https://tophub.today/
+  logo: https://tophub.today/favicon.ico
+  desc: 今日热榜提供各站热榜聚合：微信、今日头条、百度、知乎、V2EX、微博、贴吧、豆瓣、天涯、虎扑、Github、抖音...…
+  tags: 资讯
+- name: 知乎热榜
+  url: https://www.zhihu.com/hot
+  logo: https://www.zhihu.com/favicon.ico
+  tags: 资讯
+- name: 知乎日报
+  url: http://daily.zhihu.com/
+  logo: https://daily.zhihu.com/favicon.ico
+  desc: 在中国，资讯类移动应用的人均阅读时长是 5 分钟，而在知乎日报，这个数字是 21。以独有的方式为你提供最高质、最深度、…
+  tags: 资讯
+- name: 数字尾巴
+  url: https://www.dgtle.com/
+  logo: https://www.dgtle.com/favicon.ico
+  desc: 致力于分享美好数字生活体验，囊括你闻所未闻的最丰富数码资讯，触所未触最抢鲜产品评测，随时随地感受尾巴们各式数字生活精彩…
+  tags: 资讯
+- name: 少数派
+  url: https://sspai.com/
+  logo: https://cdn-static.sspai.com/favicon/sspai.ico
+  desc: 少数派致力于更好地运用数字产品或科学方法，帮助用户提升工作效率和生活品质
+  tags: 资讯
+- name: 人民网
+  url: http://search.people.cn/
+  logo: https://search.people.cn/favicon.ico
+  desc: 人民网，是世界十大报纸之一《人民日报》建设的以新闻为主的大型网上信息发布平台，也是互联网上最大的中文和多语种新闻网站之…
+  tags: 资讯
+- name: 36氪
+  url: https://36kr.com/
+  tags: 资讯
+- name: 趣集
+  url: https://ifun.cool/
+  logo: https://ifun.cool/favicon.ico
+  desc: 探索好玩，分享纯粹快乐。精选高品质单机大作、多人联机与怀旧经典，提供免安装资源、汉化补丁与联机教程。帮你过滤垃圾游戏，…
+  tags: 小说
+- name: 盐神
+  url: https://onehu.xyz
+  logo: https://onehu.xyz/img/fluid.png
+  desc: 免费分享一些盐选文章，免费阅读网站
+  tags: 小说
+- name: 趣书网
+  url: https://www.yqtxt.com/
+  tags: 小说
+- name: 52书库新
+  url: https://www.po5.net/
+  logo: https://www.po5.net/favicon.ico
+  desc: 52书库(www.52shuku.net)分享各类好看的耽美小说，言情小说，GL百合小说等等，覆盖了穿书，甜宠，追妻，…
+  tags: 小说
+- name: 52书库
+  url: https://www.52shuwu.me/
+  tags: 小说
+- name: 52推书
+  url: https://www.52shuku.top/
+  tags: 小说
+- name: Sankki 网址收藏
+  url: https://nav.sankki.com/
+  logo: https://cos.sankki.com/resource/common/favicon2.ico
+  desc: 高度定制化的网址导航。急速加载、使用markdown编辑模式、复制就能分享给朋友、多种风格主题、可自定义CSS、提供各…
+  tags: 收藏
+- name: Cubox 文章收藏
+  url: https://cubox.pro/my/inbox
+  logo: https://cubox.pro/my/logo192.png
+  desc: Cubox 知识库 - 轻松收集、自动整理、深度阅读、灵活管理。帮助你从容面对海量信息，善用网络碎片获得提升。
+  tags: 收藏
+- name: MuseDAM 素材管理
+  url: https://dam.musetransfer.com/home/all
+  logo: https://static-cdn.tezign.com/musedam-app/assets/pwa-512x512-D0iDle0D.png
+  desc: 它是一个极速上传下载、云端协作、超大文件快传、安全、便捷收集、分享协作的数字资产管理系统
+  tags: 收藏
+- name: 微博书 ❤️
+  url: https://www.weiboshu.com/my/books
+  logo: https://weiboshu.com/favicon.png
+  desc: 明星微博书 - 为明星爱豆打 Call
+  tags: 收藏
+- name: 露西学画画
+  url: https://www.lucydraw.com/
+  logo: https://www.lucydraw.com/favicon.ico
+  desc: 极速影院是一个专门为私人提供电影观看的平台，提供最新最全的电影,免费在线追剧新片,以及各种好看的电影。更有丰富电影专题…
+  tags: 收藏

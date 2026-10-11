@@ -1,0 +1,68 @@
+# 设计 · 书签导航页（.link）：由 aLibraryPrivate/书签/导航/设计.md 转换而来
+# 规则见「AAA示例/自定义文件规则.md」；源文件的每个 `## 分类` → 条目的 tags
+# （文件内分类：内容区按标签分组、每组带小标题；未打标签的归最后的「其他」组）
+title: 设计
+desc: 设计导航、图库、字库、配色与原型工具
+tags: 导航, 设计
+showLogo: true
+
+- name: 优设导航
+  url: https://hao.uisdc.com/
+  desc: 设计导航2013年上线至今，是优设网旗下最专业好用的设计师导航网站！设计导航为设计师提供AI创作、UI设计、设计教程、…
+  tags: 导航
+- name: 设计狮导航
+  url: https://www.998877.com.cn/
+  logo: https://www.998877.com.cn/template/daohang/public/img/favicon.ico
+  desc: 设计狮是最好用的设计网址导航，支持网址自定义功能，我们提供最新的设计灵感推荐和设计工具导航，助您快速找到所需资源！
+  tags: 导航
+- name: 好设计导航
+  url: http://hao.shejidaren.com/
+  logo: https://hao.shejidaren.com/images/apple-touch-icon.png
+  desc: 设计师网址导航专注分享优秀设计网站、免费无版权限制可商用的高品质素材，设计教程、尺寸规范、配色方案、设计素材和灵感
+  tags: 导航
+- name: 奇迹秀工具箱
+  url: https://www.qijishow.com/down/index.html
+  logo: https://www.qijishow.com/favicon.ico
+  desc: 奇迹秀分享UI设计师必备设计工具及各类设计辅助神器，index
+  tags: 导航
+- name: 花瓣
+  url: https://huaban.com/discovery
+  desc: 花瓣网最新采集栏目为推荐了最新采集相关的图片素材资源，其中涵盖众多设计师收藏采集的相关图片素材资源。花瓣网, 设计师寻…
+  tags: 图库
+- name: 视觉中国
+  url: https://www.vcg.com/illustration/
+  logo: https://www.vcg.com/favicon.ico
+  tags: 图库
+- name: unDraw 常用插画
+  url: https://undraw.co/illustrations
+  logo: https://undraw.co/apple-touch-icon.png
+  desc: Browse the complete unDraw collection of open-source illust…
+  tags: 图库
+- name: 手机汉仪字体
+  url: https://ifonts.com/font/shoujihanyiziti.html
+  logo: https://ifonts.com/favicon.ico
+  desc: iFonts字体助手引进全球正版字库字体，包含数千款商用中文字体和西文字体，快来iFonts体验手机汉仪字体正版商用字…
+  tags: 字库
+- name: 字加
+  url: https://zijia.zijia.com.cn/
+  logo: https://zijia.zijia.com.cn/favicon.ico
+  desc: 字加软件下载_字+下载_字加客户端官网-字加网
+  tags: 字库
+- name: UI配色
+  url: https://aicolors.co/
+  logo: https://www.bairesdev.com/tools/ai-colors/ai-colors-assets/cropped-favicon-180x180.png
+  desc: Turn prompts into color palettes.
+  tags: 配色
+- name: UI配色
+  url: https://palettemaker.com/app
+  logo: https://palettemaker.com/favicon-32x32.png
+  desc: Free color tool for creatives and color lovers. Create colo…
+  tags: 配色
+- name: 中国传统色
+  url: https://color.uisdc.com/
+  desc: 设计导航2013年上线至今，是优设网旗下最专业好用的设计师导航网站！优设配色导航帮助您完成配色方案，不用配色软件轻松配…
+  tags: 配色
+- name: Pixso 原型设计
+  url: https://pixso.cn/app/collect
+  logo: https://pixso.cn/favicon.ico
+  tags: 原型

@@ -1,0 +1,170 @@
+# 兴趣 · 书签导航页（.link）：由 aLibraryPrivate/书签/导航/兴趣.md 转换而来
+# 规则见「AAA示例/自定义文件规则.md」；源文件的每个 `## 分类` → 条目的 tags
+# （文件内分类：内容区按标签分组、每组带小标题；未打标签的归最后的「其他」组）
+title: 兴趣
+desc: 文学、知识、好玩站点与博客合集、优质博客
+tags: 导航, 兴趣
+showLogo: true
+
+- name: 秘塔写作猫
+  url: https://xiezuocat.com/
+  logo: https://xiezuocat.com/favicon.ico
+  desc: 秘塔写作猫
+  tags: 文学
+- name: 什么值得读
+  url: http://shenmezhidedu.com
+  tags: 文学
+- name: 古诗词网
+  url: https://www.56612.com/
+  tags: 文学
+- name: 古诗文网
+  url: https://www.gushiwen.cn
+  logo: https://www.gushiwen.cn/favicon.ico
+  desc: 古文岛作为传承经典的网站专注于古诗服务，致力于让古诗爱好者更便捷地发表及获取古诗相关资料。
+  tags: 文学
+- name: 若古文学
+  url: https://wenxue.ruogoo.cn/
+  logo: https://static.ruogoo.cn/favicon.ico
+  desc: 若古社区是若古文化旗下社区网站，致力于做中国最优秀的古风文化社区，为古风兴趣爱好者提供一个和谐有爱的交流平台。
+  tags: 文学
+- name: 纪妖
+  url: http://www.cbaigui.com/
+  logo: https://www.cbaigui.com/favicon.ico
+  desc: 鬼怪,精怪,神兽,中国妖怪,知妖,知妖app,纪妖,鬼神,中国神话,民俗,妖怪,纪妖网,纪妖应用,纪妖官网,纪妖app…
+  tags: 知识
+- name: 观沧海
+  url: https://www.ageeye.cn/
+  desc: 观沧海 - 地图分享知识
+  tags: 知识
+- name: 周公解梦
+  url: https://www.zgjm.org/
+  logo: https://i.zgjmorg.com/favicon.ico
+  desc: 免费周公解梦大全查询系统，翻译了最权威的原版周公解梦资料，拥有最全面的现代周公解梦破解大全查询数据，供广大网友进行解梦…
+  tags: 知识
+- name: 律法知识
+  url: https://www.justlaws.cn/
+  logo: https://www.justlaws.cn/images/logo.svg
+  desc: 从一部法律，到每一条规定。在 Just Laws 查找与阅读中国法律原文。
+  tags: 知识
+- name: 故宫博物院
+  url: https://www.dpm.org.cn/Home.html
+  logo: https://www.dpm.org.cn/favicon.ico
+  desc: 故宫博物院成立于1925年10月10日，是以明清两代皇宫和宫廷旧藏文物为基础建立起来的大型综合性古代艺术博物馆，是世界…
+  tags: 知识
+- name: 有趣的网站
+  url: http://jetli.com.cn/
+  tags: 好玩
+- name: 竹白
+  url: https://zhubai.love/creator/posts/published?page=1
+  tags: 好玩
+- name: 万年历
+  url: http://www.wannianli3.com/
+  logo: https://www.wannianli3.com/favicon.ico
+  tags: 好玩
+- name: 面包多
+  url: https://mbd.pub/
+  logo: https://cdn.2zimu.com/mianbaoduo/favicon.ico
+  desc: 面包多
+  tags: 好玩
+- name: 时光邮局
+  url: https://www.hi2future.com/
+  logo: https://orz-static.hi2future.com/me2me/static/logo_v2_144.jpg
+  desc: 这封信，写给未来的自己，问问当初的梦想是否还在坚持；这封信，写给未来的爱人，让他/她看到你十年不变的爱恋。
+  tags: 好玩
+- name: 电子烟花
+  url: https://slcp.top/fireworks
+  tags: 好玩
+- name: 秘密花园
+  url: http://www.yini.org/
+  desc: ���ܻ�԰
+  tags: 好玩
+- name: 在线魔方
+  url: https://www.qijishow.com/Brand/master/index.html
+  logo: https://www.qijishow.com/Brand/master/assets/icons/apple-touch-icon.png
+  desc: 设计师必备资源站，提供免费设计软件、工具、色彩、字体资源。
+  tags: 好玩
+- name: 十万个为什么
+  url: https://10why.net/
+  tags: 好玩
+- name: 全国方言大全
+  url: https://phonemica.net/
+  desc: Phonemica
+  tags: 好玩
+- name: 360度环游世界
+  url: https://www.airpano.com/
+  logo: https://www.airpano.com/favicon.ico
+  desc: AirPano is a VR project created by a team of Russian photog…
+  tags: 好玩
+- name: music for programming
+  url: https://musicforprogramming.net/one
+  logo: https://musicforprogramming.net/favicon.png
+  tags: 好玩
+- name: 黑洞-十年之约 🔥
+  url: https://www.foreverblog.cn/go.html
+  logo: https://www.foreverblog.cn/apple-touch-icon.png?v=20261002
+  desc: 穿过虫洞，随机访问一个半年内仍有更新的十年之约成员博客。
+  tags: 博客合集
+- name: 开往-下一站点 🔥
+  url: https://travellings.link/
+  logo: https://www.travellings.cn/assets/favicon.png
+  desc: 开往-友链接力
+  tags: 博客合集
+- name: AlleyRead
+  url: https://alleyread.com/
+  tags: 博客合集
+- name: 博客合集
+  url: https://bf.zzxworld.com/s
+  logo: https://bf.zzxworld.com/images/favicon.png
+  desc: BlogFinder 收录的所有博客站点列表，目前已有九百多位个人博客入驻本站。
+  tags: 博客合集
+- name: 中文博客合集
+  url: https://github.com/timqian/chinese-independent-blogs
+  tags: 博客合集
+- name: 2022年终总结
+  url: https://github.com/saveweb/review-2022
+  logo: https://github.com/fluidicon.png
+  desc: 饿您饿饿年，你吃年终总结了馍？. Contribute to saveweb/review-2022 developm…
+  tags: 博客合集
+- name: 2021年终总结
+  url: https://github.com/saveweb/review-2021
+  tags: 博客合集
+- name: 一颗小树
+  url: https://yeshu.cloud/posts
+  logo: https://yeshu.cloud/images/apple-touch-icon.png
+  desc: In progress to be a product maker.
+  tags: 优质博客
+- name: 一介大叔
+  url: http://www.winature.com
+  desc: 共享IP
+  tags: 优质博客
+- name: 一蓑烟雨
+  url: https://easyf12.top/
+  logo: https://pic1.imgdb.cn/item/6808c97558cb8da5c8c67f17.png
+  desc: 竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。
+  tags: 优质博客
+- name: 渚碧博客
+  url: https://jubeny.com/
+  tags: 优质博客
+- name: 深蓝的天空
+  url: https://bluest.xyz/
+  tags: 优质博客
+- name: 熊涛的博客
+  url: https://lastknightcoder.github.io/
+  logo: https://lastknightcoder.github.io/favicon.png
+  desc: 首页
+  tags: 优质博客
+- name: FROYO's Blog
+  url: http://www.izhuyue.com
+  logo: http://www.izhuyue.com/favicon.ico
+  desc: 把握现在,拥抱未来
+  tags: 优质博客
+- name: Xinsenz茶話
+  url: https://xinsenz.com
+  logo: https://xinsenz.com/wp-content/themes/Berry-wordpress/build/images/favicon.png
+  desc: 星辰茶话 – 个人博客，树下闲坐，酒好花新，听风写字。
+  tags: 优质博客
+- name: Moonvy月球背面
+  url: https://moonvy.com/blog/
+  logo: https://moonvy.com/blog/icon/logo-256.png
+  desc: 月球背面・Moonvy - 月维的创造者们对「设计」和「开发」的思考与讨论
+  tags: 优质博客

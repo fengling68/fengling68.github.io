@@ -1,0 +1,206 @@
+# 工具 · 书签导航页（.link）：由 aLibraryPrivate/书签/导航/工具.md 转换而来
+# 规则见「AAA示例/自定义文件规则.md」；源文件的每个 `## 分类` → 条目的 tags
+# （文件内分类：内容区按标签分组、每组带小标题；未打标签的归最后的「其他」组）
+title: 工具
+desc: 在线工具：编辑 / 图片 / CSS / JS / 网站检测 / 敏感词查询 / CDN
+tags: 导航, 工具
+showLogo: true
+
+- name: tldraw 画板
+  url: https://www.tldraw.com/
+  logo: https://www.tldraw.com/apple-touch-icon-180x180.svg
+  desc: A free and instant collaborative whiteboarding tool.
+  tags: 编辑工具
+- name: draw.io 流程图
+  url: https://app.diagrams.net/
+  logo: https://app.diagrams.net/images/apple-touch-icon.png
+  desc: draw.io is free online diagram software for making flowchar…
+  tags: 编辑工具
+- name: MarkDowd 排版
+  url: https://editor.mdnice.com/
+  logo: https://editor.mdnice.com/favicon.svg
+  desc: mdnice 是一款 Markdown 微信编辑器，拥有良好的兼容性、海量主题样式、免费的图床、强大的技术团队，提供文…
+  tags: 编辑工具
+- name: 码上掘金
+  url: https://code.juejin.cn
+  logo: https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe4b1dda450a423693e69a0de95f1bd7~tplv-k3u1fbpfcp-zoom-1.image
+  desc: 码上掘金
+  tags: 编辑工具
+- name: 精灵图
+  url: https://www.toptal.com/developers/css/sprite-generator
+  tags: IMG 工具
+- name: base64 图片转换
+  url: https://www.base64-image.de/
+  logo: https://www.base64-image.de/apple-touch-icon.png
+  desc: Free online tool to optimize images and convert them to bas…
+  tags: IMG 工具
+- name: tinypng 图片压缩
+  url: https://tinypng.com/
+  logo: https://tinypng.com/images/apple-touch-icon.png
+  desc: Free online image optimizer for faster websites! Reduce the…
+  tags: IMG 工具
+- name: favicon 头像制作
+  url: https://tool.lu/favicon/
+  logo: https://tool.lu/favicon.ico
+  desc: favicon在线制作,icon制作,网站图标,网站图标制作,ico图标制作
+  tags: IMG 工具
+- name: IconFont 阿里图标
+  url: https://www.iconfont.cn/manage/index?manage_type=myprojects
+  logo: https://img.alicdn.com/imgextra/i4/O1CN01XZe8pH1USpiUNT1QN_!!6000000002517-2-tps-114-114.png
+  desc: iconfont-国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能。阿里巴巴体验…
+  tags: IMG 工具
+- name: Can I Use
+  url: https://caniuse.com/
+  logo: https://caniuse.com/img/favicon-128.png
+  desc: "Can I use" provides up-to-date browser support tables for …
+  tags: CSS 工具
+- name: Loading 生成器
+  url: https://loading.io/
+  logo: https://loading.io/favicon.ico
+  tags: CSS 工具
+- name: Grid 生成器
+  url: https://www.lingdaima.com/grid/
+  logo: https://www.lingdaima.com/favicon.ico
+  desc: 本工具无需代码，在线快速设计网页布局，即可获得HTML和CSS代码，只需要拖拽即可完成复杂的html布局，在线操作，方…
+  tags: CSS 工具
+- name: Grid 生成器
+  url: https://cssgrid-generator.netlify.app/
+  logo: https://cssgrid-generator.netlify.app/favicon.ico
+  desc: CSS Grid Generator
+  tags: CSS 工具
+- name: Button 生成器
+  url: https://cssbuttongenerator.com/
+  logo: https://www.cssbuttongenerator.com/static/favicon/apple-touch-icon.png
+  desc: CSS Button Generator is a free online tool to create CSS bu…
+  tags: CSS 工具
+- name: 贝塞尔曲线游戏
+  url: https://bezier.method.ac/
+  logo: https://bezier.method.ac/favicon.ico
+  desc: A game to help you master the pen tool
+  tags: CSS 工具
+- name: 贝塞尔曲线
+  url: https://cubic-bezier.com/#.17,.67,.83,.67
+  desc: cubic-bezier.com
+  tags: CSS 工具
+- name: 字体预览工具
+  url: http://blog.luckly-mjw.cn/tool-show/iconfont-preview/index.html
+  logo: https://blog.luckly-mjw.cn/favicon.ico
+  desc: iconfont preview for web, Momo
+  tags: CSS 工具
+- name: 嗨正则
+  url: https://hiregex.com/
+  tags: JS 工具
+- name: 正则可视化
+  url: https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24
+  logo: https://jex.im/favicon.ico
+  desc: Regulex：JavaScript Regular Expression Visualizer
+  tags: JS 工具
+- name: 正则表达式
+  url: https://any86.github.io/any-rule/
+  desc: 正则大全
+  tags: JS 工具
+- name: 表格生成器
+  url: https://tableconvert.com/
+  logo: https://tableconvert.com/favicon.ico
+  desc: TableConvert is a free online table converter and data gene…
+  tags: JS 工具
+- name: 表单生成器
+  url: https://mrhj.gitee.io/form-generator/#/
+  tags: JS 工具
+- name: 手机屏幕尺寸大全
+  url: https://uiiiuiii.com/screen/index.htm
+  logo: https://aixzd.com/app/static/favicon/180.png
+  desc: AI 星踪岛（AIXZD）是国内专业的AI内容与机器人产业服务平台。依托优设网14年行业积淀，服务千万级用户，汇聚全球…
+  tags: JS 工具
+- name: VSCode片段生成器
+  url: https://snippet-generator.app/
+  logo: https://snippet-generator.app/favicon-32x32.png
+  desc: Snippet generator for Visual Studio Code, Sublime Text and …
+  tags: JS 工具
+- name: HTTP Content-type 表
+  url: https://tool.oschina.net/commons
+  logo: https://tool.oschina.net/img/favicon.ico
+  desc: OSCHINA.NET在线工具,ostools为开发设计人员提供在线工具，提供jsbin在线 CSS、JS 调试，在线…
+  tags: JS 工具
+- name: 域名检测
+  url: https://www.urlzt.com/
+  logo: https://www.urlzt.com/favicon.ico
+  desc: 极强域名检测是一款节点化实时检测报警通知系统，使用本工具你可以知道域名状态、链接状态、网络状态、链接是否打开异常、域名…
+  tags: 网站检测
+- name: 网站适配
+  url: https://responsively.app/
+  logo: https://responsively.app/apple-touch-icon.png
+  desc: A dev-tool that aids faster and precise responsive web deve…
+  tags: 网站检测
+- name: Npm 测试
+  url: https://npm.runkit.com/
+  tags: 网站检测
+- name: WebSocket 测试
+  url: http://www.easyswoole.com/wstool.html
+  logo: https://www.easyswoole.com/favicon.ico
+  desc: EasySwoole在线WebSocket测试工具
+  tags: 网站检测
+- name: Gtmetrix 测速
+  url: https://gtmetrix.com/
+  logo: https://gtmetrix.com/favicon.ico
+  tags: 网站检测
+- name: WebPage 测速
+  url: https://www.webpagetest.org/
+  tags: 网站检测
+- name: 拓源网
+  url: http://zbp.toyean.com/tools/
+  desc: 新广告法违禁词查询工具为您提供新广告法违禁用词及敏感词检测查询,适用大部分电商平台,欢迎使用
+  tags: 敏感词查询
+- name: 易播网
+  url: http://www.51ebo.com/detection.html
+  logo: http://www.51ebo.com/themes/simplebootx/Public/assets/images/favicon.ico
+  desc: 易播网为广大用户提供新广告法违禁用词及敏感词检测查询,广告敏感违禁词查询就上易播网
+  tags: 敏感词查询
+- name: 句易网
+  url: http://www.ju1.cn/
+  logo: http://www.ju1.cn/favicon.ico
+  desc: 句易网为您提供2025年最新广告法淘宝抖音违禁词在线过滤工具，欢迎使用，工具适用于各类行业自媒体短视频文案新闻稿检查，…
+  tags: 敏感词查询
+- name: 零克查词
+  url: http://ci.lingke.pro/
+  tags: 敏感词查询
+- name: 禁用词查询
+  url: http://www.jinyongci.com/
+  desc: 审核中 | Reviewing
+  tags: 敏感词查询
+- name: 违禁词查询
+  url: http://www.zhipaiwu.com/index.php/Weijinci/index.html
+  tags: 敏感词查询
+- name: cdn - bootcdn
+  url: https://www.bootcdn.cn/
+  logo: https://www.bootcdn.cn/assets/ico/apple-touch-icon-144-precomposed.png?1785081230094
+  desc: Bootstrap 中文网开源项目免费 CDN 加速服务 - 我们致力于为 Bootstrap、jQuery、Angu…
+  tags: 其他
+- name: cdn - jsdelivr
+  url: https://www.jsdelivr.com/?query=vue
+  logo: https://www.jsdelivr.com/icons/apple-touch-icon.png
+  desc: Optimized for JS and ESM delivery from npm and GitHub. Work…
+  tags: 其他
+- name: MathStudio
+  url: http://mathstud.io/
+  logo: http://mathstud.io/favicon.png
+  desc: Modern technical computing system for students, teachers, e…
+  tags: 其他
+- name: 文件百科
+  url: https://www.wenjianbaike.com
+  logo: https://www.wenjianbaike.com/favicon.ico
+  desc: 文件百科拥有一个庞大的文件格式查询数据库，当你遇到未知类型文件无法打开时，您可以在本站上查询该文件扩展名，就可以找到该…
+  tags: 其他
+- name: 在线预览字体
+  url: http://blog.luckly-mjw.cn/tool-show/iconfont-preview/index.html
+  logo: https://blog.luckly-mjw.cn/favicon.ico
+  desc: iconfont preview for web, Momo
+  tags: 其他
+- name: 随机姓名生成器
+  url: https://www.qmsjmfb.com/
+  desc: 网名在线生成支持在线网名、姓名、游戏名字、家族团体名字批量生成，支持性别选择，支持姓氏指定，支持随机姓氏！
+  tags: 其他
+- name: 狗屁不通文章生成器
+  url: https://suulnnka.github.io/BullshitGenerator/index.html
+  desc: 狗屁不通文章生成器
+  tags: 其他

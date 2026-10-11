@@ -1,0 +1,119 @@
+# 下载 · 书签导航页（.link）：由 aLibraryPrivate/书签/导航/下载.md 转换而来
+# 规则见「AAA示例/自定义文件规则.md」；源文件的每个 `## 分类` → 条目的 tags
+# （文件内分类：内容区按标签分组、每组带小标题；未打标签的归最后的「其他」组）
+title: 下载
+desc: 电子书 / 图片 / 应用 / 软件 / 模型 / 插件 / 字体资源下载
+tags: 导航, 下载
+showLogo: true
+
+- name: 书伴
+  url: https://bookfere.com/
+  logo: https://bookfere.com/favicon.ico
+  desc: 书伴（bookfere.com），创建的目的是帮助您更便捷、深入地使用手中的Kindle阅读器，让读书成为生命的一部分…
+  tags: 电子书下载
+- name: 书格
+  url: https://new.shuge.org/collections/
+  tags: 电子书下载
+- name: 搬书匠
+  url: http://www.banshujiang.cn/
+  logo: http://www.banshujiang.cn/favicon.ico
+  desc: [搬书匠] - 电子书(EBook)
+  tags: 电子书下载
+- name: 书享家
+  url: http://shuxiangjia.cn/
+  tags: 电子书下载
+- name: 鸠摩搜索
+  url: https://www.jiumodiary.com/
+  logo: https://www.jiumodiary.com/images/apple/apple-144.png
+  desc: 鸠摩搜索引擎
+  tags: 电子书下载
+- name: 熊猫搜书
+  url: https://xmsoushu.com/#/
+  tags: 电子书下载
+- name: unsplash
+  url: https://unsplash.com/s/photos/book
+  logo: https://unsplash.com/favicon.ico
+  tags: 图片下载
+- name: pexels
+  url: https://www.pexels.com/zh-cn/
+  tags: 图片下载
+- name: 动漫图片下载
+  url: https://tenapi.cn/acg
+  logo: https://tenapi.cn/favicon.ico
+  tags: 图片下载
+- name: 触站
+  url: https://www.huashi6.com/user/like
+  logo: https://www.huashi6.com/favicon.ico
+  desc: 我喜欢的-触站
+  tags: 图片下载
+- name: wallhaven
+  url: https://wallhaven.cc/
+  tags: 图片下载
+- name: design
+  url: https://blog.md123.top/264.html
+  tags: 图片下载
+- name: 马可菠萝
+  url: https://www.macbl.com/
+  logo: https://macbl01.skqandroid.com/images/favicon.ico
+  desc: Macbl 提供最全面的Mac软件免费下载，分享最新的Mac游戏、图形设计软件、行业软件、开发工具、媒体工具、网络工具…
+  tags: 应用下载
+- name: 知您网
+  url: https://www.zhiniw.com/
+  tags: 应用下载
+- name: Mac毒
+  url: https://www.macdo.cn/
+  logo: https://www.macdo.cn/wp-content/uploads/2021/08/6464.png
+  desc: Mac毒提供Mac软件下载、macOS游戏、Adobe全家桶破解版，支持M芯片。附详细安装教程、激活方法和常见问题解答。
+  tags: 应用下载
+- name: Mac玩儿法
+  url: https://www.waerfa.com/
+  logo: https://www.waerfa.com/favicon.ico
+  desc: Mac玩儿法是一家专注于推荐优质应用和互联网创意产品/服务的中文内容平台，主要介绍 Mac、iPhone、iPad 平…
+  tags: 应用下载
+- name: Mac精品应用
+  url: https://xclient.info/
+  logo: https://img.xclient.info/icon/favicon.ico
+  desc: 精品MAC应用分享，每天分享大量mac软件，为您提供优质的mac软件,免费软件下载服务
+  tags: 应用下载
+- name: Mac键盘快捷键
+  url: https://support.apple.com/zh-cn/HT201236
+  logo: https://support.apple.com/favicon.ico
+  desc: 你可以按下某些组合键来实现通常需要鼠标或触控板才能完成的操作。每个 App 都有自己的快捷键，在一个 App 中有用的…
+  tags: 应用下载
+- name: AndroidDevTools
+  url: https://androiddevtools.cn
+  logo: https://androiddevtools.cn/static/image/apple-touch-icon-114x114.png
+  desc: AndroidDevTools 是一个收集整理 Android 开发所需的 Android SDK、开发中用到的工具、…
+  tags: 软件下载
+- name: nodejs
+  url: https://nodejs.org/dist/
+  logo: https://nodejs.org/favicon.ico
+  desc: Index of /dist/
+  tags: 软件下载
+- name: He3开发工具
+  url: https://he3.app/zh/
+  tags: 软件下载
+- name: Sketchfab
+  url: https://sketchfab.com
+  logo: https://static.sketchfab.com/static/builds/web/dist/static/assets/images/favicon/e59d7f2ff579bbf9d20771b3d4d8c6a7-v2.png
+  desc: With a community of over one million creators, we are the w…
+  tags: 模型下载
+- name: PolyHaven
+  url: https://polyhaven.com
+  logo: https://polyhaven.com/apple-touch-icon.png
+  desc: The Public 3D Asset Library
+  tags: 模型下载
+- name: 插件小屋
+  url: https://www.chajianxw.com/
+  logo: https://www.chajianxw.com/static/favicon.ico
+  desc: 插件小屋-专业的Chrome插件下载网站,这里收录了丰富优质的谷歌浏览器扩展插件,提供crx离线安装包下载与安装。无法…
+  tags: 插件下载
+- name: 字加字体
+  url: https://www.zijia.com.cn/4981?utm_source=zitixiazai
+  logo: https://www.zijia.com.cn/favicon.ico
+  desc: 方正FW筑紫A圆家族是由6款字体组成，分别是方正FW筑紫A圆 简 E,方正FW筑紫A圆 简 B,方正FW筑紫A圆 简 …
+  tags: 字体下载
+- name: 常用hosts
+  url: https://github.com/googlehosts/hosts/blob/master/hosts-files/hosts
+  logo: http://github.com/apple-touch-icon.png
+  tags: 其他

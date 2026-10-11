@@ -1,0 +1,45 @@
+# 工作 · 书签导航页（.link）：由 aLibraryPrivate/书签/导航/工作.md 转换而来
+# 规则见「AAA示例/自定义文件规则.md」；源文件的每个 `## 分类` → 条目的 tags
+# （文件内分类：内容区按标签分组、每组带小标题；未打标签的归最后的「其他」组）
+title: 工作
+desc: 工作入口：软通系统与社保 / 公积金等生活事项
+tags: 导航, 工作
+showLogo: true
+
+- name: 软通首页
+  url: https://ipsapro.isoftstone.com/PortalPlus/
+  logo: https://ipsapro.isoftstone.com/favicon.ico
+  tags: 软通
+- name: 软通面板
+  url: https://ipsapro.isoftstone.com/EmpSelfService
+  logo: https://ipsapro.isoftstone.com/favicon.ico
+  tags: 软通
+- name: iCollege
+  url: https://www.issedu365.com/
+  logo: https://eco.issedu365.com/ouselres/dashboard/static/frontend/img/favicon.ico
+  tags: 软通
+- name: iCan
+  url: https://ipsapro.isoftstone.com/iCan/#/login
+  logo: https://ipsapro.isoftstone.com/favicon.ico
+  desc: iCan
+  tags: 软通
+- name: 北京市人力社保局
+  url: http://rsj.beijing.gov.cn/#
+  logo: https://rsj.beijing.gov.cn/favicon.ico
+  desc: 首页_北京市人力资源和社会保障局
+  tags: 生活
+- name: 全国会计资格评价网
+  url: http://kzp.mof.gov.cn/
+  logo: http://kzp.mof.gov.cn/assets/images/favicon.ico
+  desc: 财政部会计财务评价中心成立于2001年8月，负责组织全国会计资格考试与会计人员水平评价工作；建立考试信息系统和合格人员…
+  tags: 生活
+- name: 北京小客车指标管理
+  url: https://xkczb.jtw.beijing.gov.cn/
+  logo: https://xkczb.jtw.beijing.gov.cn/templates/default/images/favicon.ico
+  desc: 北京市小客车指标调控管理信息系统
+  tags: 生活
+- name: 北京住房公积金管理中心
+  url: https://gjj.beijing.gov.cn/
+  logo: https://gjj.beijing.gov.cn/web/uiFramework/commonResource/zip/bitbug_favicon/bitbug_favicon.ico
+  desc: 北京住房公积金网
+  tags: 生活

@@ -1,0 +1,2042 @@
+{
+  "updated": "2026-10-11",
+  "profiles": {
+    "image": "80/1880",
+    "thumb": "150/68/30",
+    "cover": "2:150/80"
+  },
+  "icons": {
+    "color": "green"
+  },
+  "covers": {
+    "images": [
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-thumbnail-2-1675774645601.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-thumbnail-4-1675774649617.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-thumbnail-5-1675774652746.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-cartoon-001-1668179045250.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-cartoon-002-1668179047003.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-cartoon-003-1668179049459.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-cartoon-004-1668179051326.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/infinity-223203-1668178102884.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/infinity-335023-1668178104297.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/infinity-1660823-1668178111980.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/infinity-240159-1666706387753.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-今天的她也是如此可爱-001-1666442574474.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-她和她的猫-001-1665921635146.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-她和她的猫-002-1665921637356.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-她和她的猫-003-1665921638853.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-2022-10-16-002-1665913099413.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpage-2022-10-16-001-1665913101870.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-scene-002-1668179054709.webp",
+      "https://fengling68.github.io/imgbed/images-upic-picture/wallpaper-scene-003-1668179056460.webp"
+    ]
+  },
+  "features": {
+    "mermaid": false
+  },
+  "kinds": [
+    {
+      "dir": "AAA示例",
+      "name": "AAA示例",
+      "view": "auto",
+      "unit": "项",
+      "hint": "混合内容",
+      "icon": "<rect x=\"3.5\" y=\"3.5\" width=\"7.2\" height=\"7.2\" rx=\"1.4\"/><circle cx=\"16.9\" cy=\"7.1\" r=\"3.6\"/><path d=\"M7.1 13.4l3.6 6.4H3.5z\"/><rect x=\"13.5\" y=\"13.5\" width=\"7\" height=\"7\" rx=\"1.4\"/>",
+      "count": 16,
+      "tree": [
+        {
+          "title": "chm",
+          "file": "AAA示例/chm.chm",
+          "size": "7.4 KB",
+          "stamp": "1791722792409:7538"
+        },
+        {
+          "title": "docx",
+          "file": "AAA示例/docx.docx",
+          "stamp": "1791722792409:1447"
+        },
+        {
+          "title": "epub",
+          "file": "AAA示例/epub.epub",
+          "cover": "AAA示例/epub.webp",
+          "author": "MyLibrary",
+          "pages": 3,
+          "size": "33.8 KB",
+          "stamp": "1791722792409:34645"
+        },
+        {
+          "title": "html",
+          "file": "AAA示例/html.html",
+          "stamp": "1791722792409:23950"
+        },
+        {
+          "title": "image1",
+          "file": "AAA示例/image1.webp",
+          "stamp": "1791722792409:23198"
+        },
+        {
+          "title": "image2",
+          "file": "AAA示例/image2.webp",
+          "stamp": "1791722792409:11986"
+        },
+        {
+          "title": "常用开发导航",
+          "file": "AAA示例/link.link",
+          "sites": [
+            {
+              "name": "MDN Web Docs",
+              "url": "https://developer.mozilla.org/zh-CN/",
+              "logo": "https://developer.mozilla.org/favicon.ico",
+              "desc": "Web 技术权威文档",
+              "tags": ["文档", "前端"]
+            },
+            {
+              "name": "Vue.js",
+              "url": "https://cn.vuejs.org/",
+              "logo": "https://cn.vuejs.org/logo.svg",
+              "desc": "渐进式 JavaScript 框架",
+              "tags": ["前端"]
+            },
+            {
+              "name": "GitHub",
+              "url": "https://github.com/",
+              "logo": "https://github.githubassets.com/favicons/favicon.svg",
+              "desc": "代码托管与协作",
+              "tags": ["工具"]
+            },
+            {
+              "name": "Can I use",
+              "url": "https://caniuse.com/",
+              "logo": "",
+              "desc": "浏览器兼容性查询（没写 logo → 回退首字母色块）",
+              "tags": ["前端", "工具"]
+            },
+            {
+              "name": "示例站点",
+              "url": "https://example.com/",
+              "logo": "",
+              "desc": "没打标签 → 归到最后的「其他」组"
+            }
+          ],
+          "date": "2026-10-11",
+          "tags": ["导航", "示例"],
+          "desc": "点击卡片直接新窗口打开（文件级 showLogo 控制是否展示网站 logo）",
+          "stamp": "1791722792409:1347"
+        },
+        {
+          "title": "Markdown 预览示例",
+          "file": "AAA示例/markdown.md",
+          "date": "2026-10-09",
+          "tags": ["示例", "markdown", "预览"],
+          "desc": "展示文档预览支持的写作语法：目录、容器、选项卡、行高亮、公式、任务列表与表情短码。",
+          "stamp": "1791722792409:2315"
+        },
+        {
+          "title": "mp4",
+          "file": "AAA示例/mp4.mp4",
+          "cover": "AAA示例/mp4.webp",
+          "size": "1.08 MB",
+          "stamp": "1791722792411:1128375"
+        },
+        {
+          "title": "pptx",
+          "file": "AAA示例/pptx.pptx",
+          "stamp": "1791722792411:20230"
+        },
+        {
+          "title": "txt",
+          "file": "AAA示例/txt.txt",
+          "stamp": "1791722792411:283"
+        },
+        {
+          "title": "外链示例",
+          "file": "AAA示例/url.url",
+          "url": "https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video",
+          "cover": "https://t13.baidu.com/it/u=4054909515,2945964656&fm=224&app=112&f=JPEG?w=500&h=500",
+          "tags": ["外链", "示例"],
+          "stamp": "1791722792411:200"
+        },
+        {
+          "title": "wav",
+          "file": "AAA示例/wav.wav",
+          "size": "0.13 MB",
+          "stamp": "1791722792412:132344"
+        },
+        {
+          "title": "webp",
+          "file": "AAA示例/webp.webp",
+          "stamp": "1791722792412:750"
+        },
+        {
+          "title": "xlsx",
+          "file": "AAA示例/xlsx.xlsx",
+          "stamp": "1791722792412:18531"
+        },
+        {
+          "title": "自定义文件规则说明",
+          "file": "AAA示例/自定义文件规则.md",
+          "stamp": "1791722792412:2657"
+        }
+      ]
+    },
+    {
+      "dir": "导航",
+      "name": "导航",
+      "view": "auto",
+      "unit": "项",
+      "hint": "混合内容",
+      "icon": "<rect x=\"3.5\" y=\"3.5\" width=\"7.2\" height=\"7.2\" rx=\"1.4\"/><circle cx=\"16.9\" cy=\"7.1\" r=\"3.6\"/><path d=\"M7.1 13.4l3.6 6.4H3.5z\"/><rect x=\"13.5\" y=\"13.5\" width=\"7\" height=\"7\" rx=\"1.4\"/>",
+      "count": 7,
+      "tree": [
+        {
+          "title": "下载",
+          "file": "导航/下载.link",
+          "sites": [
+            {
+              "name": "书伴",
+              "url": "https://bookfere.com/",
+              "logo": "https://bookfere.com/favicon.ico",
+              "desc": "书伴（bookfere.com），创建的目的是帮助您更便捷、深入地使用手中的Kindle阅读器，让读书成为生命的一部分…",
+              "tags": ["电子书下载"]
+            },
+            {
+              "name": "书格",
+              "url": "https://new.shuge.org/collections/",
+              "logo": "",
+              "desc": "",
+              "tags": ["电子书下载"]
+            },
+            {
+              "name": "搬书匠",
+              "url": "http://www.banshujiang.cn/",
+              "logo": "http://www.banshujiang.cn/favicon.ico",
+              "desc": "[搬书匠] - 电子书(EBook)",
+              "tags": ["电子书下载"]
+            },
+            {
+              "name": "书享家",
+              "url": "http://shuxiangjia.cn/",
+              "logo": "",
+              "desc": "",
+              "tags": ["电子书下载"]
+            },
+            {
+              "name": "鸠摩搜索",
+              "url": "https://www.jiumodiary.com/",
+              "logo": "https://www.jiumodiary.com/images/apple/apple-144.png",
+              "desc": "鸠摩搜索引擎",
+              "tags": ["电子书下载"]
+            },
+            {
+              "name": "熊猫搜书",
+              "url": "https://xmsoushu.com/#/",
+              "logo": "",
+              "desc": "",
+              "tags": ["电子书下载"]
+            },
+            {
+              "name": "unsplash",
+              "url": "https://unsplash.com/s/photos/book",
+              "logo": "https://unsplash.com/favicon.ico",
+              "desc": "",
+              "tags": ["图片下载"]
+            },
+            {
+              "name": "pexels",
+              "url": "https://www.pexels.com/zh-cn/",
+              "logo": "",
+              "desc": "",
+              "tags": ["图片下载"]
+            },
+            {
+              "name": "动漫图片下载",
+              "url": "https://tenapi.cn/acg",
+              "logo": "https://tenapi.cn/favicon.ico",
+              "desc": "",
+              "tags": ["图片下载"]
+            },
+            {
+              "name": "触站",
+              "url": "https://www.huashi6.com/user/like",
+              "logo": "https://www.huashi6.com/favicon.ico",
+              "desc": "我喜欢的-触站",
+              "tags": ["图片下载"]
+            },
+            {
+              "name": "wallhaven",
+              "url": "https://wallhaven.cc/",
+              "logo": "",
+              "desc": "",
+              "tags": ["图片下载"]
+            },
+            {
+              "name": "design",
+              "url": "https://blog.md123.top/264.html",
+              "logo": "",
+              "desc": "",
+              "tags": ["图片下载"]
+            },
+            {
+              "name": "马可菠萝",
+              "url": "https://www.macbl.com/",
+              "logo": "https://macbl01.skqandroid.com/images/favicon.ico",
+              "desc": "Macbl 提供最全面的Mac软件免费下载，分享最新的Mac游戏、图形设计软件、行业软件、开发工具、媒体工具、网络工具…",
+              "tags": ["应用下载"]
+            },
+            {
+              "name": "知您网",
+              "url": "https://www.zhiniw.com/",
+              "logo": "",
+              "desc": "",
+              "tags": ["应用下载"]
+            },
+            {
+              "name": "Mac毒",
+              "url": "https://www.macdo.cn/",
+              "logo": "https://www.macdo.cn/wp-content/uploads/2021/08/6464.png",
+              "desc": "Mac毒提供Mac软件下载、macOS游戏、Adobe全家桶破解版，支持M芯片。附详细安装教程、激活方法和常见问题解答。",
+              "tags": ["应用下载"]
+            },
+            {
+              "name": "Mac玩儿法",
+              "url": "https://www.waerfa.com/",
+              "logo": "https://www.waerfa.com/favicon.ico",
+              "desc": "Mac玩儿法是一家专注于推荐优质应用和互联网创意产品/服务的中文内容平台，主要介绍 Mac、iPhone、iPad 平…",
+              "tags": ["应用下载"]
+            },
+            {
+              "name": "Mac精品应用",
+              "url": "https://xclient.info/",
+              "logo": "https://img.xclient.info/icon/favicon.ico",
+              "desc": "精品MAC应用分享，每天分享大量mac软件，为您提供优质的mac软件,免费软件下载服务",
+              "tags": ["应用下载"]
+            },
+            {
+              "name": "Mac键盘快捷键",
+              "url": "https://support.apple.com/zh-cn/HT201236",
+              "logo": "https://support.apple.com/favicon.ico",
+              "desc": "你可以按下某些组合键来实现通常需要鼠标或触控板才能完成的操作。每个 App 都有自己的快捷键，在一个 App 中有用的…",
+              "tags": ["应用下载"]
+            },
+            {
+              "name": "AndroidDevTools",
+              "url": "https://androiddevtools.cn",
+              "logo": "https://androiddevtools.cn/static/image/apple-touch-icon-114x114.png",
+              "desc": "AndroidDevTools 是一个收集整理 Android 开发所需的 Android SDK、开发中用到的工具、…",
+              "tags": ["软件下载"]
+            },
+            {
+              "name": "nodejs",
+              "url": "https://nodejs.org/dist/",
+              "logo": "https://nodejs.org/favicon.ico",
+              "desc": "Index of /dist/",
+              "tags": ["软件下载"]
+            },
+            {
+              "name": "He3开发工具",
+              "url": "https://he3.app/zh/",
+              "logo": "",
+              "desc": "",
+              "tags": ["软件下载"]
+            },
+            {
+              "name": "Sketchfab",
+              "url": "https://sketchfab.com",
+              "logo": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/favicon/e59d7f2ff579bbf9d20771b3d4d8c6a7-v2.png",
+              "desc": "With a community of over one million creators, we are the w…",
+              "tags": ["模型下载"]
+            },
+            {
+              "name": "PolyHaven",
+              "url": "https://polyhaven.com",
+              "logo": "https://polyhaven.com/apple-touch-icon.png",
+              "desc": "The Public 3D Asset Library",
+              "tags": ["模型下载"]
+            },
+            {
+              "name": "插件小屋",
+              "url": "https://www.chajianxw.com/",
+              "logo": "https://www.chajianxw.com/static/favicon.ico",
+              "desc": "插件小屋-专业的Chrome插件下载网站,这里收录了丰富优质的谷歌浏览器扩展插件,提供crx离线安装包下载与安装。无法…",
+              "tags": ["插件下载"]
+            },
+            {
+              "name": "字加字体",
+              "url": "https://www.zijia.com.cn/4981?utm_source=zitixiazai",
+              "logo": "https://www.zijia.com.cn/favicon.ico",
+              "desc": "方正FW筑紫A圆家族是由6款字体组成，分别是方正FW筑紫A圆 简 E,方正FW筑紫A圆 简 B,方正FW筑紫A圆 简 …",
+              "tags": ["字体下载"]
+            },
+            {
+              "name": "常用hosts",
+              "url": "https://github.com/googlehosts/hosts/blob/master/hosts-files/hosts",
+              "logo": "http://github.com/apple-touch-icon.png",
+              "desc": "",
+              "tags": ["其他"]
+            }
+          ],
+          "tags": ["导航", "下载"],
+          "desc": "电子书 / 图片 / 应用 / 软件 / 模型 / 插件 / 字体资源下载",
+          "stamp": "1791722792412:4980"
+        },
+        {
+          "title": "兴趣",
+          "file": "导航/兴趣.link",
+          "sites": [
+            {
+              "name": "秘塔写作猫",
+              "url": "https://xiezuocat.com/",
+              "logo": "https://xiezuocat.com/favicon.ico",
+              "desc": "秘塔写作猫",
+              "tags": ["文学"]
+            },
+            {
+              "name": "什么值得读",
+              "url": "http://shenmezhidedu.com",
+              "logo": "",
+              "desc": "",
+              "tags": ["文学"]
+            },
+            {
+              "name": "古诗词网",
+              "url": "https://www.56612.com/",
+              "logo": "",
+              "desc": "",
+              "tags": ["文学"]
+            },
+            {
+              "name": "古诗文网",
+              "url": "https://www.gushiwen.cn",
+              "logo": "https://www.gushiwen.cn/favicon.ico",
+              "desc": "古文岛作为传承经典的网站专注于古诗服务，致力于让古诗爱好者更便捷地发表及获取古诗相关资料。",
+              "tags": ["文学"]
+            },
+            {
+              "name": "若古文学",
+              "url": "https://wenxue.ruogoo.cn/",
+              "logo": "https://static.ruogoo.cn/favicon.ico",
+              "desc": "若古社区是若古文化旗下社区网站，致力于做中国最优秀的古风文化社区，为古风兴趣爱好者提供一个和谐有爱的交流平台。",
+              "tags": ["文学"]
+            },
+            {
+              "name": "纪妖",
+              "url": "http://www.cbaigui.com/",
+              "logo": "https://www.cbaigui.com/favicon.ico",
+              "desc": "鬼怪,精怪,神兽,中国妖怪,知妖,知妖app,纪妖,鬼神,中国神话,民俗,妖怪,纪妖网,纪妖应用,纪妖官网,纪妖app…",
+              "tags": ["知识"]
+            },
+            {
+              "name": "观沧海",
+              "url": "https://www.ageeye.cn/",
+              "logo": "",
+              "desc": "观沧海 - 地图分享知识",
+              "tags": ["知识"]
+            },
+            {
+              "name": "周公解梦",
+              "url": "https://www.zgjm.org/",
+              "logo": "https://i.zgjmorg.com/favicon.ico",
+              "desc": "免费周公解梦大全查询系统，翻译了最权威的原版周公解梦资料，拥有最全面的现代周公解梦破解大全查询数据，供广大网友进行解梦…",
+              "tags": ["知识"]
+            },
+            {
+              "name": "律法知识",
+              "url": "https://www.justlaws.cn/",
+              "logo": "https://www.justlaws.cn/images/logo.svg",
+              "desc": "从一部法律，到每一条规定。在 Just Laws 查找与阅读中国法律原文。",
+              "tags": ["知识"]
+            },
+            {
+              "name": "故宫博物院",
+              "url": "https://www.dpm.org.cn/Home.html",
+              "logo": "https://www.dpm.org.cn/favicon.ico",
+              "desc": "故宫博物院成立于1925年10月10日，是以明清两代皇宫和宫廷旧藏文物为基础建立起来的大型综合性古代艺术博物馆，是世界…",
+              "tags": ["知识"]
+            },
+            {
+              "name": "有趣的网站",
+              "url": "http://jetli.com.cn/",
+              "logo": "",
+              "desc": "",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "竹白",
+              "url": "https://zhubai.love/creator/posts/published?page=1",
+              "logo": "",
+              "desc": "",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "万年历",
+              "url": "http://www.wannianli3.com/",
+              "logo": "https://www.wannianli3.com/favicon.ico",
+              "desc": "",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "面包多",
+              "url": "https://mbd.pub/",
+              "logo": "https://cdn.2zimu.com/mianbaoduo/favicon.ico",
+              "desc": "面包多",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "时光邮局",
+              "url": "https://www.hi2future.com/",
+              "logo": "https://orz-static.hi2future.com/me2me/static/logo_v2_144.jpg",
+              "desc": "这封信，写给未来的自己，问问当初的梦想是否还在坚持；这封信，写给未来的爱人，让他/她看到你十年不变的爱恋。",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "电子烟花",
+              "url": "https://slcp.top/fireworks",
+              "logo": "",
+              "desc": "",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "秘密花园",
+              "url": "http://www.yini.org/",
+              "logo": "",
+              "desc": "���ܻ�԰",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "在线魔方",
+              "url": "https://www.qijishow.com/Brand/master/index.html",
+              "logo": "https://www.qijishow.com/Brand/master/assets/icons/apple-touch-icon.png",
+              "desc": "设计师必备资源站，提供免费设计软件、工具、色彩、字体资源。",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "十万个为什么",
+              "url": "https://10why.net/",
+              "logo": "",
+              "desc": "",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "全国方言大全",
+              "url": "https://phonemica.net/",
+              "logo": "",
+              "desc": "Phonemica",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "360度环游世界",
+              "url": "https://www.airpano.com/",
+              "logo": "https://www.airpano.com/favicon.ico",
+              "desc": "AirPano is a VR project created by a team of Russian photog…",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "music for programming",
+              "url": "https://musicforprogramming.net/one",
+              "logo": "https://musicforprogramming.net/favicon.png",
+              "desc": "",
+              "tags": ["好玩"]
+            },
+            {
+              "name": "黑洞-十年之约 🔥",
+              "url": "https://www.foreverblog.cn/go.html",
+              "logo": "https://www.foreverblog.cn/apple-touch-icon.png?v=20261002",
+              "desc": "穿过虫洞，随机访问一个半年内仍有更新的十年之约成员博客。",
+              "tags": ["博客合集"]
+            },
+            {
+              "name": "开往-下一站点 🔥",
+              "url": "https://travellings.link/",
+              "logo": "https://www.travellings.cn/assets/favicon.png",
+              "desc": "开往-友链接力",
+              "tags": ["博客合集"]
+            },
+            {
+              "name": "AlleyRead",
+              "url": "https://alleyread.com/",
+              "logo": "",
+              "desc": "",
+              "tags": ["博客合集"]
+            },
+            {
+              "name": "博客合集",
+              "url": "https://bf.zzxworld.com/s",
+              "logo": "https://bf.zzxworld.com/images/favicon.png",
+              "desc": "BlogFinder 收录的所有博客站点列表，目前已有九百多位个人博客入驻本站。",
+              "tags": ["博客合集"]
+            },
+            {
+              "name": "中文博客合集",
+              "url": "https://github.com/timqian/chinese-independent-blogs",
+              "logo": "",
+              "desc": "",
+              "tags": ["博客合集"]
+            },
+            {
+              "name": "2022年终总结",
+              "url": "https://github.com/saveweb/review-2022",
+              "logo": "https://github.com/fluidicon.png",
+              "desc": "饿您饿饿年，你吃年终总结了馍？. Contribute to saveweb/review-2022 developm…",
+              "tags": ["博客合集"]
+            },
+            {
+              "name": "2021年终总结",
+              "url": "https://github.com/saveweb/review-2021",
+              "logo": "",
+              "desc": "",
+              "tags": ["博客合集"]
+            },
+            {
+              "name": "一颗小树",
+              "url": "https://yeshu.cloud/posts",
+              "logo": "https://yeshu.cloud/images/apple-touch-icon.png",
+              "desc": "In progress to be a product maker.",
+              "tags": ["优质博客"]
+            },
+            {
+              "name": "一介大叔",
+              "url": "http://www.winature.com",
+              "logo": "",
+              "desc": "共享IP",
+              "tags": ["优质博客"]
+            },
+            {
+              "name": "一蓑烟雨",
+              "url": "https://easyf12.top/",
+              "logo": "https://pic1.imgdb.cn/item/6808c97558cb8da5c8c67f17.png",
+              "desc": "竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。",
+              "tags": ["优质博客"]
+            },
+            {
+              "name": "渚碧博客",
+              "url": "https://jubeny.com/",
+              "logo": "",
+              "desc": "",
+              "tags": ["优质博客"]
+            },
+            {
+              "name": "深蓝的天空",
+              "url": "https://bluest.xyz/",
+              "logo": "",
+              "desc": "",
+              "tags": ["优质博客"]
+            },
+            {
+              "name": "熊涛的博客",
+              "url": "https://lastknightcoder.github.io/",
+              "logo": "https://lastknightcoder.github.io/favicon.png",
+              "desc": "首页",
+              "tags": ["优质博客"]
+            },
+            {
+              "name": "FROYO's Blog",
+              "url": "http://www.izhuyue.com",
+              "logo": "http://www.izhuyue.com/favicon.ico",
+              "desc": "把握现在,拥抱未来",
+              "tags": ["优质博客"]
+            },
+            {
+              "name": "Xinsenz茶話",
+              "url": "https://xinsenz.com",
+              "logo": "https://xinsenz.com/wp-content/themes/Berry-wordpress/build/images/favicon.png",
+              "desc": "星辰茶话 – 个人博客，树下闲坐，酒好花新，听风写字。",
+              "tags": ["优质博客"]
+            },
+            {
+              "name": "Moonvy月球背面",
+              "url": "https://moonvy.com/blog/",
+              "logo": "https://moonvy.com/blog/icon/logo-256.png",
+              "desc": "月球背面・Moonvy - 月维的创造者们对「设计」和「开发」的思考与讨论",
+              "tags": ["优质博客"]
+            }
+          ],
+          "tags": ["导航", "兴趣"],
+          "desc": "文学、知识、好玩站点与博客合集、优质博客",
+          "stamp": "1791722792413:6576"
+        },
+        {
+          "title": "前端",
+          "file": "导航/前端.link",
+          "sites": [
+            {
+              "name": "菜鸟工具",
+              "url": "https://c.runoob.com/",
+              "logo": "https://www.jyshare.com/pwa/icon-192.png",
+              "desc": "菜鸟工具，为开发设计人员提供在线工具，网址导航，提供在线PHP、Python、 CSS、JS 调试，中文简繁体转换，进…",
+              "tags": ["前端导航"]
+            },
+            {
+              "name": "站长工具",
+              "url": "https://tool.chinaz.com/",
+              "logo": "https://csstools.chinaz.com/favicon.ico",
+              "desc": "站长工具是站长的必备工具。经常上站长工具可以了解SEO数据变化。还可以检测网站死链接、蜘蛛访问、HTML格式检测、网站…",
+              "tags": ["前端导航"]
+            },
+            {
+              "name": "Web前端导航",
+              "url": "http://www.alloyteam.com/nav/",
+              "logo": "",
+              "desc": "",
+              "tags": ["前端导航"]
+            },
+            {
+              "name": "运营工具大全",
+              "url": "https://xiaomark.com/tool",
+              "logo": "https://xiaomark.com/favicon.ico",
+              "desc": "运营工具大全收录优秀的运营领域相关工具。",
+              "tags": ["前端导航"]
+            },
+            {
+              "name": "狼牌网址导航",
+              "url": "https://www.volf.club/",
+              "logo": "https://www.volf.club/assets/images/favicon.png",
+              "desc": "狼牌工作网址导航，为兴趣",
+              "tags": ["前端导航"]
+            },
+            {
+              "name": "神器集",
+              "url": "https://hao.logosc.cn/",
+              "logo": "http://hao.logosc.cn/favicon.svg",
+              "desc": "",
+              "tags": ["前端导航"]
+            },
+            {
+              "name": "web全栈",
+              "url": "https://senior-frontend.pages.dev/",
+              "logo": "https://senior-frontend.pages.dev/logo.png",
+              "desc": "你好，朋友",
+              "tags": ["前端合集"]
+            },
+            {
+              "name": "资源教程",
+              "url": "https://cnodejs.org/topic/56ef3edd532839c33a99d00e",
+              "logo": "https://cnodejs.org/apple-touch-icon.png",
+              "desc": "话题不存在",
+              "tags": ["前端合集"]
+            },
+            {
+              "name": "前端面试题",
+              "url": "https://github.com/febobo/web-interview",
+              "logo": "",
+              "desc": "",
+              "tags": ["前端合集"]
+            },
+            {
+              "name": "掘金",
+              "url": "https://juejin.cn/",
+              "logo": "https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/apple-touch-icon.png",
+              "desc": "掘金是面向全球中文开发者的技术内容分享与交流平台。我们通过技术文章、沸点、课程、直播等产品和服务，打造一个激发开发者创…",
+              "tags": ["交流平台"]
+            },
+            {
+              "name": "思否",
+              "url": "https://segmentfault.com/",
+              "logo": "",
+              "desc": "SegmentFault 思否是中国专业的开发者技术社区。我们以技术问答、技术博客、技术课程、技术资讯为核心的产品形态…",
+              "tags": ["交流平台"]
+            },
+            {
+              "name": "力扣",
+              "url": "https://leetcode.cn/",
+              "logo": "https://leetcode.cn/favicon.ico",
+              "desc": "海量技术面试题库，拥有算法、数据结构、系统设计等 1000+题目，帮助你高效提升编程技能，轻松拿下世界 IT 名企 D…",
+              "tags": ["交流平台"]
+            },
+            {
+              "name": "设计模式",
+              "url": "https://refactoringguru.cn/design-patterns",
+              "logo": "",
+              "desc": "",
+              "tags": ["设计模式"]
+            },
+            {
+              "name": "数据结构算法可视",
+              "url": "https://visualgo.net/zh",
+              "logo": "https://visualgo.net/img/favicon.png",
+              "desc": "VisuAlgo was conceptualised in 2011 by Associate Professor …",
+              "tags": ["设计模式"]
+            },
+            {
+              "name": "代码速查表-中",
+              "url": "https://quickref.cn/",
+              "logo": "https://quickref.cn/icons/favicon.svg",
+              "desc": "Quick Reference &#x26; Quick Reference",
+              "tags": ["速查文档"]
+            },
+            {
+              "name": "代码速查表-英",
+              "url": "https://quickref.me/",
+              "logo": "https://quickref.me/images/favicon.png?v=1",
+              "desc": "Share quick reference and cheat sheet for developers",
+              "tags": ["速查文档"]
+            },
+            {
+              "name": "代码备忘录-英",
+              "url": "https://devhints.io/",
+              "logo": "https://devhints.io/assets/favicon.png",
+              "desc": "A ridiculous collection of web development cheatsheets",
+              "tags": ["速查文档"]
+            },
+            {
+              "name": "OverAPI",
+              "url": "https://overapi.com/javascript",
+              "logo": "https://overapi.com/favicon.ico",
+              "desc": "OverAPI.com is a site collecting all the cheatsheets,all!",
+              "tags": ["速查文档"]
+            },
+            {
+              "name": "DevDocs",
+              "url": "https://devdocs.io/",
+              "logo": "https://devdocs.io/images/apple-icon-160.png",
+              "desc": "Fast, offline, and free documentation browser for developer…",
+              "tags": ["速查文档"]
+            },
+            {
+              "name": "CSS Tricks",
+              "url": "https://lhammer.cn/You-need-to-know-css/#/zh-cn/",
+              "logo": "https://lhammer.cn/You-need-to-know-css/static/favicon.ico",
+              "desc": "You-need-to-know-css,CSS tricks web developers need to know",
+              "tags": ["速查文档"]
+            },
+            {
+              "name": "一页备忘录",
+              "url": "https://cheatography.com/",
+              "logo": "https://cheatography.com/images/cheatography-iphone.png",
+              "desc": "Find thousands of incredible, original programming cheat sh…",
+              "tags": ["速查文档"]
+            },
+            {
+              "name": "MDN",
+              "url": "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript",
+              "logo": "https://developer.mozilla.org/apple-touch-icon.png",
+              "desc": "JavaScript（JS）是一种具有函数优先特性的轻量级、解释型或者说即时编译型的编程语言。虽然作为 Web 页面中…",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "Npm",
+              "url": "https://www.npmjs.com/",
+              "logo": "",
+              "desc": "",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "Vue2",
+              "url": "https://v2.cn.vuejs.org/",
+              "logo": "https://v2.cn.vuejs.org/images/icons/apple-icon-180x180.png",
+              "desc": "Vue.js - The Progressive JavaScript Framework",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "Vue3",
+              "url": "https://cn.vuejs.org/api/",
+              "logo": "https://cn.vuejs.org/logo.svg",
+              "desc": "Vue.js - 渐进式的 JavaScript 框架",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "Vite",
+              "url": "https://vitejs.cn/config/",
+              "logo": "https://vitejs.cn/logo-without-border.svg",
+              "desc": "发现 Vue 生态系统中最好的框架、UI 库、工具和构建工具",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "React",
+              "url": "https://react.docschina.org/docs/getting-started.html",
+              "logo": "https://react.docschina.org/favicon.ico",
+              "desc": "",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "Webpack",
+              "url": "https://www.webpackjs.com/concepts/",
+              "logo": "https://www.webpackjs.com/icon_180x180.png",
+              "desc": "webpack 是一个模块打包器。它的主要目标是将 JavaScript 文件打包在一起，打包后的文件用于在浏览器中使…",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "ES6",
+              "url": "https://es6.ruanyifeng.com/",
+              "logo": "https://es6.ruanyifeng.com/favicon.ico",
+              "desc": "ES6 入门教程",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "NodeJs",
+              "url": "https://nodejs.org/dist/latest-v16.x/docs/api/",
+              "logo": "https://nodejs.org/favicon.ico",
+              "desc": "Index | Node.js v16.20.2 Documentation",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "ElementUI",
+              "url": "https://element.eleme.cn/#/zh-CN",
+              "logo": "https://element.eleme.cn/favicon.ico",
+              "desc": "Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "Element Plus",
+              "url": "https://element-plus.gitee.io/zh-CN/",
+              "logo": "",
+              "desc": "",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "AntDesign",
+              "url": "https://ant.design/components/overview-cn/",
+              "logo": "https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png",
+              "desc": "基于 Ant Design 设计体系的 React UI 组件库，用于研发企业级中后台产品。",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "Echarts",
+              "url": "https://echarts.apache.org/zh/option.html",
+              "logo": "https://echarts.apache.org/zh/images/favicon.png?_v_=20240226",
+              "desc": "Apache ECharts，一款基于JavaScript的数据可视化图表库，提供直观，生动，可交互，可个性化定制的数…",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "Electron",
+              "url": "https://www.electronjs.org/zh/docs/latest/api/app",
+              "logo": "",
+              "desc": "app | Electron",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "ESLint",
+              "url": "https://cn.eslint.org/",
+              "logo": "https://zh-hans.eslint.org/apple-touch-icon.png",
+              "desc": "插件化、可配置的 JavaScript 代码检查工具，让你轻松地提高代码质量。",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "Lodash",
+              "url": "https://www.lodashjs.com/",
+              "logo": "https://www.lodashjs.com/img/favicon.ico",
+              "desc": "Lodash 是一个一致性、模块化、高性能的 JavaScript 实用工具库。",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "Zepto.js",
+              "url": "https://zeptojs.com/",
+              "logo": "https://zeptojs.com/favicon.png",
+              "desc": "Zepto.js: the aerogel-weight jQuery-compatible JavaScript l…",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "jsdoc",
+              "url": "https://jsdoc.app/",
+              "logo": "",
+              "desc": "Official documentation for JSDoc.",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "EJS 中文文档",
+              "url": "https://ejs.bootcss.com/",
+              "logo": "",
+              "desc": "EJS -- 嵌入式 JavaScript 模板引擎 | EJS 中文文档",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "谷歌官方文档",
+              "url": "https://developers.google.cn/web",
+              "logo": "https://www.gstatic.cn/devrel-devsite/prod/v097103d8ccd7b257790809ea4cc5e5fee6daa6e24890a4af388296e58364bc31/developers/images/touchicon-180-new.png",
+              "desc": "探索开发者资源、社区活动和鼓舞人心的故事，它们可以帮助您更智能地构建应用和更快地完成交付。",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "支付宝开放文档",
+              "url": "https://myjsapi.alipay.com/index.html",
+              "logo": "https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico",
+              "desc": "支付宝文档中心",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "高德开放平台",
+              "url": "https://lbs.amap.com/",
+              "logo": "https://a.amap.com/pc/static/favicon.ico",
+              "desc": "高德开放平台|高德开放平台官网|高德开放平台控制台|官网控制台|控制台|应用管理|应用分析|账号信息|开发者信息|账号…",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "微信开放文档",
+              "url": "https://developers.weixin.qq.com/doc/",
+              "logo": "https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png",
+              "desc": "微信开发者平台文档",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "微信SDK文档",
+              "url": "https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html",
+              "logo": "https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png",
+              "desc": "微信服务号文档文档",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "小程序API",
+              "url": "https://developers.weixin.qq.com/miniprogram/dev/api/",
+              "logo": "https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png",
+              "desc": "微信开发者平台文档",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "小程序后台",
+              "url": "https://mp.weixin.qq.com/",
+              "logo": "https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png",
+              "desc": "微信公众平台，给个人、企业和组织提供业务服务与用户管理能力的全新服务平台。",
+              "tags": ["技术文档"]
+            },
+            {
+              "name": "dayjs",
+              "url": "https://dayjs.fenxianglu.cn/category/",
+              "logo": "https://dayjs.fenxianglu.cn/assets/favicon.png",
+              "desc": "Day.js是一个极简的JavaScript库，可以为现代浏览器解析、验证、操作和显示日期和时间。",
+              "tags": ["插件文档"]
+            },
+            {
+              "name": "Swiper",
+              "url": "https://www.swiper.com.cn/index.html",
+              "logo": "https://www.swiper.com.cn/favicon.ico",
+              "desc": "Swiper(Swiper master)是目前应用较广泛的移动端网页触摸内容滑动js插件。 Swiper中文网提供S…",
+              "tags": ["插件文档"]
+            },
+            {
+              "name": "BetterScroll 2.0",
+              "url": "https://better-scroll.github.io/docs/zh-CN/guide/",
+              "logo": "https://better-scroll.github.io/docs/assets/bs.ico",
+              "desc": "Make Scroll Perfect",
+              "tags": ["插件文档"]
+            },
+            {
+              "name": "Valine 评论插件",
+              "url": "https://valine.js.org/",
+              "logo": "https://valine.js.org/images/icons/apple-touch-icon-152x152.png",
+              "desc": "Valine - 一款快速、简洁且高效的无后端评论系统。",
+              "tags": ["插件文档"]
+            },
+            {
+              "name": "PixiJS",
+              "url": "https://www.pixijs.com/",
+              "logo": "",
+              "desc": "PixiJS | The HTML5 Creation Engine | PixiJS",
+              "tags": ["动画文档"]
+            },
+            {
+              "name": "Velocity.js",
+              "url": "http://www.velocityjs.org/",
+              "logo": "",
+              "desc": "Velocity.js: An incredibly fast animation engine for motion…",
+              "tags": ["动画文档"]
+            },
+            {
+              "name": "Animate.css",
+              "url": "https://animate.style/",
+              "logo": "https://animate.style/img/favicon.ico",
+              "desc": "Animate.css is a library of ready-to-use, cross-browser ani…",
+              "tags": ["动画文档"]
+            },
+            {
+              "name": "animejs",
+              "url": "https://animejs.com/documentation/#cssSelector",
+              "logo": "https://animejs.com/assets/images/favicon.png",
+              "desc": "A fast, multipurpose and lightweight JavaScript animation l…",
+              "tags": ["动画文档"]
+            },
+            {
+              "name": "LeanCloud",
+              "url": "https://www.leancloud.cn/",
+              "logo": "https://www.leancloud.cn/apple-touch-icon.png",
+              "desc": "领先的 BaaS 提供商，提供数据存储、文件存储、云引擎、容器、即时通讯、消息推送、短信、游戏云等多项服务，为移动开发…",
+              "tags": ["云服务"]
+            },
+            {
+              "name": "阿里云",
+              "url": "https://www.aliyun.com/",
+              "logo": "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico",
+              "desc": "阿里云——阿里巴巴集团旗下全球领先的云计算及人工智能科技公司之一",
+              "tags": ["云服务"]
+            },
+            {
+              "name": "sdg",
+              "url": "https://api.sdgou.cc/#/home",
+              "logo": "",
+              "desc": "",
+              "tags": ["API"]
+            },
+            {
+              "name": "ten",
+              "url": "https://tenapi.cn/",
+              "logo": "https://tenapi.cn/favicon.ico",
+              "desc": "Ten▪Api免费提供Api服务",
+              "tags": ["API"]
+            },
+            {
+              "name": "free",
+              "url": "https://github.com/fangzesheng/free-api",
+              "logo": "",
+              "desc": "",
+              "tags": ["API"]
+            },
+            {
+              "name": "apifox",
+              "url": "https://www.apifox.cn/",
+              "logo": "https://cdn.apifox.com/static/logo/favicon.ico",
+              "desc": "Apifox = Postman + Swagger + Mock + JMeter。集接口文档工具、接口Mock工具…",
+              "tags": ["API"]
+            },
+            {
+              "name": "awesome",
+              "url": "https://github.com/TonnyL/Awesome_APIs/blob/master/README-zh.md",
+              "logo": "",
+              "desc": "",
+              "tags": ["API"]
+            },
+            {
+              "name": "聚合数据",
+              "url": "https://www.juhe.cn/",
+              "logo": "https://www.juhe.cn/favicon.ico",
+              "desc": "聚合数据为天聚地合(股票代码: 2479.HK )旗下品牌,是国内领先的综合数据服务平台,以严选安全数据源为核心优势,…",
+              "tags": ["API"]
+            },
+            {
+              "name": "极速数据",
+              "url": "https://www.jisuapi.com/",
+              "logo": "https://www.jisuapi.com/favicon.ico",
+              "desc": "极速数据平台提供各类生活数据API，方便开发者快速简单的开发APP、软件及其他服务平台。快递、企业工商、汽车、商标等数…",
+              "tags": ["API"]
+            }
+          ],
+          "tags": ["导航", "前端"],
+          "desc": "前端导航、速查文档、技术文档、插件与动画文档、云服务与 API",
+          "stamp": "1791722792413:13064"
+        },
+        {
+          "title": "工作",
+          "file": "导航/工作.link",
+          "sites": [
+            {
+              "name": "软通首页",
+              "url": "https://ipsapro.isoftstone.com/PortalPlus/",
+              "logo": "https://ipsapro.isoftstone.com/favicon.ico",
+              "desc": "",
+              "tags": ["软通"]
+            },
+            {
+              "name": "软通面板",
+              "url": "https://ipsapro.isoftstone.com/EmpSelfService",
+              "logo": "https://ipsapro.isoftstone.com/favicon.ico",
+              "desc": "",
+              "tags": ["软通"]
+            },
+            {
+              "name": "iCollege",
+              "url": "https://www.issedu365.com/",
+              "logo": "https://eco.issedu365.com/ouselres/dashboard/static/frontend/img/favicon.ico",
+              "desc": "",
+              "tags": ["软通"]
+            },
+            {
+              "name": "iCan",
+              "url": "https://ipsapro.isoftstone.com/iCan/#/login",
+              "logo": "https://ipsapro.isoftstone.com/favicon.ico",
+              "desc": "iCan",
+              "tags": ["软通"]
+            },
+            {
+              "name": "北京市人力社保局",
+              "url": "http://rsj.beijing.gov.cn/#",
+              "logo": "https://rsj.beijing.gov.cn/favicon.ico",
+              "desc": "首页_北京市人力资源和社会保障局",
+              "tags": ["生活"]
+            },
+            {
+              "name": "全国会计资格评价网",
+              "url": "http://kzp.mof.gov.cn/",
+              "logo": "http://kzp.mof.gov.cn/assets/images/favicon.ico",
+              "desc": "财政部会计财务评价中心成立于2001年8月，负责组织全国会计资格考试与会计人员水平评价工作；建立考试信息系统和合格人员…",
+              "tags": ["生活"]
+            },
+            {
+              "name": "北京小客车指标管理",
+              "url": "https://xkczb.jtw.beijing.gov.cn/",
+              "logo": "https://xkczb.jtw.beijing.gov.cn/templates/default/images/favicon.ico",
+              "desc": "北京市小客车指标调控管理信息系统",
+              "tags": ["生活"]
+            },
+            {
+              "name": "北京住房公积金管理中心",
+              "url": "https://gjj.beijing.gov.cn/",
+              "logo": "https://gjj.beijing.gov.cn/web/uiFramework/commonResource/zip/bitbug_favicon/bitbug_favicon.ico",
+              "desc": "北京住房公积金网",
+              "tags": ["生活"]
+            }
+          ],
+          "tags": ["导航", "工作"],
+          "desc": "工作入口：软通系统与社保 / 公积金等生活事项",
+          "stamp": "1791722792413:1968"
+        },
+        {
+          "title": "工具",
+          "file": "导航/工具.link",
+          "sites": [
+            {
+              "name": "tldraw 画板",
+              "url": "https://www.tldraw.com/",
+              "logo": "https://www.tldraw.com/apple-touch-icon-180x180.svg",
+              "desc": "A free and instant collaborative whiteboarding tool.",
+              "tags": ["编辑工具"]
+            },
+            {
+              "name": "draw.io 流程图",
+              "url": "https://app.diagrams.net/",
+              "logo": "https://app.diagrams.net/images/apple-touch-icon.png",
+              "desc": "draw.io is free online diagram software for making flowchar…",
+              "tags": ["编辑工具"]
+            },
+            {
+              "name": "MarkDowd 排版",
+              "url": "https://editor.mdnice.com/",
+              "logo": "https://editor.mdnice.com/favicon.svg",
+              "desc": "mdnice 是一款 Markdown 微信编辑器，拥有良好的兼容性、海量主题样式、免费的图床、强大的技术团队，提供文…",
+              "tags": ["编辑工具"]
+            },
+            {
+              "name": "码上掘金",
+              "url": "https://code.juejin.cn",
+              "logo": "https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe4b1dda450a423693e69a0de95f1bd7~tplv-k3u1fbpfcp-zoom-1.image",
+              "desc": "码上掘金",
+              "tags": ["编辑工具"]
+            },
+            {
+              "name": "精灵图",
+              "url": "https://www.toptal.com/developers/css/sprite-generator",
+              "logo": "",
+              "desc": "",
+              "tags": ["IMG 工具"]
+            },
+            {
+              "name": "base64 图片转换",
+              "url": "https://www.base64-image.de/",
+              "logo": "https://www.base64-image.de/apple-touch-icon.png",
+              "desc": "Free online tool to optimize images and convert them to bas…",
+              "tags": ["IMG 工具"]
+            },
+            {
+              "name": "tinypng 图片压缩",
+              "url": "https://tinypng.com/",
+              "logo": "https://tinypng.com/images/apple-touch-icon.png",
+              "desc": "Free online image optimizer for faster websites! Reduce the…",
+              "tags": ["IMG 工具"]
+            },
+            {
+              "name": "favicon 头像制作",
+              "url": "https://tool.lu/favicon/",
+              "logo": "https://tool.lu/favicon.ico",
+              "desc": "favicon在线制作,icon制作,网站图标,网站图标制作,ico图标制作",
+              "tags": ["IMG 工具"]
+            },
+            {
+              "name": "IconFont 阿里图标",
+              "url": "https://www.iconfont.cn/manage/index?manage_type=myprojects",
+              "logo": "https://img.alicdn.com/imgextra/i4/O1CN01XZe8pH1USpiUNT1QN_!!6000000002517-2-tps-114-114.png",
+              "desc": "iconfont-国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能。阿里巴巴体验…",
+              "tags": ["IMG 工具"]
+            },
+            {
+              "name": "Can I Use",
+              "url": "https://caniuse.com/",
+              "logo": "https://caniuse.com/img/favicon-128.png",
+              "desc": "\"Can I use\" provides up-to-date browser support tables for …",
+              "tags": ["CSS 工具"]
+            },
+            {
+              "name": "Loading 生成器",
+              "url": "https://loading.io/",
+              "logo": "https://loading.io/favicon.ico",
+              "desc": "",
+              "tags": ["CSS 工具"]
+            },
+            {
+              "name": "Grid 生成器",
+              "url": "https://www.lingdaima.com/grid/",
+              "logo": "https://www.lingdaima.com/favicon.ico",
+              "desc": "本工具无需代码，在线快速设计网页布局，即可获得HTML和CSS代码，只需要拖拽即可完成复杂的html布局，在线操作，方…",
+              "tags": ["CSS 工具"]
+            },
+            {
+              "name": "Grid 生成器",
+              "url": "https://cssgrid-generator.netlify.app/",
+              "logo": "https://cssgrid-generator.netlify.app/favicon.ico",
+              "desc": "CSS Grid Generator",
+              "tags": ["CSS 工具"]
+            },
+            {
+              "name": "Button 生成器",
+              "url": "https://cssbuttongenerator.com/",
+              "logo": "https://www.cssbuttongenerator.com/static/favicon/apple-touch-icon.png",
+              "desc": "CSS Button Generator is a free online tool to create CSS bu…",
+              "tags": ["CSS 工具"]
+            },
+            {
+              "name": "贝塞尔曲线游戏",
+              "url": "https://bezier.method.ac/",
+              "logo": "https://bezier.method.ac/favicon.ico",
+              "desc": "A game to help you master the pen tool",
+              "tags": ["CSS 工具"]
+            },
+            {
+              "name": "贝塞尔曲线",
+              "url": "https://cubic-bezier.com/#.17,.67,.83,.67",
+              "logo": "",
+              "desc": "cubic-bezier.com",
+              "tags": ["CSS 工具"]
+            },
+            {
+              "name": "字体预览工具",
+              "url": "http://blog.luckly-mjw.cn/tool-show/iconfont-preview/index.html",
+              "logo": "https://blog.luckly-mjw.cn/favicon.ico",
+              "desc": "iconfont preview for web, Momo",
+              "tags": ["CSS 工具"]
+            },
+            {
+              "name": "嗨正则",
+              "url": "https://hiregex.com/",
+              "logo": "",
+              "desc": "",
+              "tags": ["JS 工具"]
+            },
+            {
+              "name": "正则可视化",
+              "url": "https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24",
+              "logo": "https://jex.im/favicon.ico",
+              "desc": "Regulex：JavaScript Regular Expression Visualizer",
+              "tags": ["JS 工具"]
+            },
+            {
+              "name": "正则表达式",
+              "url": "https://any86.github.io/any-rule/",
+              "logo": "",
+              "desc": "正则大全",
+              "tags": ["JS 工具"]
+            },
+            {
+              "name": "表格生成器",
+              "url": "https://tableconvert.com/",
+              "logo": "https://tableconvert.com/favicon.ico",
+              "desc": "TableConvert is a free online table converter and data gene…",
+              "tags": ["JS 工具"]
+            },
+            {
+              "name": "表单生成器",
+              "url": "https://mrhj.gitee.io/form-generator/#/",
+              "logo": "",
+              "desc": "",
+              "tags": ["JS 工具"]
+            },
+            {
+              "name": "手机屏幕尺寸大全",
+              "url": "https://uiiiuiii.com/screen/index.htm",
+              "logo": "https://aixzd.com/app/static/favicon/180.png",
+              "desc": "AI 星踪岛（AIXZD）是国内专业的AI内容与机器人产业服务平台。依托优设网14年行业积淀，服务千万级用户，汇聚全球…",
+              "tags": ["JS 工具"]
+            },
+            {
+              "name": "VSCode片段生成器",
+              "url": "https://snippet-generator.app/",
+              "logo": "https://snippet-generator.app/favicon-32x32.png",
+              "desc": "Snippet generator for Visual Studio Code, Sublime Text and …",
+              "tags": ["JS 工具"]
+            },
+            {
+              "name": "HTTP Content-type 表",
+              "url": "https://tool.oschina.net/commons",
+              "logo": "https://tool.oschina.net/img/favicon.ico",
+              "desc": "OSCHINA.NET在线工具,ostools为开发设计人员提供在线工具，提供jsbin在线 CSS、JS 调试，在线…",
+              "tags": ["JS 工具"]
+            },
+            {
+              "name": "域名检测",
+              "url": "https://www.urlzt.com/",
+              "logo": "https://www.urlzt.com/favicon.ico",
+              "desc": "极强域名检测是一款节点化实时检测报警通知系统，使用本工具你可以知道域名状态、链接状态、网络状态、链接是否打开异常、域名…",
+              "tags": ["网站检测"]
+            },
+            {
+              "name": "网站适配",
+              "url": "https://responsively.app/",
+              "logo": "https://responsively.app/apple-touch-icon.png",
+              "desc": "A dev-tool that aids faster and precise responsive web deve…",
+              "tags": ["网站检测"]
+            },
+            {
+              "name": "Npm 测试",
+              "url": "https://npm.runkit.com/",
+              "logo": "",
+              "desc": "",
+              "tags": ["网站检测"]
+            },
+            {
+              "name": "WebSocket 测试",
+              "url": "http://www.easyswoole.com/wstool.html",
+              "logo": "https://www.easyswoole.com/favicon.ico",
+              "desc": "EasySwoole在线WebSocket测试工具",
+              "tags": ["网站检测"]
+            },
+            {
+              "name": "Gtmetrix 测速",
+              "url": "https://gtmetrix.com/",
+              "logo": "https://gtmetrix.com/favicon.ico",
+              "desc": "",
+              "tags": ["网站检测"]
+            },
+            {
+              "name": "WebPage 测速",
+              "url": "https://www.webpagetest.org/",
+              "logo": "",
+              "desc": "",
+              "tags": ["网站检测"]
+            },
+            {
+              "name": "拓源网",
+              "url": "http://zbp.toyean.com/tools/",
+              "logo": "",
+              "desc": "新广告法违禁词查询工具为您提供新广告法违禁用词及敏感词检测查询,适用大部分电商平台,欢迎使用",
+              "tags": ["敏感词查询"]
+            },
+            {
+              "name": "易播网",
+              "url": "http://www.51ebo.com/detection.html",
+              "logo": "http://www.51ebo.com/themes/simplebootx/Public/assets/images/favicon.ico",
+              "desc": "易播网为广大用户提供新广告法违禁用词及敏感词检测查询,广告敏感违禁词查询就上易播网",
+              "tags": ["敏感词查询"]
+            },
+            {
+              "name": "句易网",
+              "url": "http://www.ju1.cn/",
+              "logo": "http://www.ju1.cn/favicon.ico",
+              "desc": "句易网为您提供2025年最新广告法淘宝抖音违禁词在线过滤工具，欢迎使用，工具适用于各类行业自媒体短视频文案新闻稿检查，…",
+              "tags": ["敏感词查询"]
+            },
+            {
+              "name": "零克查词",
+              "url": "http://ci.lingke.pro/",
+              "logo": "",
+              "desc": "",
+              "tags": ["敏感词查询"]
+            },
+            {
+              "name": "禁用词查询",
+              "url": "http://www.jinyongci.com/",
+              "logo": "",
+              "desc": "审核中 | Reviewing",
+              "tags": ["敏感词查询"]
+            },
+            {
+              "name": "违禁词查询",
+              "url": "http://www.zhipaiwu.com/index.php/Weijinci/index.html",
+              "logo": "",
+              "desc": "",
+              "tags": ["敏感词查询"]
+            },
+            {
+              "name": "cdn - bootcdn",
+              "url": "https://www.bootcdn.cn/",
+              "logo": "https://www.bootcdn.cn/assets/ico/apple-touch-icon-144-precomposed.png?1785081230094",
+              "desc": "Bootstrap 中文网开源项目免费 CDN 加速服务 - 我们致力于为 Bootstrap、jQuery、Angu…",
+              "tags": ["其他"]
+            },
+            {
+              "name": "cdn - jsdelivr",
+              "url": "https://www.jsdelivr.com/?query=vue",
+              "logo": "https://www.jsdelivr.com/icons/apple-touch-icon.png",
+              "desc": "Optimized for JS and ESM delivery from npm and GitHub. Work…",
+              "tags": ["其他"]
+            },
+            {
+              "name": "MathStudio",
+              "url": "http://mathstud.io/",
+              "logo": "http://mathstud.io/favicon.png",
+              "desc": "Modern technical computing system for students, teachers, e…",
+              "tags": ["其他"]
+            },
+            {
+              "name": "文件百科",
+              "url": "https://www.wenjianbaike.com",
+              "logo": "https://www.wenjianbaike.com/favicon.ico",
+              "desc": "文件百科拥有一个庞大的文件格式查询数据库，当你遇到未知类型文件无法打开时，您可以在本站上查询该文件扩展名，就可以找到该…",
+              "tags": ["其他"]
+            },
+            {
+              "name": "在线预览字体",
+              "url": "http://blog.luckly-mjw.cn/tool-show/iconfont-preview/index.html",
+              "logo": "https://blog.luckly-mjw.cn/favicon.ico",
+              "desc": "iconfont preview for web, Momo",
+              "tags": ["其他"]
+            },
+            {
+              "name": "随机姓名生成器",
+              "url": "https://www.qmsjmfb.com/",
+              "logo": "",
+              "desc": "网名在线生成支持在线网名、姓名、游戏名字、家族团体名字批量生成，支持性别选择，支持姓氏指定，支持随机姓氏！",
+              "tags": ["其他"]
+            },
+            {
+              "name": "狗屁不通文章生成器",
+              "url": "https://suulnnka.github.io/BullshitGenerator/index.html",
+              "logo": "",
+              "desc": "狗屁不通文章生成器",
+              "tags": ["其他"]
+            }
+          ],
+          "tags": ["导航", "工具"],
+          "desc": "在线工具：编辑 / 图片 / CSS / JS / 网站检测 / 敏感词查询 / CDN",
+          "stamp": "1791722792413:8997"
+        },
+        {
+          "title": "常用",
+          "file": "导航/常用.link",
+          "sites": [
+            {
+              "name": "学吧导航 ❤️",
+              "url": "https://www.xue8nav.com/",
+              "logo": "https://www.xue8nav.com/wp-content/uploads/2020/01/app-icon-1.png",
+              "desc": "学吧导航，超过四十万学习爱好者都在用的专业学习网址大全学霸导航，汇集了国内外优质的学习网站和平台。网站囊括了综合平台、…",
+              "tags": ["导航"]
+            },
+            {
+              "name": "AI工具集",
+              "url": "https://ai-bot.cn/?ref=xue8nav.com",
+              "logo": "https://ai-bot.cn/wp-content/uploads/2023/04/ai-bot-baidu-logo.png",
+              "desc": "AI工具集官网收录了国内外数百个AI工具，该导航网站包括AI写作工具、AI图像生成和背景移除、AI视频制作、AI音频转…",
+              "tags": ["导航"]
+            },
+            {
+              "name": "闪击工作台",
+              "url": "https://nav.sankki.com/#/index",
+              "logo": "",
+              "desc": "",
+              "tags": ["导航"]
+            },
+            {
+              "name": "妙书签",
+              "url": "https://websiteshare.cn/#/workbench",
+              "logo": "https://websiteshare.cn/assets/favicon-CbfEsAxH.ico",
+              "desc": "书签收藏待办",
+              "tags": ["导航"]
+            },
+            {
+              "name": "我的博客 ❤️",
+              "url": "https://fengling68.github.io/MyBlogs",
+              "logo": "https://fengling68.github.io/MyBlogs/image/avatar.png",
+              "desc": "风月无古今，情怀自浅深，唯心所造。",
+              "tags": ["我的"]
+            },
+            {
+              "name": "我的资料库 ❤️",
+              "url": "https://fengling68.github.io/MyLibrary/",
+              "logo": "https://fengling68.github.io/MyLibrary/favicon.svg",
+              "desc": "个人数字知识库",
+              "tags": ["我的"]
+            },
+            {
+              "name": "我的工具 ❤️",
+              "url": "https://fengling68.github.io/MyAllTools/",
+              "logo": "https://fengling68.github.io/MyAllTools/favicon.svg",
+              "desc": "个人小工具集合",
+              "tags": ["我的"]
+            },
+            {
+              "name": "我的股票 ❤️",
+              "url": "https://fengling68.github.io/MyStock/",
+              "logo": "https://fengling68.github.io/MyStock/favicon.svg",
+              "desc": "个人股票投资分析",
+              "tags": ["我的"]
+            },
+            {
+              "name": "GitHub",
+              "url": "https://github.com/fengling68?tab=repositories&q=&type=&language=&sort=name",
+              "logo": "https://github.com/apple-touch-icon.png",
+              "desc": "fengling68 has 2 repositories available. Follow their code …",
+              "tags": ["我的"]
+            },
+            {
+              "name": "中国科技云数据胶囊",
+              "url": "https://data.cstcloud.cn/my/data/all",
+              "logo": "https://data.cstcloud.cn/favicon.svg",
+              "desc": "加载中... 数据胶囊",
+              "tags": ["我的"]
+            },
+            {
+              "name": "一本日记 💎",
+              "url": "https://1diary.me/",
+              "logo": "https://1diary.me/diary.ico",
+              "desc": "一本日记",
+              "tags": ["记录"]
+            },
+            {
+              "name": "知犀导图 💎",
+              "url": "https://www.zhixi.com/space?page=owner",
+              "logo": "https://www.zhixi.com/favicon.ico",
+              "desc": "知犀思维导图官网模板社区专业为您免费提供精美思维导图模板，点击模板即可在线编辑制作，支持一键导出与云端存储， 助力您的…",
+              "tags": ["记录"]
+            },
+            {
+              "name": "语雀",
+              "url": "https://www.yuque.com/dashboard/books",
+              "logo": "https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*sRUdR543RjcAAAAAAAAAAAAADvuFAQ/original",
+              "desc": "十万阿里人都在用的笔记与文档知识库，面向企业、组织或个人，提供全新的体系化知识管理，打造轻松流畅的工作协同。金融级数据…",
+              "tags": ["记录"]
+            },
+            {
+              "name": "微信读书 💎",
+              "url": "https://weread.qq.com/",
+              "logo": "https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/appleTouchIcon/apple-touch-icon-152x152.png",
+              "desc": "微信读书提供海量正版书籍、小说、漫画、公众号、听书，多设备同步实现跨屏阅读。与微信好友一起发现更多精品好书，随时交流感…",
+              "tags": ["读写"]
+            },
+            {
+              "name": "墨星写作 💎",
+              "url": "https://www.mx-xz.com/",
+              "logo": "https://www.mx-xz.com/apple-touch-icon.png",
+              "desc": "墨星写作网(原中国作者素材库)主要提供各类小说写作技巧学习，网文小说写作素材资料查阅以及各类写作辅助生成工具，致力于打…",
+              "tags": ["读写"]
+            },
+            {
+              "name": "一席",
+              "url": "https://yixi.tv/#/home",
+              "logo": "",
+              "desc": "一席",
+              "tags": ["读写"]
+            },
+            {
+              "name": "稿定设计 💎",
+              "url": "https://www.gaoding.com/",
+              "logo": "",
+              "desc": "海量设计模板加持不会PS也能轻松搞定设计，在线设计海报、简历、PPT、名片、宣传单、邀请函、Logo等多种设计需求场景…",
+              "tags": ["剪辑"]
+            },
+            {
+              "name": "万兴喵影 💎",
+              "url": "https://miao.wondershare.cn/help/faq.html",
+              "logo": "https://images.wondershare.cn/miao-zh-square-green.png",
+              "desc": "帮助中心",
+              "tags": ["剪辑"]
+            },
+            {
+              "name": "喵影教程",
+              "url": "https://www.bilibili.com/video/av53264784?zw",
+              "logo": "https://i0.hdslb.com/bfs/archive/69f534a9648f3ecec03caf99d6b806ecb6381878.jpg@57w_57h",
+              "desc": "新版喵影工厂视频教程系列终于来啦！对视频教程中不清楚的点可以在评论区互动哦~下载喵影工厂：shencut.com, 视…",
+              "tags": ["剪辑"]
+            },
+            {
+              "name": "即梦AI",
+              "url": "https://jimeng.jianying.com/ai-tool/home/",
+              "logo": "https://lf3-lv-buz.vlabstatic.com/obj/image-lvweb-buz/common/images/dreamina-v5.ico",
+              "desc": "即梦AI是一个AI创作平台，可激发艺术创意、提升绘画和视频创作体验。您可以利用AI智能，将想象变为现实。即梦AI支持文…",
+              "tags": ["剪辑"]
+            },
+            {
+              "name": "Seedance",
+              "url": "https://www.volcengine.com/activity/seedance",
+              "logo": "https://portal.volccdn.com/obj/volcfe/misc/favicon.png",
+              "desc": "",
+              "tags": ["剪辑"]
+            },
+            {
+              "name": "海绵音乐",
+              "url": "https://www.haimian.com/?utm_source=ai-bot.cn",
+              "logo": "https://lf-hm-scm.haimianyinyue.com/obj/haimian-scm/doria/swing/static/image/icon.png",
+              "desc": "海绵音乐是抖音旗下的免费 AI 音乐创作产品，输入一句话即可快速生成原创音乐、仿写热门歌曲，还支持对话写歌、AI写词、…",
+              "tags": ["音乐"]
+            },
+            {
+              "name": "音述",
+              "url": "https://www.yinshu.me/",
+              "logo": "https://www.yinshu.me/favicon.ico?favicon.52d6a513.ico",
+              "desc": "用一句话生成完整 AI 歌曲，体验音述AI音乐创作。",
+              "tags": ["音乐"]
+            },
+            {
+              "name": "mureka",
+              "url": "https://www.mureka.cn/home",
+              "logo": "https://www.mureka.cn/favicon.ico",
+              "desc": "Discover how to create stunning AI-generated music with Mur…",
+              "tags": ["音乐"]
+            },
+            {
+              "name": "自由钢琴",
+              "url": "https://www.autopiano.cn/",
+              "logo": "",
+              "desc": "",
+              "tags": ["音乐"]
+            },
+            {
+              "name": "哔哩哔哩",
+              "url": "https://www.bilibili.com/",
+              "logo": "https://i0.hdslb.com/bfs/static/jinkela/long/images/512.png",
+              "desc": "哔哩哔哩（bilibili.com)是国内知名的视频弹幕网站，这里有及时的动漫新番，活跃的ACG氛围，有创意的Up主。…",
+              "tags": ["视频"]
+            },
+            {
+              "name": "速速动漫",
+              "url": "http://susudm8.com/",
+              "logo": "",
+              "desc": "404 Not Found",
+              "tags": ["视频"]
+            },
+            {
+              "name": "电影天堂",
+              "url": "https://www.dygod.net/index.html",
+              "logo": "https://www.dygod.net/favicon.ico",
+              "desc": "��Ӱ����:�����Ӱ����,��Ʒ������",
+              "tags": ["视频"]
+            },
+            {
+              "name": "奇米奇米",
+              "url": "http://www.qimiqimi.net/type/guoman.html",
+              "logo": "",
+              "desc": "Redirecting...",
+              "tags": ["视频"]
+            },
+            {
+              "name": "新片场",
+              "url": "https://www.xinpianchang.com/?from=navigator",
+              "logo": "",
+              "desc": "新片场汇聚全球原创优质视频及创作人，提供4K、无广告、无水印视频观看，专业的视频艺术学习教程，正版视觉素材交易等，与百…",
+              "tags": ["视频"]
+            },
+            {
+              "name": "电影日历",
+              "url": "https://www.cikeee.com/",
+              "logo": "",
+              "desc": "",
+              "tags": ["视频"]
+            },
+            {
+              "name": "今日热榜",
+              "url": "https://tophub.today/",
+              "logo": "https://tophub.today/favicon.ico",
+              "desc": "今日热榜提供各站热榜聚合：微信、今日头条、百度、知乎、V2EX、微博、贴吧、豆瓣、天涯、虎扑、Github、抖音...…",
+              "tags": ["资讯"]
+            },
+            {
+              "name": "知乎热榜",
+              "url": "https://www.zhihu.com/hot",
+              "logo": "https://www.zhihu.com/favicon.ico",
+              "desc": "",
+              "tags": ["资讯"]
+            },
+            {
+              "name": "知乎日报",
+              "url": "http://daily.zhihu.com/",
+              "logo": "https://daily.zhihu.com/favicon.ico",
+              "desc": "在中国，资讯类移动应用的人均阅读时长是 5 分钟，而在知乎日报，这个数字是 21。以独有的方式为你提供最高质、最深度、…",
+              "tags": ["资讯"]
+            },
+            {
+              "name": "数字尾巴",
+              "url": "https://www.dgtle.com/",
+              "logo": "https://www.dgtle.com/favicon.ico",
+              "desc": "致力于分享美好数字生活体验，囊括你闻所未闻的最丰富数码资讯，触所未触最抢鲜产品评测，随时随地感受尾巴们各式数字生活精彩…",
+              "tags": ["资讯"]
+            },
+            {
+              "name": "少数派",
+              "url": "https://sspai.com/",
+              "logo": "https://cdn-static.sspai.com/favicon/sspai.ico",
+              "desc": "少数派致力于更好地运用数字产品或科学方法，帮助用户提升工作效率和生活品质",
+              "tags": ["资讯"]
+            },
+            {
+              "name": "人民网",
+              "url": "http://search.people.cn/",
+              "logo": "https://search.people.cn/favicon.ico",
+              "desc": "人民网，是世界十大报纸之一《人民日报》建设的以新闻为主的大型网上信息发布平台，也是互联网上最大的中文和多语种新闻网站之…",
+              "tags": ["资讯"]
+            },
+            {
+              "name": "36氪",
+              "url": "https://36kr.com/",
+              "logo": "",
+              "desc": "",
+              "tags": ["资讯"]
+            },
+            {
+              "name": "趣集",
+              "url": "https://ifun.cool/",
+              "logo": "https://ifun.cool/favicon.ico",
+              "desc": "探索好玩，分享纯粹快乐。精选高品质单机大作、多人联机与怀旧经典，提供免安装资源、汉化补丁与联机教程。帮你过滤垃圾游戏，…",
+              "tags": ["小说"]
+            },
+            {
+              "name": "盐神",
+              "url": "https://onehu.xyz",
+              "logo": "https://onehu.xyz/img/fluid.png",
+              "desc": "免费分享一些盐选文章，免费阅读网站",
+              "tags": ["小说"]
+            },
+            {
+              "name": "趣书网",
+              "url": "https://www.yqtxt.com/",
+              "logo": "",
+              "desc": "",
+              "tags": ["小说"]
+            },
+            {
+              "name": "52书库新",
+              "url": "https://www.po5.net/",
+              "logo": "https://www.po5.net/favicon.ico",
+              "desc": "52书库(www.52shuku.net)分享各类好看的耽美小说，言情小说，GL百合小说等等，覆盖了穿书，甜宠，追妻，…",
+              "tags": ["小说"]
+            },
+            {
+              "name": "52书库",
+              "url": "https://www.52shuwu.me/",
+              "logo": "",
+              "desc": "",
+              "tags": ["小说"]
+            },
+            {
+              "name": "52推书",
+              "url": "https://www.52shuku.top/",
+              "logo": "",
+              "desc": "",
+              "tags": ["小说"]
+            },
+            {
+              "name": "Sankki 网址收藏",
+              "url": "https://nav.sankki.com/",
+              "logo": "https://cos.sankki.com/resource/common/favicon2.ico",
+              "desc": "高度定制化的网址导航。急速加载、使用markdown编辑模式、复制就能分享给朋友、多种风格主题、可自定义CSS、提供各…",
+              "tags": ["收藏"]
+            },
+            {
+              "name": "Cubox 文章收藏",
+              "url": "https://cubox.pro/my/inbox",
+              "logo": "https://cubox.pro/my/logo192.png",
+              "desc": "Cubox 知识库 - 轻松收集、自动整理、深度阅读、灵活管理。帮助你从容面对海量信息，善用网络碎片获得提升。",
+              "tags": ["收藏"]
+            },
+            {
+              "name": "MuseDAM 素材管理",
+              "url": "https://dam.musetransfer.com/home/all",
+              "logo": "https://static-cdn.tezign.com/musedam-app/assets/pwa-512x512-D0iDle0D.png",
+              "desc": "它是一个极速上传下载、云端协作、超大文件快传、安全、便捷收集、分享协作的数字资产管理系统",
+              "tags": ["收藏"]
+            },
+            {
+              "name": "微博书 ❤️",
+              "url": "https://www.weiboshu.com/my/books",
+              "logo": "https://weiboshu.com/favicon.png",
+              "desc": "明星微博书 - 为明星爱豆打 Call",
+              "tags": ["收藏"]
+            },
+            {
+              "name": "露西学画画",
+              "url": "https://www.lucydraw.com/",
+              "logo": "https://www.lucydraw.com/favicon.ico",
+              "desc": "极速影院是一个专门为私人提供电影观看的平台，提供最新最全的电影,免费在线追剧新片,以及各种好看的电影。更有丰富电影专题…",
+              "tags": ["收藏"]
+            }
+          ],
+          "tags": ["导航", "常用"],
+          "desc": "常用站点速查：导航 / 我的 / 记录 / 读写 / 剪辑 / 音乐 / 视频 / 资讯 / 小说 / 收藏",
+          "stamp": "1791722792413:10971"
+        },
+        {
+          "title": "设计",
+          "file": "导航/设计.link",
+          "sites": [
+            {
+              "name": "优设导航",
+              "url": "https://hao.uisdc.com/",
+              "logo": "",
+              "desc": "设计导航2013年上线至今，是优设网旗下最专业好用的设计师导航网站！设计导航为设计师提供AI创作、UI设计、设计教程、…",
+              "tags": ["导航"]
+            },
+            {
+              "name": "设计狮导航",
+              "url": "https://www.998877.com.cn/",
+              "logo": "https://www.998877.com.cn/template/daohang/public/img/favicon.ico",
+              "desc": "设计狮是最好用的设计网址导航，支持网址自定义功能，我们提供最新的设计灵感推荐和设计工具导航，助您快速找到所需资源！",
+              "tags": ["导航"]
+            },
+            {
+              "name": "好设计导航",
+              "url": "http://hao.shejidaren.com/",
+              "logo": "https://hao.shejidaren.com/images/apple-touch-icon.png",
+              "desc": "设计师网址导航专注分享优秀设计网站、免费无版权限制可商用的高品质素材，设计教程、尺寸规范、配色方案、设计素材和灵感",
+              "tags": ["导航"]
+            },
+            {
+              "name": "奇迹秀工具箱",
+              "url": "https://www.qijishow.com/down/index.html",
+              "logo": "https://www.qijishow.com/favicon.ico",
+              "desc": "奇迹秀分享UI设计师必备设计工具及各类设计辅助神器，index",
+              "tags": ["导航"]
+            },
+            {
+              "name": "花瓣",
+              "url": "https://huaban.com/discovery",
+              "logo": "",
+              "desc": "花瓣网最新采集栏目为推荐了最新采集相关的图片素材资源，其中涵盖众多设计师收藏采集的相关图片素材资源。花瓣网, 设计师寻…",
+              "tags": ["图库"]
+            },
+            {
+              "name": "视觉中国",
+              "url": "https://www.vcg.com/illustration/",
+              "logo": "https://www.vcg.com/favicon.ico",
+              "desc": "",
+              "tags": ["图库"]
+            },
+            {
+              "name": "unDraw 常用插画",
+              "url": "https://undraw.co/illustrations",
+              "logo": "https://undraw.co/apple-touch-icon.png",
+              "desc": "Browse the complete unDraw collection of open-source illust…",
+              "tags": ["图库"]
+            },
+            {
+              "name": "手机汉仪字体",
+              "url": "https://ifonts.com/font/shoujihanyiziti.html",
+              "logo": "https://ifonts.com/favicon.ico",
+              "desc": "iFonts字体助手引进全球正版字库字体，包含数千款商用中文字体和西文字体，快来iFonts体验手机汉仪字体正版商用字…",
+              "tags": ["字库"]
+            },
+            {
+              "name": "字加",
+              "url": "https://zijia.zijia.com.cn/",
+              "logo": "https://zijia.zijia.com.cn/favicon.ico",
+              "desc": "字加软件下载_字+下载_字加客户端官网-字加网",
+              "tags": ["字库"]
+            },
+            {
+              "name": "UI配色",
+              "url": "https://aicolors.co/",
+              "logo": "https://www.bairesdev.com/tools/ai-colors/ai-colors-assets/cropped-favicon-180x180.png",
+              "desc": "Turn prompts into color palettes.",
+              "tags": ["配色"]
+            },
+            {
+              "name": "UI配色",
+              "url": "https://palettemaker.com/app",
+              "logo": "https://palettemaker.com/favicon-32x32.png",
+              "desc": "Free color tool for creatives and color lovers. Create colo…",
+              "tags": ["配色"]
+            },
+            {
+              "name": "中国传统色",
+              "url": "https://color.uisdc.com/",
+              "logo": "",
+              "desc": "设计导航2013年上线至今，是优设网旗下最专业好用的设计师导航网站！优设配色导航帮助您完成配色方案，不用配色软件轻松配…",
+              "tags": ["配色"]
+            },
+            {
+              "name": "Pixso 原型设计",
+              "url": "https://pixso.cn/app/collect",
+              "logo": "https://pixso.cn/favicon.ico",
+              "desc": "",
+              "tags": ["原型"]
+            }
+          ],
+          "tags": ["导航", "设计"],
+          "desc": "设计导航、图库、字库、配色与原型工具",
+          "stamp": "1791722792413:3338"
+        }
+      ]
+    },
+    {
+      "dir": "电子书",
+      "name": "电子书",
+      "view": "book",
+      "unit": "本",
+      "hint": "PDF / 电子书",
+      "icon": "<path d=\"M12 6.4C10.7 5 8.8 4.3 6.4 4.3c-.6 0-1.2.05-1.7.15V19.2c.5-.1 1.1-.15 1.7-.15 2.4 0 4.3.7 5.6 2.1\"/><path d=\"M12 6.4c1.3-1.4 3.2-2.1 5.6-2.1.6 0 1.2.05 1.7.15V19.2c-.5-.1-1.1-.15-1.7-.15-2.4 0-4.3.7-5.6 2.1\"/><path d=\"M12 6.4v14.75\"/>",
+      "count": 3,
+      "tree": [
+        {
+          "name": "小说写作",
+          "children": [
+            {
+              "title": "写作素材",
+              "file": "电子书/小说写作/写作素材.chm",
+              "size": "7.63 MB",
+              "stamp": "1791722792421:8005471"
+            },
+            {
+              "title": "写作资料",
+              "file": "电子书/小说写作/写作资料.chm",
+              "size": "2.67 MB",
+              "stamp": "1791722792424:2801798"
+            },
+            {
+              "title": "分类小说素材库",
+              "file": "电子书/小说写作/分类小说素材库.chm",
+              "size": "8.79 MB",
+              "stamp": "1791722792434:9221711"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "读书笔记",
+      "name": "读书笔记",
+      "view": "doc",
+      "unit": "篇",
+      "hint": "Markdown / 文本",
+      "icon": "<path d=\"M5.5 3.5h8.6L18.5 8v12.5h-13z\"/><path d=\"M14 3.5V8h4.5\"/><path d=\"M8.2 12.6h7.6M8.2 16h4.8\"/>",
+      "count": 6,
+      "tree": [
+        {
+          "title": "三味书屋",
+          "file": "读书笔记/书单.md",
+          "date": "2018-08-03",
+          "stamp": "1791722792434:3195"
+        },
+        {
+          "name": "微信读书",
+          "children": [
+            {
+              "title": "《挪威的森林》",
+              "file": "读书笔记/微信读书/20200428｜挪威的森林.md",
+              "date": "2020-04-28",
+              "stamp": "1791722792435:10719"
+            },
+            {
+              "title": "《非暴力沟通》",
+              "file": "读书笔记/微信读书/20210604｜非暴力沟通.md",
+              "date": "2021-06-04",
+              "stamp": "1791722792435:18048"
+            },
+            {
+              "title": "《基督山伯爵》",
+              "file": "读书笔记/微信读书/20210731｜基督山伯爵.md",
+              "date": "2021-07-31",
+              "stamp": "1791722792435:17040"
+            },
+            {
+              "title": "《草木有趣：跟着二十四节气过日子》",
+              "file": "读书笔记/微信读书/20221101｜草木有趣：跟着二十四节气过日子.md",
+              "date": "2022-11-01",
+              "stamp": "1791722792435:25457"
+            }
+          ]
+        },
+        {
+          "name": "闲读小说",
+          "children": [
+            {
+              "title": "《猫的旅馆APP》",
+              "file": "读书笔记/闲读小说/20221015｜猫的旅馆APP.md",
+              "date": "2022-10-15",
+              "stamp": "1791722792435:3882"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+# 书签导航页示例（.link）：首个书签之前是「文件级配置」，`- ` 开头的每一段是一条书签
+title: 常用开发导航
+desc: 点击卡片直接新窗口打开（文件级 showLogo 控制是否展示网站 logo）
+tags: 导航, 示例
+date: 2026-10-11
+showLogo: true
+
+# 条目级 `tags` = **文件内分类**：内容区按标签分组、每组带一个小标题（标签名 + 数量）。
+# 一条书签可写多个标签（`tags: 文档, 前端`），它会在所属的每个组里各出现一次；
+# 不写 tags 的书签归到最后的「其他」组；全都没写 tags 时不显示标题，仍是一片网格。
+
+- name: MDN Web Docs
+  url: https://developer.mozilla.org/zh-CN/
+  logo: https://developer.mozilla.org/favicon.ico
+  desc: Web 技术权威文档
+  tags: 文档, 前端
+- name: Vue.js
+  url: https://cn.vuejs.org/
+  logo: https://cn.vuejs.org/logo.svg
+  desc: 渐进式 JavaScript 框架
+  tags: 前端
+- name: GitHub
+  url: https://github.com/
+  logo: https://github.githubassets.com/favicons/favicon.svg
+  desc: 代码托管与协作
+  tags: 工具
+- name: Can I use
+  url: https://caniuse.com/
+  desc: 浏览器兼容性查询（没写 logo → 回退首字母色块）
+  tags: 前端, 工具
+- name: 示例站点
+  url: https://example.com/
+  desc: 没打标签 → 归到最后的「其他」组
