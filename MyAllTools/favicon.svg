@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="开发工具">
+  <rect width="100" height="100" rx="22" fill="#eef1f4" />
+  <path d="M35 32L18.5 50L35 68" fill="none" stroke="#17405f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M65 32L81.5 50L65 68" fill="none" stroke="#17405f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M56 28.5L44 71.5" fill="none" stroke="#17405f" stroke-width="8" stroke-linecap="round" />
+</svg>
