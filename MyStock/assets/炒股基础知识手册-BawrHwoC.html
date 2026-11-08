@@ -1,0 +1,2498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>炒股基础知识手册（图解版）</title>
+<style>
+  :root{
+    --bg:#f7f8fa;
+    --panel:#ffffff;
+    --ink:#1f2329;
+    --sub:#5a6470;
+    --line:#e6e9ee;
+    --brand:#c8102e;      /* 涨/品牌红 */
+    --green:#0a8f5b;      /* 跌/绿 */
+    --blue:#1664c0;
+    --yellow:#b8860b;
+    --shadow:0 1px 4px rgba(20,30,50,.06);
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;
+    display:flex;flex-direction:column;height:100vh;overflow:hidden;
+  }
+  a{color:var(--blue);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  header.top{
+    display: none;
+    background:linear-gradient(135deg,#c8102e,#9b0c23);
+    color:#fff;padding:20px 0;
+  }
+  header.top .headinner{max-width:99%;margin:0 auto;}
+  header.top h1{margin:0;font-size:26px;letter-spacing:1px;}
+  header.top p{margin:0;opacity:.92;font-size:14px;}
+
+  .wrap{display:flex;align-items:stretch;flex:1 1 auto;min-height:0;width:100%;max-width:99%;margin:0 auto;padding:0;}
+
+  /* 左侧卡片式目录（切换，不整页滚动） */
+  nav.side{
+    order:1;
+    width:380px;flex:none;padding:18px 0;max-height:100%;overflow:auto;
+    margin-right:28px;
+  }
+  nav.side ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:5px 8px;}
+  nav.side li{margin:0;min-width:0;}
+  nav.side li a{
+    display:block;color:var(--sub);padding:4px 8px;font-size:12px;line-height:1.3;
+    border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:var(--shadow);
+    transition:all .15s ease;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  nav.side li a:hover{color:var(--ink);text-decoration:none;background:#eef1f5;border-color:#d8dee6;}
+  nav.side li a.active{color:#fff;background:var(--brand);border-color:var(--brand);font-weight:600;box-shadow:none;}
+  .navtitle{font-size:13px;font-weight:700;color:var(--ink);margin:0 0 10px;padding:0 4px;}
+  .nav-ic{display:inline-block;width:13px;height:13px;vertical-align:-2px;margin-left:3px;color:#aab2bd;flex:none;}
+  .flow .arr{display:flex;align-items:center;color:var(--sub);font-size:18px;padding:0 2px;}
+
+  main{order:2;flex:1;min-width:0;min-height:0;max-height:100%;overflow:auto;padding:24px 0 60px 0;}
+  main section{
+    display:none;
+    margin-bottom:22px;
+  }
+  main section.show{display:block;}
+
+  /* 隐藏内部滚动条（内容区 / 目录区仍可滚动，只是不显示滚动条） */
+  main, nav.side{scrollbar-width:none;-ms-overflow-style:none;}
+  main::-webkit-scrollbar, nav.side::-webkit-scrollbar{width:0;height:0;display:none;}
+  section h2{
+    margin:0 0 14px;font-size:21px;border-bottom:2px solid var(--brand);padding-bottom:8px;display:inline-block;
+  }
+  section h3{margin:22px 0 8px;font-size:17px;color:var(--blue);}
+  section h4{margin:16px 0 6px;font-size:15px;color:var(--ink);}
+  p{margin:8px 0;}
+  ul,ol{margin:8px 0;padding-left:22px;}
+  li{margin:5px 0;}
+  code{background:#eef1f5;padding:2px 6px;border-radius:4px;font-size:13px;color:#9b0c23;}
+
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;}
+  th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;}
+  th{background:#f0f3f7;font-weight:600;color:var(--sub);}
+  tr:nth-child(even) td{background:#fbfcfe;}
+
+  .tip,.warn,.key{
+    border-radius:10px;padding:12px 16px;margin:14px 0;font-size:14px;
+  }
+  .tip{background:#eef6ff;border:1px solid #cfe3ff;color:#0b4a86;}
+  .warn{background:#fff3f3;border:1px solid #ffd4d4;color:#9b0c23;}
+  .key{background:#fff8e6;border:1px solid #ffe7a8;color:#7a5a00;}
+
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:20px;margin-right:6px;}
+  .tag.red{background:#fde8ec;color:var(--brand);}
+  .tag.green{background:#e6f6ee;color:var(--green);}
+  .tag.blue{background:#e7f0fb;color:var(--blue);}
+  .tag.gray{background:#eef1f5;color:var(--sub);}
+
+  /* 图形容器 */
+  .fig{border:1px solid var(--line);border-radius:10px;background:#fbfcfe;padding:14px 16px;margin:16px 0;text-align:center;}
+  .fig svg{width:60%;height:auto;display:inline-block;vertical-align:top;}
+  .fig .cap{font-size:13px;color:var(--sub);margin-top:8px;text-align:center;}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--sub);margin:6px 0 0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:14px;height:4px;border-radius:2px;display:inline-block;}
+  .legend i.box{width:12px;height:12px;border-radius:3px;}
+
+  /* 图鉴卡片网格 */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:14px;margin:16px 0;}
+  .card{border:1px solid var(--line);border-radius:10px;background:#fbfcfe;padding:10px;display:flex;flex-direction:column;gap:6px;}
+  .card svg{width:100%;height:auto;display:block;background:#fff;border:1px solid #eef1f5;border-radius:6px;}
+  .card .ct{font-size:13px;}
+  .card .ct b{color:var(--ink);}
+  .card .ct span{display:block;color:var(--sub);font-size:12px;margin-top:2px;line-height:1.5;}
+
+  /* 盘口五档表 */
+  table.order{width:auto;margin:10px auto;max-width:420px;}
+  table.order td{border:1px solid var(--line);padding:6px 14px;font-size:13px;text-align:center;}
+  table.order .g{color:var(--green);font-weight:600;}
+  table.order .r{color:var(--brand);font-weight:600;}
+  table.order .mid{background:#f0f3f7;font-weight:600;color:var(--ink);}
+
+  /* 选股流程 */
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:16px 0;}
+  .flow .step{flex:1 1 150px;border:1px solid var(--line);border-radius:10px;background:#fbfcfe;padding:12px 14px;}
+  .flow .step b{display:block;color:var(--brand);font-size:14px;margin-bottom:4px;}
+  .flow .step span{font-size:13px;color:var(--sub);line-height:1.5;}
+  .flow .arrow{display:flex;align-items:center;color:var(--sub);font-size:20px;font-weight:bold;}
+
+  /* 金字塔仓位 */
+  .pyr{display:flex;flex-direction:column;align-items:center;gap:4px;margin:10px 0;}
+  .pyr .lvl{border:1px solid var(--line);background:#fde8ec;color:var(--brand);font-size:13px;font-weight:600;text-align:center;padding:6px 0;border-radius:6px;}
+
+
+  @media(max-width:860px){
+    .wrap{flex-direction:column;align-items:stretch;max-width:100%;}
+    header.top .headinner{max-width:100%;padding:0 16px;}
+    nav.side{order:1;width:100%;padding:8px 0;max-height:none;margin-right:0;overflow:hidden;}
+    nav.side ul{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;padding-bottom:4px;}
+    nav.side li{margin:0;flex:none;}
+    nav.side li a{border-radius:10px;padding:7px 12px;white-space:nowrap;}
+    main{order:2;padding:10px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="headinner">
+    <h1>📈 炒股基础知识手册（图解版）</h1>
+    <p>从开户规则、K 线到均线/量能/MACD/KDJ/RSI/BOLL，再到公司盈利与估值指标 —— 带图解、可查阅的完整入门手册（A 股视角）</p>
+  </div>
+</header>
+
+<div class="wrap">
+    <nav class="side">
+    <div class="navtitle">📑 章节目录</div>
+    <ul>
+      <li><a href="#c1" data-target="c1">1. 股市与新手上路</a></li>
+      <li><a href="#c2" data-target="c2">2. 交易规则必知</a></li>
+      <li><a href="#c45" data-target="c45">3. 新股与退市</a></li>
+      <li><a href="#c20" data-target="c20">4. 术语速查表</a></li>
+      <li><a href="#c56" data-target="c56">5. 基金与 ETF 品种全景<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c3" data-target="c3">6. K 线入门<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c15" data-target="c15">7. K 线组合图鉴合集<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c4" data-target="c4">8. 均线系统 MA<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c5" data-target="c5">9. 成交量 VOL<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c14" data-target="c14">10. 盘口与竞价<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c12" data-target="c12">11. 支撑与压力<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c57" data-target="c57">12. 趋势线、通道与扇形线<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c6" data-target="c6">13. MACD 指标<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c7" data-target="c7">14. 摆动指标<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c9" data-target="c9">15. BOLL 布林带<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c10" data-target="c10">16. 其他常用指标</a></li>
+      <li><a href="#c11" data-target="c11">17. 量价关系</a></li>
+      <li><a href="#c58" data-target="c58">18. 量价图形组合精讲<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c13" data-target="c13">19. 财务报表与估值体系<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c42" data-target="c42">20. 公司事件与公告</a></li>
+      <li><a href="#c59" data-target="c59">21. 分红派息与股息率<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c16" data-target="c16">22. 常见技术形态<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c60" data-target="c60">23. 缺口理论<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c61" data-target="c61">24. 形态进阶：楔形·矩形·圆弧·岛形<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c22" data-target="c22">25. 三大经典理论</a></li>
+      <li><a href="#c25" data-target="c25">26. 主力与筹码分析<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c48" data-target="c48">27. 龙虎榜与异动榜解读</a></li>
+      <li><a href="#c27" data-target="c27">28. 短线题材炒作<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c37" data-target="c37">29. 技术分析实战</a></li>
+      <li><a href="#c17" data-target="c17">30. 资金面与衍生工具</a></li>
+      <li><a href="#c30" data-target="c30">31. 指数基金与 ETF 定投实战</a></li>
+      <li><a href="#c31" data-target="c31">32. 可转债<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c32" data-target="c32">33. 期权基础<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c33" data-target="c33">34. 融资融券与杠杆的双刃剑</a></li>
+      <li><a href="#c35" data-target="c35">35. 宏观与行业基本面</a></li>
+      <li><a href="#c28" data-target="c28">36. 价值与成长投资风格</a></li>
+      <li><a href="#c18" data-target="c18">37. 选股实操流程<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c62" data-target="c62">38. 自上而下与自下而上选股体系<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c63" data-target="c63">39. 财务指标选股筛查<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c64" data-target="c64">40. 北向资金与机构持仓选股<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c19" data-target="c19">41. 仓位管理与止损纪律</a></li>
+      <li><a href="#c39" data-target="c39">42. 复盘与计划</a></li>
+      <li><a href="#c38" data-target="c38">43. 交易心理与概率思维</a></li>
+      <li><a href="#c51" data-target="c51">44. 欧奈尔 CANSLIM 强势股选股法<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c52" data-target="c52">45. 趋势跟踪交易系统<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c53" data-target="c53">46. 量价背离与顶底背驰<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c65" data-target="c65">47. 多周期共振分析<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c54" data-target="c54">48. 市场情绪指标与恐贪周期<svg class="nav-ic" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.4" r="1.2" fill="currentColor"/><path d="M2.5 12.5 L6 8.6 L9 11 L11.5 8 L14 11.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></li>
+      <li><a href="#c55" data-target="c55">49. 财报季博弈</a></li>
+      <li><a href="#c40" data-target="c40">50. 风险警示与骗局防范</a></li>
+    </ul>
+  </nav>
+
+    <main>
+    <section id="c1" class="show">
+    <h2>1. 股市与新手上路</h2>
+    <h3>什么是股票</h3>
+    <p>股票是公司发行的所有权凭证。你买入股票，就成为了公司的股东，享有分红权和投票权（普通股）。股价短期由买卖供需决定，长期由公司价值决定。</p>
+
+    <h3>A 股常见板块</h3>
+    <table>
+      <tr><th>板块</th><th>代码前缀</th><th>说明</th></tr>
+      <tr><td>沪市主板</td><td>600 / 601 / 603 / 605</td><td>大型成熟企业，涨跌幅 ±10%</td></tr>
+      <tr><td>深市主板</td><td>000 / 001 / 002 / 003</td><td>成熟企业，±10%（003 段 2021 年中小板并入主板后启用）</td></tr>
+      <tr><td>创业板</td><td>300 / 301</td><td>成长型创新企业，±20%，需开通权限（2年+10万）</td></tr>
+      <tr><td>科创板</td><td>688</td><td>科技创新企业，±20%，需开通权限（2年+50万）</td></tr>
+      <tr><td>北交所</td><td>8 开头 / 43、83、87</td><td>中小企业，±30%</td></tr>
+      <tr><td>ST / *ST</td><td>ST 前缀</td><td>风险警示，±5%；*ST 为退市风险警示</td></tr>
+    </table>
+
+    <div class="tip">
+      <b>关于"003"：</b>深市主板代码为 <b>000 / 001 / 002 / 003</b>（003 段自 2021 年中小板并入主板后启用），与沪市主板（600/601/603/605）同属<b>沪深主板</b>，涨跌幅 ±10%。注意：创业板（300/301）、科创板（688）虽也在沪深交易所，但属于<b>独立板块</b>，涨跌幅 ±20% 且需单独开通权限，并不算"主板"。
+    </div>
+
+    <h3>全球主要股票市场（基础认知）</h3>
+    <p>除了 A 股，全球主要市场规则差异很大。了解这些，能帮你理解"同一家公司在 A 股和 H 股两地为何价格不同"，也为以后做海外配置打底。</p>
+    <table>
+      <tr><th>市场</th><th>代表交易所</th><th>计价货币</th><th>交收 / 交易</th><th>涨跌限制</th><th>主要特色</th></tr>
+      <tr><td>A 股（中国大陆）</td><td>上交所 / 深交所</td><td>人民币 CNY</td><td>交收 T+1；当日买次日卖</td><td>主板 ±10%、双创 ±20%、北交所 ±30%</td><td>红涨绿跌；涨跌停板；散户为主</td></tr>
+      <tr><td>H 股 / 港股（中国香港）</td><td>香港交易所 HKEX</td><td>港币 HKD</td><td>交收 T+2；盘中可 T+0 回转</td><td>无涨跌停（设 ±10% 市场波动调节机制）</td><td>红涨绿跌；可做空；国际资金自由进出；有"港股通"渠道</td></tr>
+      <tr><td>美股（美国）</td><td>NYSE / NASDAQ</td><td>美元 USD</td><td>交收 T+1；盘中可 T+0</td><td>无涨跌停（设熔断机制）</td><td>绿涨红跌（国际惯例）；可做空；盘前盘后交易；机构为主</td></tr>
+      <tr><td>日股（日本）</td><td>东京证券交易所 TSE</td><td>日元 JPY</td><td>交收 T+2；盘中可 T+0</td><td>有涨跌停板（价格区间限制）</td><td>传统红涨蓝跌；全球第三大股市</td></tr>
+      <tr><td>韩股（韩国）</td><td>韩国交易所 KRX</td><td>韩元 KRW</td><td>交收 T+2；盘中可 T+0</td><td>有涨跌停板（约 ±15%~30%）</td><td>传统红涨蓝跌；电子 / 半导体权重高</td></tr>
+      <tr><td>台股（中国台湾）</td><td>台湾证交所 TWSE</td><td>新台币 TWD</td><td>交收 T+2；盘中可 T+0</td><td>有涨跌停板（±10%）</td><td>红涨绿跌；半导体（台积电）权重极高</td></tr>
+      <tr><td>欧股（英 / 德等）</td><td>LSE / 法兰克福等</td><td>英镑 / 欧元</td><td>交收 T+2</td><td>无涨跌停（设熔断）</td><td>绿涨红跌；以机构与养老金为主</td></tr>
+    </table>
+    <div class="tip">
+      <b>颜色习惯一句话：</b>东亚（中 / 港 / 日 / 韩 / 台）多为<b>红涨绿（蓝）跌</b>；欧美为<b>绿涨红跌</b>（国际惯例）。具体以你所用软件的设置为准，别被颜色搞反了方向。
+    </div>
+    <div class="tip">
+      <b>普通人如何投海外：</b>① <b>港股通</b>——用 A 股账户直接买部分港股（需满足资产门槛）；② <b>QDII 基金</b>——用人民币买投资于海外股市的基金，最省心；③ 直接开境外券商（需自行换汇、注意合规）。<b>H 股</b>指注册在内地、在香港上市的内地企业股票（如"中国移动 H"），与对应的"A 股"常存在价差（即 A/H 溢价）。
+    </div>
+
+    <h3>证券简称 / 代码前的字母含义</h3>
+    <p>行情软件里股票名字前面常带字母，它们代表<b>特殊状态或权益事件</b>，看懂能避开很多坑：</p>
+    <table>
+      <tr><th>字母</th><th>含义</th><th>说明 / 注意</th></tr>
+      <tr><td>ST</td><td>其他风险警示（Special Treatment）</td><td>公司出现财务或其他异常，涨跌幅限 <b>±5%</b>；"戴帽"提示风险，不代表马上退市</td></tr>
+      <tr><td>*ST</td><td>退市风险警示</td><td>公司连续亏损等触及退市条件，涨跌幅 ±5%；若未改善将被强制退市，高风险</td></tr>
+      <tr><td>N</td><td>新股上市首日（New）</td><td>仅上市<b>第一天</b>带 N：主板首日最高涨约 44%（有申报价限制）；双创 / 北交所前 5 日无涨跌幅限制</td></tr>
+      <tr><td>C</td><td>注册制新股上市次日至第 5 日</td><td>创业板 / 科创板 / 北交所新股在 N 之后几天（次日至第 5 日）带 C，仍<b>无涨跌幅限制</b>，波动极大</td></tr>
+      <tr><td>XD</td><td>除息（Ex-Dividend）</td><td>当天因现金分红下调股价，<b>当日买入不享本次分红</b></td></tr>
+      <tr><td>XR</td><td>除权（Ex-Right）</td><td>当天因送股 / 转增股下调股价，当日买入不享送转</td></tr>
+      <tr><td>DR</td><td>除权除息（Ex-Dividend &amp; Right）</td><td>同时现金分红 + 送转股，股价双重除权</td></tr>
+      <tr><td>U（科创板后缀）</td><td>发行人尚未盈利</td><td>仅 688 科创板股票带，如"XXX-U"，提示公司还在亏损期</td></tr>
+      <tr><td>W（科创板后缀）</td><td>特殊表决权（同股不同权）</td><td>如"XXX-W"，创始人 1 股可能 = 多票投票权</td></tr>
+      <tr><td>V（科创板后缀）</td><td>红筹 / 协议控制架构</td><td>如"XXX-V"，多为境外注册、VIE 架构回 A 的红筹企业</td></tr>
+      <tr><td>S（历史遗留）</td><td>未完成股改</td><td>早期遗留标记，如今已极少见</td></tr>
+      <tr><td>退市 / 退</td><td>退市整理期</td><td>简称前冠"退市"字样，进入 15 个交易日整理期，之后终止上市</td></tr>
+    </table>
+    <div class="tip">
+      <b>记忆口诀：</b>ST / *ST 是"戴帽"警示（涨跌幅 ±5%）；N 是新上市第一天；C 是新股前 5 日无限制；XD / XR / DR 是"分红送股除权除息"三兄弟；科创板 U / W / V 后缀提示"未盈利 / 同股不同权 / 红筹架构"。看到 ST、*ST、退市字样，新手尽量回避。
+    </div>
+
+    <div class="key">
+      <b>新人第一步：</b>选一家券商开户（手机 APP 即可）→ 绑定银行卡（三方存管）→ 转入资金 → 熟悉交易软件 → 用小仓位练习，<b>先学习再实盘</b>。
+    </div>
+  
+    
+    </section>
+    <section id="c2">
+    <h2>2. 交易规则必知</h2>
+    <table>
+      <tr><th>项目</th><th>规则</th><th>备注</th></tr>
+      <tr><td>交易时间</td><td>9:30–11:30，13:00–15:00</td><td>集合竞价 9:15–9:25；连续竞价 9:30–11:30、13:00–14:57；收盘集合竞价 14:57–15:00（沪深均适用）</td></tr>
+      <tr><td>交易制度</td><td>T+1</td><td>当天买入，<b>次日</b>才能卖出（卖出资金当日可用、次日可取）</td></tr>
+      <tr><td>最小单位</td><td>1 手 = 100 股</td><td>买入须为 100 股整数倍；科创板 200 股起</td></tr>
+      <tr><td>涨跌停</td><td>主板 ±10%；创业板/科创板 ±20%；北交所 ±30%</td><td>新股上市前 5 日（双创/北交所）无涨跌幅限制</td></tr>
+      <tr><td>手续费</td><td>佣金 + 印花税 + 过户费</td><td>佣金 ≤万3（双向，最低5元）；印花税卖出收万5（单向）；过户费约万0.1</td></tr>
+      <tr><td>交割</td><td>银证转账</td><td>交易时间可转入/转出，非交易时间不能转</td></tr>
+    </table>
+
+    <h3>交易时间详解（按时间段划分）</h3>
+    <p>A 股一天的交易被切分成多个阶段，每个阶段规则不同。新手最容易踩的坑是<b>"9:20 后不能撤单"</b>和<b>"以为午休也能成交"</b>。</p>
+    <table>
+      <tr><th>时间段</th><th>阶段</th><th>规则与说明</th></tr>
+      <tr><td>9:15–9:20</td><td>开盘集合竞价（可撤单）</td><td>可挂单也可撤单。此时的挂单 / 撤单不代表真实成交，常被用来"试盘"或制造假象，参考意义有限。</td></tr>
+      <tr><td>9:20–9:25</td><td>开盘集合竞价（不可撤单）</td><td>可挂单但<b>不能撤单</b>。9:25 按"最大成交量"原则一次性撮合成交，产生<b>开盘价</b>。这段的委托更真实。</td></tr>
+      <tr><td>9:25–9:30</td><td>开盘前静默</td><td>券商接受委托并暂存，但系统不撮合；9:30 连续竞价开始后统一处理。此阶段看不到成交。</td></tr>
+      <tr><td>9:30–11:30</td><td>上午连续竞价</td><td>系统按"价格优先、时间优先"实时逐笔撮合，就是平时看到的实时行情与成交。</td></tr>
+      <tr><td>11:30–13:00</td><td>午间休市</td><td>不交易、不撮合。部分券商支持"预埋单"（休市期间挂单，13:00 自动报送）。</td></tr>
+      <tr><td>13:00–14:57</td><td>下午连续竞价</td><td>同上午。</td></tr>
+      <tr><td>14:57–15:00</td><td>收盘集合竞价</td><td><b>沪深均适用</b>。按最大成交量撮合成交，产生<b>收盘价</b>；14:57 后不可撤单。</td></tr>
+      <tr><td>15:00–15:30</td><td>盘后交易</td><td>① <b>大宗交易</b>：大笔买卖协议成交，不冲击盘面；② 科创 / 创业板<b>盘后固定价格交易</b>：按收盘价成交，给没赶上竞价的人补救机会。</td></tr>
+    </table>
+    <div class="tip">
+      <b>集合竞价撮合原则：</b>系统把所有买卖委托按"最大成交量"匹配出一个成交价，再按"价格优先、时间优先"分配。所以集合竞价的"开盘价 / 收盘价"是撮合出来的，不是某笔单子决定的。
+    </div>
+
+
+
+
+    <div class="tip">
+      <b>成本意识：</b>频繁短线交易会被手续费吞噬利润。一笔"万3 佣金 + 万5 印花税"的来回交易成本约 0.11%，意味着股价不涨 0.2% 你就亏了。
+    </div>
+  
+    
+    </section>
+    <section id="c45">
+    <h2>3. 新股与退市</h2>
+<p>"打新"即申购首次公开发行的股票。过去 A 股新股上市多一字涨停，被视为"无风险套利"，但<b>全面注册制后破发常态化</b>，打新不再是稳赚。</p>
+    <h3>市值配售规则</h3>
+    <table>
+      <tr><th>项目</th><th>规则要点</th></tr>
+      <tr><td>配售单位</td><td>沪市每 1 万元日均市值配 1000 股额度；深市（含创业板）每 5000 元配 500 股额度</td></tr>
+      <tr><td>市值计算</td><td>按 T-2 日（含）前 20 个交易日日均持仓计算，需持有对应市场股票</td></tr>
+      <tr><td>申购单位</td><td>沪市 1 签 = 1000 股；深市 / 创业板 / 科创板 1 签 = 500 股</td></tr>
+      <tr><td>权限要求</td><td>主板打新需有对应市场市值；创业板 / 科创板打新还需开通权限（2 年交易经验 + 资产门槛）</td></tr>
+    </table>
+    <h3>申购流程</h3>
+    <div class="flow">
+      <div class="step">T-2 前<br>持有市值</div><span class="arr">→</span>
+      <div class="step">T 日<br>一键申购</div><span class="arr">→</span>
+      <div class="step">T+1<br>配号</div><span class="arr">→</span>
+      <div class="step">T+2<br>中签缴款</div><span class="arr">→</span>
+      <div class="step">上市日<br>卖出</div>
+    </div>
+    <div class="tip"><b>缴款关键：</b>T+2 日 16:00 前账户须有足额可用资金，系统自动扣款；<b>中签后弃购连续 12 个月内累计 3 次</b>，将被禁止打新 6 个月。不能超额申购（按市值额度上限）。</div>
+  
+<p>注册制下"退市常态化"，壳价值下降。看懂风险标识与退市红线，是生存基本功。</p>
+    <table>
+      <tr><th>类型</th><th>触发情形（要点）</th></tr>
+      <tr><td>风险警示</td><td><b>ST</b>（其他风险警示）、<b>*ST</b>（退市风险警示），日涨跌幅限制 ±5%，需签风险协议才能买</td></tr>
+      <tr><td>交易类退市</td><td>连续 20 个交易日股价 &lt; 1 元（"1 元退市"）、或收盘市值低于规定门槛、或成交量过低</td></tr>
+      <tr><td>财务类退市</td><td>营收 / 净利润 / 净资产等指标不达标（如扣非前后净利润为负且营收低于 1 亿）</td></tr>
+      <tr><td>规范类退市</td><td>信息披露重大缺陷、未按期披露财报等</td></tr>
+      <tr><td>重大违法类</td><td>欺诈发行、重大信息披露违法等</td></tr>
+    </table>
+    <div class="key"><b>退市流程：</b>风险警示 → 退市整理期（15 个交易日，±10%）→ 摘牌 → 转入股转系统（老三板），流动性极差、价格暴跌。口诀："<b>1 元退市</b>"是散户最该警惕的交易类红线；ST / *ST 不再"必重组"，新手慎碰。</div>
+  
+  
+    
+    </section>
+    <section id="c20">
+    <h2>4. 术语速查表</h2>
+    <table>
+      <tr><th>术语</th><th>含义</th></tr>
+      <tr><td>建仓 / 满仓 / 空仓</td><td>买入 / 全部买入 / 全部卖出不持</td></tr>
+      <tr><td>加仓 / 减仓</td><td>增加 / 减少持仓</td></tr>
+      <tr><td>止损 / 止盈</td><td>亏到预设位卖出 / 赚到目标位卖出</td></tr>
+      <tr><td>套牢 / 解套</td><td>买入后下跌被"锁住" / 回本卖出</td></tr>
+      <tr><td>割肉</td><td>亏损状态下卖出止损</td></tr>
+      <tr><td>主力 / 机构</td><td>资金量大、能影响股价的资金方（中性说法）</td></tr>
+      <tr><td>龙头 / 题材</td><td>板块中最强个股 / 炒作概念（如 AI、新能源车）</td></tr>
+      <tr><td>除权 / 除息</td><td>分红送股后股价下调，需看前复权判断真实涨跌</td></tr>
+      <tr><td>前复权 / 后复权</td><td>以当前价为基准还原历史 / 以历史价为基准还原——长期看走势用复权价</td></tr>
+      <tr><td>市盈率 PE / TTM</td><td>股价 / 每股收益（静态/滚动12月/动态）</td></tr>
+      <tr><td>市净率 PB</td><td>股价 / 每股净资产</td></tr>
+      <tr><td>ROE</td><td>净资产收益率，衡量股东回报</td></tr>
+      <tr><td>换手率</td><td>成交活跃度 = 成交股数 / 流通股本</td></tr>
+      <tr><td>量比</td><td>当前每分钟成交量 / 过去 5 日平均，&gt;1 放量</td></tr>
+    </table>
+  
+    
+    </section>
+    <section id="c56">
+    <h2>5. 基金与 ETF 品种全景</h2>
+<p>对大多数散户来说，<strong>选对基金往往比选对个股更容易跑赢市场</strong>：基金天然分散持仓、由专业团队管理，还能让普通人一键参与某个行业、指数或海外市场的机会。基金不是股票，但属于同一大类"证券投资工具"。</p>
+
+<h3>为什么要懂基金</h3>
+<p>买不起一篮子股票？没时间研究财报？基金用"集合投资"帮你解决。它也是资产配置、定投、避险的重要工具。</p>
+
+<h3>基金大类速查表</h3>
+<table>
+<tr><th>类型</th><th>是什么</th><th>管理费</th><th>交易方式</th><th>适合谁</th></tr>
+<tr><td>主动偏股基金</td><td>基金经理主动选股，追求超额收益</td><td>较高（1.2%~1.5%）</td><td>场外申赎</td><td>没时间研究个股</td></tr>
+<tr><td>指数 ETF</td><td>被动跟踪指数（如沪深300），持仓透明</td><td>很低（0.15%~0.5%）</td><td>场内买卖（像股票）</td><td>想低成本买市场</td></tr>
+<tr><td>LOF</td><td>既能在场内交易也能场外申赎</td><td>低~中</td><td>场内 + 场外</td><td>兼顾灵活与定投</td></tr>
+<tr><td>封闭式基金</td><td>封闭期内不能赎回，二级市场交易</td><td>中</td><td>场内买卖</td><td>能接受流动性折价</td></tr>
+<tr><td>债券 / 货币基金</td><td>投债券或短融，波动小</td><td>低</td><td>场外为主</td><td>现金管理、稳健型</td></tr>
+<tr><td>REITs</td><td>投基础设施 / 不动产，分派租金</td><td>中</td><td>场内买卖</td><td>想拿稳定分红</td></tr>
+<tr><td>QDII</td><td>投境外市场（美股 / 港股 / 黄金）</td><td>较高</td><td>场外申赎</td><td>全球配置需求</td></tr>
+</table>
+
+<h3>指数基金 vs 主动基金</h3>
+<ul>
+<li><span class="tag blue">指数基金</span>费率低、持仓透明、长期大概率跑赢多数主动基金；缺点是无法"择时抄底"。与『指数基金与 ETF 定投实战』一章搭配看。</li>
+<li><span class="tag red">主动基金</span>依赖基金经理能力，可能大幅跑赢也可能跑输；选基要看长期业绩、最大回撤、经理稳定性。</li>
+</ul>
+
+<div class="fig">
+<svg viewBox="0 0 380 200" role="img" aria-label="基金分类树">
+<rect x="150" y="10" width="80" height="26" rx="5" fill="#c8102e"/>
+<text x="190" y="27" font-size="12" fill="#fff" text-anchor="middle">证券投资基金</text>
+<line x1="190" y1="36" x2="80" y2="70" stroke="#b8c0cc"/>
+<line x1="190" y1="36" x2="190" y2="70" stroke="#b8c0cc"/>
+<line x1="190" y1="36" x2="300" y2="70" stroke="#b8c0cc"/>
+<rect x="40" y="70" width="80" height="26" rx="5" fill="#1664c0"/>
+<rect x="150" y="70" width="80" height="26" rx="5" fill="#1664c0"/>
+<rect x="260" y="70" width="80" height="26" rx="5" fill="#1664c0"/>
+<text x="80" y="87" font-size="11" fill="#fff" text-anchor="middle">股票型</text>
+<text x="190" y="87" font-size="11" fill="#fff" text-anchor="middle">债券/货币</text>
+<text x="300" y="87" font-size="11" fill="#fff" text-anchor="middle">QDII/REITs</text>
+<text x="190" y="118" font-size="11" fill="#5a6470" text-anchor="middle">股票型再分：主动基金 / 指数ETF / LOF / 封闭</text>
+</svg>
+<div class="cap">图 5-1　基金按底层资产与运作方式分类（仅示意，非穷举）</div>
+</div>
+
+<div class="tip"><b>费率陷阱：</b>基金有管理费、申购/赎回费、销售服务费。长期持有下，1% 的费率差异会在复利中放大成巨大的收益差距。定投前先看"管理费 + 托管费"合计。</div>
+
+<div class="warn">基金<strong>不保本</strong>。股票型/混合型基金会随市场波动，QDII 还有汇率风险；买前看清投资范围与风险等级（R1~R5）。</div>
+    </section>
+    <section id="c3">
+    <h2>6. K 线入门</h2>
+    <p>K 线（蜡烛图）是记录一段时间（日/周/分钟）内<b>开盘价、收盘价、最高价、最低价</b>的图形，是看盘最基础的语言。</p>
+
+    <h3>单根 K 线结构</h3>
+    <ul>
+      <li><b>实体</b>：开盘价与收盘价之间的矩形。</li>
+      <li><b>阳线（红）</b>：收盘价 &gt; 开盘价，A 股习惯用<b>红色</b>表示上涨。</li>
+      <li><b>阴线（绿）</b>：收盘价 &lt; 开盘价，A 股习惯用<b>绿色</b>表示下跌。</li>
+      <li><b>上影线</b>：实体上方的细线，代表盘中最高价（上方抛压）。</li>
+      <li><b>下影线</b>：实体下方的细线，代表盘中最低价（下方支撑）。</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 380 250" role="img" aria-label="K线蜡烛结构图">
+        <!-- 阳线（红） -->
+        <rect x="120" y="90" width="44" height="60" fill="#c8102e"/>
+        <line x1="142" y1="90" x2="142" y2="55" stroke="#c8102e" stroke-width="3"/>
+        <line x1="142" y1="150" x2="142" y2="195" stroke="#c8102e" stroke-width="3"/>
+        <!-- 阴线（绿） -->
+        <rect x="220" y="110" width="44" height="55" fill="#0a8f5b"/>
+        <line x1="242" y1="110" x2="242" y2="75" stroke="#0a8f5b" stroke-width="3"/>
+        <line x1="242" y1="165" x2="242" y2="200" stroke="#0a8f5b" stroke-width="3"/>
+        <!-- 标注 -->
+        <line x1="142" y1="55" x2="60" y2="55" stroke="#5a6470" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="58" y="50" font-size="12" fill="#5a6470" text-anchor="end">上影线（最高价）</text>
+        <line x1="142" y1="120" x2="60" y2="120" stroke="#5a6470" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="58" y="124" font-size="12" fill="#5a6470" text-anchor="end">实体（开→收）</text>
+        <line x1="142" y1="195" x2="60" y2="195" stroke="#5a6470" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="58" y="199" font-size="12" fill="#5a6470" text-anchor="end">下影线（最低价）</text>
+        <text x="142" y="222" font-size="13" fill="#c8102e" text-anchor="middle" font-weight="bold">阳线·收涨（红）</text>
+        <text x="242" y="222" font-size="13" fill="#0a8f5b" text-anchor="middle" font-weight="bold">阴线·收跌（绿）</text>
+      </svg>
+      <div class="cap">图 6-1　单根 K 线结构：实体 + 上下影线，红涨绿跌（A 股惯例）</div>
+    </div>
+
+    <h3>常见单根 / 组合形态（基础）</h3>
+    <table>
+      <tr><th>形态</th><th>样子</th><th>含义</th></tr>
+      <tr><td>大阳线</td><td>长红实体、短影线</td><td>买方强势，看涨信号</td></tr>
+      <tr><td>大阴线</td><td>长绿实体、短影线</td><td>卖方强势，看跌信号</td></tr>
+      <tr><td>十字星</td><td>实体极短，上下影线</td><td>多空僵持，变盘预警</td></tr>
+      <tr><td>锤头线</td><td>小实体 + 长下影</td><td>下跌末端，下档承接强，可能见底</td></tr>
+      <tr><td>倒锤头</td><td>小实体 + 长上影</td><td>上涨末端抛压重，或低位试盘</td></tr>
+      <tr><td>吞没形态</td><td>后一根实体包住前一根</td><td>阳包阴看涨；阴包阳看跌，反转信号较强</td></tr>
+      <tr><td>早晨之星</td><td>阴线 + 十字星 + 阳线</td><td>经典底部反转组合</td></tr>
+      <tr><td>乌云盖顶</td><td>阳线后高开低走长阴</td><td>经典顶部反转组合</td></tr>
+    </table>
+
+    <div class="fig">
+      <svg viewBox="0 0 380 170" role="img" aria-label="K线组合示意">
+        <!-- 早晨之星示意：阴线+十字星+阳线 -->
+        <rect x="40" y="60" width="22" height="55" fill="#0a8f5b"/>
+        <line x1="51" y1="60" x2="51" y2="40" stroke="#0a8f5b" stroke-width="2"/>
+        <line x1="51" y1="115" x2="51" y2="135" stroke="#0a8f5b" stroke-width="2"/>
+        <rect x="92" y="95" width="20" height="6" fill="#5a6470"/>
+        <line x1="102" y1="95" x2="102" y2="70" stroke="#5a6470" stroke-width="2"/>
+        <line x1="102" y1="101" x2="102" y2="125" stroke="#5a6470" stroke-width="2"/>
+        <rect x="144" y="90" width="24" height="40" fill="#c8102e"/>
+        <line x1="156" y1="90" x2="156" y2="72" stroke="#c8102e" stroke-width="2"/>
+        <line x1="156" y1="130" x2="156" y2="150" stroke="#c8102e" stroke-width="2"/>
+        <text x="51" y="160" font-size="11" fill="#5a6470" text-anchor="middle">阴线</text>
+        <text x="102" y="160" font-size="11" fill="#5a6470" text-anchor="middle">十字星</text>
+        <text x="156" y="160" font-size="11" fill="#5a6470" text-anchor="middle">阳线</text>
+        <text x="210" y="95" font-size="13" fill="#c8102e" font-weight="bold">→ 早晨之星（底部反转）</text>
+      </svg>
+      <div class="cap">图 6-2　"早晨之星"组合示意：下跌末端阴线后接十字星，再被阳线反包</div>
+    </div>
+
+    <div class="warn">
+      注意：A 股 <b>红涨绿跌</b>，与欧美（绿涨红跌）相反。看海外行情或软件设置时务必确认配色口径，避免误读。
+    </div>
+
+    <div class="key">
+      <b>周期选择：</b>日 K 看中期趋势，周 K 看大方向，60 分钟 / 15 分钟 K 用于找买卖点。不同周期结论可能冲突，以<b>大周期定方向、小周期找时机</b>。
+    </div>
+  
+    
+    </section>
+    <section id="c15">
+    <h2>7. K 线组合图鉴合集</h2>
+    <p>把常见反转 / 持续形态做成"图鉴"，每张小图都是一组 K 线示意，配合含义速记。颜色仍为 A 股红涨绿跌。</p>
+    <h3>7.1 单根 K 线解剖：红绿柱（实体）与上下引线</h3>
+    <p>每根 K 线由三部分组成：<b>实体</b>（红柱 / 绿柱，记录开盘价与收盘价之间的涨跌）、<b>上影线</b>（最高价到实体的线段）、<b>下影线</b>（最低价到实体的线段）。A 股惯例：<b>红色实体 = 收盘 &gt; 开盘（涨）</b>，<b>绿色实体 = 收盘 &lt; 开盘（跌）</b>；实体越长代表该方向力量越强。</p>
+    <div class="fig">
+      <svg viewBox="0 0 400 280">
+        <line x1="100" y1="100" x2="100" y2="62" stroke="#5a6470" stroke-width="2"/>
+        <line x1="100" y1="166" x2="100" y2="206" stroke="#5a6470" stroke-width="2"/>
+        <rect x="82" y="100" width="36" height="66" fill="#c8102e"/>
+        <text x="100" y="56" text-anchor="middle" font-size="11" fill="#333">最高价</text>
+        <text x="146" y="84" font-size="10" fill="#5a6470">上影线</text>
+        <text x="62" y="98" text-anchor="end" font-size="10" fill="#333">收盘价</text>
+        <text x="62" y="170" text-anchor="end" font-size="10" fill="#333">开盘价</text>
+        <text x="100" y="184" text-anchor="middle" font-size="11" font-weight="bold" fill="#c8102e">实体·红柱（涨）</text>
+        <text x="146" y="194" font-size="10" fill="#5a6470">下影线</text>
+        <text x="100" y="224" text-anchor="middle" font-size="11" fill="#333">最低价</text>
+        <line x1="300" y1="104" x2="300" y2="66" stroke="#5a6470" stroke-width="2"/>
+        <line x1="300" y1="166" x2="300" y2="208" stroke="#5a6470" stroke-width="2"/>
+        <rect x="282" y="104" width="36" height="62" fill="#0a8f5b"/>
+        <text x="300" y="60" text-anchor="middle" font-size="11" fill="#333">最高价</text>
+        <text x="346" y="88" font-size="10" fill="#5a6470">上影线</text>
+        <text x="262" y="102" text-anchor="end" font-size="10" fill="#333">开盘价</text>
+        <text x="262" y="172" text-anchor="end" font-size="10" fill="#333">收盘价</text>
+        <text x="300" y="188" text-anchor="middle" font-size="11" font-weight="bold" fill="#0a8f5b">实体·绿柱（跌）</text>
+        <text x="346" y="198" font-size="10" fill="#5a6470">下影线</text>
+        <text x="300" y="228" text-anchor="middle" font-size="11" fill="#333">最低价</text>
+      </svg>
+      <div class="cap">图 7-1　单根 K 线解剖：红绿实体 + 上下引线，标注四价（开 / 收 / 高 / 低）</div>
+    </div>
+    <div class="fig">
+      <svg viewBox="0 0 360 160">
+        <line x1="80" y1="70" x2="80" y2="20" stroke="#5a6470" stroke-width="2"/>
+        <line x1="80" y1="100" x2="80" y2="112" stroke="#5a6470" stroke-width="2"/>
+        <rect x="65" y="70" width="30" height="30" fill="#c8102e"/>
+        <text x="80" y="140" text-anchor="middle" font-size="11" fill="#333">长上影线：上攻遇阻、抛压重</text>
+        <line x1="280" y1="70" x2="280" y2="58" stroke="#5a6470" stroke-width="2"/>
+        <line x1="280" y1="100" x2="280" y2="150" stroke="#5a6470" stroke-width="2"/>
+        <rect x="265" y="70" width="30" height="30" fill="#0a8f5b"/>
+        <text x="280" y="140" text-anchor="middle" font-size="11" fill="#333">长下影线：下探有承接、买盘强</text>
+      </svg>
+      <div class="cap">图 7-2　引线的多空含义：上影看抛压，下影看承接</div>
+    </div>
+    <table>
+      <tr><th>部位 / 形态</th><th>含义（实战解读）</th></tr>
+      <tr><td>实体长（红 / 绿）</td><td>多 / 空一方压倒性占优，趋势意愿强烈</td></tr>
+      <tr><td>实体短（十字星 / 纺锤线）</td><td>多空分歧大、方向不明，常出现在变盘前夕</td></tr>
+      <tr><td>长上影线</td><td>上攻后被打回，上方抛压重 / 高位见顶预警（射击之星、墓碑线）</td></tr>
+      <tr><td>长下影线</td><td>下跌后被拉起，下方有承接 / 低位见底预警（锤头、上吊）</td></tr>
+      <tr><td>上下影都长（螺旋桨）</td><td>多空激烈博弈、犹豫不决，变盘前兆</td></tr>
+      <tr><td>光头光脚（无影线）</td><td>单边极强，开盘即最低（涨停）或最高（跌停）常见</td></tr>
+      <tr><td>一字线</td><td>开盘=收盘=最高=最低，极度涨停 / 跌停或停牌，无量锁死</td></tr>
+    </table>
+    <p><b>引线口诀：</b>上影看抛压、下影看承接；<b>长上影出在高位是风险，长下影出在低位有机会</b>；影线越长，多空争夺越激烈，越容易变盘。</p>
+
+    <div class="gallery">
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="60" y="15" width="30" height="55" fill="#c8102e"/><line x1="75" y1="15" x2="75" y2="8" stroke="#c8102e" stroke-width="3"/><line x1="75" y1="70" x2="75" y2="82" stroke="#c8102e" stroke-width="3"/></svg><div class="ct"><b>大阳线</b><span>买方压倒性强势，看涨</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="60" y="20" width="30" height="50" fill="#0a8f5b"/><line x1="75" y1="20" x2="75" y2="10" stroke="#0a8f5b" stroke-width="3"/><line x1="75" y1="70" x2="75" y2="82" stroke="#0a8f5b" stroke-width="3"/></svg><div class="ct"><b>大阴线</b><span>卖方压倒性强势，看跌</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="68" y="42" width="14" height="5" fill="#5a6470"/><line x1="75" y1="42" x2="75" y2="14" stroke="#5a6470" stroke-width="2"/><line x1="75" y1="47" x2="75" y2="78" stroke="#5a6470" stroke-width="2"/></svg><div class="ct"><b>十字星</b><span>多空僵持，变盘预警</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="66" y="25" width="18" height="18" fill="#c8102e"/><line x1="75" y1="25" x2="75" y2="18" stroke="#c8102e" stroke-width="2"/><line x1="75" y1="43" x2="75" y2="80" stroke="#c8102e" stroke-width="2"/></svg><div class="ct"><b>锤头线</b><span>底部长下影，下档强</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="66" y="45" width="18" height="18" fill="#0a8f5b"/><line x1="75" y1="45" x2="75" y2="14" stroke="#0a8f5b" stroke-width="2"/><line x1="75" y1="63" x2="75" y2="72" stroke="#0a8f5b" stroke-width="2"/></svg><div class="ct"><b>倒锤头</b><span>顶部长上影，抛压重</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="45" y="40" width="20" height="22" fill="#0a8f5b"/><rect x="68" y="25" width="28" height="50" fill="#c8102e"/></svg><div class="ct"><b>看涨吞没</b><span>阳包阴，底部反转</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="45" y="35" width="20" height="22" fill="#c8102e"/><rect x="68" y="22" width="28" height="50" fill="#0a8f5b"/></svg><div class="ct"><b>看跌吞没</b><span>阴包阳，顶部反转</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="20" y="35" width="16" height="30" fill="#0a8f5b"/><rect x="55" y="48" width="14" height="4" fill="#5a6470"/><line x1="62" y1="48" x2="62" y2="32" stroke="#5a6470" stroke-width="2"/><line x1="62" y1="52" x2="62" y2="68" stroke="#5a6470" stroke-width="2"/><rect x="92" y="38" width="20" height="30" fill="#c8102e"/></svg><div class="ct"><b>早晨之星</b><span>阴+星+阳，见底</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="20" y="30" width="16" height="30" fill="#c8102e"/><rect x="55" y="42" width="14" height="4" fill="#5a6470"/><line x1="62" y1="42" x2="62" y2="26" stroke="#5a6470" stroke-width="2"/><line x1="62" y1="46" x2="62" y2="62" stroke="#5a6470" stroke-width="2"/><rect x="92" y="40" width="20" height="30" fill="#0a8f5b"/></svg><div class="ct"><b>黄昏之星</b><span>阳+星+阴，见顶</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="20" y="55" width="16" height="22" fill="#c8102e"/><rect x="55" y="42" width="16" height="26" fill="#c8102e"/><rect x="90" y="28" width="16" height="30" fill="#c8102e"/></svg><div class="ct"><b>红三兵</b><span>三连阳阶梯上行</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="20" y="28" width="16" height="24" fill="#0a8f5b"/><rect x="55" y="42" width="16" height="24" fill="#0a8f5b"/><rect x="90" y="55" width="16" height="22" fill="#0a8f5b"/></svg><div class="ct"><b>三只乌鸦</b><span>三连阴阶梯下行</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="12" y="35" width="16" height="35" fill="#c8102e"/><rect x="40" y="50" width="12" height="14" fill="#0a8f5b"/><rect x="58" y="48" width="12" height="14" fill="#0a8f5b"/><rect x="76" y="52" width="12" height="14" fill="#0a8f5b"/><rect x="100" y="20" width="16" height="40" fill="#c8102e"/></svg><div class="ct"><b>上升三法</b><span>大阳+三小阴+阳，续涨</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="12" y="20" width="16" height="35" fill="#0a8f5b"/><rect x="40" y="40" width="12" height="14" fill="#c8102e"/><rect x="58" y="42" width="12" height="14" fill="#c8102e"/><rect x="76" y="38" width="12" height="14" fill="#c8102e"/><rect x="100" y="35" width="16" height="40" fill="#0a8f5b"/></svg><div class="ct"><b>下降三法</b><span>大阴+三小阳+阴，续跌</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="30" y="30" width="30" height="45" fill="#0a8f5b"/><rect x="52" y="45" width="16" height="18" fill="#c8102e"/></svg><div class="ct"><b>看涨孕线</b><span>大阴内包小阳，企稳</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="30" y="25" width="30" height="45" fill="#c8102e"/><rect x="52" y="42" width="16" height="18" fill="#0a8f5b"/></svg><div class="ct"><b>看跌孕线</b><span>大阳内包小阴，转弱</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="25" y="42" width="20" height="30" fill="#c8102e"/><rect x="60" y="28" width="20" height="36" fill="#0a8f5b"/></svg><div class="ct"><b>乌云盖顶</b><span>阳后高开低走阴，见顶</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="25" y="30" width="20" height="34" fill="#0a8f5b"/><rect x="58" y="40" width="20" height="32" fill="#c8102e"/></svg><div class="ct"><b>刺透形态</b><span>阴后低开高走阳，见底</span></div></div>
+    </div>
+
+    <h3>7.2 更多经典单根 / 双根形态</h3>
+    <div class="gallery">
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="66" y="22" width="18" height="12" fill="#5a6470"/><line x1="75" y1="22" x2="75" y2="16" stroke="#5a6470" stroke-width="2"/><line x1="75" y1="34" x2="75" y2="82" stroke="#5a6470" stroke-width="2"/></svg><div class="ct"><b>上吊线</b><span>高位长下影，警惕反转</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="66" y="58" width="18" height="12" fill="#5a6470"/><line x1="75" y1="58" x2="75" y2="14" stroke="#5a6470" stroke-width="2"/><line x1="75" y1="70" x2="75" y2="78" stroke="#5a6470" stroke-width="2"/></svg><div class="ct"><b>射击之星</b><span>高位长上影，见顶</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="68" y="20" width="14" height="4" fill="#5a6470"/><line x1="75" y1="24" x2="75" y2="82" stroke="#5a6470" stroke-width="2"/></svg><div class="ct"><b>T 字线</b><span>四价合一于顶，下影长</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="68" y="66" width="14" height="4" fill="#5a6470"/><line x1="75" y1="66" x2="75" y2="12" stroke="#5a6470" stroke-width="2"/></svg><div class="ct"><b>倒 T / 墓碑</b><span>四价合一于底，上影长</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><line x1="40" y1="45" x2="110" y2="45" stroke="#c8102e" stroke-width="4"/></svg><div class="ct"><b>一字线</b><span>四价合一，涨停/跌停锁死</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="68" y="42" width="14" height="8" fill="#5a6470"/><line x1="75" y1="42" x2="75" y2="14" stroke="#5a6470" stroke-width="2"/><line x1="75" y1="50" x2="75" y2="78" stroke="#5a6470" stroke-width="2"/></svg><div class="ct"><b>螺旋桨</b><span>上下长影，变盘前兆</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="42" y="32" width="18" height="38" fill="#0a8f5b"/><rect x="66" y="28" width="22" height="46" fill="#c8102e"/></svg><div class="ct"><b>曙光初现</b><span>阴后阳插半，见底</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="42" y="42" width="18" height="28" fill="#0a8f5b"/><rect x="64" y="22" width="26" height="50" fill="#c8102e"/></svg><div class="ct"><b>旭日东升</b><span>阳包阴，强势见底</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="42" y="46" width="18" height="26" fill="#c8102e"/><rect x="64" y="26" width="26" height="48" fill="#0a8f5b"/></svg><div class="ct"><b>倾盆大雨</b><span>阳后阴覆盖，见顶</span></div></div>
+      <div class="card"><svg viewBox="0 0 150 90"><rect x="40" y="44" width="18" height="30" fill="#0a8f5b"/><rect x="66" y="44" width="18" height="30" fill="#c8102e"/></svg><div class="ct"><b>好友反攻</b><span>阴后阳同价，止跌</span></div></div>
+    </div>
+
+    <div class="key">记忆要点：底部区域出现"长下影 / 阳包阴 / 星线后跟阳线"多为见底信号；顶部区域出现"长上影 / 阴包阳 / 星线后跟阴线"多为见顶信号。<b>组合形态比单根 K 线可靠</b>，且要结合所处位置与量能。同一种形态（如锤头与上吊、倒锤与射击之星）<b>形状相同、含义相反，关键看所处趋势位置</b>。</div>
+
+  
+    
+    </section>
+    <section id="c4">
+    <h2>8. 均线系统 MA</h2>
+    <p>移动平均线（MA）是把 N 天的收盘价求平均连成的线，用来<strong>平滑噪音、判断趋势方向和支撑压力</strong>。均线是"跟随"指标，滞后但稳定。</p>
+
+    <h3>常用均线参数</h3>
+    <table>
+      <tr><th>均线</th><th>含义 / 用法</th></tr>
+      <tr><td>MA5</td><td>5 日均线，短线强弱，常作攻击线</td></tr>
+      <tr><td>MA10</td><td>10 日，短线趋势</td></tr>
+      <tr><td>MA20</td><td>月线（约 20 交易日），中短期趋势分界</td></tr>
+      <tr><td>MA30 / MA60</td><td>季线 / 60 日，中期趋势，机构常用</td></tr>
+      <tr><td>MA120</td><td>半年线，中长期牛熊分界参考</td></tr>
+      <tr><td>MA250</td><td>年线，长期牛熊分界线（"牛熊线"）</td></tr>
+    </table>
+
+    <div class="fig">
+      <svg viewBox="0 0 380 230" role="img" aria-label="均线折线图">
+        <!-- 网格 -->
+        <line x1="40" y1="20" x2="40" y2="200" stroke="#e6e9ee"/>
+        <line x1="40" y1="200" x2="360" y2="200" stroke="#b8c0cc"/>
+        <!-- 收盘价 -->
+        <polyline points="40,170 80,160 120,150 160,140 200,120 240,110 280,95 320,80 360,70"
+          fill="none" stroke="#1f2329" stroke-width="2.5"/>
+        <!-- MA5 -->
+        <polyline points="40,175 80,166 120,156 160,143 200,128 240,112 280,98 320,82 360,72"
+          fill="none" stroke="#c8102e" stroke-width="2" stroke-dasharray="5 3"/>
+        <!-- MA20 -->
+        <polyline points="40,185 80,180 120,172 160,162 200,150 240,138 280,124 320,108 360,92"
+          fill="none" stroke="#1664c0" stroke-width="2"/>
+        <!-- 标签 -->
+        <text x="355" y="66" font-size="11" fill="#1f2329" text-anchor="end">收盘价</text>
+        <text x="355" y="88" font-size="11" fill="#c8102e" text-anchor="end">MA5</text>
+        <text x="355" y="108" font-size="11" fill="#1664c0" text-anchor="end">MA20</text>
+      </svg>
+      <div class="legend">
+        <span><i style="background:#1f2329"></i>收盘价</span>
+        <span><i style="background:#c8102e"></i>MA5（短期）</span>
+        <span><i style="background:#1664c0"></i>MA20（中期）</span>
+      </div>
+      <div class="cap">图 8-1　价格与均线：短期线在上方、长期线在下方且向上发散 → 多头排列（上升趋势）</div>
+    </div>
+
+    <h3>均线排列与买卖信号</h3>
+    <ul>
+      <li><span class="tag red">多头排列</span>短期 &gt; 中期 &gt; 长期，均线向上发散 → 上升趋势，逢回踩均线可关注。</li>
+      <li><span class="tag green">空头排列</span>短期 &lt; 中期 &lt; 长期，均线向下发散 → 下降趋势，反弹减仓为主。</li>
+      <li><span class="tag blue">金叉</span>短均线由下向上穿越长均线（如 MA5 上穿 MA20）→ 看涨信号。</li>
+      <li><span class="tag gray">死叉</span>短均线由上向下穿越长均线 → 看跌信号。</li>
+      <li><b>均线支撑 / 压力</b>：上升时回踩不破均线为支撑；下降时反弹不过均线为压力。</li>
+    </ul>
+
+    <div class="tip">
+      均线不是"预测线"，而是"成本线"。股价在年线上方运行，说明中长期持仓者多数盈利（多头市场）；跌破年线则需警惕趋势转弱。
+    </div>
+  
+    
+    </section>
+    <section id="c5">
+    <h2>9. 成交量 VOL</h2>
+    <p>成交量（VOL）是某段时间内的成交股数（或手数），是最难被操纵的真相指标。价格可以骗人，<strong>量能往往反映真实意图</strong>。</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 380 230" role="img" aria-label="成交量能量柱">
+        <line x1="40" y1="30" x2="40" y2="190" stroke="#e6e9ee"/>
+        <line x1="40" y1="190" x2="360" y2="190" stroke="#b8c0cc"/>
+        <!-- 能量柱：红=收阳 绿=收阴 -->
+        <rect x="50"  y="120" width="20" height="70" fill="#c8102e"/>
+        <rect x="78"  y="95"  width="20" height="95" fill="#c8102e"/>
+        <rect x="106" y="140" width="20" height="50" fill="#0a8f5b"/>
+        <rect x="134" y="150" width="20" height="40" fill="#0a8f5b"/>
+        <rect x="162" y="80"  width="20" height="110" fill="#c8102e"/>
+        <rect x="190" y="100" width="20" height="90" fill="#c8102e"/>
+        <rect x="218" y="160" width="20" height="30" fill="#0a8f5b"/>
+        <rect x="246" y="130" width="20" height="60" fill="#c8102e"/>
+        <rect x="274" y="110" width="20" height="80" fill="#c8102e"/>
+        <rect x="302" y="170" width="20" height="20" fill="#0a8f5b"/>
+        <rect x="330" y="90"  width="20" height="100" fill="#c8102e"/>
+        <!-- VOL5 均量线 -->
+        <polyline points="60,150 88,140 116,150 144,155 172,135 200,128 228,150 256,140 284,130 312,158 340,135"
+          fill="none" stroke="#1664c0" stroke-width="2"/>
+        <text x="355" y="25" font-size="11" fill="#1664c0" text-anchor="end">VOL5 均量线</text>
+        <text x="40" y="208" font-size="11" fill="#5a6470">成交量柱：</text>
+        <rect x="110" y="202" width="12" height="10" fill="#c8102e"/><text x="126" y="211" font-size="11" fill="#5a6470">收阳</text>
+        <rect x="166" y="202" width="12" height="10" fill="#0a8f5b"/><text x="182" y="211" font-size="11" fill="#5a6470">收阴</text>
+      </svg>
+      <div class="legend">
+        <span><i class="box" style="background:#c8102e"></i>红柱=当日收阳成交量</span>
+        <span><i class="box" style="background:#0a8f5b"></i>绿柱=当日收阴成交量</span>
+        <span><i style="background:#1664c0"></i>VOL5 均量线</span>
+      </div>
+      <div class="cap">图 9-1　"能量柱"：柱越高表示当日成交越活跃；配合价格看放量/缩量</div>
+    </div>
+
+    <h3>量能柱与均量线</h3>
+    <ul>
+      <li>红柱：当日收盘价 &gt; 开盘价（收阳）的成交量；绿柱：收阴的成交量（部分软件按涨跌染色）。</li>
+      <li>VOL5 / VOL10：5 日、10 日均量线，判断"放量还是缩量"的参照。</li>
+    </ul>
+
+    <h3>量价配合的几种典型</h3>
+    <table>
+      <tr><th>情形</th><th>含义</th></tr>
+      <tr><td>放量上涨</td><td>量价齐升，上涨有资金认可，较为健康</td></tr>
+      <tr><td>缩量上涨</td><td>追涨意愿不足，需警惕冲高回落（底部缩量上涨尚可）</td></tr>
+      <tr><td>放量下跌</td><td>恐慌出逃或主力出货，趋势偏弱</td></tr>
+      <tr><td>缩量下跌</td><td>抛压减轻，可能接近短期底部</td></tr>
+      <tr><td>地量</td><td>极度缩量，常出现在底部区，所谓"地量见地价"</td></tr>
+      <tr><td>天量</td><td>异常巨量，高位天量警惕见顶，低位天量可能是启动</td></tr>
+    </table>
+
+    <div class="warn">
+      <b>口诀：</b>"价升量增、价跌量缩"为常态健康；"价升量缩、价跌量增"为背离警示。成交量需结合位置（高位还是低位）判断，孤立看一根柱意义不大。
+    </div>
+  
+    
+    </section>
+    <section id="c14">
+    <h2>10. 盘口与竞价</h2>
+    <p>除了 K 线，<b>分时图</b>是盘中看实时走势最常用的图；<b>盘口</b>则显示买卖五档挂单，是短线博弈的"显微镜"。</p>
+
+    <h3>10.1 分时走势图</h3>
+    <p>横坐标是一交易日时间（9:30–11:30、13:00–15:00），纵坐标相对昨收的涨跌。<b>昨收线（虚线）上方为红、下方为绿</b>。</p>
+    <div class="fig">
+      <svg viewBox="0 0 380 250" role="img" aria-label="分时图示意">
+        <rect x="40" y="30" width="320" height="92" fill="#fde8ec"/>
+        <rect x="40" y="122" width="320" height="92" fill="#e6f6ee"/>
+        <line x1="40" y1="30" x2="40" y2="220" stroke="#e6e9ee"/>
+        <line x1="40" y1="220" x2="360" y2="220" stroke="#b8c0cc"/>
+        <line x1="40" y1="122" x2="360" y2="122" stroke="#b8c0cc" stroke-dasharray="5 4"/>
+        <text x="44" y="118" font-size="10" fill="#5a6470">昨收</text>
+        <polyline points="40,140 80,110 120,132 160,95 200,118 240,80 280,100 320,70 360,86"
+          fill="none" stroke="#1f2329" stroke-width="2"/>
+        <polyline points="40,152 80,132 120,130 160,120 200,118 240,108 280,106 320,98 360,96"
+          fill="none" stroke="#b8860b" stroke-width="2"/>
+        <rect x="52"  y="224" width="9" height="0"  fill="#c8102e"/>
+        <rect x="84"  y="224" width="9" height="14" fill="#c8102e"/>
+        <rect x="116" y="224" width="9" height="20" fill="#0a8f5b"/>
+        <rect x="148" y="224" width="9" height="26" fill="#c8102e"/>
+        <rect x="180" y="224" width="9" height="18" fill="#0a8f5b"/>
+        <rect x="212" y="224" width="9" height="30" fill="#c8102e"/>
+        <rect x="244" y="224" width="9" height="16" fill="#0a8f5b"/>
+        <rect x="276" y="224" width="9" height="24" fill="#c8102e"/>
+        <rect x="308" y="224" width="9" height="20" fill="#c8102e"/>
+        <rect x="340" y="224" width="9" height="28" fill="#c8102e"/>
+        <text x="352" y="36" font-size="11" fill="#1f2329" text-anchor="end">分时价（白）</text>
+        <text x="352" y="52" font-size="11" fill="#b8860b" text-anchor="end">均价（黄）</text>
+      </svg>
+      <div class="cap">图 10-1　分时图：价格在昨收（虚线）上方偏红、下方偏绿；黄色均价线为当日平均成本</div>
+    </div>
+    <ul>
+      <li><b>白线（分时价）</b>：每分钟最后一笔成交价的连线，实时波动。</li>
+      <li><b>黄线（均价）</b>：当日总成交额 / 总成交量，代表平均持仓成本。股价在均价线上方运行 = 当日强势。</li>
+      <li><b>量峰</b>：分时图下方成交量柱，密集放量处常是当日关键价位。</li>
+    </ul>
+
+    <h3>10.2 五档盘口</h3>
+    <p>盘口显示买卖各五档的挂单价格与数量，是观察"谁在买、谁在卖"的窗口。下方买盘托单、上方卖盘压单。</p>
+    <div class="fig">
+      <table class="order">
+        <tr><td class="g">卖五</td><td>10.25</td><td>1,200</td></tr>
+        <tr><td class="g">卖四</td><td>10.24</td><td>800</td></tr>
+        <tr><td class="g">卖三</td><td>10.23</td><td>1,500</td></tr>
+        <tr><td class="g">卖二</td><td>10.22</td><td>600</td></tr>
+        <tr><td class="g">卖一</td><td>10.21</td><td>2,300</td></tr>
+        <tr class="mid"><td>最新 / 昨收</td><td>10.21 / 10.00</td><td>+2.10%</td></tr>
+        <tr><td class="r">买一</td><td>10.20</td><td>3,100</td></tr>
+        <tr><td class="r">买二</td><td>10.19</td><td>900</td></tr>
+        <tr><td class="r">买三</td><td>10.18</td><td>1,400</td></tr>
+        <tr><td class="r">买四</td><td>10.17</td><td>700</td></tr>
+        <tr><td class="r">买五</td><td>10.16</td><td>2,000</td></tr>
+      </table>
+      <div class="cap">图 10-2　五档盘口示例：卖一为最低卖价（绿）、买一为最高买价（红），二者即时撮合成交</div>
+    </div>
+    <div class="tip">
+      <b>盘口名词：</b><b>委比</b> = (委买量−委卖量)/(委买量+委卖量)，正为买盘强；<b>量比</b> = 现在每分钟成交量 / 过去 5 日平均，&gt;1 放量；<b>内盘/外盘</b>：主动卖出成交为内盘（绿）、主动买入为外盘（红），外 &gt; 内 说明买气强。
+    </div>
+  
+
+    <h3>集合竞价实战技巧</h3>
+    <p>开盘价由集合竞价产生，是观察主力意图的第一窗口。</p>
+    <div class="fig">
+      <svg viewBox="0 0 420 170">
+        <line x1="40" y1="150" x2="400" y2="150" stroke="#5a6470" stroke-width="1"/>
+        <text x="40" y="166" font-size="10" fill="#5a6470">9:15</text>
+        <text x="160" y="166" font-size="10" fill="#5a6470">9:20</text>
+        <text x="280" y="166" font-size="10" fill="#5a6470">9:25</text>
+        <text x="390" y="166" font-size="10" fill="#5a6470">9:30</text>
+        <rect x="40" y="60" width="120" height="14" fill="#e6ebf1"/>
+        <rect x="160" y="40" width="120" height="34" fill="#c8102e" opacity="0.18"/>
+        <line x1="160" y1="150" x2="160" y2="36" stroke="#c8102e" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="200" y="30" font-size="10" fill="#c8102e">9:20 后不可撤单（真实意图）</text>
+        <circle cx="280" cy="55" r="4" fill="#c8102e"/>
+        <text x="290" y="52" font-size="10" fill="#333">9:25 产生开盘价</text>
+        <text x="40" y="50" font-size="10" fill="#5a6470">9:15–9:20 可挂可撤（虚假单多）</text>
+      </svg>
+      <div class="cap">图　集合竞价时间轴：9:20 是不可撤单分界，9:25 定开盘价</div>
+    </div>
+    <ul>
+      <li><b>9:15–9:20</b>：可挂单也可撤单，常有"诱多 / 诱空"假单，参考意义低。</li>
+      <li><b>9:20–9:25</b>：<b>不可撤单</b>，此时的挂单才是真实态度；观察最后几分钟的价格与量。</li>
+      <li><b>高开 + 竞价量放大</b>：资金抢筹，当日偏强；<b>低开 + 竞价放量</b>：抛压重。</li>
+      <li><b>弱转强</b>：前日弱势、今竞价高开抢筹，易出超预期；<b>一字板</b>：强势涨停，只能排板碰运气。</li>
+    </ul>
+    <div class="tip"><b>避坑：</b>9:20 后拉高又撤单是常见"诱多"；开盘一笔巨量砸盘常源于竞价埋伏。竞价只是开盘参考，别单一依赖。</div>
+  
+    
+    </section>
+    <section id="c12">
+    <h2>11. 支撑与压力</h2>
+    <ul>
+      <li><b>支撑位：</b>股价跌到此处买方增强、止跌反弹的位置（如前低、均线、密集成交区、整数关口）。</li>
+      <li><b>压力位：</b>股价涨到此处卖方增强、遇阻回落的位置（如前高、均线、跳空缺口、整数关口）。</li>
+      <li><b>相互转化：</b>有效跌破支撑后，该位置变压力；有效突破压力后，该位置变支撑（"跌破变压、突破变撑"）。</li>
+      <li><b>趋势线：</b>连接两个及以上低点得上升支撑线；连接高点得下降压力线。线越被验证次数多，越有效。</li>
+      <li><b>缺口：</b>跳空高开 / 低开留下的价格空白区。向上跳空常为支撑，向下跳空常为压力；"缺口必补"非绝对，强势行情可不补。</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 380 230" role="img" aria-label="支撑压力示意图">
+        <line x1="40" y1="20" x2="40" y2="200" stroke="#e6e9ee"/>
+        <line x1="40" y1="200" x2="360" y2="200" stroke="#b8c0cc"/>
+        <!-- 价格 zigzag -->
+        <polyline points="50,170 90,120 130,150 170,90 210,130 250,80 290,110 330,70"
+          fill="none" stroke="#1f2329" stroke-width="2.5"/>
+        <!-- 压力线 -->
+        <line x1="40" y1="80" x2="360" y2="80" stroke="#c8102e" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <text x="350" y="74" font-size="11" fill="#c8102e" text-anchor="end">压力位（前高）</text>
+        <!-- 支撑线 -->
+        <line x1="40" y1="150" x2="360" y2="150" stroke="#0a8f5b" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <text x="350" y="166" font-size="11" fill="#0a8f5b" text-anchor="end">支撑位（前低）</text>
+        <text x="200" y="195" font-size="11" fill="#5a6470" text-anchor="middle">跌破支撑 → 该位变压力；突破压力 → 该位变支撑</text>
+      </svg>
+      <div class="cap">图 11-1　支撑与压力：价格在两条水平线之间波动，线被反复验证后更有效</div>
+    </div>
+
+    <div class="key"><b>怎么用：</b>支撑附近缩量企稳可低吸，跌破支撑止损；压力附近放量不过可减仓，有效突破压力再加回。</div>
+  
+    
+    </section>
+    <section id="c57">
+    <h2>12. 趋势线、通道与扇形线</h2>
+<p>趋势线是技术分析的"画线基本功"。它把杂乱的波动归纳成一条有方向的线，用来判断趋势是否还在、以及何时可能转折。配合『支撑与压力』一章一起看，效果更好。</p>
+
+<h3>怎么画趋势线</h3>
+<ul>
+<li><span class="tag red">上升趋势线</span>连接两个<strong>依次抬高</strong>的低位（低点2 高于 低点1），并至少被第三个低点确认。</li>
+<li><span class="tag green">下降趋势线</span>连接两个<strong>依次降低</strong>的高位（高点2 低于 高点1）。</li>
+<li>触点越多、持续时间越长，趋势线越"值钱"（越有效）。</li>
+</ul>
+
+<h3>通道线（轨道）</h3>
+<p>在趋势线基础上，画一条与之<strong>平行</strong>的线连接另一侧的高点/低点，形成"通道"。价格常在通道上下沿之间运行；触及上沿易回落，触及下沿易反弹。</p>
+
+<h3>扇形线（趋势线的递进）</h3>
+<p>一条趋势线被有效跌破后，连接更早的低点画第二条（更平缓）；再破则画第三条。三条扇形线依次变平缓，往往意味着原趋势衰竭、转折临近——所谓"三破反转"。</p>
+
+<div class="fig">
+<svg viewBox="0 0 380 220" role="img" aria-label="趋势线与通道">
+<line x1="40" y1="20" x2="40" y2="200" stroke="#e6e9ee"/>
+<line x1="40" y1="200" x2="360" y2="200" stroke="#b8c0cc"/>
+<polyline points="50,170 115,148 180,122 245,98 310,76 340,68" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<line x1="50" y1="178" x2="340" y2="76" stroke="#5a6470" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="50" y1="150" x2="340" y2="48" stroke="#5a6470" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="200" y="118" font-size="11" fill="#5a6470">上升趋势线（支撑）</text>
+<text x="300" y="44" font-size="11" fill="#5a6470">通道上轨（压力）</text>
+</svg>
+<div class="cap">图 12-1　上升趋势线与平行通道：回踩趋势线不破=支撑，触上轨=压力</div>
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 380 200" role="img" aria-label="扇形线">
+<line x1="40" y1="20" x2="40" y2="180" stroke="#e6e9ee"/>
+<line x1="40" y1="180" x2="360" y2="180" stroke="#b8c0cc"/>
+<polyline points="50,70 120,120 180,100 260,150 320,170" fill="none" stroke="#0a8f5b" stroke-width="2.5"/>
+<line x1="50" y1="70" x2="300" y2="150" stroke="#c8102e" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="50" y1="70" x2="320" y2="120" stroke="#5a6470" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="50" y1="70" x2="340" y2="95" stroke="#5a6470" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="248" y="164" font-size="11" fill="#c8102e">① 先破</text>
+<text x="285" y="130" font-size="11" fill="#5a6470">②</text>
+<text x="305" y="104" font-size="11" fill="#5a6470">③ 后破</text>
+</svg>
+<div class="cap">图 12-2　扇形线：趋势线依次被破后换更平缓的线，三破常预示反转</div>
+</div>
+
+<div class="warn">趋势线被"盘中刺破"不等于有效跌破，<strong>以收盘价跌破 + 次日确认</strong>更可靠。斜率过于陡峭的趋势线更容易被破。</div>
+    </section>
+    <section id="c6">
+    <h2>13. MACD 指标</h2>
+    <p>MACD（指数平滑异同移动平均线）是趋势型指标，用于判断趋势强弱、转折点与背离，是最常用的指标之一。</p>
+
+    <h3>三个组成部分</h3>
+    <ul>
+      <li><b>DIF（快线）</b>：EMA12 − EMA26，反映短期与中期成本差。</li>
+      <li><b>DEA（慢线）</b>：DIF 的 9 日平滑均线，信号线。</li>
+      <li><b>MACD 柱（红绿柱）</b>：(DIF − DEA) × 2，柱体在零轴上下摆动，柱缩短 = 动能减弱。</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 380 240" role="img" aria-label="MACD示意图">
+        <!-- 零轴 -->
+        <line x1="40" y1="120" x2="360" y2="120" stroke="#b8c0cc" stroke-width="1"/>
+        <text x="44" y="116" font-size="11" fill="#5a6470">零轴</text>
+        <!-- 红绿柱（DIF-DEA） -->
+        <rect x="55"  y="120" width="14" height="22" fill="#c8102e"/>
+        <rect x="80"  y="120" width="14" height="34" fill="#c8102e"/>
+        <rect x="105" y="120" width="14" height="18" fill="#c8102e"/>
+        <rect x="130" y="102" width="14" height="18" fill="#0a8f5b"/>
+        <rect x="155" y="92"  width="14" height="28" fill="#0a8f5b"/>
+        <rect x="180" y="84"  width="14" height="36" fill="#0a8f5b"/>
+        <rect x="205" y="96"  width="14" height="24" fill="#0a8f5b"/>
+        <rect x="230" y="112" width="14" height="8"  fill="#c8102e"/>
+        <rect x="255" y="120" width="14" height="20" fill="#c8102e"/>
+        <rect x="280" y="120" width="14" height="40" fill="#c8102e"/>
+        <rect x="305" y="120" width="14" height="55" fill="#c8102e"/>
+        <rect x="330" y="120" width="14" height="30" fill="#c8102e"/>
+        <!-- DIF / DEA 线 -->
+        <polyline points="62,128 87,116 112,124 137,108 162,98 187,90 212,100 237,116 262,124 287,108 312,92 337,110"
+          fill="none" stroke="#1f2329" stroke-width="2"/>
+        <polyline points="62,130 87,122 112,124 137,118 162,110 187,104 212,106 237,114 262,120 287,114 312,104 337,104"
+          fill="none" stroke="#1664c0" stroke-width="2" stroke-dasharray="5 3"/>
+        <text x="350" y="90" font-size="11" fill="#1f2329" text-anchor="end">DIF</text>
+        <text x="350" y="100" font-size="11" fill="#1664c0" text-anchor="end">DEA</text>
+        <!-- 金叉死叉标注 -->
+        <circle cx="262" cy="124" r="4" fill="#c8102e"/>
+        <text x="262" y="142" font-size="10" fill="#c8102e" text-anchor="middle">金叉</text>
+        <circle cx="187" cy="97" r="4" fill="#0a8f5b"/>
+        <text x="187" y="78" font-size="10" fill="#0a8f5b" text-anchor="middle">死叉</text>
+      </svg>
+      <div class="legend">
+        <span><i class="box" style="background:#c8102e"></i>红柱（DIF&gt;DEA·多头动能）</span>
+        <span><i class="box" style="background:#0a8f5b"></i>绿柱（DIF&lt;DEA·空头动能）</span>
+        <span><i style="background:#1f2329"></i>DIF</span>
+        <span><i style="background:#1664c0"></i>DEA</span>
+      </div>
+      <div class="cap">图 13-1　MACD：零轴之上为多头区；DIF 上穿 DEA 为金叉（买参考），下穿为死叉（卖参考）</div>
+    </div>
+
+    <h3>主要用法</h3>
+    <table>
+      <tr><th>信号</th><th>判断</th></tr>
+      <tr><td>金叉</td><td>DIF 上穿 DEA（尤其零轴下方金叉、零轴上方金叉更强）→ 买入参考</td></tr>
+      <tr><td>死叉</td><td>DIF 下穿 DEA → 卖出参考</td></tr>
+      <tr><td>零轴</td><td>零轴上方 = 多头市场；下方 = 空头市场。零轴上方金叉更可靠</td></tr>
+      <tr><td>红绿柱</td><td>红柱放大 = 上涨动能强；绿柱放大 = 下跌动能强；柱缩短 = 动能衰减，可能变盘</td></tr>
+      <tr><td>顶背离</td><td>股价创新高，MACD 双线 / 红柱却走低 → 上涨乏力，警惕见顶</td></tr>
+      <tr><td>底背离</td><td>股价创新低，MACD 双线 / 绿柱却抬高 → 下跌衰竭，警惕见底</td></tr>
+    </table>
+
+    <div class="tip">
+      <b>参数：</b>默认 (12, 26, 9)。MACD 偏中长线，对短线噪音不敏感，适合判断"趋势有没有变"，不适合抓精确拐点。背离是它最有价值的信号。
+    </div>
+  
+    
+    </section>
+    <section id="c7">
+    <h2>14. 摆动指标</h2>
+    <p>KDJ（随机指标）是超买超卖型摆动指标，对短线拐点敏感，常与 MACD 搭配（MACD 看趋势、KDJ 找买卖点）。</p>
+
+    <h3>三条线</h3>
+    <ul>
+      <li><b>K 线</b>：快速确认线，敏感。</li>
+      <li><b>D 线</b>：慢速主干线，较平滑。</li>
+      <li><b>J 线</b>：方向敏感线，= 3K − 2D，可上穿 100 / 下破 0，最敏感也最容易骗线。</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 380 240" role="img" aria-label="KDJ示意图">
+        <!-- 背景带 -->
+        <rect x="40" y="40" width="320" height="32" fill="#fff3f3"/>
+        <rect x="40" y="168" width="320" height="32" fill="#e6f6ee"/>
+        <!-- 横线 -->
+        <line x1="40" y1="40" x2="360" y2="40" stroke="#ffb3b3"/>
+        <line x1="40" y1="72" x2="360" y2="72" stroke="#ffb3b3" stroke-dasharray="4 3"/>
+        <line x1="40" y1="120" x2="360" y2="120" stroke="#b8c0cc" stroke-dasharray="4 3"/>
+        <line x1="40" y1="168" x2="360" y2="168" stroke="#8fd4ad" stroke-dasharray="4 3"/>
+        <line x1="40" y1="200" x2="360" y2="200" stroke="#8fd4ad"/>
+        <line x1="40" y1="40" x2="40" y2="200" stroke="#e6e9ee"/>
+        <!-- K/D/J -->
+        <polyline points="50,150 90,140 130,90 170,70 210,110 250,160 290,150 330,100"
+          fill="none" stroke="#c8102e" stroke-width="2"/>
+        <polyline points="50,155 90,150 130,110 170,95 210,120 250,150 290,148 330,120"
+          fill="none" stroke="#1664c0" stroke-width="2"/>
+        <polyline points="50,140 90,125 130,50 170,20 210,90 250,180 290,155 330,60"
+          fill="none" stroke="#b8860b" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <!-- 文本 -->
+        <text x="352" y="36" font-size="11" fill="#c8102e" text-anchor="end">80 超买</text>
+        <text x="352" y="216" font-size="11" fill="#0a8f5b" text-anchor="end">20 超卖</text>
+        <text x="352" y="124" font-size="10" fill="#5a6470" text-anchor="end">50 中轴</text>
+        <text x="350" y="150" font-size="11" fill="#c8102e" text-anchor="end">K</text>
+        <text x="350" y="156" font-size="11" fill="#1664c0" text-anchor="end">D</text>
+        <text x="350" y="90" font-size="11" fill="#b8860b" text-anchor="end">J</text>
+      </svg>
+      <div class="legend">
+        <span><i style="background:#c8102e"></i>K</span>
+        <span><i style="background:#1664c0"></i>D</span>
+        <span><i style="background:#b8860b"></i>J</span>
+        <span><i class="box" style="background:#fff3f3;border:1px solid #ffb3b3"></i>超买区(&gt;80)</span>
+        <span><i class="box" style="background:#e6f6ee;border:1px solid #8fd4ad"></i>超卖区(&lt;20)</span>
+      </div>
+      <div class="cap">图 14-1　KDJ：进入 80 以上为超买、20 以下为超卖；K 上穿 D 为金叉、下穿为死叉</div>
+    </div>
+
+    <h3>核心读数（0–100）</h3>
+    <table>
+      <tr><th>区间</th><th>含义</th></tr>
+      <tr><td>K、D &gt; 80</td><td>超买区，高位钝化时股价仍可能继续涨，不宜单凭"超买"就卖</td></tr>
+      <tr><td>K、D &lt; 20</td><td>超卖区，低位钝化时股价仍可能继续跌</td></tr>
+      <tr><td>金叉（K 上穿 D）</td><td>低位金叉（20 附近）更可靠；高位金叉需谨慎</td></tr>
+      <tr><td>死叉（K 下穿 D）</td><td>高位死叉（80 附近）风险大</td></tr>
+      <tr><td>J 值</td><td>&gt;100 超买极端；&lt;0 超卖极端，常作预警</td></tr>
+    </table>
+
+    <div class="warn">
+      <b>钝化陷阱：</b>强势单边行情中 KDJ 会长期停留在超买 / 超卖区（"钝化"），这时若机械反手，易被甩下车或抄在半山腰。KDJ 在<b>震荡市</b>最好用，在<b>单边市</b>需配合趋势指标。
+    </div>
+  
+
+    <h3>RSI 指标</h3>
+    <p>RSI（相对强弱指标）衡量一段时间内<b>上涨力度与下跌力度的对比</b>，范围 0–100，也是超买超卖型指标。</p>
+
+    <h3>常用参数与读数</h3>
+    <table>
+      <tr><th>参数</th><th>特点</th></tr>
+      <tr><td>RSI6</td><td>极灵敏，适合超短线</td></tr>
+      <tr><td>RSI12</td><td>常用中期</td></tr>
+      <tr><td>RSI24</td><td>较平滑，适合中长期</td></tr>
+    </table>
+
+    <h3>读数含义</h3>
+    <ul>
+      <li><b>70 以上：</b>超买，短期过热，注意回落风险（非立刻卖，结合趋势）。</li>
+      <li><b>30 以下：</b>超卖，短期过冷，关注反弹机会。</li>
+      <li><b>50 中轴：</b>多空分水岭；RSI 在 50 上方偏强，下方偏弱。</li>
+      <li><b>背离：</b>股价新高而 RSI 不新高（顶背离）；股价新低而 RSI 不新低（底背离）——转势预警。</li>
+    </ul>
+
+    <div class="tip">
+      RSI 与 KDJ 都是摆动指标，二者择一即可，不必同时堆叠。RSI 比 KDJ 更平滑、更少假信号，适合判断"涨过头 / 跌过头"。
+    </div>
+  
+    
+    </section>
+    <section id="c9">
+    <h2>15. BOLL 布林带</h2>
+    <p>BOLL（布林带）由中轨（20 日均线）+ 上下轨（中轨 ±2 倍标准差）构成，像一个"通道"，反映股价的波动区间。</p>
+
+    <h3>三条轨道</h3>
+    <ul>
+      <li><b>中轨（MID）</b>：MA20，趋势方向。</li>
+      <li><b>上轨（UPPER）</b>：中轨 + 2σ，短期压力。</li>
+      <li><b>下轨（LOWER）</b>：中轨 − 2σ，短期支撑。</li>
+    </ul>
+
+    <div class="fig">
+      <svg viewBox="0 0 380 230" role="img" aria-label="BOLL布林带示意图">
+        <line x1="40" y1="20" x2="40" y2="200" stroke="#e6e9ee"/>
+        <line x1="40" y1="200" x2="360" y2="200" stroke="#b8c0cc"/>
+        <!-- 上下轨填充 -->
+        <path d="M40,60 L80,55 L120,50 L160,70 L200,90 L240,80 L280,60 L320,70 L360,90 L360,150 L320,140 L280,160 L240,150 L200,170 L160,150 L120,160 L80,165 L40,170 Z"
+          fill="#eef6ff"/>
+        <!-- 上轨 -->
+        <polyline points="40,60 80,55 120,50 160,70 200,90 240,80 280,60 320,70 360,90"
+          fill="none" stroke="#1664c0" stroke-width="2"/>
+        <!-- 中轨 -->
+        <polyline points="40,115 80,110 120,105 160,110 200,130 240,115 280,110 320,105 360,120"
+          fill="none" stroke="#b8860b" stroke-width="2"/>
+        <!-- 下轨 -->
+        <polyline points="40,170 80,165 120,160 160,150 200,170 240,150 280,160 320,140 360,150"
+          fill="none" stroke="#0a8f5b" stroke-width="2"/>
+        <!-- 价格 -->
+        <polyline points="40,120 80,100 120,95 160,120 200,140 240,125 280,105 320,115 360,135"
+          fill="none" stroke="#1f2329" stroke-width="2"/>
+        <text x="350" y="50" font-size="11" fill="#1664c0" text-anchor="end">上轨</text>
+        <text x="350" y="100" font-size="11" fill="#b8860b" text-anchor="end">中轨</text>
+        <text x="350" y="165" font-size="11" fill="#0a8f5b" text-anchor="end">下轨</text>
+      </svg>
+      <div class="legend">
+        <span><i style="background:#1664c0"></i>上轨（压力）</span>
+        <span><i style="background:#b8860b"></i>中轨（MA20）</span>
+        <span><i style="background:#0a8f5b"></i>下轨（支撑）</span>
+        <span><i style="background:#1f2329"></i>价格</span>
+      </div>
+      <div class="cap">图 15-1　BOLL 通道：价格触及下轨易反弹、触及上轨易回落；通道开口=波动加大，收口=面临变盘</div>
+    </div>
+
+    <h3>用法</h3>
+    <table>
+      <tr><th>情形</th><th>含义</th></tr>
+      <tr><td>价格触下轨</td><td>可能获得支撑反弹（震荡市有效）</td></tr>
+      <tr><td>价格触上轨</td><td>可能遇压回落</td></tr>
+      <tr><td>开口放大</td><td>波动率加大，趋势可能启动（突破上轨 = 强势，跌破下轨 = 弱势）</td></tr>
+      <tr><td>收口收窄</td><td>波动率变小，面临方向选择（"横久必突"）</td></tr>
+      <tr><td>中轨方向</td><td>中轨向上 = 偏多；向下 = 偏空</td></tr>
+    </table>
+
+    <div class="key">
+      <b>布林带口诀：</b>"下轨买、上轨卖"只在<b>震荡市</b>好用；趋势行情中价格会贴着上轨（强势）或下轨（弱势）运行，此时"触轨就反"会亏钱。看轨的<b>方向</b>比看位置更重要。
+    </div>
+  
+    
+    </section>
+    <section id="c10">
+    <h2>16. 其他常用指标</h2>
+    <h3>BIAS 乖离率</h3>
+    <p>衡量股价偏离均线的程度：<code>BIAS = (收盘价 − MA) / MA × 100%</code>。正乖离过大（股价远高于均线）有回落需求；负乖离过大有反弹需求。常用 6 日 / 12 日乖离。</p>
+
+    <h3>WR 威廉指标</h3>
+    <p>范围 0–100，<b>80 以上为超卖、20 以下为超买</b>（与 KDJ/RSI 读数方向相反，注意区分）。反映"收盘价在最近 N 日高低区间的位置"。</p>
+
+    <h3>OBV 能量潮</h3>
+    <p>以成交量累加：上涨日加量、下跌日减量。OBV 上升说明资金持续流入，与价格同向为健康，背离警示转势。</p>
+
+    <h3>筹码分布（CYQ）</h3>
+    <p>显示不同价位上的持仓成本堆积，像"山峰"。<b>密集峰</b>是支撑 / 压力区；股价上方无套牢峰（"真空区"）利于上行；下方获利盘过多需防兑现。</p>
+
+    <h3>振幅 / 换手率</h3>
+    <ul>
+      <li><b>换手率</b> = 成交股数 / 流通股本。高换手（如 &gt;10%）说明交投活跃、分歧大；低位高换手可能是吸筹，高位高换手警惕出货。</li>
+      <li><b>振幅</b> = (最高 − 最低) / 昨收，反映当日波动激烈程度。</li>
+    </ul>
+
+    <div class="tip">
+      <b>指标组合建议：</b>趋势方向用 <b>均线 + MACD</b>；买卖时机用 <b>KDJ / RSI + 量能</b>；波动区间用 <b>BOLL</b>；资金态度用 <b>成交量 + OBV + 换手</b>。指标互相印证，比单看一个更稳。
+    </div>
+  
+    
+    </section>
+    <section id="c11">
+    <h2>17. 量价关系</h2>
+    <p>价格是结果，成交量是背后的"资金投票"。理解量价，是看懂一切技术图形的底层逻辑。</p>
+    <table>
+      <tr><th>组合</th><th>位置</th><th>解读</th></tr>
+      <tr><td>价升量增</td><td>上升初期 / 途中</td><td>健康上涨，可持股</td></tr>
+      <tr><td>价升量缩</td><td>上升途中</td><td>跟风不足，警惕回调</td></tr>
+      <tr><td>价跌量增</td><td>高位</td><td>出货 / 恐慌，风险大</td></tr>
+      <tr><td>价跌量缩</td><td>下跌末端</td><td>抛压衰竭，可能见底</td></tr>
+      <tr><td>低位放量</td><td>长期下跌后</td><td>可能有资金建仓，关注</td></tr>
+      <tr><td>高位放量滞涨</td><td>大涨后</td><td>经典见顶信号，务必警惕</td></tr>
+    </table>
+    <div class="warn"><b>铁律：</b>任何技术形态，若没有量能配合，可信度都打折。"放量突破"比"缩量突破"可靠得多。</div>
+  
+    
+    </section>
+    <section id="c58">
+    <h2>18. 量价图形组合精讲</h2>
+<p>单一的"价涨量增"太笼统。实战中，价格与成交量的<strong>组合形态</strong>能更细腻地透露多空力量变化。以下是最常见的几种量价组合。</p>
+
+<table>
+<tr><th>量价组合</th><th>图形特征</th><th>含义</th></tr>
+<tr><td>缩量上涨</td><td>价涨、量比前期明显缩小</td><td>筹码锁定好（牛市主升）或买盘枯竭（末端），需结合位置判断</td></tr>
+<tr><td>放量滞涨</td><td>量大、价不涨（长上影 / 十字星）</td><td>高位派发信号，警惕见顶</td></tr>
+<tr><td>价跌量增</td><td>下跌伴随放量</td><td>恐慌抛售或主力出逃，跌势未尽</td></tr>
+<tr><td>价跌量缩</td><td>阴跌、成交量萎缩</td><td>抛压减轻，可能接近阶段底部</td></tr>
+<tr><td>地量地价</td><td>成交量创阶段新低 + 价格止跌</td><td>底部信号之一，常先于反转</td></tr>
+<tr><td>天量天价</td><td>巨量 + 价格见顶</td><td>阶段性顶部特征，量能难以为继</td></tr>
+</table>
+
+<div class="fig">
+<svg viewBox="0 0 380 200" role="img" aria-label="量价组合示意">
+<line x1="40" y1="20" x2="40" y2="180" stroke="#e6e9ee"/>
+<line x1="40" y1="180" x2="360" y2="180" stroke="#b8c0cc"/>
+<polyline points="50,150 110,100 170,85 230,75 290,70" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<rect x="53" y="140" width="9" height="40" fill="#c8102e"/>
+<rect x="113" y="146" width="9" height="34" fill="#c8102e"/>
+<rect x="173" y="152" width="9" height="28" fill="#c8102e"/>
+<rect x="233" y="158" width="9" height="22" fill="#c8102e"/>
+<rect x="293" y="165" width="9" height="15" fill="#c8102e"/>
+<text x="175" y="40" font-size="11" fill="#5a6470" text-anchor="middle">缩量上涨：价升、量柱渐矮 → 锁仓上行</text>
+</svg>
+<div class="cap">图 18-1　缩量上涨示例：价格抬高但量能递减，需警惕末端无力</div>
+</div>
+
+<div class="tip"><b>量在价先：</b>成交量是"真金白银的投票"。价格可以骗线，但异常放量/缩量往往先一步反映资金意图。结合『量价背离与背驰』一章的顶/底背驰一起看，胜率更高。</div>
+
+<div class="warn">同一组合在不同位置含义相反（如缩量上涨在低位可能是启动、在高位可能是拉高出货）。<strong>永远先看股价所处的趋势位置，再读量价。</strong></div>
+    </section>
+    <section id="c13">
+    <h2>19. 财务报表与估值体系</h2>
+    <p>技术面看"价格走势"，基本面看"公司本身值不值"。读懂财报和估值，才能判断一只股票是便宜还是贵、是在赚钱还是烧钱。</p>
+
+    <h3>19.1 公司赚钱能力（利润表核心）</h3>
+    <table>
+      <tr><th>指标</th><th>含义 / 公式</th><th>怎么看</th></tr>
+      <tr><td>营业收入</td><td>卖产品/服务收到的钱（营收）</td><td>看规模与增速，持续增长才好</td></tr>
+      <tr><td>营业利润</td><td>营收 − 成本 − 费用 − 税费</td><td>主营真实盈利能力</td></tr>
+      <tr><td>净利润</td><td>最终赚到的利润（归母净利更常用）</td><td>股东真正分到口径下的盈利</td></tr>
+      <tr><td>毛利率</td><td>(营收 − 营业成本) / 营收</td><td>越高说明产品越"值钱/有壁垒"</td></tr>
+      <tr><td>净利率</td><td>净利润 / 营收</td><td>扣除所有费用后的真实赚钱效率</td></tr>
+      <tr><td>经营性现金流</td><td>主营业务实打实收到的现金</td><td>利润"含金量"，比净利润更难造假</td></tr>
+    </table>
+
+    <div class="tip"><b>利润 ≠ 现金：</b>账面盈利但经营现金流长期为负，可能是"纸面富贵"（货卖了没收回钱）。看利润表一定要对照现金流量表。</div>
+
+    <h3>19.2 关键财务指标（ROE 等）</h3>
+    <table>
+      <tr><th>指标</th><th>公式</th><th>意义</th></tr>
+      <tr><td>ROE 净资产收益率</td><td>净利润 / 净资产</td><td>股东每投 1 元能赚多少，巴菲特最看重；长期 &gt;15% 较优</td></tr>
+      <tr><td>ROA 总资产收益率</td><td>净利润 / 总资产</td><td>衡量全部资产赚钱效率，重资产行业参考</td></tr>
+      <tr><td>资产负债率</td><td>总负债 / 总资产</td><td>越低越稳健；过高有偿债风险（金融业天然高）</td></tr>
+      <tr><td>营收/净利增速</td><td>本期 vs 去年同期</td><td>成长性，高估值需要高增长支撑</td></tr>
+      <tr><td>自由现金流</td><td>经营现金流 − 资本开支</td><td>公司真正能自由支配的"闲钱"</td></tr>
+    </table>
+
+    <h3>19.3 估值指标大全（市盈率家族等）</h3>
+    <table>
+      <tr><th>指标</th><th>公式</th><th>怎么用</th></tr>
+      <tr><td>PE 市盈率（静态）</td><td>股价 / 上年每股收益</td><td>用过去业绩估，反应慢</td></tr>
+      <tr><td>PE 市盈率（TTM）</td><td>股价 / 最近 12 月每股收益</td><td>滚动口径，最常用</td></tr>
+      <tr><td>PE 市盈率（动态）</td><td>股价 / 预测本年每股收益</td><td>含预期，波动大</td></tr>
+      <tr><td>PEG</td><td>PE / 净利润增速(%)</td><td>PEG &lt; 1 常被视作"增长匹配、相对便宜"</td></tr>
+      <tr><td>PB 市净率</td><td>股价 / 每股净资产</td><td>适合银行、地产等重资产/破净股</td></tr>
+      <tr><td>PS 市销率</td><td>总市值 / 营业收入</td><td>适合暂未盈利的高成长公司</td></tr>
+      <tr><td>股息率</td><td>每股分红 / 股价</td><td>价值/防御股参考，越高越"收租"</td></tr>
+      <tr><td>EV/EBITDA</td><td>企业价值 / 息税折旧前利润</td><td>跨资本结构比较更公平</td></tr>
+    </table>
+
+    <div class="warn">
+      <b>PE 不是越低越好：</b>周期股（如钢铁、航运）利润高点 PE 反而低，是"周期顶部陷阱"；困境反转股 PE 高甚至为负，不代表不能买。估值必须<b>同行业横向比 + 历史纵向比</b>。
+    </div>
+
+    <h3>19.4 三大财务报表关系</h3>
+    <div class="fig">
+      <svg viewBox="0 0 380 210" role="img" aria-label="三大财务报表关系">
+        <rect x="20" y="30" width="100" height="60" rx="8" fill="#eef6ff" stroke="#1664c0"/>
+        <text x="70" y="55" font-size="13" fill="#1664c0" text-anchor="middle" font-weight="bold">利润表</text>
+        <text x="70" y="75" font-size="11" fill="#5a6470" text-anchor="middle">赚了多少</text>
+
+        <rect x="140" y="30" width="100" height="60" rx="8" fill="#fff8e6" stroke="#b8860b"/>
+        <text x="190" y="55" font-size="13" fill="#b8860b" text-anchor="middle" font-weight="bold">资产负债表</text>
+        <text x="190" y="75" font-size="11" fill="#5a6470" text-anchor="middle">家底/结构</text>
+
+        <rect x="260" y="30" width="100" height="60" rx="8" fill="#e6f6ee" stroke="#0a8f5b"/>
+        <text x="310" y="55" font-size="13" fill="#0a8f5b" text-anchor="middle" font-weight="bold">现金流量表</text>
+        <text x="310" y="75" font-size="11" fill="#5a6470" text-anchor="middle">钱进出</text>
+
+        <!-- 关系箭头 -->
+        <line x1="120" y1="60" x2="138" y2="60" stroke="#5a6470" stroke-width="1.5" marker-end="url(#ar)"/>
+        <line x1="240" y1="60" x2="258" y2="60" stroke="#5a6470" stroke-width="1.5" marker-end="url(#ar)"/>
+        <line x1="190" y1="90" x2="190" y2="150" stroke="#5a6470" stroke-width="1.5" marker-end="url(#ar)"/>
+
+        <rect x="120" y="150" width="140" height="46" rx="8" fill="#fde8ec" stroke="#c8102e"/>
+        <text x="190" y="170" font-size="12" fill="#c8102e" text-anchor="middle" font-weight="bold">综合判断公司质量</text>
+        <text x="190" y="188" font-size="11" fill="#5a6470" text-anchor="middle">赚钱吗？家底稳吗？钱真实吗？</text>
+
+        <defs>
+          <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#5a6470"/>
+          </marker>
+        </defs>
+      </svg>
+      <div class="cap">图 19-1　三大报表：利润表看盈利、资产负债表看家底、现金流量表验证"钱是否真实"</div>
+    </div>
+
+    <h4>三大报表一句话</h4>
+    <ul>
+      <li><b>利润表</b>：一段时期"赚了多少"（营收→利润），看盈利能力。</li>
+      <li><b>资产负债表</b>：某个时点"有什么"（资产 = 负债 + 所有者权益），看财务结构是否健康。</li>
+      <li><b>现金流量表</b>：一段时期"钱怎么进出的"（经营/投资/筹资），验证利润含金量。</li>
+    </ul>
+
+    <h3>19.5 财报披露时间</h3>
+    <table>
+      <tr><th>报告</th><th>披露截止</th><th>看点</th></tr>
+      <tr><td>一季报</td><td>当年 4 月 30 日</td><td>开局业绩，春节后淡季影响</td></tr>
+      <tr><td>中报（半年报）</td><td>8 月 31 日</td><td>半年经营全貌，含分红预案</td></tr>
+      <tr><td>三季报</td><td>10 月 31 日</td><td>前三季度累计，预判年报</td></tr>
+      <tr><td>年报</td><td>次年 4 月 30 日</td><td>最完整，含审计、分红方案</td></tr>
+    </table>
+
+    <div class="key">
+      <b>基本面速记：</b>好公司 ≈ 营收/净利持续增 + ROE 高且稳 + 经营现金流健康 + 负债可控；再结合 PE/PEG 看"现在贵不贵"。技术面决定<b>何时买卖</b>，基本面决定<b>买什么、能不能拿</b>。
+    </div>
+  
+
+    <h3>财报深挖：三大报表 + 杜邦分析</h3>
+    <h3>三大报表速记</h3>
+    <ul>
+      <li><b>利润表：</b>一段时间赚了多少（营收−成本−费用=净利润）。看"盈利能力"。</li>
+      <li><b>资产负债表：</b>某时点家底（资产 = 负债 + 所有者权益）。看"偿债与安全"。</li>
+      <li><b>现金流量表：</b>钱怎么进出的（经营/投资/筹资三大活动）。看"真金白银"。</li>
+    </ul>
+    <div class="key"><b>黄金法则：</b>利润可以粉饰，现金流很难造假。经营现金流长期为正且覆盖净利润，才是"赚到真钱"。</div>
+    <h3>杜邦分析：ROE 拆解</h3>
+    <div class="fig">
+      <svg viewBox="0 0 380 170" role="img" aria-label="杜邦分析">
+        <rect x="140" y="20" width="100" height="34" fill="#1664c0"/>
+        <text x="166" y="42" font-size="13" fill="#fff">ROE</text>
+        <line x1="190" y1="54" x2="70" y2="90" stroke="#5a6470" stroke-width="1.5"/>
+        <line x1="190" y1="54" x2="190" y2="90" stroke="#5a6470" stroke-width="1.5"/>
+        <line x1="190" y1="54" x2="310" y2="90" stroke="#5a6470" stroke-width="1.5"/>
+        <rect x="20" y="100" width="100" height="34" fill="#0a8f5b"/>
+        <text x="44" y="122" font-size="12" fill="#fff">净利率</text>
+        <rect x="140" y="100" width="100" height="34" fill="#0a8f5b"/>
+        <text x="158" y="122" font-size="12" fill="#fff">周转率</text>
+        <rect x="260" y="100" width="100" height="34" fill="#0a8f5b"/>
+        <text x="278" y="122" font-size="12" fill="#fff">杠杆率</text>
+      </svg>
+      <div class="cap">图 19-1　杜邦分析：ROE = 净利率 × 总资产周转率 × 权益乘数（杠杆）</div>
+    </div>
+    <p>高 ROE 来源不同含义不同：靠<b>净利率</b>（品牌溢价，最优质）、靠<b>周转率</b>（薄利多销）、靠<b>杠杆率</b>（高风险）。选股时优先"高净利率驱动"的 ROE。</p>
+  
+    
+    </section>
+    <section id="c42">
+    <h2>20. 公司事件与公告</h2>
+    <p>公司分红、送股后，每股价值下降，股价必须同步下调，否则老股东凭空多赚——这个"下调"就是<b>除权 / 除息</b>。除权除息日当天股价会"看起来暴跌"，其实是会计调整，你的总资产没变。</p>
+    <h4>关键日期</h4>
+    <ul>
+      <li><b>股权登记日</b>：这天收盘后仍持有股票，才有权参与本次分红送转。</li>
+      <li><b>除权除息日（XD / XR / DR）</b>：股价正式下调的日子，名称前出现对应字母（见第 1 章）。当天买入<b>不享</b>本次权益。</li>
+      <li><b>派息日 / 送转股上市日</b>：现金到账、送转股份可流通的日子。</li>
+    </ul>
+    <h4>参考价计算公式（重点）</h4>
+    <table>
+      <tr><th>情形</th><th>除权（息）参考价公式</th><th>说明</th></tr>
+      <tr><td>仅现金分红（除息）</td><td>前收盘价 − 每股现金红利</td><td>最单纯的"除息"，股价减去分红额</td></tr>
+      <tr><td>仅送股 / 转增（除权）</td><td>前收盘价 ÷ (1 + 送转股比例)</td><td>10 送 3 → 比例 0.3，股价约降为 1 / 1.3</td></tr>
+      <tr><td>仅配股</td><td>(前收盘价 + 配股价 × 配股比例) ÷ (1 + 配股比例)</td><td>配股要<b>花钱认购</b>，不操作会被除权"白亏"</td></tr>
+      <tr><td>混合（分红 + 送转 + 配股）</td><td>(前收盘价 − 红利 + 配股价×配股比例) ÷ (1 + 送转比例 + 配股比例)</td><td>最通用公式，交易所据此算"参考价"</td></tr>
+    </table>
+    <h4>复权</h4>
+    <p>除权会在 K 线上留下"向下的缺口"，让长期走势看着断裂。软件用<b>复权</b>把它补齐：</p>
+    <ul>
+      <li><b>前复权</b>：以<b>当前</b>价为基准，把历史价格向下调整，使 K 线连续——<b>新手看这个最直观</b>。</li>
+      <li><b>后复权</b>：以<b>历史</b>某日为基准，把之后价格向上累加，反映"若一直持有、分红再投"的真实收益。</li>
+      <li><b>不复权</b>：显示真实成交价，会有缺口，适合看除权日当天的真实盘面。</li>
+    </ul>
+    <div class="tip">
+      <b>配股是"权利"也是"陷阱"：</b>配股要你再掏钱买，不买就会因除权而亏损（市值缩水）。公布配股后，要么参与配股，要么在股权登记日前卖出，别"忘了管"。
+    </div>
+  
+
+    <h3>股票常见公告与事件日历</h3>
+    <h3>股票常见公告（场景公告）</h3>
+    <p>公告是上市公司向市场披露的正式信息，是基本面研究的原始材料。按内容大致分：</p>
+    <table>
+      <tr><th>公告类型</th><th>关注要点</th></tr>
+      <tr><td>定期报告（年报 / 中报 / 季报）</td><td>业绩、资产负债、现金流（详见第 19 章）；看"同比 / 环比"与"是否符合预期"</td></tr>
+      <tr><td>业绩预告 / 快报</td><td>在正式财报前披露盈亏方向，常引发股价异动</td></tr>
+      <tr><td>权益分派实施公告</td><td>明确<b>股权登记日、除权除息日、分红金额</b>，是除权操作依据</td></tr>
+      <tr><td>重组 / 定增 / 并购</td><td>可能重大利好或利空；注意"利好兑现即下跌"的反身性</td></tr>
+      <tr><td>限售股解禁</td><td>解禁 = 潜在抛压，解禁比例大的票短期承压</td></tr>
+      <tr><td>减持 / 增持</td><td>重要股东、高管增减持信号意义强（增持≠一定涨，需结合价格位置）</td></tr>
+      <tr><td>停牌 / 复牌</td><td>重大事项停牌，复牌常补涨补跌，注意流动性风险</td></tr>
+      <tr><td>风险提示（ST / 退市 / 异常波动）</td><td>交易所强制披露，提示风险</td></tr>
+    </table>
+    <div class="tip">
+      <b>读公告三原则：</b>① 看<b>时间</b>（盘后发 vs 盘中发影响不同）；② 看<b>实质</b>而非标题（"拟""不超过"≠落地）；③ 警惕<b>"利好出尽是利空"</b>——预期已被 price in 的利好，落地反而跌。
+    </div>
+
+    <h3>交易事件日历（投资日历）</h3>
+    <p>市场节奏很大程度由"日历事件"驱动。把重要节点记在心里，能提前规避波动、把握窗口：</p>
+    <table>
+      <tr><th>频率</th><th>关键节点</th><th>对市场的影响</th></tr>
+      <tr><td>每月</td><td>CPI / PPI / PMI 等经济数据；LPR 报价（每月 20 日左右）；MLF 续作</td><td>数据好坏影响降息预期与风格（成长 vs 价值）</td></tr>
+      <tr><td>季度</td><td>财报披露密集期（4 月 / 8 月 / 10 月）；季末基金排名与调仓</td><td>业绩证伪期、机构调仓带来板块波动</td></tr>
+      <tr><td>全年 8 次</td><td>美联储 FOMC 议息会议</td><td>决定美元利率，影响全球风险资产与北向资金（见第 35 章）</td></tr>
+      <tr><td>每年</td><td>两会（3 月）、中央经济工作会议（12 月）、年报截止（次年 4 月底）</td><td>定调政策方向，催生主题行情</td></tr>
+      <tr><td>指数调仓日</td><td>MSCI / 富时罗素 / 沪深 300 等调仓</td><td>生效日尾盘常现被动资金"脉冲"式成交</td></tr>
+    </table>
+  
+    
+    </section>
+    <section id="c59">
+    <h2>21. 分红派息与股息率</h2>
+<p>买股票赚两笔钱：一笔是<strong>价差</strong>（低买高卖），一笔是<strong>分红</strong>（公司把利润返给股东）。理解分红，是理解"价值投资"和"红利策略"的起点。</p>
+
+<h3>两种分红方式</h3>
+<table>
+<tr><th>方式</th><th>给到你什么</th><th>股价会怎样</th></tr>
+<tr><td>现金分红</td><td>直接发现金到账户</td><td>除息后股价下调（总权益不变）</td></tr>
+<tr><td>送股 / 转增</td><td>多给股票（股本变大）</td><td>除权后股价按比下调</td></tr>
+</table>
+<p>关于"股权登记日、除权除息日、派息日"以及"为什么除权后股价会掉"，详见『公司事件与公告』一章，这里从<strong>投资者回报</strong>角度继续。</p>
+
+<h3>股息率：衡量"分红厚不厚"</h3>
+<p><code>股息率 = 每股年度分红 ÷ 当前股价 × 100%</code>。例如股价 10 元、每股年分红 0.5 元，股息率就是 5%。<strong>股价越低、分红越高，股息率越高。</strong></p>
+
+<h3>红利策略为什么有效</h3>
+<ul>
+<li>持续高股息的公司，往往<strong>现金流好、盈利稳定</strong>，是"看得见的回报"。</li>
+<li>熊市里，分红能部分对冲股价下跌，提供"安全垫"。</li>
+<li>缺点：高股息也可能是"价值陷阱"（公司走下坡路、被迫高分红）。</li>
+</ul>
+
+<div class="fig">
+<svg viewBox="0 0 380 170" role="img" aria-label="分红时间轴">
+<line x1="40" y1="90" x2="350" y2="90" stroke="#b8c0cc"/>
+<circle cx="80" cy="90" r="6" fill="#1664c0"/><text x="80" y="115" font-size="10" fill="#5a6470" text-anchor="middle">分红预案</text>
+<circle cx="160" cy="90" r="6" fill="#1664c0"/><text x="160" y="115" font-size="10" fill="#5a6470" text-anchor="middle">股权登记</text>
+<circle cx="240" cy="90" r="6" fill="#c8102e"/><text x="240" y="70" font-size="10" fill="#c8102e" text-anchor="middle">除权除息</text>
+<circle cx="320" cy="90" r="6" fill="#0a8f5b"/><text x="320" y="115" font-size="10" fill="#5a6470" text-anchor="middle">派息到账</text>
+</svg>
+<div class="cap">图 21-1　分红流程时间轴：在股权登记日持有才能拿到分红</div>
+</div>
+
+<h3>回购 vs 分红</h3>
+<p>回购是公司在二级市场<strong>买回自己的股票</strong>并注销，能提升每股价值、托底股价；分红是直接发现金。两者都是回馈股东，但回购对股价的支撑更"主动"。</p>
+
+<div class="key"><b>看分红别只看"高"：</b>关注<strong>分红的连续性、分红率（分红占净利润比例）、和盈利质量</strong>。一次性高分红、或靠借钱分红的公司要警惕。</div>
+    </section>
+    <section id="c16">
+    <h2>22. 常见技术形态</h2>
+    <p>价格运行一段时间会形成可识别的"形状"，分<b>反转形态</b>（趋势转向）与<b>持续形态</b>（趋势中继）。</p>
+
+    <h3>22.1 反转形态</h3>
+    <div class="fig">
+      <svg viewBox="0 0 380 220" role="img" aria-label="头肩顶">
+        <line x1="40" y1="20" x2="40" y2="200" stroke="#e6e9ee"/>
+        <line x1="40" y1="200" x2="360" y2="200" stroke="#b8c0cc"/>
+        <polyline points="40,170 90,90 130,140 190,60 250,140 290,100 340,170" fill="none" stroke="#1f2329" stroke-width="2.5"/>
+        <line x1="130" y1="140" x2="250" y2="140" stroke="#c8102e" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <line x1="250" y1="140" x2="340" y2="170" stroke="#c8102e" stroke-width="1.2" stroke-dasharray="6 3"/>
+        <text x="90" y="84" font-size="11" fill="#5a6470" text-anchor="middle">左肩</text>
+        <text x="190" y="54" font-size="11" fill="#5a6470" text-anchor="middle">头</text>
+        <text x="290" y="94" font-size="11" fill="#5a6470" text-anchor="middle">右肩</text>
+        <text x="230" y="156" font-size="11" fill="#c8102e" text-anchor="middle">颈线</text>
+      </svg>
+      <div class="cap">图 22-1　头肩顶：三个高点（头最高），跌破颈线确认趋势反转向下</div>
+    </div>
+    <div class="fig">
+      <svg viewBox="0 0 380 220" role="img" aria-label="头肩底">
+        <line x1="40" y1="20" x2="40" y2="200" stroke="#e6e9ee"/>
+        <line x1="40" y1="200" x2="360" y2="200" stroke="#b8c0cc"/>
+        <polyline points="40,70 90,150 130,100 190,180 250,100 290,140 340,70" fill="none" stroke="#1f2329" stroke-width="2.5"/>
+        <line x1="130" y1="100" x2="250" y2="100" stroke="#c8102e" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <line x1="250" y1="100" x2="340" y2="70" stroke="#c8102e" stroke-width="1.2" stroke-dasharray="6 3"/>
+        <text x="90" y="168" font-size="11" fill="#5a6470" text-anchor="middle">左肩</text>
+        <text x="190" y="176" font-size="11" fill="#5a6470" text-anchor="middle">头</text>
+        <text x="290" y="156" font-size="11" fill="#5a6470" text-anchor="middle">右肩</text>
+        <text x="230" y="94" font-size="11" fill="#c8102e" text-anchor="middle">颈线</text>
+      </svg>
+      <div class="cap">图 22-2　头肩底：三个低点（头最低），突破颈线确认趋势反转向上</div>
+    </div>
+    <div class="fig">
+      <svg viewBox="0 0 380 200" role="img" aria-label="双重顶与双重底">
+        <line x1="40" y1="20" x2="40" y2="180" stroke="#e6e9ee"/>
+        <line x1="40" y1="180" x2="360" y2="180" stroke="#b8c0cc"/>
+        <polyline points="40,150 110,60 160,130 210,60 280,150" fill="none" stroke="#0a8f5b" stroke-width="2.5"/>
+        <line x1="40" y1="130" x2="280" y2="130" stroke="#0a8f5b" stroke-width="1.2" stroke-dasharray="6 3"/>
+        <text x="160" y="120" font-size="11" fill="#0a8f5b" text-anchor="middle">双重顶(M)·颈线</text>
+        <polyline points="40,60 110,150 160,80 210,150 280,60" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+        <line x1="40" y1="80" x2="280" y2="80" stroke="#c8102e" stroke-width="1.2" stroke-dasharray="6 3"/>
+        <text x="160" y="170" font-size="11" fill="#c8102e" text-anchor="middle">双重底(W)·颈线</text>
+      </svg>
+      <div class="cap">图 22-3　双重顶（M，看跌）与双重底（W，看涨）：两个相近高/低点 + 颈线突破确认</div>
+    </div>
+
+    <h3>22.2 持续形态</h3>
+    <div class="fig">
+      <svg viewBox="0 0 380 200" role="img" aria-label="三角形与旗形">
+        <line x1="40" y1="20" x2="40" y2="180" stroke="#e6e9ee"/>
+        <line x1="40" y1="180" x2="360" y2="180" stroke="#b8c0cc"/>
+        <!-- 上升三角形：水平顶 + 上移底（向上突破） -->
+        <polyline points="40,60 180,60 205,72" fill="none" stroke="#c8102e" stroke-width="2"/>
+        <polyline points="40,150 110,120 180,92 205,84" fill="none" stroke="#c8102e" stroke-width="2"/>
+        <text x="110" y="40" font-size="11" fill="#c8102e" text-anchor="middle">上升三角形（看多）</text>
+        <!-- 下降三角形：水平底 + 下移顶（向下突破） -->
+        <polyline points="40,70 180,70 205,60" fill="none" stroke="#0a8f5b" stroke-width="2"/>
+        <polyline points="40,90 110,120 180,150 205,158" fill="none" stroke="#0a8f5b" stroke-width="2"/>
+        <text x="110" y="175" font-size="11" fill="#0a8f5b" text-anchor="middle">下降三角形（看空）</text>
+        <!-- 上升旗形：旗杆急涨 + 旗面向右下倾斜 + 突破上行 -->
+        <line x1="230" y1="165" x2="230" y2="55" stroke="#c8102e" stroke-width="3"/>
+        <polyline points="240,95 300,108 350,118" fill="none" stroke="#c8102e" stroke-width="2"/>
+        <polyline points="240,118 300,131 350,141" fill="none" stroke="#c8102e" stroke-width="2"/>
+        <line x1="350" y1="118" x2="372" y2="95" stroke="#c8102e" stroke-width="2.5"/>
+        <polygon points="372,95 364,98 367,106" fill="#c8102e"/>
+        <text x="295" y="152" font-size="11" fill="#c8102e" text-anchor="middle">上升旗形</text>
+      </svg>
+      <div class="cap">图 22-4　持续形态：上升三角（看涨中继）、下降三角（看跌中继）、旗形（急涨后整理再上）</div>
+    </div>
+    <div class="warn">形态不是"命令"：需<b>突破 + 放量 + 回踩确认</b>才有效；假突破在 A 股很常见，务必设止损。统计上，头肩形与双重顶/底成功率高于单纯三角形。</div>
+  
+    
+    </section>
+    <section id="c60">
+    <h2>23. 缺口理论</h2>
+<p>缺口（跳空）指相邻两根 K 线之间出现一段"没有成交"的价格空白——当日最低价高于前一日最高价（向上缺口），或最高价低于前一日最低价（向下缺口）。缺口往往代表情绪的集中爆发。</p>
+
+<h3>四类缺口</h3>
+<table>
+<tr><th>类型</th><th>出现位置</th><th>含义</th><th>操作提示</th></tr>
+<tr><td>普通缺口</td><td>横盘震荡区</td><td>随机、很快回补</td><td>意义不大，别过度解读</td></tr>
+<tr><td>突破缺口</td><td>横盘末 / 关键位突破</td><td>趋势启动信号</td><td>不回补=强势，可顺势</td></tr>
+<tr><td>中继缺口</td><td>趋势中途</td><td>行情加速，非终点</td><td>持有，趋势延续</td></tr>
+<tr><td>衰竭缺口</td><td>趋势末端</td><td>最后一冲，随后反转</td><td>警惕见顶/底，准备减仓</td></tr>
+</table>
+
+<div class="fig">
+<svg viewBox="0 0 380 220" role="img" aria-label="四类缺口示意">
+<line x1="40" y1="20" x2="40" y2="195" stroke="#e6e9ee"/>
+<line x1="40" y1="195" x2="360" y2="195" stroke="#b8c0cc"/>
+<text x="46" y="30" font-size="9" fill="#97a0ad">价格↑</text>
+<text x="322" y="210" font-size="9" fill="#97a0ad">时间→</text>
+<!-- 突破前横盘 -->
+<polyline points="50,168 80,162 110,165 140,158" fill="none" stroke="#5a6470" stroke-width="2.5"/>
+<!-- 突破缺口（红色虚线框=无成交的价格空白） -->
+<rect x="140" y="130" width="34" height="28" fill="none" stroke="#c8102e" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="157" y="124" font-size="10" fill="#c8102e" text-anchor="middle">突破缺口</text>
+<!-- 加速上涨 -->
+<polyline points="174,130 205,112 235,96" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<!-- 中继缺口 -->
+<rect x="235" y="74" width="32" height="22" fill="none" stroke="#c8102e" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="251" y="68" font-size="10" fill="#c8102e" text-anchor="middle">中继缺口</text>
+<!-- 末端冲刺 -->
+<polyline points="267,74 295,60 320,52" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<!-- 衰竭缺口 -->
+<rect x="320" y="36" width="30" height="16" fill="none" stroke="#c8102e" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="335" y="30" font-size="10" fill="#c8102e" text-anchor="middle">衰竭缺口</text>
+<!-- 反转下跌（绿） -->
+<polyline points="350,36 366,66 380,92" fill="none" stroke="#0a8f5b" stroke-width="2.5"/>
+<text x="350" y="110" font-size="9" fill="#0a8f5b" text-anchor="middle">反转</text>
+</svg>
+<div class="cap">图 23-1　同一段上升趋势中的三类缺口：突破→中继→衰竭。红色虚线框即"跳空"价格空白区（无成交），末端反转（绿）。普通缺口多在横盘且很快回补，未单独画出。</div>
+</div>
+
+<h3>岛形反转</h3>
+<p>一段趋势末端，先出现一个<strong>跳空缺口</strong>，不久后反向再来一个<strong>跳空缺口</strong>，中间的价格像一座"孤岛"被两个缺口隔开——这是强烈的趋势反转信号（常配合衰竭缺口）。</p>
+
+<div class="fig">
+<svg viewBox="0 0 380 200" role="img" aria-label="岛形反转">
+<line x1="40" y1="20" x2="40" y2="180" stroke="#e6e9ee"/>
+<line x1="40" y1="180" x2="360" y2="180" stroke="#b8c0cc"/>
+<polyline points="50,140 80,120 110,105 150,85" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<rect x="150" y="68" width="22" height="17" fill="none" stroke="#c8102e" stroke-width="1.3" stroke-dasharray="4 3"/>
+<polyline points="172,72 192,70 212,74 232,71" fill="none" stroke="#5a6470" stroke-width="2.5"/>
+<rect x="232" y="71" width="20" height="24" fill="none" stroke="#0a8f5b" stroke-width="1.3" stroke-dasharray="4 3"/>
+<polyline points="252,95 285,120 320,145 350,160" fill="none" stroke="#0a8f5b" stroke-width="2.5"/>
+<text x="200" y="60" font-size="10" fill="#5a6470" text-anchor="middle">孤岛</text>
+<text x="161" y="60" font-size="9" fill="#c8102e" text-anchor="middle">向上跳空</text>
+<text x="242" y="112" font-size="9" fill="#0a8f5b" text-anchor="middle">向下跳空</text>
+</svg>
+<div class="cap">图 23-2　岛形反转：上涨末端先"向上跳空"进入孤岛，随后反向"向下跳空"离开孤岛，中间高价区被两个缺口夹成孤岛，是强烈反转信号。</div>
+</div>
+
+<div class="warn">缺口会"回补"（价格 later 回到缺口区间内）。一般：普通缺口必补，突破缺口可不补，衰竭缺口补后确认反转。<strong>别把任何缺口都当"必补"去逆势操作。</strong></div>
+    </section>
+    <section id="c61">
+    <h2>24. 形态进阶：楔形·矩形·圆弧·岛形</h2>
+<p>『常见技术形态』一章讲了头肩、双顶底、三角、旗形。这里补全另外四类高频形态，完善你的"图形库"。</p>
+
+<h3>楔形（Wedge）</h3>
+<p>两条<strong>同向收敛</strong>的趋势线（都向上或都向下），价格波动区间逐渐收窄。与三角形不同，楔形的两条边方向一致。多数楔形是<strong>反转</strong>形态：上升楔形看跌、下降楔形看涨。</p>
+
+<h3>矩形（箱体 Box）</h3>
+<p>价格在两条水平线之间上下震荡，多空僵持。矩形多为<strong>持续形态</strong>：突破上沿看涨、跌破下沿看跌。箱体下沿是支撑、上沿是压力。</p>
+
+<h3>圆弧底 / 圆弧顶</h3>
+<p>价格缓慢地"磨"出一个圆弧，是<strong>慢转折</strong>信号。圆弧底（碗形）常见于长期筑底，一旦放量突破弧线右侧，往往开启主升；圆弧顶反之。</p>
+
+<h3>岛形反转</h3>
+<p>见『缺口理论』一章：由两个反向缺口夹出的"孤岛"，是强烈的反转信号，常出现在趋势末端。</p>
+
+<div class="fig">
+<svg viewBox="0 0 380 210" role="img" aria-label="楔形矩形圆弧">
+<line x1="40" y1="20" x2="40" y2="190" stroke="#e6e9ee"/>
+<line x1="40" y1="190" x2="360" y2="190" stroke="#b8c0cc"/>
+<!-- 上升楔形（看跌）：两线同向右上收敛 -->
+<polyline points="50,150 130,120 210,95 280,75" fill="none" stroke="#c8102e" stroke-width="2"/>
+<polyline points="60,168 130,142 210,120 280,103" fill="none" stroke="#c8102e" stroke-width="2"/>
+<text x="150" y="60" font-size="10" fill="#c8102e" text-anchor="middle">上升楔形（看跌）</text>
+<!-- 矩形箱体：上下轨两条水平线夹出区间 -->
+<rect x="50" y="150" width="240" height="22" fill="#f2f4f8"/>
+<line x1="50" y1="150" x2="290" y2="150" stroke="#5a6470" stroke-width="2"/>
+<line x1="50" y1="172" x2="290" y2="172" stroke="#5a6470" stroke-width="2"/>
+<text x="170" y="166" font-size="10" fill="#5a6470" text-anchor="middle">矩形（箱体）</text>
+<!-- 圆弧底（看涨） -->
+<path d="M50 185 Q150 130 250 185" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<text x="150" y="120" font-size="10" fill="#c8102e" text-anchor="middle">圆弧底（看涨）</text>
+</svg>
+<div class="cap">图 24-1　上升楔形 / 矩形箱体 / 圆弧底 三种形态对比</div>
+</div>
+
+<div class="tip">形态越大（构筑时间越长）、成交量配合越到位，突破后的空间往往越大。<strong>所有形态都要等"突破 + 确认"再动手</strong>，提前埋伏容易在时间成本上吃亏。</div>
+    </section>
+    <section id="c22">
+    <h2>25. 三大经典理论</h2>
+    <p>道氏理论由查尔斯·道创立，是技术分析的理论源头。它不预测点位，而是判断"趋势状态"，核心回答一个问题：现在到底是在上涨、下跌，还是震荡？</p>
+    <h3>三大公理（假设）</h3>
+    <ul>
+      <li><b>市场指数包容一切：</b>价格已反映所有已知和预期的信息（经济、政策、情绪、资金）。</li>
+      <li><b>价格沿趋势运行：</b>趋势一旦形成，会延续直到出现明确的反转信号。</li>
+      <li><b>历史会重演：</b>人性不变，相似的图形在不同时间反复出现（但不是简单复制）。</li>
+    </ul>
+    <h3>三种趋势</h3>
+    <table>
+      <tr><th>级别</th><th>时长</th><th>特征</th></tr>
+      <tr><td>主要趋势（牛/熊）</td><td>数月～数年</td><td>决定大方向，最值得顺势</td></tr>
+      <tr><td>次级趋势（中级调整）</td><td>数周～数月</td><td>对主要趋势的回撤（牛市中的回调、熊市中的反弹）</td></tr>
+      <tr><td>短暂趋势（日常波动）</td><td>数日～数周</td><td>噪音多，容易骗线，短线才关心</td></tr>
+    </table>
+    <h3>牛熊三阶段</h3>
+    <ul>
+      <li><b>牛市：</b>① 怀疑期（底部放量、无人相信）→ ② 确认期（突破关键阻力、右侧确立）→ ③ 狂热期（全民炒股、估值泡沫）。</li>
+      <li><b>熊市：</b>① 出货期（高位滞涨、放量下跌）→ ② 恐慌期（加速杀跌）→ ③ 绝望期（阴跌筑底、缩量见底）。</li>
+    </ul>
+    <div class="key"><b>成交量验证：</b>道氏强调"价涨量增、价跌量缩"才是健康趋势；上涨缩量或下跌放量都预示趋势可能衰竭。</div>
+    <div class="warn"><b>局限：</b>道氏偏"事后确认"，信号滞后，无法直接给出买卖点，更适合判断大环境而非精确抄底逃顶。</div>
+  
+
+    <h3>波浪理论入门</h3>
+    <p>艾略特波浪理论认为，市场遵循"五浪上升 + 三浪调整"的循环，且大浪套小浪（分形结构）。它是预测性工具，也最容易被主观数错。</p>
+    <h3>八浪结构</h3>
+    <div class="fig">
+      <svg viewBox="0 0 380 220" role="img" aria-label="波浪理论八浪">
+        <polyline points="20,180 80,90 130,160 190,40 240,120 300,30 330,110 350,70" fill="none" stroke="#1664c0" stroke-width="3"/>
+        <text x="80" y="84" font-size="11" fill="#c8102e">1</text>
+        <text x="130" y="176" font-size="11" fill="#0a8f5b">2</text>
+        <text x="190" y="34" font-size="11" fill="#c8102e">3</text>
+        <text x="240" y="134" font-size="11" fill="#0a8f5b">4</text>
+        <text x="300" y="24" font-size="11" fill="#c8102e">5</text>
+        <text x="330" y="124" font-size="11" fill="#0a8f5b">A</text>
+        <text x="350" y="64" font-size="11" fill="#0a8f5b">B</text>
+        <text x="366" y="84" font-size="11" fill="#0a8f5b">C</text>
+      </svg>
+      <div class="cap">图 25-1　八浪循环：1-2-3-4-5 上升（红），A-B-C 调整（绿）</div>
+    </div>
+    <h3>各浪要点</h3>
+    <ul>
+      <li><b>第 1 浪：</b>熊末第一波反弹，常被误认为反弹，量能温和。</li>
+      <li><b>第 2 浪：</b>回撤但不破第 1 浪起点，缩量。</li>
+      <li><b>第 3 浪：</b>最凌厉、最长的一浪，放量突破，往往最具赚钱效应。</li>
+      <li><b>第 5 浪：</b>末升浪，常出现量价背离、指标顶背离，警惕见顶。</li>
+      <li><b>A-B-C 调整：</b>三浪下跌，C 浪常最凶；完成后重新开始新的五浪。</li>
+    </ul>
+    <h3>斐波那契比率</h3>
+    <p>浪与浪之间的幅度常用黄金比例度量：2 浪回撤 1 浪的 0.382/0.5/0.618；3 浪约为 1 浪的 1.618 倍；4 浪回撤 3 浪的 0.382；5 浪约等于 1 浪高度或 0.618×(1+3) 浪高度。这套比例用于预判目标位与支撑位。</p>
+    <div class="warn"><b>难点：</b>同一走势可"数"出多种浪型，主观性强。建议只把它当"大概率框架"，配合趋势线与指标，不孤注一掷。</div>
+  
+
+    <h3>缠论基础：分型、笔、线段</h3>
+    <p>缠论是一套自成体系的买卖点理论，核心是用几何结构定义走势，不依赖指标。入门先掌握三个基本构件。</p>
+    <h3>① 分型</h3>
+    <p>由相邻三根 K 线构成：<b>顶分型</b>＝中间 K 线最高、两侧渐低；<b>底分型</b>＝中间 K 线最低、两侧渐高。分型是走势转折的最小信号。</p>
+    <h3>② 笔</h3>
+    <p>两个相邻<b>同性质分型</b>之间、且越过中间至少一根 K 线的连线，称为一笔。<b>向上笔</b>连接底分型→顶分型；<b>向下笔</b>连接顶分型→底分型。笔是"有方向的线段"。</p>
+    <h3>③ 线段</h3>
+    <p>至少由三笔组成、且首尾方向一致的连续结构，代表一段可控的走势。线段被反向线段破坏即确认原趋势结束。</p>
+    <div class="fig">
+      <svg viewBox="0 0 380 200" role="img" aria-label="分型与笔">
+        <polyline points="40,150 70,170 100,120" fill="none" stroke="#0a8f5b" stroke-width="3"/>
+        <text x="56" y="192" font-size="11" fill="#5a6470">底分型</text>
+        <line x1="100" y1="120" x2="200" y2="60" stroke="#c8102e" stroke-width="3"/>
+        <text x="135" y="92" font-size="11" fill="#c8102e">向上笔</text>
+        <polyline points="200,60 230,40 260,80" fill="none" stroke="#c8102e" stroke-width="3"/>
+        <text x="216" y="34" font-size="11" fill="#5a6470">顶分型</text>
+        <line x1="260" y1="80" x2="340" y2="140" stroke="#0a8f5b" stroke-width="3"/>
+        <text x="285" y="116" font-size="11" fill="#0a8f5b">向下笔</text>
+      </svg>
+      <div class="cap">图 25-1　底分型→向上笔→顶分型→向下笔，构成最基础的笔走势</div>
+    </div>
+    <h3>中枢与背驰（进阶）</h3>
+    <ul>
+      <li><b>中枢：</b>三段重叠的价格区间，是买卖双方反复争夺的"震荡箱"，代表趋势的喘息。</li>
+      <li><b>背驰：</b>股价创新高（或新低）但力度（如 MACD 红柱面积、成交量）不增反减，提示趋势即将反转——这是缠论最核心的买卖点依据。</li>
+    </ul>
+    <div class="tip"><b>学习建议：</b>缠论门槛高、定义严格（笔段有苛刻包含关系处理），新手先搞懂分型与笔，再逐步深入中枢与背驰，别一上来就追求精确买卖点。</div>
+  
+    
+    </section>
+    <section id="c25">
+    <h2>26. 主力与筹码分析</h2>
+    <p>筹码分布（成本分布）用"不同价格上堆积的持仓量"画出筹码峰，帮你看清"大家的成本在哪、谁在盈利、谁在套牢"。</p>
+    <h3>关键概念</h3>
+    <ul>
+      <li><b>筹码峰：</b>成交量密集的价格区，即大多数人的持仓成本区。</li>
+      <li><b>单峰 / 多峰：</b>单峰＝成本高度集中（易拉升）；多峰＝筹码分散（上有套牢、下有获利，压力大）。</li>
+      <li><b>获利盘 / 套牢盘：</b>当前价上方为套牢盘，下方为获利盘。</li>
+      <li><b>集中度：</b>数值越低，筹码越集中，主力控盘度越高。</li>
+    </ul>
+    <div class="fig">
+      <svg viewBox="0 0 380 200" role="img" aria-label="筹码分布峰">
+        <rect x="30" y="180" width="320" height="2" fill="#5a6470"/>
+        <rect x="60" y="150" width="16" height="30" fill="#c8102e"/>
+        <rect x="76" y="120" width="16" height="60" fill="#c8102e"/>
+        <rect x="92" y="90" width="16" height="90" fill="#c8102e"/>
+        <line x1="108" y1="40" x2="108" y2="185" stroke="#1664c0" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="112" y="55" font-size="11" fill="#1664c0">当前价</text>
+        <rect x="108" y="80" width="16" height="100" fill="#0a8f5b"/>
+        <rect x="124" y="100" width="16" height="80" fill="#0a8f5b"/>
+        <rect x="140" y="130" width="16" height="50" fill="#0a8f5b"/>
+        <rect x="156" y="155" width="16" height="25" fill="#0a8f5b"/>
+        <text x="56" y="196" font-size="11" fill="#c8102e">获利盘</text>
+        <text x="118" y="196" font-size="11" fill="#0a8f5b">套牢盘</text>
+      </svg>
+      <div class="cap">图 26-1　当前价（蓝线）下方为获利筹码（红），上方为套牢筹码（绿）</div>
+    </div>
+    <h3>实战读法</h3>
+    <ul>
+      <li><b>低位单峰密集 + 放量突破：</b>主力吸筹完毕、成本一致，是强启动信号。</li>
+      <li><b>高位单峰密集 + 放量滞涨：</b>筹码在高位换手给散户，警惕派发。</li>
+      <li><b>双峰对峙：</b>上峰套牢、下峰获利，股价常在区间震荡消化。</li>
+    </ul>
+  
+
+    <h3>主力行为全解：吸筹·洗盘·拉升·出货</h3>
+    <p>所谓"主力"是资金体量足以影响股价的机构或大户。理解其运作四阶段，能帮你站在大概率一边。</p>
+    <div class="fig">
+      <svg viewBox="0 0 380 200" role="img" aria-label="主力运作四阶段">
+        <polyline points="20,160 90,160 130,120 200,90 250,150 320,60" fill="none" stroke="#1664c0" stroke-width="3"/>
+        <text x="30" y="180" font-size="11" fill="#5a6470">①吸筹</text>
+        <text x="118" y="112" font-size="11" fill="#5a6470">②洗盘</text>
+        <text x="200" y="84" font-size="11" fill="#c8102e">③拉升</text>
+        <text x="286" y="54" font-size="11" fill="#0a8f5b">④出货</text>
+      </svg>
+      <div class="cap">图 26-1　主力典型四阶段：低位吸筹 → 洗盘 → 拉升 → 高位出货</div>
+    </div>
+    <table>
+      <tr><th>阶段</th><th>价格特征</th><th>量能特征</th><th>散户感受</th></tr>
+      <tr><td>吸筹</td><td>低位横盘、小阴小阳</td><td>温和放量、间歇放量</td><td>"这票不动，垃圾"</td></tr>
+      <tr><td>洗盘</td><td>小幅打压、震仓</td><td>缩量下跌</td><td>"是不是要跌了？"割肉</td></tr>
+      <tr><td>拉升</td><td>放量突破、连阳</td><td>持续放量</td><td>"后悔卖早了"追高</td></tr>
+      <tr><td>出货</td><td>高位震荡、拉高出货</td><td>巨量滞涨</td><td>"还能涨"接盘</td></tr>
+    </table>
+    <div class="key"><b>识别口诀：</b>低位"利空不跌、缩量止跌"多在吸筹；高位"利好不涨、放量长上影"多在高出货。永远别在高位放量滞涨时恋战。</div>
+  
+    
+    </section>
+    <section id="c48">
+    <h2>27. 龙虎榜与异动榜解读</h2>
+    <p>龙虎榜是交易所公布的"当日异常交易席位成交明细"，是观察主力资金动向的公开窗口。</p>
+    <table>
+      <tr><th>触发条件（A 股常见）</th><th>说明</th></tr>
+      <tr><td>日涨跌幅偏离 / 达到 ±7%（主板）、±15%（双创）</td><td>价格异动上榜</td></tr>
+      <tr><td>日换手率达到 20%</td><td>交投极度活跃上榜</td></tr>
+      <tr><td>日振幅达到 15%</td><td>剧烈波动上榜</td></tr>
+      <tr><td>无涨跌幅限制新股首日等</td><td>特殊情形上榜</td></tr>
+    </table>
+    <h3>看什么</h3>
+    <ul>
+      <li><b>买方 vs 卖方力量</b>：净买入为正、买方席位强，偏多。</li>
+      <li><b>席位性质</b>：机构专用（中线逻辑）、知名游资（短线情绪）、沪 / 深股通（外资）、"拉萨天团"（散户集中，常被视为反向指标）。</li>
+      <li><b>异动榜 / 涨幅榜 / 跌幅榜</b>：观察当日资金偏好与情绪冷热。</li>
+    </ul>
+    <div class="tip"><b>注意：</b>龙虎榜是 <b>T+1 盘后</b>公布，具有滞后性；上榜不等于明天必涨，别盲目跟风。结合题材持续性与大盘环境综合判断。</div>
+  
+    
+    </section>
+    <section id="c27">
+    <h2>28. 短线题材炒作</h2>
+    <h3>涨停板类型</h3>
+    <ul>
+      <li><b>一字板：</b>开盘即涨停，买不进，最强（利好/主线龙头）。</li>
+      <li><b>T 字板：</b>开盘涨停后被砸开又回封，分歧转一致。</li>
+      <li><b>换手板：</b>全天充分成交后封板，更健康、可持续。</li>
+    </ul>
+    <h3>打板术语</h3>
+    <p><b>扫板</b>（直接吃涨停价挂单）、<b>排板</b>（在涨停价排队等成交）、<b>板上确认</b>（封死后再介入）。风险极高，适合有纪律的短线客。</p>
+    <h3>短线情绪周期</h3>
+    <div class="fig">
+      <svg viewBox="0 0 380 180" role="img" aria-label="情绪周期">
+        <polyline points="20,150 90,60 150,40 220,90 290,150 350,120" fill="none" stroke="#c8102e" stroke-width="3"/>
+        <text x="30" y="166" font-size="10" fill="#5a6470">冰点</text>
+        <text x="80" y="55" font-size="10" fill="#5a6470">回暖</text>
+        <text x="140" y="35" font-size="10" fill="#c8102e">高潮</text>
+        <text x="206" y="100" font-size="10" fill="#5a6470">退潮</text>
+        <text x="280" y="166" font-size="10" fill="#0a8f5b">冰点</text>
+      </svg>
+      <div class="cap">图 28-1　情绪周期：冰点→回暖→高潮→退潮→再冰点，循环往复</div>
+    </div>
+    <ul>
+      <li><b>冰点：</b>连板高度压缩、亏钱效应弥漫，是最佳试错买点。</li>
+      <li><b>回暖：</b>出现先锋涨停、高度打开。</li>
+      <li><b>高潮：</b>普涨、百股涨停，应"卖在一致"。</li>
+      <li><b>退潮：</b>高位杀跌、天地板，必须空仓避险。</li>
+    </ul>
+    <div class="warn"><b>重要风险提示：</b>打板与情绪博弈是 A 股最难、最易亏损的模式之一，20% 涨跌幅下天地板可单日亏 30%+，新手慎用，先模拟。</div>
+  
+
+    <h3>场景驱动下的板块轮动规律</h3>
+    <p>股市很少"齐涨齐跌"，资金会随<b>宏观场景与突发事件</b>在不同板块间轮动。理解"什么环境买什么"，比死记代码更重要。下面按常见场景列出受益板块与逻辑：</p>
+    <table>
+      <tr><th>场景 / 事件</th><th>受益板块</th><th>背后的原因</th></tr>
+      <tr><td>通胀上行 / 商品涨价</td><td>黄金、有色（铜铝）、油气、煤炭、农产品（玉米大豆）</td><td>涨价直接抬升商品价格；资源股业绩与商品价格强相关，通胀利好实物资产</td></tr>
+      <tr><td>降息 / 货币宽松</td><td>券商、地产、高股息、科技成长</td><td>利率下行降低贴现率（利好长久期成长股）、降房贷成本（地产）、成交放量利好券商</td></tr>
+      <tr><td>经济衰退 / 避险</td><td>黄金、国债、公用事业、医药</td><td>避险推升黄金；防御板块需求刚性、业绩波动小，资金"抱团"避险</td></tr>
+      <tr><td>战争 / 地缘冲突</td><td>油气、黄金、军工、粮食（玉米大豆）、航运</td><td>冲突扰动供给→油价粮价涨；军工订单预期升温；避险买黄金</td></tr>
+      <tr><td>和平 / 局势缓和</td><td>科技、消费、航空旅游、航运复苏</td><td>风险偏好回升，压制避险资产（黄金跌）；复产复工利好周期与消费</td></tr>
+      <tr><td>科技突破 / AI 热潮</td><td>半导体、算力、光模块、消费电子、软件</td><td>产业趋势驱动业绩预期，资金追逐高成长赛道</td></tr>
+      <tr><td>经济复苏 / 繁荣</td><td>铜、钢铁、水泥、机械、银行</td><td>"铜博士"对经济最敏感；基建地产链需求回暖，银行贷款扩张</td></tr>
+      <tr><td>政策刺激（基建）</td><td>钢铁、水泥、建材、工程机械、地产链</td><td>财政发力直接拉动上游原材料与工程机械需求</td></tr>
+      <tr><td>极端天气 / 减产</td><td>农产品（玉米大豆白糖）、天然气、煤炭</td><td>供给收缩推升价格，农业与能源受益</td></tr>
+      <tr><td>人民币贬值</td><td>出口型（家电、纺服）；航空（利空）、造纸（成本压力）</td><td>贬值利好出口企业收入，但航空有美元债 / 燃油成本压力</td></tr>
+    </table>
+    <div class="key">
+      <b>轮动口诀：</b>"通胀买资源、放水买券商、衰退买黄金医药、战争买油气军工、缓和买科技消费、复苏买铜钢机械"。注意：轮动不是绝对的——取决于当时的宏观主线和资金偏好；A 股经典的"煤飞色舞"就是资源股联动行情，常呈"价值→成长→周期→防御"的阶段性次序。别在题材高潮末端追高。
+    </div>
+  
+    
+    </section>
+    <section id="c37">
+    <h2>29. 技术分析实战</h2>
+    <p>单一指标容易骗线，高手讲究"多维度相互验证"。</p>
+    <h3>多周期共振</h3>
+    <p>看大周期定方向（周线/日线判趋势），小周期找买点（60 分/15 分找入场）。大周期向上、小周期回踩企稳，才是高胜率买点；逆大周期抄底常失败。</p>
+    <h3>经典指标组合</h3>
+    <ul>
+      <li><b>趋势：</b>均线多头排列 + 股价在年线（250）上方 = 牛市格局。</li>
+      <li><b>动量：</b>MACD 金叉 + 零轴上方 + 红柱放大 = 主升确认。</li>
+      <li><b>量能：</b>突破必须放量，缩量突破多为假突破。</li>
+      <li><b>超买：</b>KDJ/RSI 高位钝化时，不急于卖，等背离确认。</li>
+    </ul>
+    <div class="warn"><b>假突破识别：</b>无量冲过前高、当日长上影、次日跌回区间内，多为诱多；真突破常伴随跳空缺口与持续放量。</div>
+    <div class="key"><b>买点框架：</b>大周期向上 + 回踩重要均线/支撑 + 放量阳线启动 + 指标金叉 = 四类信号共振时出手，胜率与赔率最佳。</div>
+  
+    
+    </section>
+    <section id="c17">
+    <h2>30. 资金面与衍生工具</h2>
+    <p>除个股技术面与基本面，还要懂"钱从哪来、有哪些工具"。这些是 A 股生态的重要组成。</p>
+
+    <h3>30.1 市场资金构成</h3>
+    <table>
+      <tr><th>资金类别</th><th>说明</th><th>看什么</th></tr>
+      <tr><td>北向资金</td><td>外资通过沪/深股通买卖 A 股（"聪明钱"参考）</td><td>每日净买入额、持股变动</td></tr>
+      <tr><td>融资融券（两融）</td><td>融资=借钱买股（杠杆看多）；融券=借券卖出（看空）</td><td>融资余额升=情绪升温</td></tr>
+      <tr><td>公募 / 私募 / 险资</td><td>机构主力，调仓影响板块</td><td>基金重仓、发行冷热</td></tr>
+      <tr><td>龙虎榜</td><td>异动股（涨停/跌停/大幅波动）的买卖席位披露</td><td>知名游资/机构进出</td></tr>
+    </table>
+    <div class="tip"><b>北向暂停披露口径变化：</b>近年北向资金实时数据披露方式有过调整，看盘时以交易软件当日展示为准，不要盲信过时口径。</div>
+
+    <h3>30.2 常见衍生 / 稳健工具</h3>
+    <table>
+      <tr><th>工具</th><th>特点</th><th>适合谁</th></tr>
+      <tr><td>ETF（交易型指数基金）</td><td>一篮子股票、费率低、透明，跟踪指数</td><td>不想选个股、想布局板块/宽基的人</td></tr>
+      <tr><td>指数 / 主动基金定投</td><td>分批买入摊薄成本，纪律化</td><td>上班族、长期储蓄型投资者</td></tr>
+      <tr><td>可转债</td><td>可转股的债券，下有债底、上跟正股，"进可攻退可守"</td><td>稳健偏保守、想参与权益的人</td></tr>
+      <tr><td>新股申购（打新）</td><td>市值配售、中签缴款，历史多数有溢价</td><td>有持仓市值的账户（需开通权限）</td></tr>
+    </table>
+
+    <h3>30.3 分红与税</h3>
+    <ul>
+      <li><b>现金分红</b>：公司把利润直接发钱，除息后股价下调（总市值不变）。</li>
+      <li><b>红利税</b>：持股 &gt;1 年免征；1 个月–1 年按 10%；≤1 个月按 20%（以卖出时持股期限算）。</li>
+      <li><b>送转股</b>：送股/转增股本，除权后股价下调、股数增加，注意"填权/贴权"。</li>
+    </ul>
+    <div class="key"><b>工具选择逻辑：</b>看不懂个股 → 用 ETF/基金；怕波动又想参与 → 可转债；有耐心长期 → 定投宽基；只做个股 → 必须把技术 + 基本面 + 资金面三件套结合。</div>
+  
+    
+    </section>
+    <section id="c30">
+    <h2>31. 指数基金与 ETF 定投实战</h2>
+    <h3>ETF 种类</h3>
+    <ul>
+      <li><b>宽基 ETF：</b>沪深300、中证500、创业板指——分散个股风险，适合大多数人的底仓。</li>
+      <li><b>行业/主题 ETF：</b>券商、医药、半导体、新能源——押注赛道贝塔。</li>
+      <li><b>跨境 ETF：</b>纳指、港股——一键配置海外。</li>
+    </ul>
+    <h3>定投微笑曲线</h3>
+    <p>定期定额买入：市场下跌时同样的钱买到更多份额（摊低成本的"左侧"），市场回升后盈利。定投的核心是"用时间平滑波动"，适合没时间盯盘的上班族。</p>
+    <h3>进阶技巧</h3>
+    <ul>
+      <li><b>估值定投：</b>低估（如 PE 历史分位 &lt; 30%）多投，高估少投或止盈。</li>
+      <li><b>止盈策略：</b>目标收益率止盈（如 +30%）、估值分位止盈（如 &gt; 80%）、或回撤止盈。</li>
+    </ul>
+    <div class="tip"><b>定投纪律：</b>坚持不择时、不间断，最忌"一跌就停、一涨就追"。长期（3–5 年以上）才能体现复利与摊平效果。</div>
+  
+    
+    </section>
+    <section id="c31">
+    <h2>32. 可转债</h2>
+    <p>可转债"下有债底、上不封顶"，是进可攻退可守的品种，但条款复杂。</p>
+    <h3>核心公式</h3>
+    <ul>
+      <li><b>转股价值</b> = 100 ÷ 转股价 × 正股价（一张债能换成的股票市值）。</li>
+      <li><b>转股溢价率</b> =（转债价 − 转股价值）÷ 转股价值 ×100%（溢价越低越"股性"强）。</li>
+    </ul>
+    <div class="fig">
+      <svg viewBox="0 0 380 180" role="img" aria-label="转债价格构成">
+        <rect x="40" y="120" width="120" height="40" fill="#0a8f5b"/>
+        <text x="58" y="145" font-size="12" fill="#fff">债底（纯债价值）</text>
+        <rect x="160" y="60" width="120" height="100" fill="#c8102e" opacity="0.85"/>
+        <text x="172" y="115" font-size="12" fill="#fff">转股期权价值</text>
+        <text x="40" y="176" font-size="11" fill="#5a6470">转债价格 = 债底 + 期权价值（熊市靠债底，牛市靠转股）</text>
+      </svg>
+      <div class="cap">图 32-1　可转债价格由"债底"和"转股期权"两部分构成</div>
+    </div>
+    <h3>关键条款</h3>
+    <ul>
+      <li><b>强赎：</b>正股连续 N 日高于转股价 130%，公司可强制赎回——持债人须及时卖出或转股，否则被低价赎回亏损。</li>
+      <li><b>下修：</b>正股大跌、转债价低迷时，公司下调转股价，提升转股价值，对转债是利好。</li>
+      <li><b>回售：</b>特定条件下持有人可把债按面值+利息卖回公司，是保护条款。</li>
+    </ul>
+    <div class="key"><b>打新：</b>顶格申购新转债，上市首日大多上涨，是近乎无风险的小额福利（具体配售规则以当时监管规定为准）。</div>
+  
+    
+    </section>
+    <section id="c32">
+    <h2>33. 期权基础</h2>
+    <p>期权是"在未来以约定价格买卖标的"的权利（非义务），是 A 股少数带杠杆和对冲功能的工具。</p>
+    <h3>基本分类</h3>
+    <ul>
+      <li><b>认购期权（Call）：</b>看涨，有权以行权价买入标的。</li>
+      <li><b>认沽期权（Put）：</b>看跌，有权以行权价卖出标的。</li>
+      <li><b>买方：</b>付出权利金，亏损有限（最多权利金）、收益潜力大。</li>
+      <li><b>卖方：</b>收权利金，收益有限、风险可能很大（义务方）。</li>
+    </ul>
+    <h3>价值构成</h3>
+    <p>期权价格 = <b>内在价值</b>（立即行权能赚的部分）+ <b>时间价值</b>（对未来的预期）。越临近到期，时间价值衰减越快（"时间损耗"）。</p>
+    <div class="fig">
+      <svg viewBox="0 0 380 180" role="img" aria-label="认购期权买方盈亏">
+        <line x1="150" y1="20" x2="150" y2="160" stroke="#5a6470" stroke-width="1" stroke-dasharray="4 3"/>
+        <polyline points="40,40 150,40 340,150" fill="none" stroke="#c8102e" stroke-width="3"/>
+        <text x="150" y="174" font-size="11" fill="#1664c0">行权价</text>
+        <text x="250" y="140" font-size="11" fill="#c8102e">盈利区</text>
+        <text x="48" y="56" font-size="11" fill="#0a8f5b">最大亏损=权利金</text>
+      </svg>
+      <div class="cap">图 33-1　认购期权买方盈亏：横轴标的价格，低于行权价亏权利金（有限），之上随上涨盈利</div>
+    </div>
+    <div class="key"><b>两大用途：</b>① <b>杠杆博方向</b>（小资金撬动大波动）；② <b>保险对冲</b>（持有股票同时买认沽，下跌时期权赚钱抵消股票亏损）。期权复杂度高，务必先模拟交易。</div>
+  
+    
+    </section>
+    <section id="c33">
+    <h2>34. 融资融券与杠杆的双刃剑</h2>
+    <p>两融让你"借券商的钱/券"交易，放大收益也放大风险。</p>
+    <h3>融资 vs 融券</h3>
+    <table>
+      <tr><th></th><th>融资（做多）</th><th>融券（做空）</th></tr>
+      <tr><td>含义</td><td>借钱买股，涨了还钱赚差价</td><td>借券卖出，跌了低价买回归还</td></tr>
+      <tr><td>适合</td><td>看多且保证金充足</td><td>看空（A 股券源少、限制多）</td></tr>
+      <tr><td>风险</td><td>下跌会追加保证金，否则强平</td><td>理论上亏损无上限（涨不停）</td></tr>
+    </table>
+    <h3>强平机制</h3>
+    <p>账户<b>维持担保比例</b> =（现金+股票+债券）÷ 负债。低于警戒线（如 150%）需补钱，低于平仓线（如 130%）券商可强制卖出。杠杆会在暴跌中"加速出局"。</p>
+    <div class="warn"><b>新手警告：</b>杠杆是专业玩家的工具。满仓融资遇黑天鹅，可能一天内被强平、本金归零。普通投资者尽量不用或极低杠杆。</div>
+  
+    
+    </section>
+    <section id="c35">
+    <h2>35. 宏观与行业基本面</h2>
+    <p>选股先选行业。好行业出牛股的概率远大于差行业。</p>
+    <h3>产业链位置</h3>
+    <ul>
+      <li><b>上游：</b>原料/资源（矿、化工、半导体材料），价格周期性强。</li>
+      <li><b>中游：</b>制造/零部件，受上下游两头挤压，看规模与技术。</li>
+      <li><b>下游：</b>品牌/渠道/终端，贴近消费者，看品牌与定价权。</li>
+    </ul>
+    <h3>竞争格局</h3>
+    <p>用 <b>CRn（前 n 家市占率）</b>判断集中度：寡头（CR5&gt;60%）格局稳定、龙头吃香；分散行业价格战激烈。</p>
+    <h3>景气与政策</h3>
+    <ul>
+      <li><b>景气度：</b>订单、产能利用率、价格（如锂价、面板价）是先行指标。</li>
+      <li><b>政策：</b>补贴、集采、碳中和、国产化替代——A 股政策敏感度极高。</li>
+    </ul>
+    <div class="tip"><b>研究框架：</b>行业空间（天花板）→ 竞争格局（谁最强）→ 景气位置（上行/下行）→ 政策导向 → 落实到具体龙头公司的业绩兑现。</div>
+  
+
+    <h3>宏观经济指标如何驱动股市</h3>
+    <p>宏观是"水温"，决定市场整体的水位与风格切换。</p>
+    <table>
+      <tr><th>指标</th><th>含义</th><th>对股市一般影响</th></tr>
+      <tr><td>利率 / 降息</td><td>资金价格</td><td>降息→流动性宽裕→利好估值（成长股尤甚）</td></tr>
+      <tr><td>CPI / PPI</td><td>通胀 / 工业品价格</td><td>温和通胀可接受；高通胀→加息预期→承压</td></tr>
+      <tr><td>PMI</td><td>制造业荣枯线（50 为界）</td><td>&gt;50 扩张、经济回暖信号</td></tr>
+      <tr><td>M1 / M2</td><td>货币供应量</td><td>M1-M2 剪刀差走阔→资金活化、风险偏好升</td></tr>
+      <tr><td>汇率</td><td>人民币强弱</td><td>贬值→外资流出压力；升值→北向回流</td></tr>
+    </table>
+    <div class="key"><b>北向资金：</b>通过沪深港通流入的外资，常被视为"聪明钱"风向标，单日大幅净流入/流出会引发关注，但别盲目跟随，它也会犯错。</div>
+  
+    
+    </section>
+    <section id="c28">
+    <h2>36. 价值与成长投资风格</h2>
+    <p>价值投资买的是"好公司 + 好价格"，赚企业成长和估值修复的钱，与短线博弈是两套逻辑。</p>
+    <h3>四大护城河</h3>
+    <ul>
+      <li><b>无形资产：</b>品牌（茅台）、专利、牌照（特许经营权）。</li>
+      <li><b>网络效应：</b>用户越多越值钱（社交、平台）。</li>
+      <li><b>成本优势：</b>规模、区位、工艺带来的低成本。</li>
+      <li><b>转换成本：</b>换供应商太麻烦/太贵（企业软件、银行）。</li>
+    </ul>
+    <h3>安全边际</h3>
+    <p>用"内在价值"打折的价格买入，留出犯错空间。内在价值常用<b>自由现金流折现（DCF）</b>估算：把公司未来每年的自由现金流，按合理贴现率折算成今天的价值，再除以股本得每股价值。</p>
+    <div class="key"><b>能力圈：</b>只投自己真懂的生意。看不懂的赛道，再热也不碰——这是巴菲特反复强调的纪律。</div>
+    <div class="tip"><b>适用场景：</b>价值投资适合长期资金、能承受波动的投资者；它需要耐心持有数年，而非几天。典型指标：低 PE/PB、高 ROE、稳定分红、低负债。</div>
+  
+
+    <h3>成长股投资：赛道、PEG 与景气度</h3>
+    <p>成长股赚的是"业绩高速增长"的钱，愿意为未来买单，估值通常不便宜。</p>
+    <h3>选股三要素</h3>
+    <ul>
+      <li><b>赛道空间：</b>行业天花板高（如新能源车、AI、创新药），渗透率处于早期。</li>
+      <li><b>PEG 指标：</b>PEG = PE ÷ 净利润增速。PEG &lt; 1 表示"增速能消化估值"，更具性价比。</li>
+      <li><b>景气度：</b>行业处于上行周期（订单饱满、价格上涨、政策扶持），业绩兑现概率高。</li>
+    </ul>
+    <h3>渗透率 S 曲线</h3>
+    <p>新技术从 0% 到普及呈 S 形：0–10% 概念期（炒作）、10–40% 爆发期（最佳利润区）、40% 以上成熟饱和（杀估值）。投资要在"爆发前夜"介入。</p>
+    <div class="key"><b>戴维斯双击 / 双杀：</b>业绩与估值同向变动。双击＝盈利↑+估值↑（股价暴涨）；双杀＝盈利↓+估值↓（股价暴跌）。成长股最怕"增速不及预期"引发双杀。</div>
+  
+    
+    </section>
+    <section id="c18">
+    <h2>37. 选股实操流程</h2>
+    <p>把"怎么选出一只能买的股票"拆成可执行的六步，从大环境到买点再到纪律，一步步来。</p>
+
+    <h3>37.1 流程概览</h3>
+    <div class="flow">
+      <div class="step"><b>① 看大盘环境</b><span>牛/熊/震荡？均线多空、量能定方向，决定仓位高低</span></div>
+      <div class="arrow">→</div>
+      <div class="step"><b>② 选主线板块</b><span>政策、景气、资金共振的板块（题材/赛道）</span></div>
+      <div class="arrow">→</div>
+      <div class="step"><b>③ 基本面初筛</b><span>营收/净利增长、ROE、负债、现金流健康</span></div>
+      <div class="arrow">→</div>
+      <div class="step"><b>④ 技术面找买点</b><span>回踩均线/支撑、放量突破、指标金叉</span></div>
+      <div class="arrow">→</div>
+      <div class="step"><b>⑤ 仓位 & 止损</b><span>分仓买入，预设止损位与仓位上限</span></div>
+      <div class="arrow">→</div>
+      <div class="step"><b>⑥ 持有 & 复盘</b><span>跟踪逻辑兑现，破位止损，盘后复盘总结</span></div>
+    </div>
+
+    <h3>37.2 每一步怎么做</h3>
+    <table>
+      <tr><th>步骤</th><th>关键动作</th><th>避坑</th></tr>
+      <tr><td>① 大盘</td><td>看上证/创业板指数是否在年线之上、均线多空排列、成交额是否放大</td><td>大盘单边下跌时少做、控仓，别逆势硬扛</td></tr>
+      <tr><td>② 板块</td><td>找近期资金流入、有政策/业绩催化的主线，而非追日内杂毛</td><td>别买"涨最猛但无逻辑"的纯情绪票</td></tr>
+      <tr><td>③ 基本面</td><td>用第 19 章指标筛：连续增长 + ROE&gt;15% + 现金流正 + 负债可控</td><td>别只看 PE 低，警惕周期顶/财务雷</td></tr>
+      <tr><td>④ 买点</td><td>回调到 MA20/支撑企稳、或放量突破前高时介入，不追分时尖角</td><td>不追涨停打板（高难度），等回踩确认</td></tr>
+      <tr><td>⑤ 风控</td><td>单只 ≤ 总仓 30%，首次建仓 ≤ 计划仓 50%，破位即止损</td><td>不止损、满仓一只、补仓摊平亏损股</td></tr>
+      <tr><td>⑥ 复盘</td><td>每日记"为什么买/卖"，验证逻辑，积累自己的模式</td><td>凭感觉交易、赚了不知为何赚</td></tr>
+    </table>
+    <div class="warn"><b>纪律 > 预测：</b>流程的价值不在"选到牛股"，而在让你<b>每次都用同一套标准决策</b>，把情绪和随意性降到最低。新手先练"小仓 + 严格止损 + 复盘"三件事。</div>
+  
+    
+    </section>
+    <section id="c62">
+    <h2>38. 自上而下与自下而上选股体系</h2>
+<p>面对 5000 多只 A 股，怎么下手？两套主流框架帮你建立"选股坐标系"。与『选股实操流程』一章的六步法配合使用。</p>
+
+<h3>自上而下（先赛道，后个股）</h3>
+<p>从宏观大环境出发，层层收窄到具体公司：<strong>宏观 → 行业 / 板块 → 个股</strong>。先判断当下什么风格、什么行业景气向上，再在好行业里挑龙头。</p>
+<table>
+<tr><th>步骤</th><th>问自己</th></tr>
+<tr><td>① 宏观定调</td><td>经济周期、利率、政策风向偏向哪类资产？</td></tr>
+<tr><td>② 选行业</td><td>哪个行业景气向上、有政策 / 技术催化？</td></tr>
+<tr><td>③ 选个股</td><td>行业内谁是最强龙头 / 弹性最大标的？</td></tr>
+</table>
+
+<h3>自下而上（先个股，后验证）</h3>
+<p>反过来，先在全市场用<strong>财务质地 + 护城河</strong>筛出一批"好公司"，再回头看它们所处的行业是否景气、估值是否合理。价值投资者更偏这套。</p>
+
+<h3>两者如何结合</h3>
+<ul>
+<li>用<strong>自上而下</strong>锁定"风口"（提高胜率与弹性）。</li>
+<li>用<strong>自下而上</strong>确保买的是"好公司"（避免风口里的垃圾股）。</li>
+<li>交集 = 既在景气赛道、自身质地又过硬的标的，优先进入核心股票池。</li>
+</ul>
+
+<div class="fig">
+<svg viewBox="0 0 380 180" role="img" aria-label="自上而下漏斗">
+<rect x="60" y="20" width="260" height="34" rx="6" fill="#c8102e"/>
+<text x="190" y="42" font-size="12" fill="#fff" text-anchor="middle">宏观环境</text>
+<rect x="90" y="70" width="200" height="34" rx="6" fill="#1664c0"/>
+<text x="190" y="92" font-size="12" fill="#fff" text-anchor="middle">行业 / 板块</text>
+<rect x="120" y="120" width="140" height="34" rx="6" fill="#0a8f5b"/>
+<text x="190" y="142" font-size="12" fill="#fff" text-anchor="middle">核心个股</text>
+</svg>
+<div class="cap">图 38-1　自上而下选股：像漏斗一样层层收窄到核心标的</div>
+</div>
+
+<div class="tip"><b>美林投资时钟</b>是自上而下的经典工具：复苏 → 过热 → 滞胀 → 衰退 四个阶段，分别对应股票、商品、现金/防御、债券的相对优势。新手可先记住"复苏买股票、过热买商品"。</div>
+    </section>
+    <section id="c63">
+    <h2>39. 财务指标选股筛查</h2>
+<p>选股不能只靠感觉。把『财务报表与估值体系』里的指标变成一张<strong>可执行的筛选清单</strong>，用数据先粗筛、再精研。</p>
+
+<h3>核心筛选维度</h3>
+<table>
+<tr><th>指标</th><th>看什么</th><th>经验参考（非硬标准）</th></tr>
+<tr><td>ROE（净资产收益率）</td><td>公司用股东钱赚钱的能力</td><td>连续 &gt; 15% 较优</td></tr>
+<tr><td>毛利率</td><td>产品溢价 / 成本控制力</td><td>越高越有护城河</td></tr>
+<tr><td>营收 / 净利增速</td><td>成长性</td><td>持续双位数增长</td></tr>
+<tr><td>资产负债率</td><td>财务杠杆与风险</td><td>同行越低越稳</td></tr>
+<tr><td>经营现金流</td><td>利润是否"真金白银"</td><td>为正、且与净利匹配</td></tr>
+<tr><td>PEG</td><td>估值 vs 增速</td><td>&lt; 1 相对低估</td></tr>
+</table>
+
+<h3>一票否决项（先排除）</h3>
+<ul>
+<li><span class="tag gray">ST / *ST</span> 已被风险警示，质地存疑。</li>
+<li><span class="tag red">商誉占比高</span> 警惕商誉减值雷。</li>
+<li><span class="tag red">经营现金流长期为负</span> 利润可能是"纸上富贵"。</li>
+<li><span class="tag red">频繁定增 / 大股东减持</span> 圈钱或信心不足信号。</li>
+</ul>
+
+<h3>成长型 vs 价值型 侧重不同</h3>
+<ul>
+<li><strong>成长股</strong>重增速、重赛道，可接受高 PE，但 PEG 不能离谱。</li>
+<li><strong>价值股</strong>重低 PE/PB、高股息、稳现金流，安全边际优先。</li>
+</ul>
+
+<div class="fig">
+<svg viewBox="0 0 380 200" role="img" aria-label="好公司与差公司雷达对比">
+<polygon points="190,40 290,90 260,170 120,170 90,90" fill="#e6f6ee" stroke="#0a8f5b" stroke-width="2"/>
+<polygon points="190,80 240,110 225,150 155,150 140,110" fill="#fde8ec" stroke="#c8102e" stroke-width="2"/>
+<text x="190" y="30" font-size="10" fill="#5a6470" text-anchor="middle">ROE</text>
+<text x="305" y="90" font-size="10" fill="#5a6470" text-anchor="middle">成长</text>
+<text x="275" y="185" font-size="10" fill="#5a6470" text-anchor="middle">现金流</text>
+<text x="105" y="185" font-size="10" fill="#5a6470" text-anchor="middle">低负债</text>
+<text x="75" y="90" font-size="10" fill="#5a6470" text-anchor="middle">毛利</text>
+<text x="190" y="118" font-size="11" fill="#0a8f5b" text-anchor="middle">优质公司</text>
+</svg>
+<div class="cap">图 39-1　优质公司与问题公司多维度对比（示意，非真实数据）</div>
+</div>
+
+<div class="warn">筛选清单是"粗筛"不是"买入理由"。指标要<strong>跨年份、跨同行对比</strong>，单一季度或单一指标易被操纵。所有财务数据以公司定期报告原文为准。</div>
+    </section>
+    <section id="c64">
+    <h2>40. 北向资金与机构持仓选股</h2>
+<p>散户之外，市场上有一批"聪明钱"——北向资金（外资）和各类机构。跟踪它们的动向，是很多选股体系的加分项。</p>
+
+<h3>北向资金（沪深股通）</h3>
+<ul>
+<li>指通过香港通道净买入 A 股的外资，被称为"聪明钱"，因其研究能力强、偏向长期。</li>
+<li>看两个维度：<strong>整体净流入/流出</strong>（判断外资风险偏好）+ <strong>行业/个股增持方向</strong>（找具体标的）。</li>
+<li>连续多日净流入某板块，往往预示中期看好；但单日波动噪声大，别追。</li>
+</ul>
+
+<h3>机构持仓怎么看</h3>
+<table>
+<tr><th>资金类型</th><th>特点</th></tr>
+<tr><td>公募基金</td><td>持仓透明（季报披露），偏向景气赛道与龙头</td></tr>
+<tr><td>社保 / 险资</td><td>稳健、长线，重低估值高分红</td></tr>
+<tr><td>QFII / 北向</td><td>外资视角，看重治理与全球比价</td></tr>
+<tr><td>私募 / 游资</td><td>灵活、偏主题与短线，波动大</td></tr>
+</table>
+
+<div class="fig">
+<svg viewBox="0 0 380 180" role="img" aria-label="北向资金流向量价">
+<line x1="40" y1="20" x2="40" y2="160" stroke="#e6e9ee"/>
+<line x1="40" y1="160" x2="360" y2="160" stroke="#b8c0cc"/>
+<polyline points="50,120 110,110 170,90 230,70 290,60 340,55" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<rect x="55" y="118" width="8" height="30" fill="#0a8f5b"/>
+<rect x="115" y="108" width="8" height="40" fill="#0a8f5b"/>
+<rect x="175" y="88" width="8" height="50" fill="#0a8f5b"/>
+<rect x="235" y="68" width="8" height="55" fill="#0a8f5b"/>
+<rect x="295" y="58" width="8" height="60" fill="#0a8f5b"/>
+<text x="200" y="40" font-size="11" fill="#5a6470" text-anchor="middle">价升 + 北向持续净流入 = 外资加持</text>
+</svg>
+<div class="cap">图 40-1　价格上行伴随北向资金持续流入的示意</div>
+</div>
+
+<div class="warn">跟着聪明钱有<strong>滞后性</strong>：机构持仓是季度披露的"过去式"，等你看清时可能已涨过。把它当"验证与方向"，而非"追涨信号"。配合『龙虎榜与异动榜解读』看游资动向，能补全短线视角。</div>
+    </section>
+    <section id="c19">
+    <h2>41. 仓位管理与止损纪律</h2>
+    <p>"买什么"决定收益，"怎么管钱"决定你能否活到赚钱那天。仓位与止损是散户最该先练好的功课。</p>
+
+    <h3>41.1 金字塔加仓（正金字塔）</h3>
+    <p>首次建仓最大，越涨加得越少——成本始终低于市价，且风险递减。</p>
+    <div class="fig">
+      <div class="pyr">
+        <div class="lvl" style="width:60%">首次建仓 50%</div>
+        <div class="lvl" style="width:75%">回踩加仓 30%</div>
+        <div class="lvl" style="width:90%">突破再加 20%</div>
+      </div>
+      <div class="cap">图 41-1　正金字塔加仓：底宽顶窄，上涨过程中仓位是"递减追加"</div>
+    </div>
+    <div class="warn"><b>禁止倒金字塔：</b>越涨买得越多（顶宽底窄）会在高位堆满仓位，一回调就巨亏，是散户常见死法。</div>
+
+    <h3>41.2 止损方法</h3>
+    <table>
+      <tr><th>方法</th><th>怎么设</th><th>适用</th></tr>
+      <tr><td>固定比例止损</td><td>买入价下方 5%–8% 机械止损</td><td>短线、纪律差的新手首选</td></tr>
+      <tr><td>支撑位止损</td><td>跌破关键均线/前低/趋势线离场</td><td>技术交易者</td></tr>
+      <tr><td>移动止损（跟踪）</td><td>随价格上涨上移止损线，保住利润</td><td>趋势/中线持仓</td></tr>
+      <tr><td>时间止损</td><td>买入后 N 日不涨反弱，先退出</td><td>事件/题材驱动</td></tr>
+    </table>
+
+    <h3>41.3 仓位口诀</h3>
+    <ul>
+      <li><b>单只上限</b>：不超过总资金的 30%，避免"一失足满盘皆输"。</li>
+      <li><b>行情定总仓</b>：牛市可 60%–80%，震荡 30%–50%，熊市 ≤ 20% 或空仓。</li>
+      <li><b>分仓</b>：不要一次满仓，留有余地才能"跌了敢加、错了能撤"。</li>
+      <li><b>盈利才加仓</b>：亏损股不补仓摊平，那只会把小错变大错。</li>
+    </ul>
+    <div class="key"><b>一句话：</b>先想"最多亏多少"再想"能赚多少"；止损线提前画好，盘中只执行、不纠结。活得久比赚得快重要。</div>
+  
+    
+    </section>
+    <section id="c39">
+    <h2>42. 复盘与计划</h2>
+    <h3>每日复盘四步</h3>
+    <ol>
+      <li><b>看大盘：</b>指数涨跌、量能、北向、涨跌家数，判断市场温度。</li>
+      <li><b>看板块：</b>领涨/领跌板块、资金流向、是否有持续性主线。</li>
+      <li><b>看个股：</b>持仓股走势是否符合预期，自选股有无买点信号。</li>
+      <li><b>做计划：</b>写下明日"买什么、什么价、买多少、错了怎么办"。</li>
+    </ol>
+    <h3>交易日志</h3>
+    <p>每笔交易记录：买入理由、仓位、止损位、卖出原因、情绪状态。定期回看，找出自己的"亏钱模式"——大多数人反复犯同一类错误。</p>
+    <div class="key"><b>周/月总结：</b>统计胜率、盈亏比、最大回撤；哪类模式赚钱、哪类亏钱。用数据而非记忆迭代自己的交易系统。</div>
+  
+    
+    </section>
+    <section id="c38">
+    <h2>43. 交易心理与概率思维</h2>
+    <p>炒股最终拼的是认知与心态。技术易学，人性难改。</p>
+    <h3>常见认知偏差</h3>
+    <ul>
+      <li><b>锚定效应：</b>死记买入价，亏了不肯割（"回本就卖"），被成本绑架。</li>
+      <li><b>确认偏误：</b>只信看涨的理由，忽略反面证据。</li>
+      <li><b>损失厌恶：</b>亏 100 的痛苦 &gt; 赚 100 的快乐，导致小赚即跑、大亏死扛。</li>
+      <li><b>追涨杀跌：</b>被情绪驱动在高位接盘、低位割肉。</li>
+    </ul>
+    <h3>概率与期望值</h3>
+    <p>交易不是"对错"，而是"<b>期望值</b>"：EV = 胜率×平均盈利 − 败率×平均亏损。只要 EV 为正，长期坚持必赢；单次盈亏不重要。</p>
+    <div class="key"><b>凯利公式（参考）：</b>仓位比例 f =（胜率×赔率 − 败率）÷ 赔率。它告诉你"该下多大注"，避免一把梭与过度保守。实战常用"半凯利"更稳健。</div>
+    <div class="tip"><b>纪律优先：</b>提前写好买卖计划并机械执行，比盘中"感觉"可靠得多。情绪上头时，先关软件冷静。</div>
+  
+    
+    </section>
+    <section id="c51">
+    <h2>44. 欧奈尔 CANSLIM 强势股选股法</h2>
+<p>威廉·欧奈尔（William O'Neil）复盘数十年美国牛股，提炼出 <b>CANSLIM</b> 七因子模型：它不预测底，而是"买已经启动的强势股"，在大盘向上时追随领涨龙头。该体系尤其适合成长股牛市与题材主升浪。</p>
+
+<h3>七因子速查</h3>
+<table>
+<tr><th>字母</th><th>含义</th><th>实战看点</th></tr>
+<tr><td><b>C</b></td><td>Current 当季盈利</td><td>当季 EPS 同比加速 ≥25%，且营收同步增长</td></tr>
+<tr><td><b>A</b></td><td>Annual 年度盈利</td><td>近 3 年净利润复合增速高，ROE 优秀</td></tr>
+<tr><td><b>N</b></td><td>New 新事物</td><td>新产品 / 新管理层 / 股价新高 / 行业新逻辑</td></tr>
+<tr><td><b>S</b></td><td>Supply 流通盘</td><td>流通盘适中、供给有限，易被资金推动</td></tr>
+<tr><td><b>L</b></td><td>Leader 龙头</td><td>相对强弱 RS 居前，绝不买弱势跟跌股</td></tr>
+<tr><td><b>I</b></td><td>Institutional 机构</td><td>有优质机构增持，但非过度抱团</td></tr>
+<tr><td><b>M</b></td><td>Market 大盘</td><td>大盘处于上升趋势时才重仓，M 定仓位</td></tr>
+</table>
+
+<h3>杯柄形态与买点</h3>
+<p>强势股启动前常走出"杯柄形态"：先深度回调形成杯身（U 形），再横盘小幅回落形成杯柄，最后放量突破杯柄上沿即为买点。</p>
+<div class="fig">
+  <svg viewBox="0 0 400 200" role="img" aria-label="杯柄形态">
+    <line x1="40" y1="70" x2="370" y2="70" stroke="#bbb" stroke-width="1" stroke-dasharray="5 4"/>
+    <path d="M40,70 C90,165 200,165 260,80 L300,80 Q330,80 330,98 Q330,108 350,98 L362,80" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+    <line x1="362" y1="80" x2="388" y2="44" stroke="#c8102e" stroke-width="2.5"/>
+    <polygon points="388,44 380,46 384,53" fill="#c8102e"/>
+    <text x="110" y="190" font-size="13" fill="#5a6470">杯身（回调洗盘）</text>
+    <text x="300" y="125" font-size="13" fill="#5a6470">杯柄</text>
+    <text x="295" y="38" font-size="13" fill="#c8102e">突破买点</text>
+  </svg>
+  <div class="cap">图 44-1　杯柄形态：放量突破杯柄上沿为标准的右侧买点，止损设于杯柄下方</div>
+</div>
+
+<h3>卖出与止损纪律</h3>
+<ul>
+<li><b>止损：</b>买入后跌破买点 7%–8% 坚决止损，不摊平。</li>
+<li><b>止盈：</b>主升浪中让利润奔跑，跌破 10 周 / 50 日线或放量长阴离场。</li>
+<li><b>大盘风控：</b>M（大盘）转弱、放量破位时整体降仓。</li>
+</ul>
+<div class="key"><b>核心口诀：</b>买最强的龙头，在大盘向上时买，破位就走——不猜顶、不抄底弱势股。</div>
+    
+    </section>
+    <section id="c52">
+    <h2>45. 趋势跟踪交易系统</h2>
+<p>"趋势是你的朋友"。趋势跟踪不预测拐点，而是<b>识别已发生的趋势并顺势持有</b>，靠少数大波段盈利覆盖多次小止损。它适合均线、通道、突破类策略，是量化与主观交易共用的底层逻辑。</p>
+
+<h3>均线趋势系统</h3>
+<ul>
+<li>多头排列（短 &gt; 中 &gt; 长）持有，价格跌破关键均线减仓。</li>
+<li>经典参数：MA20 判短期、MA60 判中期、MA120 / 250 判牛熊。</li>
+<li>线上持有、线下观望，规则简单但需忍受回撤。</li>
+</ul>
+
+<h3>通道突破（唐奇安通道）</h3>
+<p>取 N 日最高价与最低价构成通道，价格<b>向上突破 N 日高点</b>买入，跌破 N 日低点卖出。海龟训练班用 20 日突破入场、10 日突破离场。</p>
+
+<h3>海龟法则要点</h3>
+<ul>
+<li><b>入场：</b>55 日最高点突破建仓。</li>
+<li><b>头寸：</b>用 ATR（真实波幅）定仓位，波动大则少买，控制单笔风险 ≤1%–2%。</li>
+<li><b>止损：</b>2ATR 反向止损；盈利后移动止损（如吊灯止损）保护利润。</li>
+</ul>
+
+<h3>低胜率高赔率的本质</h3>
+<div class="fig">
+  <svg viewBox="0 0 400 220" role="img" aria-label="通道突破">
+<line x1="30" y1="170" x2="370" y2="110" stroke="#5a6470" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="30" y1="120" x2="370" y2="60" stroke="#5a6470" stroke-width="1.5" stroke-dasharray="5 4"/>
+<polyline points="30,160 90,140 150,150 210,125 270,135 330,110 360,50" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<line x1="360" y1="50" x2="392" y2="30" stroke="#c8102e" stroke-width="2.5"/>
+<polygon points="392,30 383,33 387,41" fill="#c8102e"/>
+<text x="150" y="205" font-size="13" fill="#5a6470">上升通道（上下轨平行上倾）</text>
+<text x="320" y="24" font-size="13" fill="#c8102e">突破买入</text>
+</svg>
+  <div class="cap">图 45-1　价格在区间内运行，放量突破上轨即是趋势跟踪的入场信号</div>
+</div>
+<div class="key"><b>记住：</b>趋势系统胜率常只有 30%–40%，但"赚时大、亏时小"，长期正期望。纪律（止损 + 仓位）比信号更重要。</div>
+    
+    </section>
+    <section id="c53">
+    <h2>46. 量价背离与顶底背驰</h2>
+<p>背离是<b>价格与动能不一致</b>的转折预警：价格还在冲高（或探低），但背后的量能或技术指标已先一步走弱 / 走强，预示原有趋势力竭。</p>
+
+<h3>顶背离（多头力竭）</h3>
+<p>价格创新高，但 <b>MACD / RSI / 成交量</b> 未同步创新高，甚至走低。常见于上涨末端，是减仓信号。</p>
+<h3>底背离（空头力竭）</h3>
+<p>价格创新低，但指标拒绝新低、率先回升。常见于下跌末端，是逢低布局信号。</p>
+
+<div class="fig">
+  <svg viewBox="0 0 400 250" role="img" aria-label="顶背离示意">
+    <text x="10" y="20" font-size="13" fill="#c8102e">价格（创新高）</text>
+    <path d="M30,110 L140,60 L200,90 L320,45 L370,70" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+    <line x1="140" y1="60" x2="140" y2="235" stroke="#ccc" stroke-dasharray="4 4"/>
+    <line x1="320" y1="45" x2="320" y2="235" stroke="#ccc" stroke-dasharray="4 4"/>
+    <text x="195" y="155" font-size="13" fill="#0a8f5b">指标（未创新高）</text>
+    <path d="M30,215 L140,170 L200,195 L320,185 L370,205" fill="none" stroke="#0a8f5b" stroke-width="2.5"/>
+    <text x="120" y="40" font-size="12" fill="#5a6470">峰值1</text>
+    <text x="328" y="38" font-size="12" fill="#5a6470">峰值2↑</text>
+    <text x="328" y="180" font-size="12" fill="#5a6470">峰值2↓</text>
+  </svg>
+  <div class="cap">图 46-1　顶背离：价格更高的高点，指标却走出更低的高点</div>
+</div>
+
+<h3>量价背离的典型形态</h3>
+<table>
+<tr><th>形态</th><th>含义</th></tr>
+<tr><td>价升量缩</td><td>上涨缺资金跟进，动能衰减，警惕回落</td></tr>
+<tr><td>价跌量增</td><td>恐慌抛售 / 出货，下跌或有惯性</td></tr>
+<tr><td>地量见地价</td><td>极度缩量后抛压枯竭，常临近阶段底部</td></tr>
+<tr><td>天量见天价</td><td>巨量换手后上涨乏力，易见阶段顶</td></tr>
+</table>
+<div class="warn"><b>陷阱：</b>背离会"多次背离才转折"，不可一出现就逆势操作；必须等<b>趋势线破位 / 放量大反转 K 线</b>确认后再动手。</div>
+    
+    </section>
+    <section id="c65">
+    <h2>47. 多周期共振分析</h2>
+<p>看日线要涨、看周线却在下山——周期冲突最让人纠结。多周期分析就是给趋势"定层级"，让你知道该顺哪个、防哪个。</p>
+
+<h3>周期层级与分工</h3>
+<table>
+<tr><th>周期</th><th>角色</th><th>回答的问题</th></tr>
+<tr><td>月线 / 周线</td><td>定方向（大趋势）</td><td>现在是牛是熊、主升还是主跌？</td></tr>
+<tr><td>日线</td><td>定波段</td><td>这一波回调还是反转？</td></tr>
+<tr><td>60 分钟 / 分时</td><td>找买卖点</td><td>具体哪天哪点进场 / 出场？</td></tr>
+</table>
+
+<h3>共振与冲突</h3>
+<ul>
+<li><span class="tag red">多周期共振</span>大、中、小周期方向一致 → 信号最强、胜率最高，值得重仓跟随。</li>
+<li><span class="tag green">周期冲突</span>小周期逆大周期（如周线涨、日线跌）→ 多半是"回调/反弹"，不逆大趋势做反向单。</li>
+<li><strong>顺大做小：</strong>大周期向上时，只在小周期回踩企稳时买；大周期向下时，反弹是减仓机会。</li>
+</ul>
+
+<div class="fig">
+<svg viewBox="0 0 380 210" role="img" aria-label="多周期堆叠">
+<line x1="40" y1="20" x2="40" y2="190" stroke="#e6e9ee"/>
+<line x1="40" y1="190" x2="360" y2="190" stroke="#b8c0cc"/>
+<polyline points="50,150 130,130 210,120 290,100 340,90" fill="none" stroke="#b8c0cc" stroke-width="2"/>
+<text x="60" y="40" font-size="10" fill="#5a6470">月线(大)</text>
+<polyline points="50,160 110,140 170,120 230,100 290,85 340,80" fill="none" stroke="#1664c0" stroke-width="2.5"/>
+<text x="60" y="60" font-size="10" fill="#1664c0">周线(中)</text>
+<polyline points="50,170 90,150 130,165 170,130 210,148 250,110 290,130 330,95" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<text x="58" y="84" font-size="10" fill="#c8102e">日线(小)</text>
+</svg>
+<div class="cap">图 47-1　大周期定方向、小周期找买卖点：三者同向即"共振"</div>
+</div>
+
+<div class="tip"><b>实操口诀：</b>周线看方向、日线看结构、分时看切入点。把止损放在大周期趋势线被破的位置，才能既跟上趋势又不至于在小波动里被洗出去。</div>
+    </section>
+    <section id="c54">
+    <h2>48. 市场情绪指标与恐贪周期</h2>
+<p>价格由资金驱动，资金由情绪驱动。读懂情绪，能在狂热时清醒、在绝望时贪婪。情绪指标是技术面之外的重要"温度计"（与第 28 章短线题材互相印证）。</p>
+
+<h3>常用情绪指标</h3>
+<ul>
+<li><b>涨跌家数 / 涨停跌停比：</b>普涨普跌的广度信号。</li>
+<li><b>换手率与量能：</b>放量亢奋 vs 缩量冰点。</li>
+<li><b>连板高度与题材持续性：</b>短线情绪风向标。</li>
+<li><b>融资余额 / 北向资金：</b>杠杆与外资的风险偏好。</li>
+<li><b>恐贪指数（Fear &amp; Greed）：</b>综合波动率、动量、避险需求等。</li>
+</ul>
+
+<h3>情绪周期五阶段</h3>
+<div class="fig">
+  <svg viewBox="0 0 360 300" role="img" aria-label="情绪周期">
+    <circle cx="180" cy="150" r="110" fill="none" stroke="#c8102e" stroke-width="2" stroke-dasharray="6 5"/>
+    <circle cx="180" cy="40" r="22" fill="#eef6ff" stroke="#0b4a86" stroke-width="1.5"/>
+    <circle cx="285" cy="116" r="22" fill="#e6f6ee" stroke="#0a8f5b" stroke-width="1.5"/>
+    <circle cx="245" cy="239" r="22" fill="#fde8ec" stroke="#c8102e" stroke-width="1.5"/>
+    <circle cx="115" cy="239" r="22" fill="#fff3f3" stroke="#9b0c23" stroke-width="1.5"/>
+    <circle cx="75" cy="116" r="22" fill="#eef1f5" stroke="#5a6470" stroke-width="1.5"/>
+    <text x="180" y="45" font-size="13" text-anchor="middle" fill="#0b4a86">冰点</text>
+    <text x="285" y="121" font-size="13" text-anchor="middle" fill="#0a8f5b">修复</text>
+    <text x="245" y="244" font-size="13" text-anchor="middle" fill="#c8102e">高潮</text>
+    <text x="115" y="244" font-size="13" text-anchor="middle" fill="#9b0c23">退潮</text>
+    <text x="75" y="121" font-size="13" text-anchor="middle" fill="#5a6470">再冰点</text>
+  </svg>
+  <div class="cap">图 48-1　情绪顺时针循环：冰点→修复→高潮→退潮→再冰点</div>
+</div>
+<table>
+<tr><th>阶段</th><th>市场特征</th><th>应对</th></tr>
+<tr><td>冰点</td><td>无人问津、地量阴跌</td><td>左侧小仓试错，不恐慌</td></tr>
+<tr><td>修复</td><td>龙头企稳、量能回暖</td><td>跟随主线建仓</td></tr>
+<tr><td>高潮</td><td>全民看涨、天量加速</td><td>分批止盈，不追高</td></tr>
+<tr><td>退潮</td><td>高位补跌、接力断板</td><td>空仓观望，保住利润</td></tr>
+</table>
+<div class="key"><b>逆向思维：</b>"别人贪婪我恐惧，别人恐惧我贪婪"——在冰点敢买、在高潮敢卖，是超额收益的来源。</div>
+    
+    </section>
+    <section id="c55">
+    <h2>49. 财报季博弈</h2>
+<p>财报披露窗口是基本面驱动的集中博弈期：业绩超预期往往催化主升，不及预期的"暴雷"则引发踩踏。读懂时间线与公告语言，能在不确定性中找确定性。</p>
+
+<h3>披露时间线</h3>
+<table>
+<tr><th>报告</th><th>披露节点</th><th>关键看点</th></tr>
+<tr><td>一季报</td><td>4 月 30 日前</td><td>全年开局、春节后景气</td></tr>
+<tr><td>中报</td><td>8 月 31 日前</td><td>半年经营、半年分红</td></tr>
+<tr><td>三季报</td><td>10 月 31 日前</td><td>全年指引验证</td></tr>
+<tr><td>年报</td><td>次年 4 月 30 日前</td><td>最完整，含分红方案</td></tr>
+<tr><td>业绩预告 / 快报</td><td>定期报告前</td><td>提前预判，避免踩雷</td></tr>
+</table>
+
+<h3>超预期 vs 低于预期</h3>
+<ul>
+<li><b>Beats（超预期）：</b>营收 / 净利高于一致预期 + 向好指引，常跳空上涨；关注"是否已被提前炒作"。</li>
+<li><b>Misses（低于预期）：</b>不及预期即便仍增长也易杀估值，警惕"利好出尽"。</li>
+<li><b>靴子落地：</b>利空兑现、股价已反映，反而可能见底（利空出尽是利好）。</li>
+</ul>
+
+<h3>公告类型速读</h3>
+<table>
+<tr><th>公告</th><th>信号</th></tr>
+<tr><td>预增 / 扭亏</td><td>景气向上，偏多</td></tr>
+<tr><td>预减 / 首亏</td><td>景气下行，偏空</td></tr>
+<tr><td>变脸 / 下修</td><td>诚信与业绩双杀，重大风险</td></tr>
+<tr><td>高送转 / 分红</td><td>回报信号，但需防"数字游戏"</td></tr>
+</table>
+
+<h3>财报避雷清单</h3>
+<div class="warn">重点排查：①商誉占比过高（减值风险）；②应收账款畸高、经营现金流为负（纸面利润）；③关联交易与突击营收；④频繁变更会计估计；⑤大股东高位减持。财务真实性优先于成长性。</div>
+    
+    </section>
+    <section id="c40">
+    <h2>50. 风险警示与骗局防范</h2>
+    <h3>新手十大误区</h3>
+    <ul>
+      <li>听"内幕消息"炒股（多为接盘陷阱）。</li>
+      <li>满仓干、加杠杆（一次黑天鹅清零）。</li>
+      <li>不设止损，"死扛回本"。</li>
+      <li>频繁交易、追涨杀跌（被手续费和情绪收割）。</li>
+      <li>盲目抄底"便宜"股（便宜可能有雷）。</li>
+      <li>把短期运气当能力，加重仓位。</li>
+      <li>过度分散或过度集中。</li>
+      <li>只信技术指标、忽略基本面与仓位。</li>
+    </ul>
+    <h3>典型骗局</h3>
+    <ul>
+      <li><b>杀猪盘：</b>社交平台荐股群，诱导高位接盘后跑路。</li>
+      <li><b>收费荐股/代客理财：</b>承诺收益的多是违规甚至诈骗。</li>
+      <li><b>虚拟盘：</b>假交易软件，入金后无法提现。</li>
+      <li><b>场外配资：</b>高杠杆 + 高利息，极易爆仓且不受保护。</li>
+    </ul>
+    <div class="warn"><b>铁律：</b>凡是要你"加群、交费、跟单、下载不明 APP 入金"的，一律视为诈骗。正规交易只在持牌券商官方渠道。</div>
+  
+
+    <h3>风险提示</h3>
+    <ul>
+      <li>技术指标是<b>概率工具</b>，不是必胜公式；任何单一信号都可能有假。</li>
+      <li>散户最大敌人往往是<b>情绪与纪律</b>：追涨杀跌、不止损、满仓赌一只。</li>
+      <li>设置<b>止损</b>比预测顶部更重要；先想"错了怎么办"，再想"能赚多少"。</li>
+      <li>不借钱炒股、不杠杆满仓；只用<b>亏得起</b>的闲钱。</li>
+      <li>技术指标无法预测突发政策、业绩雷、黑天鹅；基本面 + 技术面结合更稳。</li>
+      <li>本手册仅作知识科普，<b>不构成任何投资建议</b>。投资有风险，决策需谨慎、自负盈亏。</li>
+    </ul>
+
+    <div class="key">
+      <b>学习路径建议：</b>先吃透 K 线 + 均线 + 成交量（看盘三件套）→ 再学 MACD + KDJ/RSI（指标）→ 练量价关系与支撑压力（综合）→ 最后补财务估值（选股）。边看实盘边对照，比死记硬背有效得多。
+    </div>
+  
+    
+    </section>
+  </main>
+</div>
+
+<script>
+  // 右侧卡片切换：一次只显示一章，不做整页滚动锚点定位
+  (function(){
+    var links = Array.prototype.slice.call(document.querySelectorAll('nav.side a'));
+    var secs = {};
+    document.querySelectorAll('main section').forEach(function(s){ secs[s.id] = s; });
+
+    function show(id){
+      for(var k in secs){ if(secs.hasOwnProperty(k)) secs[k].classList.remove('show'); }
+      if(secs[id]){ secs[id].classList.add('show'); }
+      links.forEach(function(a){
+        a.classList.toggle('active', a.getAttribute('data-target') === id);
+      });
+      var mainEl = document.querySelector('main');
+      if(mainEl){ mainEl.scrollTop = 0; }
+    }
+
+    links.forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        show(a.getAttribute('data-target'));
+      });
+    });
+
+    show('c1'); // 默认显示第一章
+  })();
+</script>
+
+</body>
+</html>
